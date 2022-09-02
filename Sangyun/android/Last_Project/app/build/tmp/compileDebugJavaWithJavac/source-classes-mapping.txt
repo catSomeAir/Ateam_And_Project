@@ -26,3 +26,4 @@ com/example/last_project/BuildConfig.java
 com/example/last_project/member/LoginActivity.java
  com.example.last_project.member.LoginActivity
  com.example.last_project.member.LoginActivity$1
+ com.example.last_project.member.LoginActivity$2
