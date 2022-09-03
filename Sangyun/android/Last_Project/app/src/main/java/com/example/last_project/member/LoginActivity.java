@@ -39,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
         login_edt_id = findViewById(R.id.login_edt_id);
         
         CommonConn conn = new CommonConn(LoginActivity.this, "test.dg");
-        conn.addParams("email","k");
+        conn.addParams("email","kel102@gmail.com");
         conn.executeConn(new CommonConn.ConnCallback() {
             @Override
             public void onResult(boolean isResult, String data) {
@@ -53,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
             //네이버---------------------------------------------------------------------------
         login_btn_naver = findViewById(R.id.login_btn_naver);
         NaverIdLoginSDK.INSTANCE.initialize(this, getString(R.string.naver_client_id) , getString(R.string.naver_client_secret), getString(R.string.app_name));
-        login_btn_naver.setImageResource(R.drawable.temp_banner);
+        login_btn_naver.setImageResource(R.drawable.naver);
         login_btn_naver.setOAuthLoginCallback(new OAuthLoginCallback() {
             @Override
             public void onSuccess() {

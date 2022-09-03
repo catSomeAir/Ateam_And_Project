@@ -100,7 +100,7 @@
 52-->[com.naver.maps:map-sdk:3.15.0] C:\Users\hanul\.gradle\caches\transforms-3\34b0db706f53423d33a25b4eeebc6fe6\transformed\jetified-map-sdk-3.15.0\AndroidManifest.xml:14:9-33
 53
 54    <application
-54-->D:\project\android\andworkspace\Last_Project\app\src\main\AndroidManifest.xml:17:5-37:19
+54-->D:\project\android\andworkspace\Last_Project\app\src\main\AndroidManifest.xml:17:5-46:19
 55        android:allowBackup="true"
 55-->D:\project\android\andworkspace\Last_Project\app\src\main\AndroidManifest.xml:18:9-35
 56        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -121,160 +121,178 @@
 64-->D:\project\android\andworkspace\Last_Project\app\src\main\AndroidManifest.xml:24:9-44
 65        <activity
 65-->D:\project\android\andworkspace\Last_Project\app\src\main\AndroidManifest.xml:25:9-27:39
-66            android:name="com.example.last_project.MainActivity"
-66-->D:\project\android\andworkspace\Last_Project\app\src\main\AndroidManifest.xml:26:13-41
+66            android:name="com.example.last_project.category.CategoryActivity"
+66-->D:\project\android\andworkspace\Last_Project\app\src\main\AndroidManifest.xml:26:13-54
 67            android:exported="true" />
 67-->D:\project\android\andworkspace\Last_Project\app\src\main\AndroidManifest.xml:27:13-36
 68        <activity
-68-->D:\project\android\andworkspace\Last_Project\app\src\main\AndroidManifest.xml:28:9-36:20
-69            android:name="com.example.last_project.member.LoginActivity"
-69-->D:\project\android\andworkspace\Last_Project\app\src\main\AndroidManifest.xml:29:13-49
-70            android:exported="true" >
+68-->D:\project\android\andworkspace\Last_Project\app\src\main\AndroidManifest.xml:28:9-30:39
+69            android:name="com.example.last_project.member.JoinActivity"
+69-->D:\project\android\andworkspace\Last_Project\app\src\main\AndroidManifest.xml:29:13-48
+70            android:exported="true" />
 70-->D:\project\android\andworkspace\Last_Project\app\src\main\AndroidManifest.xml:30:13-36
-71            <intent-filter>
-71-->D:\project\android\andworkspace\Last_Project\app\src\main\AndroidManifest.xml:31:13-35:29
-72                <action android:name="android.intent.action.MAIN" />
-72-->D:\project\android\andworkspace\Last_Project\app\src\main\AndroidManifest.xml:32:17-69
-72-->D:\project\android\andworkspace\Last_Project\app\src\main\AndroidManifest.xml:32:25-66
-73
-74                <category android:name="android.intent.category.LAUNCHER" />
-74-->D:\project\android\andworkspace\Last_Project\app\src\main\AndroidManifest.xml:34:17-77
-74-->D:\project\android\andworkspace\Last_Project\app\src\main\AndroidManifest.xml:34:27-74
-75            </intent-filter>
-76        </activity>
-77        <!-- <activity -->
-78        <!-- android:name="com.nhn.android.naverlogin.ui.OAuthLoginActivity" -->
-79        <!-- android:configChanges="orientation|screenSize" -->
-80        <!-- android:theme="@style/Theme.AppCompat.Light.Dialog" /> -->
-81        <activity
-81-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:32:9-35:78
-82            android:name="com.navercorp.nid.oauth.NidOAuthBridgeActivity"
-82-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:33:13-74
-83            android:configChanges="orientation|screenSize"
-83-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:34:13-59
-84            android:theme="@style/Theme.AppCompat.Transparent.NoActionBar" />
-84-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:35:13-75
-85        <activity
-85-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:36:9-41:78
-86            android:name="com.navercorp.nid.oauth.activity.NidOAuthWebViewActivity"
-86-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:37:13-84
-87            android:configChanges="orientation|screenSize"
-87-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:38:13-59
-88            android:label="OAuth2.0 by WebView"
-88-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:39:13-48
-89            android:screenOrientation="behind"
-89-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:40:13-47
-90            android:theme="@style/Theme.AppCompat.Transparent.NoActionBar" />
-90-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:41:13-75
-91        <activity
-91-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:42:9-61:20
-92            android:name="com.navercorp.nid.oauth.activity.NidOAuthCustomTabActivity"
-92-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:43:13-86
-93            android:configChanges="orientation|screenSize"
-93-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:44:13-59
-94            android:exported="true"
-94-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:45:13-36
-95            android:label="OAuth2.0 by Custom tabs"
-95-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:46:13-52
-96            android:launchMode="singleTask"
-96-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:47:13-44
-97            android:screenOrientation="behind"
-97-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:48:13-47
-98            android:theme="@style/Theme.AppCompat.NoActionBar" >
-98-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:49:13-63
-99            <intent-filter>
-99-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:50:13-60:29
-100                <action android:name="android.intent.action.VIEW" />
-100-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:51:17-69
-100-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:51:25-66
-101
-102                <category android:name="android.intent.category.DEFAULT" />
-102-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:53:17-76
-102-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:53:27-73
-103                <category android:name="android.intent.category.BROWSABLE" />
-103-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:54:17-78
-103-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:54:27-75
-104                <!-- Intent URL 에서 로그인 액티비티를 실행하기 위해 설정 -->
-105                <data
-105-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:56:17-59:59
-106                    android:host="authorize"
-106-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:57:21-45
-107                    android:path="/"
-107-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:58:21-37
-108                    android:scheme="naver3rdpartylogin" />
-108-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:59:21-56
-109            </intent-filter>
-110        </activity>
-111        <activity
-111-->[com.kakao.sdk:v2-auth:2.11.0] C:\Users\hanul\.gradle\caches\transforms-3\1d683a1ddfb7112dc7e25fde49d0e296\transformed\jetified-v2-auth-2.11.0\AndroidManifest.xml:10:9-14:56
-112            android:name="com.kakao.sdk.auth.TalkAuthCodeActivity"
-112-->[com.kakao.sdk:v2-auth:2.11.0] C:\Users\hanul\.gradle\caches\transforms-3\1d683a1ddfb7112dc7e25fde49d0e296\transformed\jetified-v2-auth-2.11.0\AndroidManifest.xml:11:13-67
-113            android:exported="false"
-113-->[com.kakao.sdk:v2-auth:2.11.0] C:\Users\hanul\.gradle\caches\transforms-3\1d683a1ddfb7112dc7e25fde49d0e296\transformed\jetified-v2-auth-2.11.0\AndroidManifest.xml:12:13-37
-114            android:launchMode="singleTask"
-114-->[com.kakao.sdk:v2-auth:2.11.0] C:\Users\hanul\.gradle\caches\transforms-3\1d683a1ddfb7112dc7e25fde49d0e296\transformed\jetified-v2-auth-2.11.0\AndroidManifest.xml:13:13-44
-115            android:theme="@style/TransparentCompat" />
-115-->[com.kakao.sdk:v2-auth:2.11.0] C:\Users\hanul\.gradle\caches\transforms-3\1d683a1ddfb7112dc7e25fde49d0e296\transformed\jetified-v2-auth-2.11.0\AndroidManifest.xml:14:13-53
-116        <activity
-116-->[com.kakao.sdk:v2-auth:2.11.0] C:\Users\hanul\.gradle\caches\transforms-3\1d683a1ddfb7112dc7e25fde49d0e296\transformed\jetified-v2-auth-2.11.0\AndroidManifest.xml:15:9-18:56
-117            android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
-117-->[com.kakao.sdk:v2-auth:2.11.0] C:\Users\hanul\.gradle\caches\transforms-3\1d683a1ddfb7112dc7e25fde49d0e296\transformed\jetified-v2-auth-2.11.0\AndroidManifest.xml:16:13-70
-118            android:launchMode="singleTask"
-118-->[com.kakao.sdk:v2-auth:2.11.0] C:\Users\hanul\.gradle\caches\transforms-3\1d683a1ddfb7112dc7e25fde49d0e296\transformed\jetified-v2-auth-2.11.0\AndroidManifest.xml:17:13-44
-119            android:theme="@style/TransparentCompat" />
-119-->[com.kakao.sdk:v2-auth:2.11.0] C:\Users\hanul\.gradle\caches\transforms-3\1d683a1ddfb7112dc7e25fde49d0e296\transformed\jetified-v2-auth-2.11.0\AndroidManifest.xml:18:13-53
+71        <activity
+71-->D:\project\android\andworkspace\Last_Project\app\src\main\AndroidManifest.xml:31:9-33:39
+72            android:name="com.example.last_project.SplashActivity"
+72-->D:\project\android\andworkspace\Last_Project\app\src\main\AndroidManifest.xml:32:13-43
+73            android:exported="true" />
+73-->D:\project\android\andworkspace\Last_Project\app\src\main\AndroidManifest.xml:33:13-36
+74        <activity
+74-->D:\project\android\andworkspace\Last_Project\app\src\main\AndroidManifest.xml:34:9-36:39
+75            android:name="com.example.last_project.member.LoginActivity"
+75-->D:\project\android\andworkspace\Last_Project\app\src\main\AndroidManifest.xml:35:13-49
+76            android:exported="true" />
+76-->D:\project\android\andworkspace\Last_Project\app\src\main\AndroidManifest.xml:36:13-36
+77        <activity
+77-->D:\project\android\andworkspace\Last_Project\app\src\main\AndroidManifest.xml:37:9-45:20
+78            android:name="com.example.last_project.MainActivity"
+78-->D:\project\android\andworkspace\Last_Project\app\src\main\AndroidManifest.xml:38:13-41
+79            android:exported="true" >
+79-->D:\project\android\andworkspace\Last_Project\app\src\main\AndroidManifest.xml:39:13-36
+80            <intent-filter>
+80-->D:\project\android\andworkspace\Last_Project\app\src\main\AndroidManifest.xml:40:13-44:29
+81                <action android:name="android.intent.action.MAIN" />
+81-->D:\project\android\andworkspace\Last_Project\app\src\main\AndroidManifest.xml:41:17-69
+81-->D:\project\android\andworkspace\Last_Project\app\src\main\AndroidManifest.xml:41:25-66
+82
+83                <category android:name="android.intent.category.LAUNCHER" />
+83-->D:\project\android\andworkspace\Last_Project\app\src\main\AndroidManifest.xml:43:17-77
+83-->D:\project\android\andworkspace\Last_Project\app\src\main\AndroidManifest.xml:43:27-74
+84            </intent-filter>
+85        </activity>
+86        <!-- <activity -->
+87        <!-- android:name="com.nhn.android.naverlogin.ui.OAuthLoginActivity" -->
+88        <!-- android:configChanges="orientation|screenSize" -->
+89        <!-- android:theme="@style/Theme.AppCompat.Light.Dialog" /> -->
+90        <activity
+90-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:32:9-35:78
+91            android:name="com.navercorp.nid.oauth.NidOAuthBridgeActivity"
+91-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:33:13-74
+92            android:configChanges="orientation|screenSize"
+92-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:34:13-59
+93            android:theme="@style/Theme.AppCompat.Transparent.NoActionBar" />
+93-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:35:13-75
+94        <activity
+94-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:36:9-41:78
+95            android:name="com.navercorp.nid.oauth.activity.NidOAuthWebViewActivity"
+95-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:37:13-84
+96            android:configChanges="orientation|screenSize"
+96-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:38:13-59
+97            android:label="OAuth2.0 by WebView"
+97-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:39:13-48
+98            android:screenOrientation="behind"
+98-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:40:13-47
+99            android:theme="@style/Theme.AppCompat.Transparent.NoActionBar" />
+99-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:41:13-75
+100        <activity
+100-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:42:9-61:20
+101            android:name="com.navercorp.nid.oauth.activity.NidOAuthCustomTabActivity"
+101-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:43:13-86
+102            android:configChanges="orientation|screenSize"
+102-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:44:13-59
+103            android:exported="true"
+103-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:45:13-36
+104            android:label="OAuth2.0 by Custom tabs"
+104-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:46:13-52
+105            android:launchMode="singleTask"
+105-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:47:13-44
+106            android:screenOrientation="behind"
+106-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:48:13-47
+107            android:theme="@style/Theme.AppCompat.NoActionBar" >
+107-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:49:13-63
+108            <intent-filter>
+108-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:50:13-60:29
+109                <action android:name="android.intent.action.VIEW" />
+109-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:51:17-69
+109-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:51:25-66
+110
+111                <category android:name="android.intent.category.DEFAULT" />
+111-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:53:17-76
+111-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:53:27-73
+112                <category android:name="android.intent.category.BROWSABLE" />
+112-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:54:17-78
+112-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:54:27-75
+113                <!-- Intent URL 에서 로그인 액티비티를 실행하기 위해 설정 -->
+114                <data
+114-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:56:17-59:59
+115                    android:host="authorize"
+115-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:57:21-45
+116                    android:path="/"
+116-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:58:21-37
+117                    android:scheme="naver3rdpartylogin" />
+117-->[com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:59:21-56
+118            </intent-filter>
+119        </activity>
 120        <activity
-120-->[com.naver.maps:map-sdk:3.15.0] C:\Users\hanul\.gradle\caches\transforms-3\34b0db706f53423d33a25b4eeebc6fe6\transformed\jetified-map-sdk-3.15.0\AndroidManifest.xml:21:9-25:51
-121            android:name="com.naver.maps.map.app.LegendActivity"
-121-->[com.naver.maps:map-sdk:3.15.0] C:\Users\hanul\.gradle\caches\transforms-3\34b0db706f53423d33a25b4eeebc6fe6\transformed\jetified-map-sdk-3.15.0\AndroidManifest.xml:22:13-65
-122            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
-122-->[com.naver.maps:map-sdk:3.15.0] C:\Users\hanul\.gradle\caches\transforms-3\34b0db706f53423d33a25b4eeebc6fe6\transformed\jetified-map-sdk-3.15.0\AndroidManifest.xml:23:13-91
-123            android:label="@string/navermap_legend"
-123-->[com.naver.maps:map-sdk:3.15.0] C:\Users\hanul\.gradle\caches\transforms-3\34b0db706f53423d33a25b4eeebc6fe6\transformed\jetified-map-sdk-3.15.0\AndroidManifest.xml:24:13-52
-124            android:theme="@style/navermap_app" />
-124-->[com.naver.maps:map-sdk:3.15.0] C:\Users\hanul\.gradle\caches\transforms-3\34b0db706f53423d33a25b4eeebc6fe6\transformed\jetified-map-sdk-3.15.0\AndroidManifest.xml:25:13-48
+120-->[com.kakao.sdk:v2-auth:2.11.0] C:\Users\hanul\.gradle\caches\transforms-3\1d683a1ddfb7112dc7e25fde49d0e296\transformed\jetified-v2-auth-2.11.0\AndroidManifest.xml:10:9-14:56
+121            android:name="com.kakao.sdk.auth.TalkAuthCodeActivity"
+121-->[com.kakao.sdk:v2-auth:2.11.0] C:\Users\hanul\.gradle\caches\transforms-3\1d683a1ddfb7112dc7e25fde49d0e296\transformed\jetified-v2-auth-2.11.0\AndroidManifest.xml:11:13-67
+122            android:exported="false"
+122-->[com.kakao.sdk:v2-auth:2.11.0] C:\Users\hanul\.gradle\caches\transforms-3\1d683a1ddfb7112dc7e25fde49d0e296\transformed\jetified-v2-auth-2.11.0\AndroidManifest.xml:12:13-37
+123            android:launchMode="singleTask"
+123-->[com.kakao.sdk:v2-auth:2.11.0] C:\Users\hanul\.gradle\caches\transforms-3\1d683a1ddfb7112dc7e25fde49d0e296\transformed\jetified-v2-auth-2.11.0\AndroidManifest.xml:13:13-44
+124            android:theme="@style/TransparentCompat" />
+124-->[com.kakao.sdk:v2-auth:2.11.0] C:\Users\hanul\.gradle\caches\transforms-3\1d683a1ddfb7112dc7e25fde49d0e296\transformed\jetified-v2-auth-2.11.0\AndroidManifest.xml:14:13-53
 125        <activity
-125-->[com.naver.maps:map-sdk:3.15.0] C:\Users\hanul\.gradle\caches\transforms-3\34b0db706f53423d33a25b4eeebc6fe6\transformed\jetified-map-sdk-3.15.0\AndroidManifest.xml:26:9-30:51
-126            android:name="com.naver.maps.map.app.LegalNoticeActivity"
-126-->[com.naver.maps:map-sdk:3.15.0] C:\Users\hanul\.gradle\caches\transforms-3\34b0db706f53423d33a25b4eeebc6fe6\transformed\jetified-map-sdk-3.15.0\AndroidManifest.xml:27:13-70
-127            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
-127-->[com.naver.maps:map-sdk:3.15.0] C:\Users\hanul\.gradle\caches\transforms-3\34b0db706f53423d33a25b4eeebc6fe6\transformed\jetified-map-sdk-3.15.0\AndroidManifest.xml:28:13-91
-128            android:label="@string/navermap_legal_notice"
-128-->[com.naver.maps:map-sdk:3.15.0] C:\Users\hanul\.gradle\caches\transforms-3\34b0db706f53423d33a25b4eeebc6fe6\transformed\jetified-map-sdk-3.15.0\AndroidManifest.xml:29:13-58
-129            android:theme="@style/navermap_app" />
-129-->[com.naver.maps:map-sdk:3.15.0] C:\Users\hanul\.gradle\caches\transforms-3\34b0db706f53423d33a25b4eeebc6fe6\transformed\jetified-map-sdk-3.15.0\AndroidManifest.xml:30:13-48
-130        <activity
-130-->[com.naver.maps:map-sdk:3.15.0] C:\Users\hanul\.gradle\caches\transforms-3\34b0db706f53423d33a25b4eeebc6fe6\transformed\jetified-map-sdk-3.15.0\AndroidManifest.xml:31:9-35:51
-131            android:name="com.naver.maps.map.app.OpenSourceLicenseActivity"
-131-->[com.naver.maps:map-sdk:3.15.0] C:\Users\hanul\.gradle\caches\transforms-3\34b0db706f53423d33a25b4eeebc6fe6\transformed\jetified-map-sdk-3.15.0\AndroidManifest.xml:32:13-76
-132            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
-132-->[com.naver.maps:map-sdk:3.15.0] C:\Users\hanul\.gradle\caches\transforms-3\34b0db706f53423d33a25b4eeebc6fe6\transformed\jetified-map-sdk-3.15.0\AndroidManifest.xml:33:13-91
-133            android:label="@string/navermap_open_source_license"
-133-->[com.naver.maps:map-sdk:3.15.0] C:\Users\hanul\.gradle\caches\transforms-3\34b0db706f53423d33a25b4eeebc6fe6\transformed\jetified-map-sdk-3.15.0\AndroidManifest.xml:34:13-65
-134            android:theme="@style/navermap_app" />
-134-->[com.naver.maps:map-sdk:3.15.0] C:\Users\hanul\.gradle\caches\transforms-3\34b0db706f53423d33a25b4eeebc6fe6\transformed\jetified-map-sdk-3.15.0\AndroidManifest.xml:35:13-48
-135
-136        <provider
-136-->[androidx.emoji2:emoji2:1.0.0] C:\Users\hanul\.gradle\caches\transforms-3\a6574320c86c3a37e884ef017c5b1904\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
-137            android:name="androidx.startup.InitializationProvider"
-137-->[androidx.emoji2:emoji2:1.0.0] C:\Users\hanul\.gradle\caches\transforms-3\a6574320c86c3a37e884ef017c5b1904\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
-138            android:authorities="com.example.last_project.androidx-startup"
-138-->[androidx.emoji2:emoji2:1.0.0] C:\Users\hanul\.gradle\caches\transforms-3\a6574320c86c3a37e884ef017c5b1904\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
-139            android:exported="false" >
-139-->[androidx.emoji2:emoji2:1.0.0] C:\Users\hanul\.gradle\caches\transforms-3\a6574320c86c3a37e884ef017c5b1904\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
-140            <meta-data
-140-->[androidx.emoji2:emoji2:1.0.0] C:\Users\hanul\.gradle\caches\transforms-3\a6574320c86c3a37e884ef017c5b1904\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
-141                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-141-->[androidx.emoji2:emoji2:1.0.0] C:\Users\hanul\.gradle\caches\transforms-3\a6574320c86c3a37e884ef017c5b1904\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
-142                android:value="androidx.startup" />
-142-->[androidx.emoji2:emoji2:1.0.0] C:\Users\hanul\.gradle\caches\transforms-3\a6574320c86c3a37e884ef017c5b1904\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
-143            <meta-data
-143-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\hanul\.gradle\caches\transforms-3\d2a3b14342a552ef8281dc10a1999877\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
-144                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-144-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\hanul\.gradle\caches\transforms-3\d2a3b14342a552ef8281dc10a1999877\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
-145                android:value="androidx.startup" />
-145-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\hanul\.gradle\caches\transforms-3\d2a3b14342a552ef8281dc10a1999877\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
-146        </provider>
-147    </application>
-148
-149</manifest>
+125-->[com.kakao.sdk:v2-auth:2.11.0] C:\Users\hanul\.gradle\caches\transforms-3\1d683a1ddfb7112dc7e25fde49d0e296\transformed\jetified-v2-auth-2.11.0\AndroidManifest.xml:15:9-18:56
+126            android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
+126-->[com.kakao.sdk:v2-auth:2.11.0] C:\Users\hanul\.gradle\caches\transforms-3\1d683a1ddfb7112dc7e25fde49d0e296\transformed\jetified-v2-auth-2.11.0\AndroidManifest.xml:16:13-70
+127            android:launchMode="singleTask"
+127-->[com.kakao.sdk:v2-auth:2.11.0] C:\Users\hanul\.gradle\caches\transforms-3\1d683a1ddfb7112dc7e25fde49d0e296\transformed\jetified-v2-auth-2.11.0\AndroidManifest.xml:17:13-44
+128            android:theme="@style/TransparentCompat" />
+128-->[com.kakao.sdk:v2-auth:2.11.0] C:\Users\hanul\.gradle\caches\transforms-3\1d683a1ddfb7112dc7e25fde49d0e296\transformed\jetified-v2-auth-2.11.0\AndroidManifest.xml:18:13-53
+129        <activity
+129-->[com.naver.maps:map-sdk:3.15.0] C:\Users\hanul\.gradle\caches\transforms-3\34b0db706f53423d33a25b4eeebc6fe6\transformed\jetified-map-sdk-3.15.0\AndroidManifest.xml:21:9-25:51
+130            android:name="com.naver.maps.map.app.LegendActivity"
+130-->[com.naver.maps:map-sdk:3.15.0] C:\Users\hanul\.gradle\caches\transforms-3\34b0db706f53423d33a25b4eeebc6fe6\transformed\jetified-map-sdk-3.15.0\AndroidManifest.xml:22:13-65
+131            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
+131-->[com.naver.maps:map-sdk:3.15.0] C:\Users\hanul\.gradle\caches\transforms-3\34b0db706f53423d33a25b4eeebc6fe6\transformed\jetified-map-sdk-3.15.0\AndroidManifest.xml:23:13-91
+132            android:label="@string/navermap_legend"
+132-->[com.naver.maps:map-sdk:3.15.0] C:\Users\hanul\.gradle\caches\transforms-3\34b0db706f53423d33a25b4eeebc6fe6\transformed\jetified-map-sdk-3.15.0\AndroidManifest.xml:24:13-52
+133            android:theme="@style/navermap_app" />
+133-->[com.naver.maps:map-sdk:3.15.0] C:\Users\hanul\.gradle\caches\transforms-3\34b0db706f53423d33a25b4eeebc6fe6\transformed\jetified-map-sdk-3.15.0\AndroidManifest.xml:25:13-48
+134        <activity
+134-->[com.naver.maps:map-sdk:3.15.0] C:\Users\hanul\.gradle\caches\transforms-3\34b0db706f53423d33a25b4eeebc6fe6\transformed\jetified-map-sdk-3.15.0\AndroidManifest.xml:26:9-30:51
+135            android:name="com.naver.maps.map.app.LegalNoticeActivity"
+135-->[com.naver.maps:map-sdk:3.15.0] C:\Users\hanul\.gradle\caches\transforms-3\34b0db706f53423d33a25b4eeebc6fe6\transformed\jetified-map-sdk-3.15.0\AndroidManifest.xml:27:13-70
+136            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
+136-->[com.naver.maps:map-sdk:3.15.0] C:\Users\hanul\.gradle\caches\transforms-3\34b0db706f53423d33a25b4eeebc6fe6\transformed\jetified-map-sdk-3.15.0\AndroidManifest.xml:28:13-91
+137            android:label="@string/navermap_legal_notice"
+137-->[com.naver.maps:map-sdk:3.15.0] C:\Users\hanul\.gradle\caches\transforms-3\34b0db706f53423d33a25b4eeebc6fe6\transformed\jetified-map-sdk-3.15.0\AndroidManifest.xml:29:13-58
+138            android:theme="@style/navermap_app" />
+138-->[com.naver.maps:map-sdk:3.15.0] C:\Users\hanul\.gradle\caches\transforms-3\34b0db706f53423d33a25b4eeebc6fe6\transformed\jetified-map-sdk-3.15.0\AndroidManifest.xml:30:13-48
+139        <activity
+139-->[com.naver.maps:map-sdk:3.15.0] C:\Users\hanul\.gradle\caches\transforms-3\34b0db706f53423d33a25b4eeebc6fe6\transformed\jetified-map-sdk-3.15.0\AndroidManifest.xml:31:9-35:51
+140            android:name="com.naver.maps.map.app.OpenSourceLicenseActivity"
+140-->[com.naver.maps:map-sdk:3.15.0] C:\Users\hanul\.gradle\caches\transforms-3\34b0db706f53423d33a25b4eeebc6fe6\transformed\jetified-map-sdk-3.15.0\AndroidManifest.xml:32:13-76
+141            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
+141-->[com.naver.maps:map-sdk:3.15.0] C:\Users\hanul\.gradle\caches\transforms-3\34b0db706f53423d33a25b4eeebc6fe6\transformed\jetified-map-sdk-3.15.0\AndroidManifest.xml:33:13-91
+142            android:label="@string/navermap_open_source_license"
+142-->[com.naver.maps:map-sdk:3.15.0] C:\Users\hanul\.gradle\caches\transforms-3\34b0db706f53423d33a25b4eeebc6fe6\transformed\jetified-map-sdk-3.15.0\AndroidManifest.xml:34:13-65
+143            android:theme="@style/navermap_app" />
+143-->[com.naver.maps:map-sdk:3.15.0] C:\Users\hanul\.gradle\caches\transforms-3\34b0db706f53423d33a25b4eeebc6fe6\transformed\jetified-map-sdk-3.15.0\AndroidManifest.xml:35:13-48
+144
+145        <provider
+145-->[androidx.emoji2:emoji2:1.0.0] C:\Users\hanul\.gradle\caches\transforms-3\a6574320c86c3a37e884ef017c5b1904\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+146            android:name="androidx.startup.InitializationProvider"
+146-->[androidx.emoji2:emoji2:1.0.0] C:\Users\hanul\.gradle\caches\transforms-3\a6574320c86c3a37e884ef017c5b1904\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
+147            android:authorities="com.example.last_project.androidx-startup"
+147-->[androidx.emoji2:emoji2:1.0.0] C:\Users\hanul\.gradle\caches\transforms-3\a6574320c86c3a37e884ef017c5b1904\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
+148            android:exported="false" >
+148-->[androidx.emoji2:emoji2:1.0.0] C:\Users\hanul\.gradle\caches\transforms-3\a6574320c86c3a37e884ef017c5b1904\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
+149            <meta-data
+149-->[androidx.emoji2:emoji2:1.0.0] C:\Users\hanul\.gradle\caches\transforms-3\a6574320c86c3a37e884ef017c5b1904\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+150                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+150-->[androidx.emoji2:emoji2:1.0.0] C:\Users\hanul\.gradle\caches\transforms-3\a6574320c86c3a37e884ef017c5b1904\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
+151                android:value="androidx.startup" />
+151-->[androidx.emoji2:emoji2:1.0.0] C:\Users\hanul\.gradle\caches\transforms-3\a6574320c86c3a37e884ef017c5b1904\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
+152            <meta-data
+152-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\hanul\.gradle\caches\transforms-3\d2a3b14342a552ef8281dc10a1999877\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+153                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+153-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\hanul\.gradle\caches\transforms-3\d2a3b14342a552ef8281dc10a1999877\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+154                android:value="androidx.startup" />
+154-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\hanul\.gradle\caches\transforms-3\d2a3b14342a552ef8281dc10a1999877\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+155        </provider>
+156    </application>
+157
+158</manifest>

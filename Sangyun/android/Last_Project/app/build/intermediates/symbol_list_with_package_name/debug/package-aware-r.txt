@@ -2630,6 +2630,8 @@ drawable m3_tabs_background
 drawable m3_tabs_line_indicator
 drawable m3_tabs_rounded_line_indicator
 drawable m3_tabs_transparent_background
+drawable main_tab_home_banner1
+drawable main_tab_home_banner3
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
@@ -3139,6 +3141,7 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
+id recv_main
 id restart
 id reverse
 id reverseSawtooth
@@ -3385,9 +3388,12 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_category
+layout activity_join
 layout activity_login
 layout activity_main
 layout activity_oauth_webview
+layout activity_splash
 layout activity_talk_auth_code
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
@@ -3407,9 +3413,16 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout fragment_home__banner1
+layout fragment_home__banner2
+layout fragment_home__banner3
+layout fragment_login
+layout fragment_main__many_search
+layout fragment_main__market
 layout fragment_main__tab__home
 layout fragment_main__tab__my_manaul
 layout fragment_main__tab__recentl
+layout fragment_my_info
 layout item_spinner
 layout m3_alert_dialog
 layout m3_alert_dialog_actions

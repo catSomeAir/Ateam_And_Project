@@ -8,6 +8,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.last_project.conn.CommonConn;
+import com.example.last_project.main.tab.Main_Tab_HomeFragment;
+import com.example.last_project.main.tab.home.Home_BannerFragment1;
 import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         tabs.addTab(tabs.newTab().setText("최근").setTag(3));
         tabs.getTabAt(0).select();
 
+        getSupportFragmentManager().beginTransaction().replace(R.id.container_main, new Main_Tab_HomeFragment()).commit();
         //탭레이아웃 선택 이벤트
         tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -44,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         //-------------------------------------------------------------------------------------
+
+
 
 
 
