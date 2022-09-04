@@ -25,6 +25,7 @@
             android:padding="10dp">
 
             <ImageView
+                android:id="@+id/imgv_main_category"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:src="@drawable/menu_buger" />

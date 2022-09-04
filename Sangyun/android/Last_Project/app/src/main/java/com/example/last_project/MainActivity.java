@@ -1,18 +1,18 @@
 package com.example.last_project;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
-import android.widget.TextView;
-
-import com.example.last_project.conn.CommonConn;
+import com.example.last_project.category.CategoryActivity;
 import com.example.last_project.main.tab.Main_Tab_HomeFragment;
-import com.example.last_project.main.tab.home.Home_BannerFragment1;
 import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
+    ImageView imgv_main_category;
     TabLayout tabs;
 
     @Override
@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         tabs.getTabAt(0).select();
 
         getSupportFragmentManager().beginTransaction().replace(R.id.container_main, new Main_Tab_HomeFragment()).commit();
+
         //탭레이아웃 선택 이벤트
         tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -48,13 +49,23 @@ public class MainActivity extends AppCompatActivity {
         });
         //-------------------------------------------------------------------------------------
 
-
-
+        //카테고리 버튼 선택
+        imgv_main_category = findViewById(R.id.imgv_main_category);
+        imgv_main_category.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CategoryActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slideing_left_enter, R.anim.hold);
+            }
+        });
 
 
 
 
     }
+
+
 }
 
 
