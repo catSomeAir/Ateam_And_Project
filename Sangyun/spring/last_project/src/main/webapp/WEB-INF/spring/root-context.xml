@@ -7,5 +7,5 @@
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<import resource="classpath:db/*.xml"/>
-		<context:component-scan base-package="test"/>
+		<context:component-scan base-package="test, category"/>
 </beans>
