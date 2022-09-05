@@ -23,6 +23,9 @@
         android:theme="@style/Theme.Last_Project"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".member.Login_in_Activity"
+            android:exported="true" />
+        <activity
             android:name=".category.CategoryActivity"
             android:exported="true" />
         <activity

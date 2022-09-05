@@ -1,9 +1,11 @@
 package category;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 
 @Service
 public class CategoryServiceImpl implements CategoryService {
@@ -16,5 +18,10 @@ public class CategoryServiceImpl implements CategoryService {
 	public List<CategoryVO> m_name_list(int lcode) {
 		return dao.m_name_list(lcode);
 	}
+	@Override
+	public HashMap<String, String> count(String email) {
+		return dao.count(email);
+	}
+
 
 }

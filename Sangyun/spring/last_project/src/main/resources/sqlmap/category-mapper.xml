@@ -16,4 +16,16 @@
   WHERE 	l_code = #{lcode}
 
 </select>
+<select id="reply_count" resultType="Integer">
+  SELECT    COUNT(*)
+  FROM      reply
+  WHERE 	email = #{email}
+
+</select>
+<select id="board_count" resultType="Integer">
+  SELECT    COUNT(*)
+  FROM      board
+  WHERE 	email = #{email}
+
+</select>
 </mapper>

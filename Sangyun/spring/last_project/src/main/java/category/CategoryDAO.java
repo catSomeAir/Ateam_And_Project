@@ -1,5 +1,6 @@
 package category;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -16,6 +17,13 @@ public class CategoryDAO implements CategoryService {
 	@Override
 	public List<CategoryVO> m_name_list(int lcode) {
 		return sql.selectList("category.m_list", lcode);
+	}
+	@Override
+	public HashMap<String, String> count(String email) {
+		HashMap<String, String> map = new HashMap<String, String>();
+		map.put("board_count", sql.selectOne("category.board_count",email).toString());
+		map.put("reply_count", sql.selectOne("category.reply_count",email).toString());
+		return map;
 	}
 
 }

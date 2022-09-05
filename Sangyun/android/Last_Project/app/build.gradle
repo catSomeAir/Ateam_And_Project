@@ -70,4 +70,7 @@ dependencies {
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
     implementation 'me.relex:circleindicator:2.1.4'
 
+    //피카소 : DB에 있는 이미지 경로를 이용하여 이미지뷰의 이미지 변경 JSY [ 22.09.05 ]
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
 }
