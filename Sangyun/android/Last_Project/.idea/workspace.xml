@@ -19,11 +19,22 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\hanul\.android\avd\Pixel_4_API_30_1.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="layoutResourceFile" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -42,20 +53,29 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="last_opened_file_path" value="G:/Study_Android/Workspace/Project1_kabank" />
   </component>
   <component name="RecentsManager">
     <key name="android.template.1572477565">
       <recent name="com.example.last_project.member" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\project\android\andworkspace\app\src\main\res\drawable" />
-      <recent name="D:\project\android\andworkspace\app\src\main\res\layout" />
-      <recent name="D:\project\android\andworkspace\app\src\main\res\values" />
-      <recent name="D:\project\android\andworkspace\app\src\main\java\com\example\last_project\test" />
-      <recent name="D:\project\android\andworkspace\app\src\main\java\com\example\last_project" />
+      <recent name="D:\project\android\andworkspace\Last_Project\app\src\main\res\layout" />
+      <recent name="D:\project\android\andworkspace\Last_Project\app\src\main\res\anim" />
+      <recent name="D:\project\android\andworkspace\Last_Project\app\src\main\java\com\example\last_project\conn" />
+      <recent name="D:\project\android\andworkspace\Last_Project\app\src\main\res\drawable" />
+      <recent name="D:\project\android\andworkspace\Last_Project\app\src\main\res\drawable-v24" />
+    </key>
+    <key name="android.template.-789916835">
+      <recent name="com.example.last_project.category" />
+      <recent name="com.example.last_project.member" />
+      <recent name="com.example.last_project" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\project\android\andworkspace\Last_Project\app\src\main\res\drawable-v24" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.last_project.category.recyclerview" />
       <recent name="com.example.last_project.main.tab" />
     </key>
   </component>
@@ -129,5 +149,26 @@
       <updated>1661839323185</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/last_project/category/CategoryActivity.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/last_project/category/CategoryActivity.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/last_project/category/recyclerview/CategoryAdapter.java</url>
+          <line>84</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -25,6 +25,7 @@
             android:padding="10dp">
 
             <ImageView
+                android:id="@+id/imgv_main_category"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:src="@drawable/menu_buger" />
@@ -93,6 +94,7 @@
         android:layout_height="wrap_content">
 
         <LinearLayout
+            android:paddingBottom="40dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -123,7 +125,7 @@
                 <FrameLayout
                     android:id="@+id/container_main"
                     android:layout_width="match_parent"
-                    android:layout_height="180dp">
+                    android:layout_height="wrap_content">
 
 
                 </FrameLayout>
@@ -134,7 +136,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="14dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp">
+
+                <TextView
+                    android:layout_marginTop="28dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="8dp"
+                    android:text="카테고리 검색"
+                    android:textColor="#000"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -153,15 +166,15 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="54dp"
-                            android:layout_height="54dp"
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
                             android:src="@drawable/temp1" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="가전·TV"
-                            android:textSize="12dp" />
+                            android:textSize="10dp" />
 
                     </LinearLayout>
 
@@ -173,15 +186,15 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="54dp"
-                            android:layout_height="54dp"
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
                             android:src="@drawable/temp2" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="컴퓨터·노트북"
-                            android:textSize="12dp" />
+                            android:textSize="10dp" />
 
                     </LinearLayout>
 
@@ -193,15 +206,15 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="54dp"
-                            android:layout_height="54dp"
+                            android:layout_width="44dp"
+                            android:layout_height="47dp"
                             android:src="@drawable/temp3" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="태블릿·모바일"
-                            android:textSize="12dp" />
+                            android:textSize="10dp" />
 
                     </LinearLayout>
 
@@ -213,15 +226,16 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="54dp"
-                            android:layout_height="54dp"
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
                             android:src="@drawable/temp5" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="자동차용품·공구"
-                            android:textSize="12dp" />
+                            android:gravity="center_horizontal"
+                            android:text="자동차용품\n공구"
+                            android:textSize="10dp" />
 
                     </LinearLayout>
                 </LinearLayout>
@@ -243,15 +257,15 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="54dp"
-                            android:layout_height="54dp"
-                            android:src="@drawable/temp6" />
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
+                            android:src="@drawable/temp1" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="가구·조명"
-                            android:textSize="12dp" />
+                            android:text="가전·TV"
+                            android:textSize="10dp" />
 
                     </LinearLayout>
 
@@ -263,15 +277,15 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="54dp"
-                            android:layout_height="54dp"
-                            android:src="@drawable/temp7" />
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
+                            android:src="@drawable/temp2" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="아동·유아"
-                            android:textSize="12dp" />
+                            android:text="컴퓨터·노트북"
+                            android:textSize="10dp" />
 
                     </LinearLayout>
 
@@ -283,15 +297,15 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="54dp"
-                            android:layout_height="54dp"
+                            android:layout_width="44dp"
+                            android:layout_height="47dp"
                             android:src="@drawable/temp3" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="태블릿·모바일"
-                            android:textSize="12dp" />
+                            android:textSize="10dp" />
 
                     </LinearLayout>
 
@@ -303,43 +317,47 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="54dp"
-                            android:layout_height="54dp"
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
                             android:src="@drawable/temp5" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="자동차용품·공구"
-                            android:textSize="12dp" />
+                            android:gravity="center_horizontal"
+                            android:text="자동차용품\n공구"
+                            android:textSize="10dp" />
 
                     </LinearLayout>
                 </LinearLayout>
+
             </LinearLayout>
 
             <LinearLayout
+                android:layout_marginVertical="28dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:paddingHorizontal="20dp">
 
                 <TextView
+                    android:layout_marginVertical="8dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="많이 검색 된 설명서"
                     android:textColor="#000"
-                    android:textSize="18dp"
+                    android:textSize="14dp"
                     android:textStyle="bold" />
 
                 <!-- <androidx.recyclerview.widget.RecyclerView
                      android:layout_width="match_parent"
                      android:layout_height="180dp"
                      android:orientation="horizontal" />-->
-                <ImageView
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recv_main"
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/temp_banner2" />
+                    android:layout_height="wrap_content" />
             </LinearLayout>
 
             <ImageView

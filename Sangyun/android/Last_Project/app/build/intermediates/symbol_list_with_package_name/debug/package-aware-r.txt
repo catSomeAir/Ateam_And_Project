@@ -28,6 +28,7 @@ anim design_bottom_sheet_slide_out
 anim design_snackbar_in
 anim design_snackbar_out
 anim fragment_fast_out_extra_slow_in
+anim hold
 anim mtrl_bottom_sheet_slide_in
 anim mtrl_bottom_sheet_slide_out
 anim mtrl_card_lowers_interpolator
@@ -35,6 +36,10 @@ anim nav_default_enter_anim
 anim nav_default_exit_anim
 anim nav_default_pop_enter_anim
 anim nav_default_pop_exit_anim
+anim slideing_left_enter
+anim slideing_left_exit
+anim slideing_right_enter
+anim slideing_right_exit
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
 animator design_fab_show_motion_spec
@@ -2600,6 +2605,12 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable category_event
+drawable category_my
+drawable category_notice
+drawable category_point
+drawable category_profile
+drawable category_review
 drawable close_btn_img
 drawable close_btn_img_black
 drawable design_fab_background
@@ -2607,6 +2618,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable ic_baseline_keyboard_arrow_right_24
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
@@ -2630,6 +2642,8 @@ drawable m3_tabs_background
 drawable m3_tabs_line_indicator
 drawable m3_tabs_rounded_line_indicator
 drawable m3_tabs_transparent_background
+drawable main_tab_home_banner1
+drawable main_tab_home_banner3
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
@@ -2651,6 +2665,7 @@ drawable mtrl_navigation_bar_item_background
 drawable mtrl_popupmenu_background
 drawable mtrl_popupmenu_background_overlay
 drawable mtrl_tabs_default_indicator
+drawable naver
 drawable naver_icon
 drawable navermap_compass
 drawable navermap_default_background_dark
@@ -2716,6 +2731,8 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable shape_border
 drawable shape_border_bottom
+drawable shape_border_light_gray
+drawable shape_border_navy
 drawable shape_main_tab
 drawable temp1
 drawable temp2
@@ -2976,6 +2993,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imgv_main_category
 id immediateStop
 id included
 id indicator_main_tap_home
@@ -3000,6 +3018,8 @@ id line3
 id linear
 id listMode
 id list_item
+id ln_recv_category
+id ln_recv_in_category
 id login_btn_naver
 id login_edt_id
 id login_edt_pw
@@ -3139,6 +3159,9 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
+id recv_l_category
+id recv_m_category
+id recv_main
 id restart
 id reverse
 id reverseSawtooth
@@ -3264,6 +3287,8 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tv_l_name
+id tv_m_name
 id unchecked
 id uniform
 id unlabeled
@@ -3385,9 +3410,12 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_category
+layout activity_join
 layout activity_login
 layout activity_main
 layout activity_oauth_webview
+layout activity_splash
 layout activity_talk_auth_code
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
@@ -3407,9 +3435,19 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout fragment_category
+layout fragment_home__banner1
+layout fragment_home__banner2
+layout fragment_home__banner3
+layout fragment_login
+layout fragment_main__many_search
+layout fragment_main__market
 layout fragment_main__tab__home
 layout fragment_main__tab__my_manaul
 layout fragment_main__tab__recentl
+layout fragment_my_info
+layout item_category
+layout item_in_category
 layout item_spinner
 layout m3_alert_dialog
 layout m3_alert_dialog_actions

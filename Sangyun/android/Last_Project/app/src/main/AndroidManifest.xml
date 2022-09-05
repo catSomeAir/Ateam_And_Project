@@ -23,10 +23,19 @@
         android:theme="@style/Theme.Last_Project"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".MainActivity"
+            android:name=".category.CategoryActivity"
+            android:exported="true" />
+        <activity
+            android:name=".member.JoinActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SplashActivity"
             android:exported="true" />
         <activity
             android:name=".member.LoginActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
