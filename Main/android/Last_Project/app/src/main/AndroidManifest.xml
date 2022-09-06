@@ -23,7 +23,14 @@
         android:theme="@style/Theme.Last_Project"
         android:usesCleartextTraffic="true">
         <activity
+<<<<<<< HEAD
             android:name=".member.Login_in_Activity"
+=======
+            android:name=".NoticeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".EventActivity"
+>>>>>>> 1a48d713eaf7e24bb931b82edd57d7eff58f0b4a
             android:exported="true" />
         <activity
             android:name=".category.CategoryActivity"
