@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".category.CategoryActivity">
+<<<<<<< HEAD
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,6 +24,19 @@
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/scv_category"
+=======
+    <LinearLayout
+        android:background="#004771"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="50dp">
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/logo"/>
+    </LinearLayout>
+    <androidx.core.widget.NestedScrollView
+>>>>>>> 1a48d713eaf7e24bb931b82edd57d7eff58f0b4a
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -33,6 +47,7 @@
             android:orientation="vertical">
 
             <FrameLayout
+<<<<<<< HEAD
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="14dp"
@@ -41,6 +56,15 @@
                 <!--로그인 됐을 경우-->
                 <LinearLayout
                     android:id="@+id/ln_category_login"
+=======
+                android:layout_marginBottom="14dp"
+                android:paddingHorizontal="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!--로그인 됐을 경우-->
+                <LinearLayout
+>>>>>>> 1a48d713eaf7e24bb931b82edd57d7eff58f0b4a
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
@@ -67,8 +91,11 @@
                             app:cardCornerRadius="100dp">
 
                             <ImageView
+<<<<<<< HEAD
                                 android:elevation="20dp"
                                 android:id="@+id/imgv_category_profile"
+=======
+>>>>>>> 1a48d713eaf7e24bb931b82edd57d7eff58f0b4a
                                 android:layout_width="60dp"
                                 android:layout_height="60dp"
                                 android:src="@drawable/category_profile" />
@@ -86,12 +113,21 @@
 
 
                             <TextView
+<<<<<<< HEAD
                                 android:id="@+id/tv_category_nickname"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
                                 android:text="닉네임"
                                 android:textColor="#020E20"
+=======
+                                android:layout_width="wrap_content"
+
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:text="닉네임"
+                                android:textColor="#004771"
+>>>>>>> 1a48d713eaf7e24bb931b82edd57d7eff58f0b4a
                                 android:textSize="18dp"
                                 android:textStyle="bold" />
 
@@ -111,7 +147,10 @@
                                     android:textSize="14dp" />
 
                                 <TextView
+<<<<<<< HEAD
                                     android:id="@+id/tv_category_count"
+=======
+>>>>>>> 1a48d713eaf7e24bb931b82edd57d7eff58f0b4a
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="12"
@@ -137,11 +176,18 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="내가 댓쓴 글 : "
+<<<<<<< HEAD
                                         android:textColor="#4A4A4A"
                                         android:textSize="14dp" />
 
                                     <TextView
                                         android:id="@+id/tv_category_comment_count"
+=======
+                                        android:textColor="#a9a9a9"
+                                        android:textSize="14dp" />
+
+                                    <TextView
+>>>>>>> 1a48d713eaf7e24bb931b82edd57d7eff58f0b4a
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="23"
@@ -207,8 +253,12 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="My"
+<<<<<<< HEAD
                                     android:textSize="12dp"
                                     android:textColor="#020E20" />
+=======
+                                    android:textColor="#004771" />
+>>>>>>> 1a48d713eaf7e24bb931b82edd57d7eff58f0b4a
                             </LinearLayout>
 
                             <View
@@ -233,10 +283,16 @@
 
                                 <TextView
                                     android:layout_width="wrap_content"
+<<<<<<< HEAD
                                     android:textSize="12dp"
                                     android:layout_height="wrap_content"
                                     android:text="공지사항"
                                     android:textColor="#020E20" />
+=======
+                                    android:layout_height="wrap_content"
+                                    android:text="공지사항"
+                                    android:textColor="#004771" />
+>>>>>>> 1a48d713eaf7e24bb931b82edd57d7eff58f0b4a
                             </LinearLayout>
 
                             <View
@@ -261,10 +317,16 @@
 
                                 <TextView
                                     android:layout_width="wrap_content"
+<<<<<<< HEAD
                                     android:textSize="12dp"
                                     android:layout_height="wrap_content"
                                     android:text="이벤트"
                                     android:textColor="#020E20" />
+=======
+                                    android:layout_height="wrap_content"
+                                    android:text="이벤트"
+                                    android:textColor="#004771" />
+>>>>>>> 1a48d713eaf7e24bb931b82edd57d7eff58f0b4a
                             </LinearLayout>
 
                             <View
@@ -290,9 +352,14 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+<<<<<<< HEAD
                                     android:textSize="12dp"
                                     android:text="포인트"
                                     android:textColor="#020E20" />
+=======
+                                    android:text="포인트"
+                                    android:textColor="#004771" />
+>>>>>>> 1a48d713eaf7e24bb931b82edd57d7eff58f0b4a
                             </LinearLayout>
                         </LinearLayout>
 
@@ -389,14 +456,22 @@
                 </LinearLayout>
                 <!--로그인 안된 경우-->
                 <LinearLayout
+<<<<<<< HEAD
                     android:id="@+id/ln_category_not_login"
+=======
+                    android:visibility="gone"
+>>>>>>> 1a48d713eaf7e24bb931b82edd57d7eff58f0b4a
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:background="@drawable/shape_border_navy"
                     android:orientation="vertical"
+<<<<<<< HEAD
                     android:padding="24dp"
                     android:visibility="gone">
+=======
+                    android:padding="24dp">
+>>>>>>> 1a48d713eaf7e24bb931b82edd57d7eff58f0b4a
 
                     <ImageView
                         android:layout_width="68dp"
@@ -406,7 +481,10 @@
 
 
                     <Button
+<<<<<<< HEAD
                         android:id="@+id/btn_category_login"
+=======
+>>>>>>> 1a48d713eaf7e24bb931b82edd57d7eff58f0b4a
                         android:layout_width="180dp"
                         android:layout_height="50dp"
                         android:layout_gravity="center_horizontal"
@@ -432,12 +510,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="12dp"
+<<<<<<< HEAD
                 android:layout_marginLeft="16dp"
+=======
+                android:layout_marginLeft="10dp"
+>>>>>>> 1a48d713eaf7e24bb931b82edd57d7eff58f0b4a
                 android:text="전체 카테고리 >"
                 android:textColor="#000"
                 android:textSize="16dp"
                 android:textStyle="bold" />
 
+<<<<<<< HEAD
             <LinearLayout
                 android:paddingHorizontal="14dp"
                 android:layout_width="match_parent"
@@ -1138,6 +1221,15 @@
             <!--            </androidx.recyclerview.widget.RecyclerView>-->
 
 
+=======
+            <androidx.recyclerview.widget.RecyclerView
+                android:paddingHorizontal="10dp"
+                android:id="@+id/recv_l_category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </androidx.recyclerview.widget.RecyclerView>
+>>>>>>> 1a48d713eaf7e24bb931b82edd57d7eff58f0b4a
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </LinearLayout>

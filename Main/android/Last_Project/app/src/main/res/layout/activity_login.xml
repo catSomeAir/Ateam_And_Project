@@ -4,9 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     android:background="#020E20"
     android:gravity="center_vertical"
     android:orientation="vertical"
+=======
+    android:background="#004771"
+    android:orientation="vertical"
+    android:gravity="center_vertical"
+>>>>>>> 1a48d713eaf7e24bb931b82edd57d7eff58f0b4a
     tools:context=".member.LoginActivity">
 
 
@@ -17,6 +23,7 @@
         android:layout_marginHorizontal="30dp"
         android:orientation="vertical"
         android:padding="18dp">
+<<<<<<< HEAD
 
         <Space
             android:layout_width="match_parent"
@@ -152,19 +159,105 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
+=======
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"/>
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/logo" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        <TextView
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign up for Free"
+            android:textSize="16dp"
+            android:textColor="#fff"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="#FFFFFF"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/login_edt_id"
+                android:layout_width="60dp"
+                android:layout_height="55dp"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+
+                android:hint="Email" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+
+            >
+
+
+            <EditText
+                android:id="@+id/login_edt_pw"
+                android:layout_width="0dp"
+                android:layout_height="55dp"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:hint="Password"
+                android:inputType="textPassword" />
+
+
+        </LinearLayout>
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_height="wrap_content">
+>>>>>>> 1a48d713eaf7e24bb931b82edd57d7eff58f0b4a
             <com.navercorp.nid.oauth.view.NidOAuthLoginButton
                 android:id="@+id/login_btn_naver"
 
                 android:layout_width="wrap_content"
+<<<<<<< HEAD
                 android:layout_height="50dp"
                 android:layout_marginVertical="8dp" />
 
+=======
+                android:layout_marginVertical="8dp"
+                android:layout_height="50dp" />
+>>>>>>> 1a48d713eaf7e24bb931b82edd57d7eff58f0b4a
         </LinearLayout>
 
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="0dp"
+<<<<<<< HEAD
             android:layout_weight="10" />
 
         <TextView
@@ -185,6 +278,9 @@
             android:text="ⓒ 2022 Hanul Ateam Production Inc."
             android:textColor="#a9a9a9"
             android:textSize="10dp" />
+=======
+            android:layout_weight="10"/>
+>>>>>>> 1a48d713eaf7e24bb931b82edd57d7eff58f0b4a
 
         <!--<LinearLayout
             android:padding="1dp"

@@ -17,9 +17,4 @@ public class TestDAO implements TestService {
 		return sql.selectList("test.list");
 	}
 
-	@Override
-	public TestHotdogVO testhotdog(String email) {
-		return sql.selectOne("test.hotdog",email);
-	}
-
 }
