@@ -2634,6 +2634,8 @@ drawable img_main_top1
 drawable img_main_top2
 drawable login_btn_img
 drawable logo
+drawable logo_light_navy
+drawable logo_navy
 drawable m3_appbar_background
 drawable m3_popupmenu_background_overlay
 drawable m3_radiobutton_ripple
@@ -2665,6 +2667,7 @@ drawable mtrl_navigation_bar_item_background
 drawable mtrl_popupmenu_background
 drawable mtrl_popupmenu_background_overlay
 drawable mtrl_tabs_default_indicator
+drawable my_navy
 drawable naver
 drawable naver_icon
 drawable navermap_compass
@@ -2733,6 +2736,7 @@ drawable shape_border
 drawable shape_border_bottom
 drawable shape_border_light_gray
 drawable shape_border_navy
+drawable shape_login
 drawable shape_main_tab
 drawable temp1
 drawable temp2
@@ -2859,6 +2863,9 @@ id browser_actions_menu_item_icon
 id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
+id btn_category_login
+id btn_category_logout
+id btn_login_local
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -2880,6 +2887,7 @@ id chip1
 id chip2
 id chip3
 id chip_group
+id chkbox_login_in
 id chronometer
 id circle_center
 id clear_text
@@ -2993,6 +3001,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imgv_category_profile
 id imgv_main_category
 id immediateStop
 id included
@@ -3018,6 +3027,25 @@ id line3
 id linear
 id listMode
 id list_item
+id ln_category_login
+id ln_category_not_login
+id ln_l_list1
+id ln_l_list2
+id ln_l_list3
+id ln_l_list4
+id ln_l_list5
+id ln_l_list6
+id ln_l_list7
+id ln_l_list8
+id ln_login
+id ln_m_list1
+id ln_m_list2
+id ln_m_list3
+id ln_m_list4
+id ln_m_list5
+id ln_m_list6
+id ln_m_list7
+id ln_m_list8
 id ln_recv_category
 id ln_recv_in_category
 id login_btn_naver
@@ -3159,7 +3187,6 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
-id recv_l_category
 id recv_m_category
 id recv_main
 id restart
@@ -3181,6 +3208,7 @@ id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
 id scrollable
+id scv_category
 id search_badge
 id search_bar
 id search_button
@@ -3287,6 +3315,9 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tv_category_comment_count
+id tv_category_count
+id tv_category_nickname
 id tv_l_name
 id tv_m_name
 id unchecked
@@ -3413,6 +3444,7 @@ layout abc_tooltip
 layout activity_category
 layout activity_join
 layout activity_login
+layout activity_login_in
 layout activity_main
 layout activity_oauth_webview
 layout activity_splash

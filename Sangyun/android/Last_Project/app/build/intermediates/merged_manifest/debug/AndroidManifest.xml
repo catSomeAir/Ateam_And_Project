@@ -63,6 +63,9 @@
         android:theme="@style/Theme.Last_Project"
         android:usesCleartextTraffic="true" >
         <activity
+            android:name="com.example.last_project.member.Login_in_Activity"
+            android:exported="true" />
+        <activity
             android:name="com.example.last_project.category.CategoryActivity"
             android:exported="true" />
         <activity
@@ -142,6 +145,10 @@
             android:label="@string/navermap_open_source_license"
             android:theme="@style/navermap_app" />
 
+        <provider
+            android:name="com.squareup.picasso.PicassoProvider"
+            android:authorities="com.example.last_project.com.squareup.picasso"
+            android:exported="false" />
         <provider
             android:name="androidx.startup.InitializationProvider"
             android:authorities="com.example.last_project.androidx-startup"
