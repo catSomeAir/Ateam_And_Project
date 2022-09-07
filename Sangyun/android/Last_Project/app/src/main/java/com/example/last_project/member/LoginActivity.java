@@ -34,16 +34,6 @@ public class LoginActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_login);
 
-//        login_edt_id = findViewById(R.id.login_edt_id);
-        
-/*        CommonConn conn = new CommonConn(LoginActivity.this, "test.dg");
-        conn.addParams("email","kel102@gmail.com");
-        conn.executeConn(new CommonConn.ConnCallback() {
-            @Override
-            public void onResult(boolean isResult, String data) {
-
-            }
-        });*/
 
         //일반로그인 ------------------------------------------------------------------------
         ln_login = findViewById(R.id.ln_login);

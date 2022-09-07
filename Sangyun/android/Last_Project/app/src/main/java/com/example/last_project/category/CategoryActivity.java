@@ -1,6 +1,7 @@
 package com.example.last_project.category;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.widget.NestedScrollView;
@@ -28,7 +30,7 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
     LinearLayout[] ln_l_list, ln_m_list;    //분류 레이아웃
     Integer[] l_list_id, m_list_id; //분류 id
     LinearLayout ln_category_login, ln_category_not_login;  //로그인 상태창
-    Button btn_category_login; //로그인버튼
+    Button btn_category_login, btn_category_logout; //로그인, 로그아웃버튼
 
     //로그인 시 프로필 정보
     ImageView imgv_category_profile;    //프로필이미지
@@ -38,6 +40,10 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
+
+        //로그아웃버튼
+        btn_category_logout = findViewById(R.id.btn_category_logout);
+        btn_category_logout.setOnClickListener(this);
 
         //분류 선언, 아이디지정
         l_list_id = new Integer[]{R.id.ln_l_list1, R.id.ln_l_list2, R.id.ln_l_list3, R.id.ln_l_list4, R.id.ln_l_list5, R.id.ln_l_list6, R.id.ln_l_list7, R.id.ln_l_list8};
@@ -111,10 +117,24 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View v) {
 
+        if(v.getId() == R.id.btn_category_logout){
+            CommonVal.userInfo = null;
+            SharedPreferences preferences = getSharedPreferences("login",MODE_PRIVATE);
+
+            SharedPreferences.Editor editor = preferences.edit();//edit()
+            editor.clear();
+            editor.commit();
+            Toast.makeText(CategoryActivity.this, "로그아웃 되었습니다.", Toast.LENGTH_SHORT).show();
+
+            onBackPressed();
+        }
+
         //카테고리에서 로그인버튼 누름
         if (v.getId() == R.id.btn_category_login) {
             Intent intent = new Intent(CategoryActivity.this, LoginActivity.class);
             startActivity(intent);
+
+
             onBackPressed();
         }
 
