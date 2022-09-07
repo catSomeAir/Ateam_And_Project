@@ -23,7 +23,7 @@
         android:theme="@style/Theme.Last_Project"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".NoticeActivity"
+            android:name=".MainActivity"
             android:exported="true" />
         <activity
             android:name=".EventActivity"
@@ -41,7 +41,7 @@
             android:name=".member.LoginActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".NoticeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
