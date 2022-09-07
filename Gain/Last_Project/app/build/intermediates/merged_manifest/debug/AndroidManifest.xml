@@ -66,6 +66,9 @@
             android:name="com.example.last_project.MainActivity"
             android:exported="true" />
         <activity
+            android:name="com.example.last_project.EventActivity"
+            android:exported="true" />
+        <activity
             android:name="com.example.last_project.category.CategoryActivity"
             android:exported="true" />
         <activity
@@ -78,7 +81,7 @@
             android:name="com.example.last_project.member.LoginActivity"
             android:exported="true" />
         <activity
-            android:name="com.example.last_project.EventActivity"
+            android:name="com.example.last_project.NoticeActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

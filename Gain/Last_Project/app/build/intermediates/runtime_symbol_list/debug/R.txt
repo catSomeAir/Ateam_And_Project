@@ -3170,6 +3170,7 @@ int id recv_event 0x7f090199
 int id recv_l_category 0x7f09019a
 int id recv_m_category 0x7f09019b
 int id recv_main 0x7f09019c
+int id recv_notice 0x7f090238
 int id restart 0x7f09019d
 int id reverse 0x7f09019e
 int id reverseSawtooth 0x7f09019f
@@ -3297,6 +3298,9 @@ int id transition_transform 0x7f090218
 int id triangle 0x7f090219
 int id tv_l_name 0x7f09021a
 int id tv_m_name 0x7f09021b
+int id tv_notice_content 0x7f090239
+int id tv_notice_date 0x7f09023a
+int id tv_notice_title 0x7f09023b
 int id unchecked 0x7f09021c
 int id uniform 0x7f09021d
 int id unlabeled 0x7f09021e
@@ -3423,6 +3427,7 @@ int layout activity_event 0x7f0c001d
 int layout activity_join 0x7f0c001e
 int layout activity_login 0x7f0c001f
 int layout activity_main 0x7f0c0020
+int layout activity_notice 0x7f0c00a5
 int layout activity_oauth_webview 0x7f0c0021
 int layout activity_splash 0x7f0c0022
 int layout activity_talk_auth_code 0x7f0c0023
@@ -3458,6 +3463,7 @@ int layout fragment_my_info 0x7f0c0040
 int layout item_category 0x7f0c0041
 int layout item_event_recv 0x7f0c0042
 int layout item_in_category 0x7f0c0043
+int layout item_notice_recv 0x7f0c00a6
 int layout item_spinner 0x7f0c0044
 int layout m3_alert_dialog 0x7f0c0045
 int layout m3_alert_dialog_actions 0x7f0c0046

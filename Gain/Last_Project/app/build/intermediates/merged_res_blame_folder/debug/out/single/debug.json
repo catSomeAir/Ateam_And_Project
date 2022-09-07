@@ -116,12 +116,20 @@
         "source": "D:\\Study_Android\\WorkSpace\\Last_Project\\app\\src\\main\\res\\drawable\\naver.png"
     },
     {
+        "merged": "D:\\Study_Android\\WorkSpace\\Last_Project\\app\\build\\intermediates\\merged_res\\debug\\layout_item_notice_recv.xml.flat",
+        "source": "D:\\Study_Android\\WorkSpace\\Last_Project\\app\\src\\main\\res\\layout\\item_notice_recv.xml"
+    },
+    {
         "merged": "D:\\Study_Android\\WorkSpace\\Last_Project\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_home__banner3.xml.flat",
         "source": "D:\\Study_Android\\WorkSpace\\Last_Project\\app\\src\\main\\res\\layout\\fragment_home__banner3.xml"
     },
     {
         "merged": "D:\\Study_Android\\WorkSpace\\Last_Project\\app\\build\\intermediates\\merged_res\\debug\\drawable_temp4.png.flat",
         "source": "D:\\Study_Android\\WorkSpace\\Last_Project\\app\\src\\main\\res\\drawable\\temp4.png"
+    },
+    {
+        "merged": "D:\\Study_Android\\WorkSpace\\Last_Project\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_notice.xml.flat",
+        "source": "D:\\Study_Android\\WorkSpace\\Last_Project\\app\\src\\main\\res\\layout\\activity_notice.xml"
     },
     {
         "merged": "D:\\Study_Android\\WorkSpace\\Last_Project\\app\\build\\intermediates\\merged_res\\debug\\drawable_category_profile.png.flat",

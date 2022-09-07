@@ -27,6 +27,8 @@ com/example/last_project/main/tab/home/Home_BannerFragment3.java
 com/example/last_project/EventAdapter.java
  com.example.last_project.EventAdapter
  com.example.last_project.EventAdapter$ViewHolder
+com/example/last_project/category/MyInfoFragment.java
+ com.example.last_project.category.MyInfoFragment
 com/example/last_project/main/tab/Main_Tab_MyManaulFragment.java
  com.example.last_project.main.tab.Main_Tab_MyManaulFragment
 com/example/last_project/category/recyclerview/Category_in_Adapter.java
@@ -57,6 +59,10 @@ com/example/last_project/member/LoginActivity.java
  com.example.last_project.member.LoginActivity
  com.example.last_project.member.LoginActivity$1
  com.example.last_project.member.LoginActivity$2
+com/example/last_project/category/LoginFragment.java
+ com.example.last_project.category.LoginFragment
+com/example/last_project/EventActivity.java
+ com.example.last_project.EventActivity
 com/example/last_project/main/manysearch/Main_ManySearchFragment.java
  com.example.last_project.main.manysearch.Main_ManySearchFragment
 com/example/last_project/main/tab/home/Home_BannerFragment2.java
@@ -71,9 +77,10 @@ com/example/last_project/category/recyclerview/CategoryAdapter.java
  com.example.last_project.category.recyclerview.CategoryAdapter$ViewHolder$1
  com.example.last_project.category.recyclerview.CategoryAdapter$ViewHolder$1$1
  com.example.last_project.category.recyclerview.CategoryAdapter$ViewHolder$1$1$1
-com/example/last_project/EventActivity.java
- com.example.last_project.EventActivity
-com/example/last_project/category/MyInfoFragment.java
- com.example.last_project.category.MyInfoFragment
-com/example/last_project/category/LoginFragment.java
- com.example.last_project.category.LoginFragment
+com/example/last_project/NoticeAdapter.java
+ com.example.last_project.NoticeAdapter
+ com.example.last_project.NoticeAdapter$ViewHolder
+com/example/last_project/NoticeDTO.java
+ com.example.last_project.NoticeDTO
+com/example/last_project/NoticeActivity.java
+ com.example.last_project.NoticeActivity
