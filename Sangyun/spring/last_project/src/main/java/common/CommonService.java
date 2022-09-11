@@ -41,13 +41,21 @@ public class CommonService {
 		mail.setDebug(true);
 		
 		//로그인 아이디 비번
+<<<<<<< HEAD
 		mail.setAuthentication("아이디", "비번");
+=======
+		mail.setAuthentication("이메일", "비이번");
+>>>>>>> 8ae10de1a6a537cce5f46183fd3722ff2fe8c404
 		//로그인버튼 누르기
 		mail.setSSLOnConnect(true);
 		
 		//보내는사람 메일
 		try {
+<<<<<<< HEAD
 			mail.setFrom("메일주소","지능형 IoT 관리자");
+=======
+			mail.setFrom("이메일주소","지능형 IoT 관리자");
+>>>>>>> 8ae10de1a6a537cce5f46183fd3722ff2fe8c404
 			//받는사람 설정
 			mail.addTo(email, name);
 			

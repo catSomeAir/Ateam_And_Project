@@ -41,7 +41,11 @@ public class CommonService {
 		mail.setDebug(true);
 		
 		//로그인 아이디 비번
+<<<<<<< HEAD
 		mail.setAuthentication("아이디", "비이번");
+=======
+		mail.setAuthentication("이메일", "비밀번호");
+>>>>>>> 8ae10de1a6a537cce5f46183fd3722ff2fe8c404
 		//로그인버튼 누르기
 		mail.setSSLOnConnect(true);
 		
