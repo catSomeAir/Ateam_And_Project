@@ -2595,6 +2595,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable back_arrow_white
 drawable bottom_background_img
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
@@ -2644,6 +2645,7 @@ drawable m3_tabs_background
 drawable m3_tabs_line_indicator
 drawable m3_tabs_rounded_line_indicator
 drawable m3_tabs_transparent_background
+drawable main_search
 drawable main_tab_home_banner1
 drawable main_tab_home_banner3
 drawable material_cursor_drawable
@@ -2736,6 +2738,8 @@ drawable shape_border
 drawable shape_border_bottom
 drawable shape_border_light_gray
 drawable shape_border_navy
+drawable shape_gray
+drawable shape_guest_login
 drawable shape_login
 drawable shape_main_tab
 drawable temp1
@@ -2750,6 +2754,8 @@ drawable temp_banner
 drawable temp_banner1
 drawable temp_banner2
 drawable temp_logo3
+drawable temp_model_img
+drawable temp_search_result
 drawable test_custom_background
 drawable test_level_drawable
 drawable tooltip_frame_dark
@@ -2901,6 +2907,7 @@ id confirm_button
 id constraint
 id container
 id container_main
+id container_search
 id content
 id contentPanel
 id contiguous
@@ -2950,6 +2957,8 @@ id east
 id edit_query
 id edittext_dropdown_editable
 id edittext_dropdown_noneditable
+id edt_main_search
+id edt_search
 id elastic
 id end
 id endToStart
@@ -3001,8 +3010,13 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imgv_category_back
 id imgv_category_profile
 id imgv_main_category
+id imgv_main_manysearch
+id imgv_search_category
+id imgv_search_find
+id imgv_search_result
 id immediateStop
 id included
 id indicator_main_tap_home
@@ -3046,8 +3060,11 @@ id ln_m_list5
 id ln_m_list6
 id ln_m_list7
 id ln_m_list8
+id ln_main_search
 id ln_recv_category
 id ln_recv_in_category
+id ln_search_list
+id ln_search_result
 id login_btn_naver
 id login_edt_id
 id login_edt_pw
@@ -3188,7 +3205,9 @@ id radio
 id ratio
 id rectangles
 id recv_m_category
-id recv_main
+id recv_main_manysearch
+id recv_search_relate
+id recv_search_result
 id restart
 id reverse
 id reverseSawtooth
@@ -3320,6 +3339,17 @@ id tv_category_count
 id tv_category_nickname
 id tv_l_name
 id tv_m_name
+id tv_main_manysearch_brand
+id tv_main_manysearch_model_code
+id tv_main_manysearch_model_name
+id tv_search_findtext
+id tv_search_relate
+id tv_search_result_brand
+id tv_search_result_l_catg
+id tv_search_result_m_catg
+id tv_search_result_model_code
+id tv_search_result_model_name
+id tv_search_result_s_catg
 id unchecked
 id uniform
 id unlabeled
@@ -3447,6 +3477,7 @@ layout activity_login
 layout activity_login_in
 layout activity_main
 layout activity_oauth_webview
+layout activity_search
 layout activity_splash
 layout activity_talk_auth_code
 layout browser_actions_context_menu_page
@@ -3478,8 +3509,12 @@ layout fragment_main__tab__home
 layout fragment_main__tab__my_manaul
 layout fragment_main__tab__recentl
 layout fragment_my_info
+layout fragment_search_result
 layout item_category
 layout item_in_category
+layout item_main_manysearch
+layout item_search_result
+layout item_serach_relate
 layout item_spinner
 layout m3_alert_dialog
 layout m3_alert_dialog_actions

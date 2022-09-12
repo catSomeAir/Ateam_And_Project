@@ -15,4 +15,9 @@ public class TestServiceImpl implements TestService {
 				
 	}
 
+	@Override
+	public TestHotdogVO testhotdog(String email) {
+		return dao.testhotdog(email);
+	}
+
 }

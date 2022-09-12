@@ -4,16 +4,23 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.last_project.category.CategoryActivity;
+import com.example.last_project.main.manysearch.ManySearchAdapter;
 import com.example.last_project.main.tab.Main_Tab_HomeFragment;
+import com.example.last_project.search.SearchActivity;
 import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
     ImageView imgv_main_category;
     TabLayout tabs;
+    LinearLayout ln_main_search;
+    RecyclerView recv_main_manysearch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +67,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //검색란 터치
+        ln_main_search = findViewById(R.id.ln_main_search);
+        ln_main_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+                startActivity(intent);
+            }
+        });
 
+        //많이 검색한목록
+        recv_main_manysearch = findViewById(R.id.recv_main_manysearch);
+        ManySearchAdapter adapter = new ManySearchAdapter(getLayoutInflater());
+        RecyclerView.LayoutManager manager = new LinearLayoutManager(MainActivity.this, RecyclerView.HORIZONTAL , false);
+        recv_main_manysearch.setLayoutManager(manager);
+        recv_main_manysearch.setAdapter(adapter);
 
 
     }

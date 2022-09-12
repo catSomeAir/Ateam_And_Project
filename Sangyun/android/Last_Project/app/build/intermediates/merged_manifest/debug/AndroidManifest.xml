@@ -63,6 +63,9 @@
         android:theme="@style/Theme.Last_Project"
         android:usesCleartextTraffic="true" >
         <activity
+            android:name="com.example.last_project.search.SearchActivity"
+            android:exported="true" />
+        <activity
             android:name="com.example.last_project.member.Login_in_Activity"
             android:exported="true" />
         <activity

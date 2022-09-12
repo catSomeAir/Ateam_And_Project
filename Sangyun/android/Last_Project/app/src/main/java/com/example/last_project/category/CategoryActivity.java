@@ -1,5 +1,6 @@
 package com.example.last_project.category;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -31,11 +32,11 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
     Integer[] l_list_id, m_list_id; //분류 id
     LinearLayout ln_category_login, ln_category_not_login;  //로그인 상태창
     Button btn_category_login, btn_category_logout; //로그인, 로그아웃버튼
-
     //로그인 시 프로필 정보
-    ImageView imgv_category_profile;    //프로필이미지
+    ImageView imgv_category_back, imgv_category_profile;    //프로필이미지
     TextView tv_category_nickname, tv_category_count, tv_category_comment_count;    //닉네임, 쓴글 수 , 쓴 댓글수
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,8 +55,15 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
             ln_l_list[i].setOnClickListener(this);
         }
 
-
-        //스크롤뷰
+        //뒤로가기버튼
+        imgv_category_back = findViewById(R.id.imgv_category_back);
+        imgv_category_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+        // 스크롤뷰
         scv_category = findViewById(R.id.scv_category);
 
         //로그인 / 로그아웃 화면

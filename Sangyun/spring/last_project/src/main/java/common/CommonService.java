@@ -41,13 +41,21 @@ public class CommonService {
 		mail.setDebug(true);
 		
 		//로그인 아이디 비번
+<<<<<<< HEAD
 		mail.setAuthentication("아이디", "비번");
+=======
+		mail.setAuthentication("ta2080", ")%)$Tkddbs2did");
+>>>>>>> be1f37ad320669d899fe8b6e46421cfa587c21f8
 		//로그인버튼 누르기
 		mail.setSSLOnConnect(true);
 		
 		//보내는사람 메일
 		try {
+<<<<<<< HEAD
 			mail.setFrom("메일주소","지능형 IoT 관리자");
+=======
+			mail.setFrom("ta2080@naver.com)","지능형 IoT 관리자");
+>>>>>>> be1f37ad320669d899fe8b6e46421cfa587c21f8
 			//받는사람 설정
 			mail.addTo(email, name);
 			

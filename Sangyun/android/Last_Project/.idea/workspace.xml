@@ -7,7 +7,7 @@
   </component>
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
@@ -59,8 +59,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="layoutResourceFile" />
         <option value="Class" />
+        <option value="layoutResourceFile" />
       </list>
     </option>
   </component>
@@ -81,7 +81,10 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="android.template.1572477565">
@@ -90,9 +93,12 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\project\android\andworkspace\Last_Project\app\src\main\res\drawable" />
       <recent name="D:\project\android\andworkspace\Last_Project\app\src\main\res\layout" />
+      <recent name="D:\project\android\andworkspace\Last_Project\app\src\main\java\com\example\last_project\model" />
       <recent name="D:\project\android\andworkspace\Last_Project\app\src\main\res\anim" />
       <recent name="D:\project\android\andworkspace\Last_Project\app\src\main\java\com\example\last_project\conn" />
-      <recent name="D:\project\android\andworkspace\Last_Project\app\src\main\res\drawable-v24" />
+    </key>
+    <key name="android.template.1605874967">
+      <recent name="com.example.last_project.search" />
     </key>
     <key name="android.template.-789916835">
       <recent name="com.example.last_project.category" />
@@ -104,6 +110,9 @@
     </key>
     <key name="android.template.-312160126">
       <recent name="com.example.last_project.member" />
+    </key>
+    <key name="android.template.-401249265">
+      <recent name="com.example.last_project.model" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.last_project.category.recyclerview" />
@@ -193,6 +202,11 @@
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/last_project/category/recyclerview/CategoryAdapter.java</url>
           <line>69</line>
           <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/last_project/search/SearchResultFragment.java</url>
+          <line>70</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
