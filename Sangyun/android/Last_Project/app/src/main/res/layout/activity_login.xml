@@ -47,6 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="4" />
+
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -161,6 +162,24 @@
 
         </LinearLayout>
 
+        <!--<LinearLayout
+            android:layout_gravity="center_horizontal"
+            android:layout_marginVertical="4dp"
+            android:id="@+id/ln_login_guest"
+            android:gravity="center"
+            android:layout_width="232dp"
+            android:layout_height="48dp"
+            android:background="@drawable/shape_guest_login"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GUEST로 로그인"
+                android:textColor="#fff"
+                android:textStyle="bold"/>
+
+        </LinearLayout>-->
 
         <Space
             android:layout_width="match_parent"

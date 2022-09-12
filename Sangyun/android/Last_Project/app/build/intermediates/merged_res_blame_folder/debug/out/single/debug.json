@@ -1,5 +1,9 @@
 [
     {
+        "merged": "D:\\project\\android\\andworkspace\\Last_Project\\app\\build\\intermediates\\merged_res\\debug\\drawable_temp_model_img.jpg.flat",
+        "source": "D:\\project\\android\\andworkspace\\Last_Project\\app\\src\\main\\res\\drawable\\temp_model_img.jpg"
+    },
+    {
         "merged": "D:\\project\\android\\andworkspace\\Last_Project\\app\\build\\intermediates\\merged_res\\debug\\drawable_shape_border.xml.flat",
         "source": "D:\\project\\android\\andworkspace\\Last_Project\\app\\src\\main\\res\\drawable\\shape_border.xml"
     },
@@ -8,12 +12,16 @@
         "source": "D:\\project\\android\\andworkspace\\Last_Project\\app\\src\\main\\res\\layout\\fragment_home__banner1.xml"
     },
     {
+        "merged": "D:\\project\\android\\andworkspace\\Last_Project\\app\\build\\intermediates\\merged_res\\debug\\drawable_my_navy.png.flat",
+        "source": "D:\\project\\android\\andworkspace\\Last_Project\\app\\src\\main\\res\\drawable\\my_navy.png"
+    },
+    {
         "merged": "D:\\project\\android\\andworkspace\\Last_Project\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
         "source": "D:\\project\\android\\andworkspace\\Last_Project\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "D:\\project\\android\\andworkspace\\Last_Project\\app\\build\\intermediates\\merged_res\\debug\\drawable_my_navy.png.flat",
-        "source": "D:\\project\\android\\andworkspace\\Last_Project\\app\\src\\main\\res\\drawable\\my_navy.png"
+        "merged": "D:\\project\\android\\andworkspace\\Last_Project\\app\\build\\intermediates\\merged_res\\debug\\drawable_temp_search_result.png.flat",
+        "source": "D:\\project\\android\\andworkspace\\Last_Project\\app\\src\\main\\res\\drawable\\temp_search_result.png"
     },
     {
         "merged": "D:\\project\\android\\andworkspace\\Last_Project\\app\\build\\intermediates\\merged_res\\debug\\drawable_temp2.png.flat",
@@ -36,12 +44,28 @@
         "source": "D:\\project\\android\\andworkspace\\Last_Project\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
+        "merged": "D:\\project\\android\\andworkspace\\Last_Project\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_search_result.xml.flat",
+        "source": "D:\\project\\android\\andworkspace\\Last_Project\\app\\src\\main\\res\\layout\\fragment_search_result.xml"
+    },
+    {
+        "merged": "D:\\project\\android\\andworkspace\\Last_Project\\app\\build\\intermediates\\merged_res\\debug\\drawable_back_arrow_white.png.flat",
+        "source": "D:\\project\\android\\andworkspace\\Last_Project\\app\\src\\main\\res\\drawable\\back_arrow_white.png"
+    },
+    {
         "merged": "D:\\project\\android\\andworkspace\\Last_Project\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_main__tab__recentl.xml.flat",
         "source": "D:\\project\\android\\andworkspace\\Last_Project\\app\\src\\main\\res\\layout\\fragment_main__tab__recentl.xml"
     },
     {
         "merged": "D:\\project\\android\\andworkspace\\Last_Project\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
         "source": "D:\\project\\android\\andworkspace\\Last_Project\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "D:\\project\\android\\andworkspace\\Last_Project\\app\\build\\intermediates\\merged_res\\debug\\drawable_main_search.png.flat",
+        "source": "D:\\project\\android\\andworkspace\\Last_Project\\app\\src\\main\\res\\drawable\\main_search.png"
+    },
+    {
+        "merged": "D:\\project\\android\\andworkspace\\Last_Project\\app\\build\\intermediates\\merged_res\\debug\\drawable_shape_guest_login.xml.flat",
+        "source": "D:\\project\\android\\andworkspace\\Last_Project\\app\\src\\main\\res\\drawable\\shape_guest_login.xml"
     },
     {
         "merged": "D:\\project\\android\\andworkspace\\Last_Project\\app\\build\\intermediates\\merged_res\\debug\\drawable_temp5.png.flat",
@@ -108,6 +132,14 @@
         "source": "D:\\project\\android\\andworkspace\\Last_Project\\app\\src\\main\\res\\drawable\\temp6.png"
     },
     {
+        "merged": "D:\\project\\android\\andworkspace\\Last_Project\\app\\build\\intermediates\\merged_res\\debug\\drawable_shape_gray.xml.flat",
+        "source": "D:\\project\\android\\andworkspace\\Last_Project\\app\\src\\main\\res\\drawable\\shape_gray.xml"
+    },
+    {
+        "merged": "D:\\project\\android\\andworkspace\\Last_Project\\app\\build\\intermediates\\merged_res\\debug\\layout_item_serach_relate.xml.flat",
+        "source": "D:\\project\\android\\andworkspace\\Last_Project\\app\\src\\main\\res\\layout\\item_serach_relate.xml"
+    },
+    {
         "merged": "D:\\project\\android\\andworkspace\\Last_Project\\app\\build\\intermediates\\merged_res\\debug\\drawable_img_main_top1.png.flat",
         "source": "D:\\project\\android\\andworkspace\\Last_Project\\app\\src\\main\\res\\drawable\\img_main_top1.png"
     },
@@ -154,6 +186,10 @@
     {
         "merged": "D:\\project\\android\\andworkspace\\Last_Project\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher.webp.flat",
         "source": "D:\\project\\android\\andworkspace\\Last_Project\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "D:\\project\\android\\andworkspace\\Last_Project\\app\\build\\intermediates\\merged_res\\debug\\layout_item_main_manysearch.xml.flat",
+        "source": "D:\\project\\android\\andworkspace\\Last_Project\\app\\src\\main\\res\\layout\\item_main_manysearch.xml"
     },
     {
         "merged": "D:\\project\\android\\andworkspace\\Last_Project\\app\\build\\intermediates\\merged_res\\debug\\drawable_category_my.png.flat",
@@ -220,6 +256,10 @@
         "source": "D:\\project\\android\\andworkspace\\Last_Project\\app\\src\\main\\res\\drawable\\temp3.png"
     },
     {
+        "merged": "D:\\project\\android\\andworkspace\\Last_Project\\app\\build\\intermediates\\merged_res\\debug\\layout_item_search_result.xml.flat",
+        "source": "D:\\project\\android\\andworkspace\\Last_Project\\app\\src\\main\\res\\layout\\item_search_result.xml"
+    },
+    {
         "merged": "D:\\project\\android\\andworkspace\\Last_Project\\app\\build\\intermediates\\merged_res\\debug\\drawable_category_review.png.flat",
         "source": "D:\\project\\android\\andworkspace\\Last_Project\\app\\src\\main\\res\\drawable\\category_review.png"
     },
@@ -242,6 +282,10 @@
     {
         "merged": "D:\\project\\android\\andworkspace\\Last_Project\\app\\build\\intermediates\\merged_res\\debug\\drawable_naver.png.flat",
         "source": "D:\\project\\android\\andworkspace\\Last_Project\\app\\src\\main\\res\\drawable\\naver.png"
+    },
+    {
+        "merged": "D:\\project\\android\\andworkspace\\Last_Project\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_search.xml.flat",
+        "source": "D:\\project\\android\\andworkspace\\Last_Project\\app\\src\\main\\res\\layout\\activity_search.xml"
     },
     {
         "merged": "D:\\project\\android\\andworkspace\\Last_Project\\app\\build\\intermediates\\merged_res\\debug\\drawable_logo.png.flat",

@@ -23,7 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     NidOAuthLoginButton login_btn_naver;
     Button btn_login_local; //db접속 로그인 버튼
 //    EditText login_edt_id;
-    LinearLayout ln_login;
+    LinearLayout ln_login, ln_login_guest;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +73,8 @@ public class LoginActivity extends AppCompatActivity {
 
 
         //-------------------------------------------------------------------------------------
+
+
     }
 
     @Override

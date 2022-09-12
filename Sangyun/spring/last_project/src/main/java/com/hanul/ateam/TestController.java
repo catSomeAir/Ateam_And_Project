@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.google.gson.Gson;
 
+import test.TestHotdogVO;
 import test.TestServiceImpl;
 import test.TestVO;
 
@@ -21,4 +22,13 @@ public class TestController {
 		
 		return new Gson().toJson(list);
 	}
+	
+	@RequestMapping(value = "/test.dg", produces = "text/html;charset=utf-8")
+	public String test_hotdog(String email) {
+		TestHotdogVO vo = service.testhotdog(email);
+		
+		
+		return vo.getName()+vo.getNickname();
+	}
+	
 }
