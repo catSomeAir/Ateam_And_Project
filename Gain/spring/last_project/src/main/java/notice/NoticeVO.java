@@ -6,7 +6,6 @@ public class NoticeVO {
 	public String getTitle() {
 		return title;
 	}
-
 	public void setTitle(String title) {
 		this.title = title;
 	}
@@ -26,6 +25,4 @@ public class NoticeVO {
 	public void setToday(String today) {
 		this.today = today;
 	}
-	
-	
 }
