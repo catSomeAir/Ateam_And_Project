@@ -8,6 +8,7 @@
         android:minSdkVersion="21"
         android:targetSdkVersion="31" />
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -62,6 +63,15 @@
         android:testOnly="true"
         android:theme="@style/Theme.Last_Project"
         android:usesCleartextTraffic="true" >
+        <activity
+            android:name="com.example.last_project.WebviewActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.last_project.writing.WritingActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.last_project.model.ModelDetailActivity"
+            android:exported="true" />
         <activity
             android:name="com.example.last_project.search.SearchActivity"
             android:exported="true" />

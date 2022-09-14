@@ -7,6 +7,39 @@
     android:orientation="vertical"
     tools:context=".search.SearchActivity">
 
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#020E20"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingHorizontal="14dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <!-- <ImageView
+                 android:id="@+id/imgv_category_back"
+                 android:layout_width="34dp"
+                 android:layout_height="wrap_content"
+                 android:adjustViewBounds="true"
+                 android:src="@drawable/back_arrow_white" />-->
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/logo_navy" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -40,20 +73,20 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:paddingLeft="1dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:paddingLeft="1dp">
 
                     <EditText
                         android:id="@+id/edt_search"
                         android:layout_width="0dp"
-                        android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:hint="검색어를 입력해주세요"
+                        android:layout_weight="1"
                         android:height="34dp"
                         android:background="@null"
+                        android:hint="검색어를 입력해주세요"
                         android:paddingVertical="2dp"
                         android:paddingLeft="10dp"
                         android:singleLine="true"
@@ -63,44 +96,44 @@
                 </LinearLayout>
 
 
-
             </RelativeLayout>
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
     <FrameLayout
-        android:animateLayoutChanges="true"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_marginTop="10dp"
-
             android:id="@+id/recv_search_relate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:paddingHorizontal="10dp">
 
 
         </androidx.recyclerview.widget.RecyclerView>
 
         <LinearLayout
-            android:elevation="21dp"
-            android:layout_marginHorizontal="6dp"
-            android:visibility="gone"
             android:id="@+id/ln_search_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginHorizontal="6dp"
+            android:elevation="21dp"
+            android:orientation="vertical"
+            android:visibility="gone">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="#D8DDE4"
-                android:orientation="horizontal"
                 android:gravity="center_vertical"
+                android:orientation="horizontal"
                 android:paddingHorizontal="14dp">
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -117,11 +150,12 @@
                         android:elevation="1dp"
                         android:src="@drawable/btn_find" />
                 </LinearLayout>
+
                 <TextView
                     android:id="@+id/tv_search_findtext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:singleLine="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:text="검색어"
                     android:textColor="#020E20"
                     android:textSize="16dp" />
@@ -131,6 +165,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0.9dp"
                 android:background="#000" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
@@ -150,6 +185,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0.9dp"
                 android:background="#000" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
@@ -169,6 +205,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0.9dp"
                 android:background="#000" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
@@ -188,6 +225,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0.9dp"
                 android:background="#000" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
@@ -209,6 +247,7 @@
                 android:background="#000" />
 
         </LinearLayout>
+
         <FrameLayout
             android:id="@+id/container_search"
             android:layout_width="match_parent"
