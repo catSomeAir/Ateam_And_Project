@@ -22,7 +22,7 @@
   <component name="CodeInsightWorkspaceSettings">
     <option name="optimizeImportsOnTheFly" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\hanul\.android\avd\Pixel_4_API_30_1.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[2aca55489f3f7ece]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -110,6 +110,10 @@
     </key>
     <key name="android.template.-312160126">
       <recent name="com.example.last_project.member" />
+    </key>
+    <key name="android.template.-1734097288">
+      <recent name="com.example.last_project" />
+      <recent name="com.example.last_project.writing" />
     </key>
     <key name="android.template.-401249265">
       <recent name="com.example.last_project.model" />

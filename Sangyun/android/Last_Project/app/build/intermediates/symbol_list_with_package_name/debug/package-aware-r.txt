@@ -1011,6 +1011,10 @@ attr rotationCenterId
 attr round
 attr roundPercent
 attr saturation
+attr sb_handlerColor
+attr sb_horizontal
+attr sb_indicatorColor
+attr sb_indicatorTextColor
 attr scaleFromTextSize
 attr scrimAnimationDuration
 attr scrimBackground
@@ -2593,6 +2597,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable arrow_turn
 drawable avd_hide_password
 drawable avd_show_password
 drawable back_arrow_white
@@ -2614,11 +2619,16 @@ drawable category_profile
 drawable category_review
 drawable close_btn_img
 drawable close_btn_img_black
+drawable default_scroll_handle_bottom
+drawable default_scroll_handle_left
+drawable default_scroll_handle_right
+drawable default_scroll_handle_top
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable heart_empty
 drawable ic_baseline_keyboard_arrow_right_24
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
@@ -2631,6 +2641,14 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable icon_clock
+drawable icon_document
+drawable icon_home
+drawable icon_home_navy
+drawable icon_map
+drawable icon_phone
+drawable icon_phone_navy
+drawable icon_x
 drawable img_main_top1
 drawable img_main_top2
 drawable login_btn_img
@@ -2739,9 +2757,13 @@ drawable shape_border_bottom
 drawable shape_border_light_gray
 drawable shape_border_navy
 drawable shape_gray
+drawable shape_gray_radius
 drawable shape_guest_login
 drawable shape_login
 drawable shape_main_tab
+drawable shape_navy_border8
+drawable shape_navy_fill
+drawable shape_navy_radius
 drawable temp1
 drawable temp2
 drawable temp3
@@ -2750,11 +2772,13 @@ drawable temp5
 drawable temp6
 drawable temp7
 drawable temp8
+drawable temp_back_navy
 drawable temp_banner
 drawable temp_banner1
 drawable temp_banner2
 drawable temp_logo3
 drawable temp_model_img
+drawable temp_samsung_logo
 drawable temp_search_result
 drawable test_custom_background
 drawable test_level_drawable
@@ -2907,6 +2931,7 @@ id confirm_button
 id constraint
 id container
 id container_main
+id container_model_detail
 id container_search
 id content
 id contentPanel
@@ -3012,6 +3037,8 @@ id ignoreRequest
 id image
 id imgv_category_back
 id imgv_category_profile
+id imgv_detail_cancel
+id imgv_detail_category
 id imgv_main_category
 id imgv_main_manysearch
 id imgv_search_category
@@ -3041,6 +3068,8 @@ id line3
 id linear
 id listMode
 id list_item
+id ln_as_call
+id ln_as_homepage
 id ln_category_login
 id ln_category_not_login
 id ln_l_list1
@@ -3061,10 +3090,15 @@ id ln_m_list6
 id ln_m_list7
 id ln_m_list8
 id ln_main_search
+id ln_model_detail_writing
 id ln_recv_category
 id ln_recv_in_category
 id ln_search_list
 id ln_search_result
+id ln_test
+id ln_writing_all
+id ln_writing_opinion
+id ln_writing_qna
 id login_btn_naver
 id login_edt_id
 id login_edt_pw
@@ -3193,6 +3227,7 @@ id parent_matrix
 id password_toggle
 id path
 id pathRelative
+id pdfView
 id peekHeight
 id percent
 id pin
@@ -3202,6 +3237,10 @@ id progressBar
 id progress_circular
 id progress_horizontal
 id radio
+id radio_all
+id radio_opinion
+id radio_qna
+id radiogroup_writting
 id ratio
 id rectangles
 id recv_m_category
@@ -3334,9 +3373,12 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tv_as_call
+id tv_as_homepage
 id tv_category_comment_count
 id tv_category_count
 id tv_category_nickname
+id tv_detail_cancel
 id tv_l_name
 id tv_m_name
 id tv_main_manysearch_brand
@@ -3350,6 +3392,9 @@ id tv_search_result_m_catg
 id tv_search_result_model_code
 id tv_search_result_model_name
 id tv_search_result_s_catg
+id tv_writing_all
+id tv_writing_opinion
+id tv_writing_qna
 id unchecked
 id uniform
 id unlabeled
@@ -3476,10 +3521,12 @@ layout activity_join
 layout activity_login
 layout activity_login_in
 layout activity_main
+layout activity_model_detail
 layout activity_oauth_webview
 layout activity_search
 layout activity_splash
 layout activity_talk_auth_code
+layout activity_webview
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
 layout custom_dialog
@@ -3498,6 +3545,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout fragment_after_service
 layout fragment_category
 layout fragment_home__banner1
 layout fragment_home__banner2
@@ -3508,8 +3556,10 @@ layout fragment_main__market
 layout fragment_main__tab__home
 layout fragment_main__tab__my_manaul
 layout fragment_main__tab__recentl
+layout fragment_manual
 layout fragment_my_info
 layout fragment_search_result
+layout fragment_writing
 layout item_category
 layout item_in_category
 layout item_main_manysearch
@@ -4974,6 +5024,7 @@ styleable RangeSlider minSeparation values
 styleable RecycleListView paddingBottomNoButtons paddingTopNoTitle
 styleable RecyclerView android_orientation android_clipToPadding android_descendantFocusability fastScrollEnabled fastScrollHorizontalThumbDrawable fastScrollHorizontalTrackDrawable fastScrollVerticalThumbDrawable fastScrollVerticalTrackDrawable layoutManager reverseLayout spanCount stackFromEnd
 styleable ScrimInsetsFrameLayout insetForeground
+styleable ScrollBar sb_handlerColor sb_horizontal sb_indicatorColor sb_indicatorTextColor
 styleable ScrollingViewBehavior_Layout behavior_overlapTop
 styleable SearchView android_focusable android_maxWidth android_inputType android_imeOptions closeIcon commitIcon defaultQueryHint goIcon iconifiedByDefault layout queryBackground queryHint searchHintIcon searchIcon submitBackground suggestionRowLayout voiceIcon
 styleable ShapeAppearance cornerFamily cornerFamilyBottomLeft cornerFamilyBottomRight cornerFamilyTopLeft cornerFamilyTopRight cornerSize cornerSizeBottomLeft cornerSizeBottomRight cornerSizeTopLeft cornerSizeTopRight
