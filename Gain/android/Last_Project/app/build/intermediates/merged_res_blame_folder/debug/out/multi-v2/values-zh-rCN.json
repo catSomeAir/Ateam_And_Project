@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\project\\android\\andworkspace\\Last_Project\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh-rCN\\values-zh-rCN.xml",
+            "outputFile": "D:\\Study_Android\\WorkSpace\\Last_Project\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh-rCN\\values-zh-rCN.xml",
             "map": [
                 {
                     "source": "C:\\Users\\hanul\\.gradle\\caches\\transforms-3\\56442dbac01c176803152a59cf1c1ae9\\transformed\\navigation-ui-2.3.5\\res\\values-zh-rCN\\values-zh-rCN.xml",
@@ -38,6 +38,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\hanul\\.gradle\\caches\\transforms-3\\689b0c63d649114c821454a91592f34a\\transformed\\jetified-map-sdk-3.15.0\\res\\values-zh-rCN\\values-zh-rCN.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,104,163,224,271,315,378,428,476",
+                        "endColumns": "48,58,60,46,43,62,49,47,48",
+                        "endOffsets": "99,158,219,266,310,373,423,471,520"
+                    },
+                    "to": {
+                        "startLines": "92,93,94,95,96,97,98,99,100",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "7094,7143,7202,7263,7310,7354,7417,7467,7515",
+                        "endColumns": "48,58,60,46,43,62,49,47,48",
+                        "endOffsets": "7138,7197,7258,7305,7349,7412,7462,7510,7559"
+                    }
+                },
+                {
                     "source": "C:\\Users\\hanul\\.gradle\\caches\\transforms-3\\799e25c0219bea28c68cb1e12a86b0fc\\transformed\\material-1.6.1\\res\\values-zh-rCN\\values-zh-rCN.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59",
@@ -71,23 +88,6 @@
                         "startOffsets": "3149,3371,3463,3564",
                         "endColumns": "82,91,100,92",
                         "endOffsets": "3227,3458,3559,3652"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\hanul\\.gradle\\caches\\transforms-3\\34b0db706f53423d33a25b4eeebc6fe6\\transformed\\jetified-map-sdk-3.15.0\\res\\values-zh-rCN\\values-zh-rCN.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10",
-                        "startColumns": "4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,104,163,224,271,315,378,428,476",
-                        "endColumns": "48,58,60,46,43,62,49,47,48",
-                        "endOffsets": "99,158,219,266,310,373,423,471,520"
-                    },
-                    "to": {
-                        "startLines": "92,93,94,95,96,97,98,99,100",
-                        "startColumns": "4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "7094,7143,7202,7263,7310,7354,7417,7467,7515",
-                        "endColumns": "48,58,60,46,43,62,49,47,48",
-                        "endOffsets": "7138,7197,7258,7305,7349,7412,7462,7510,7559"
                     }
                 },
                 {

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\project\\android\\andworkspace\\Last_Project\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ko\\values-ko.xml",
+            "outputFile": "D:\\Study_Android\\WorkSpace\\Last_Project\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ko\\values-ko.xml",
             "map": [
                 {
                     "source": "C:\\Users\\hanul\\.gradle\\caches\\transforms-3\\799e25c0219bea28c68cb1e12a86b0fc\\transformed\\material-1.6.1\\res\\values-ko\\values-ko.xml",
@@ -37,23 +37,6 @@
                         "startOffsets": "6986,7086",
                         "endColumns": "99,101",
                         "endOffsets": "7081,7183"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\hanul\\.gradle\\caches\\transforms-3\\34b0db706f53423d33a25b4eeebc6fe6\\transformed\\jetified-map-sdk-3.15.0\\res\\values-ko\\values-ko.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10",
-                        "startColumns": "4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,104,162,227,274,318,385,435,483",
-                        "endColumns": "48,57,64,46,43,66,49,47,48",
-                        "endOffsets": "99,157,222,269,313,380,430,478,527"
-                    },
-                    "to": {
-                        "startLines": "92,93,94,95,96,97,98,99,100",
-                        "startColumns": "4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "7188,7237,7295,7360,7407,7451,7518,7568,7616",
-                        "endColumns": "48,57,64,46,43,66,49,47,48",
-                        "endOffsets": "7232,7290,7355,7402,7446,7513,7563,7611,7660"
                     }
                 },
                 {
@@ -107,6 +90,23 @@
                         "endLines": "101,102,103,104,105,106,107,109,111,114",
                         "endColumns": "85,83,123,98,84,116,89,25,37,54",
                         "endOffsets": "7746,7830,7954,8053,8138,8255,8345,8442,8552,8787"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\hanul\\.gradle\\caches\\transforms-3\\689b0c63d649114c821454a91592f34a\\transformed\\jetified-map-sdk-3.15.0\\res\\values-ko\\values-ko.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,104,162,227,274,318,385,435,483",
+                        "endColumns": "48,57,64,46,43,66,49,47,48",
+                        "endOffsets": "99,157,222,269,313,380,430,478,527"
+                    },
+                    "to": {
+                        "startLines": "92,93,94,95,96,97,98,99,100",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "7188,7237,7295,7360,7407,7451,7518,7568,7616",
+                        "endColumns": "48,57,64,46,43,66,49,47,48",
+                        "endOffsets": "7232,7290,7355,7402,7446,7513,7563,7611,7660"
                     }
                 },
                 {
