@@ -1,12 +1,19 @@
 package com.example.last_project;
 
-public class NoticeDTO {
-    private String title,content,date;
+import java.sql.Date;
 
-    public NoticeDTO(String title, String content, String date) {
-        this.title =title;
-        this.content =content;
-        this.date= date;
+public class NoticeDTO {
+    private int id;
+    private String title,content;
+    private Date today;
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -25,11 +32,11 @@ public class NoticeDTO {
         this.content = content;
     }
 
-    public String getDate() {
-        return date;
+    public Date getToday() {
+        return today;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setToday(Date today) {
+        this.today = today;
     }
 }

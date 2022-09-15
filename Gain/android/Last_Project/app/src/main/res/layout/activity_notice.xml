@@ -14,6 +14,7 @@
         android:layout_height="wrap_content"
         android:text="공지사항"
         android:textSize="20dp"
+        android:paddingTop="10dp"
         android:textColor="@color/black"/>
 
     <androidx.recyclerview.widget.RecyclerView

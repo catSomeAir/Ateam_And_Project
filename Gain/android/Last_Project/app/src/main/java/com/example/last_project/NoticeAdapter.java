@@ -49,7 +49,14 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.ViewHolder
         public void bind(ViewHolder h,int i){
             h.title.setText(list.get(i).getTitle());
             h.content.setText(list.get(i).getContent());
-            h.date.setText(list.get(i).getDate());
+            h.date.setText(list.get(i).getToday()+"");
+
+            h.title.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                   h.content.setVisibility(View.VISIBLE);
+                }
+            });
         }
     }
 }
