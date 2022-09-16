@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Study_Android\\WorkSpace\\Last_Project\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh-rCN\\values-zh-rCN.xml",
+            "outputFile": "D:\\Study_Android\\WorkSpace\\Last_Project_\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh-rCN\\values-zh-rCN.xml",
             "map": [
                 {
                     "source": "C:\\Users\\hanul\\.gradle\\caches\\transforms-3\\56442dbac01c176803152a59cf1c1ae9\\transformed\\navigation-ui-2.3.5\\res\\values-zh-rCN\\values-zh-rCN.xml",

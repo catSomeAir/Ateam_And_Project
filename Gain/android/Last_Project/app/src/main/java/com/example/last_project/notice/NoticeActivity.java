@@ -6,8 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.last_project.NoticeAdapter;
-import com.example.last_project.NoticeDTO;
 import com.example.last_project.R;
 import com.example.last_project.conn.CommonConn;
 import com.google.gson.Gson;
