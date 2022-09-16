@@ -2,11 +2,8 @@ package com.example.last_project.model;
 
 import android.content.Intent;
 import android.os.Bundle;
-<<<<<<< HEAD
 import android.text.Editable;
 import android.text.TextWatcher;
-=======
->>>>>>> 727c6ef4aee99fe7df47bd0c3cfbfd1ab2e008e1
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -17,10 +14,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.last_project.R;
 import com.example.last_project.category.CategoryActivity;
-<<<<<<< HEAD
-=======
-import com.example.last_project.common.CommonMethod;
->>>>>>> 727c6ef4aee99fe7df47bd0c3cfbfd1ab2e008e1
 import com.example.last_project.model.detail.AfterServiceFragment;
 import com.example.last_project.model.detail.ManualFragment;
 import com.example.last_project.model.detail.WritingFragment;
@@ -81,29 +74,6 @@ public class ModelDetailActivity extends AppCompatActivity  {
         });
 
 
-<<<<<<< HEAD
-        //검색------------
-        //검색창 옆 취소
-        tv_detail_cancel = findViewById(R.id.tv_detail_cancel);
-        //검색창 옆 취소아이콘
-        imgv_detail_cancel = findViewById(R.id.imgv_detail_cancel);
-        //검색창
-        edt_search = findViewById(R.id.edt_search);
-
-        //검색창 포커스 있을때 취소 글씨 보기
-        edt_search.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if(hasFocus){
-                    tv_detail_cancel.setVisibility(View.VISIBLE);
-                }else{
-                    tv_detail_cancel.setVisibility(View.GONE);
-                }
-            }
-        });
-
-
-=======
 //        //검색------------
 //        //검색창 옆 취소
         tv_detail_cancel = findViewById(R.id.tv_detail_cancel);
@@ -167,7 +137,6 @@ public class ModelDetailActivity extends AppCompatActivity  {
 //        });
 
         CommonMethod.edittext_change(edt_search, tv_detail_cancel, imgv_detail_cancel, ModelDetailActivity.this);
->>>>>>> 727c6ef4aee99fe7df47bd0c3cfbfd1ab2e008e1
         tv_detail_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -177,7 +146,6 @@ public class ModelDetailActivity extends AppCompatActivity  {
                 imm.hideSoftInputFromWindow(edt_search.getWindowToken(), 0);
             }
         });
-<<<<<<< HEAD
 
 
 
@@ -211,8 +179,6 @@ public class ModelDetailActivity extends AppCompatActivity  {
         });
 
 
-=======
->>>>>>> 727c6ef4aee99fe7df47bd0c3cfbfd1ab2e008e1
 //        ln_model_detail_writing = findViewById(R.id.ln_model_detail_writing );
 //        ln_model_detail_writing.setOnClickListener(new View.OnClickListener() {
 //            @Override
