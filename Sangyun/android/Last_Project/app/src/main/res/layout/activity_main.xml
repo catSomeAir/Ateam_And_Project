@@ -36,16 +36,16 @@
                 android:layout_marginHorizontal="10dp"
                 android:adjustViewBounds="true"
                 android:src="@drawable/temp_logo3" />
-<!--            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="32dp"
-                android:orientation="vertical">
-                <ImageView
-                    android:adjustViewBounds="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="38dp"
-                    android:src="@drawable/main_search"/>
-            </LinearLayout>-->
+            <!--            <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:adjustViewBounds="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="38dp"
+                                android:src="@drawable/main_search"/>
+                        </LinearLayout>-->
             <LinearLayout
                 android:id="@+id/ln_main_search"
                 android:layout_width="match_parent"
@@ -65,9 +65,9 @@
                         android:layout_height="wrap_content"
                         android:height="26dp"
                         android:background="@null"
-                        android:text="찾으시는 제품을 검색하세요."
                         android:paddingVertical="2dp"
                         android:paddingLeft="10dp"
+                        android:text="찾으시는 제품을 검색하세요."
                         android:textSize="14dp" />
                 </LinearLayout>
 
@@ -98,17 +98,17 @@
         android:layout_height="1dp"
         android:layout_marginHorizontal="4dp"
         android:background="#dcdbd9" />
-        <!--android:layout_marginVertical="6dp"-->
+    <!--android:layout_marginVertical="6dp"-->
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <LinearLayout
-            android:paddingBottom="40dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="40dp">
 
 
             <com.google.android.material.tabs.TabLayout
@@ -116,14 +116,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="38dp"
                 android:layout_marginHorizontal="6dp"
+                android:background="@drawable/tab_background"
                 app:tabIndicatorColor="#27383e"
                 app:tabIndicatorFullWidth="false"
-
                 app:tabIndicatorGravity="bottom"
                 app:tabIndicatorHeight="2dp"
                 app:tabMode="fixed"
-                app:tabSelectedTextColor="#27383e"
-                app:tabTextColor="#dcdbd9" />
+                app:tabSelectedTextColor="#F4F4F4"
+                app:tabTextColor="#a9a9a9" />
 
 
             <LinearLayout
@@ -143,136 +143,49 @@
 
             </LinearLayout>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="7dp"
+                android:layout_marginBottom="2dp"
+                android:background="#e9e9e9" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_marginLeft="14dp"
-                    android:layout_marginTop="14dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="8dp"
-                    android:text="카테고리 검색"
-                    android:textColor="#000"
-                    android:textSize="17.4dp"
-                    android:textStyle="bold" />
+                android:layout_marginTop="4dp"
+                android:orientation="vertical"
+                android:paddingBottom="16dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:orientation="horizontal">
-                    <Space
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"/>
 
-                    <LinearLayout
+                    android:background="@drawable/shape_navy_radius_right"
+                    android:orientation="vertical">
+
+
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="14dp"
-
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="44dp"
-                            android:layout_height="44dp"
-                            android:src="@drawable/temp1" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="가전·TV"
-                            android:textSize="10dp" />
-
-                    </LinearLayout>
-                    <Space
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"/>
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="14dp"
-                        android:gravity="center_horizontal"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="44dp"
-                            android:layout_height="44dp"
-                            android:src="@drawable/temp2" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="컴퓨터·노트북"
-                            android:textSize="10dp" />
-
-                    </LinearLayout>
-                    <Space
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"/>
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="14dp"
-                        android:gravity="center_horizontal"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="44dp"
-                            android:layout_height="47dp"
-                            android:src="@drawable/temp3" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="태블릿·모바일"
-                            android:textSize="10dp" />
-
-                    </LinearLayout>
-                    <Space
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"/>
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="14dp"
-                        android:gravity="center_horizontal"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="44dp"
-                            android:layout_height="44dp"
-                            android:src="@drawable/temp5" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_horizontal"
-                            android:text="자동차용품\n공구"
-                            android:textSize="10dp" />
-
-                    </LinearLayout>
-                    <Space
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"/>
+                        android:layout_marginVertical="8dp"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginTop="14dp"
+                        android:text="카테고리 검색"
+                        android:textColor="#e9e9e9"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:orientation="horizontal">
+
                     <Space
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"/>
+                        android:layout_weight="4" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -293,10 +206,12 @@
                             android:textSize="10dp" />
 
                     </LinearLayout>
+
                     <Space
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"/>
+                        android:layout_weight="0.8" />
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -316,10 +231,12 @@
                             android:textSize="10dp" />
 
                     </LinearLayout>
+
                     <Space
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"/>
+                        android:layout_weight="0.8" />
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -339,10 +256,12 @@
                             android:textSize="10dp" />
 
                     </LinearLayout>
+
                     <Space
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"/>
+                        android:layout_weight="0.8" />
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -363,30 +282,160 @@
                             android:textSize="10dp" />
 
                     </LinearLayout>
+
                     <Space
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"/>
+                        android:layout_weight="4" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="14dp"
+
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
+                            android:src="@drawable/temp1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="가전·TV"
+                            android:textSize="10dp" />
+
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="14dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
+                            android:src="@drawable/temp2" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="컴퓨터·노트북"
+                            android:textSize="10dp" />
+
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="14dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="44dp"
+                            android:layout_height="47dp"
+                            android:src="@drawable/temp3" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="태블릿·모바일"
+                            android:textSize="10dp" />
+
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="14dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
+                            android:src="@drawable/temp5" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="자동차용품\n공구"
+                            android:textSize="10dp" />
+
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="16dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4" />
                 </LinearLayout>
 
 
             </LinearLayout>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="7dp"
+                android:layout_marginBottom="2dp"
+                android:background="#e9e9e9" />
+
             <LinearLayout
-                android:layout_marginVertical="14dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingHorizontal="20dp">
+                android:layout_marginTop="4dp"
+
+                android:background="@drawable/shape_navy_radius_right"
+                android:orientation="vertical">
 
                 <TextView
-                    android:layout_marginVertical="8dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="8dp"
+                    android:layout_marginLeft="14dp"
                     android:text="많이 검색 된 설명서"
-                    android:textColor="#000"
-                    android:textSize="17.4dp"
+                    android:textColor="#e9e9e9"
+                    android:textSize="16dp"
                     android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="14dp"
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp">
 
                 <!-- <androidx.recyclerview.widget.RecyclerView
                      android:layout_width="match_parent"
@@ -394,10 +443,16 @@
                      android:orientation="horizontal" />-->
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recv_main_manysearch"
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" />
             </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="7dp"
+                android:layout_marginBottom="2dp"
+                android:background="#e9e9e9" />
 
             <ImageView
                 android:layout_width="match_parent"

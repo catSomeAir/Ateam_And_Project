@@ -23,7 +23,13 @@ public class SearchResultFragment extends Fragment {
     TabLayout tabs;
     RecyclerView recv_search_result;
     ArrayList<ModelInfoVO> list = null;
+    String search_text;
     LinearLayout ln_test; // 리사이클러뷰 대신 임시로 -> 검색결과 클릭시 상세페이지로 이동시키기
+
+    public SearchResultFragment(String search_text) {
+        this.search_text = search_text;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -48,7 +54,11 @@ public class SearchResultFragment extends Fragment {
         tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-
+                if(tab.getPosition()==1){
+                    getChildFragmentManager().beginTransaction().replace(R.id.container_search_result, new NotFoundFragment(search_text)).commit();
+                    ln_test.setVisibility(View.GONE);
+                }else if(tab.getPosition()==0){
+                }
             }
 
             @Override
@@ -87,6 +97,13 @@ public class SearchResultFragment extends Fragment {
 
             }
         });
+
+        //임시테스트 : 검색어 일치 결과 없는 경우
+
+        if(!search_text.equals("비스포크")){
+            getChildFragmentManager().beginTransaction().replace(R.id.container_search_result, new NotFoundFragment(search_text)).commit();
+            ln_test.setVisibility(View.GONE);
+        }
         return v;
     }
 }

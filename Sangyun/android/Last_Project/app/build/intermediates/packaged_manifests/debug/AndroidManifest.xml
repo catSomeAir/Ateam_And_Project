@@ -64,6 +64,12 @@
         android:theme="@style/Theme.Last_Project"
         android:usesCleartextTraffic="true" >
         <activity
+<<<<<<< HEAD
+=======
+            android:name="com.example.last_project.request.RequestManualActivity"
+            android:exported="true" />
+        <activity
+>>>>>>> 727c6ef4aee99fe7df47bd0c3cfbfd1ab2e008e1
             android:name="com.example.last_project.WebviewActivity"
             android:exported="true" />
         <activity

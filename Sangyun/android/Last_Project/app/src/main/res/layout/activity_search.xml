@@ -65,15 +65,20 @@
                 android:src="@drawable/menu_buger" />
 
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="38dp"
                 android:layout_marginHorizontal="8dp"
-                android:background="@drawable/shape_border"
                 android:orientation="horizontal">
 
                 <LinearLayout
+<<<<<<< HEAD
                     android:layout_width="match_parent"
+=======
+                android:background="@drawable/shape_border"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+>>>>>>> 727c6ef4aee99fe7df47bd0c3cfbfd1ab2e008e1
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
@@ -91,12 +96,31 @@
                         android:paddingLeft="10dp"
                         android:singleLine="true"
                         android:textSize="14dp" />
-
+                    <ImageView
+                        android:id="@+id/imgv_cancel"
+                        android:visibility="gone"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/icon_x"
+                        android:layout_marginRight="8dp"/>
 
                 </LinearLayout>
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/tv_cancel"
+                    android:layout_marginLeft="8dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14dp"
+                    android:text="취소"/>
 
+<<<<<<< HEAD
 
             </RelativeLayout>
+=======
+            </LinearLayout>
+>>>>>>> 727c6ef4aee99fe7df47bd0c3cfbfd1ab2e008e1
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>

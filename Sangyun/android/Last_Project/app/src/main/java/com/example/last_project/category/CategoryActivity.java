@@ -46,6 +46,12 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
         btn_category_logout = findViewById(R.id.btn_category_logout);
         btn_category_logout.setOnClickListener(this);
 
+        if( CommonVal.userInfo != null ){
+            btn_category_logout.setVisibility(View.VISIBLE);
+        }else{
+            btn_category_logout.setVisibility(View.GONE);
+        }
+
         //분류 선언, 아이디지정
         l_list_id = new Integer[]{R.id.ln_l_list1, R.id.ln_l_list2, R.id.ln_l_list3, R.id.ln_l_list4, R.id.ln_l_list5, R.id.ln_l_list6, R.id.ln_l_list7, R.id.ln_l_list8};
         m_list_id = new Integer[]{R.id.ln_m_list1, R.id.ln_m_list2, R.id.ln_m_list3, R.id.ln_m_list4, R.id.ln_m_list5, R.id.ln_m_list6, R.id.ln_m_list7, R.id.ln_m_list8};

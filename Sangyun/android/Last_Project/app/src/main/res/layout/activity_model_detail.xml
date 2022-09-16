@@ -70,10 +70,16 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
+<<<<<<< HEAD
                      android:background="@drawable/shape_border"
                     android:layout_width="0dp"
                     android:layout_weight="1"
+=======
+                    android:layout_width="0dp"
+>>>>>>> 727c6ef4aee99fe7df47bd0c3cfbfd1ab2e008e1
                     android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_border"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
                     android:paddingLeft="1dp">
@@ -90,6 +96,7 @@
                         android:paddingLeft="10dp"
                         android:singleLine="true"
                         android:textSize="14dp" />
+<<<<<<< HEAD
                     <ImageView
                         android:id="@+id/imgv_detail_cancel"
                         android:visibility="gone"
@@ -97,10 +104,21 @@
                         android:layout_height="22dp"
                         android:src="@drawable/icon_x"
                         android:layout_marginRight="8dp"/>
+=======
+
+                    <ImageView
+                        android:id="@+id/imgv_detail_cancel"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_marginRight="8dp"
+                        android:src="@drawable/icon_x"
+                        android:visibility="gone" />
+>>>>>>> 727c6ef4aee99fe7df47bd0c3cfbfd1ab2e008e1
 
                 </LinearLayout>
 
                 <TextView
+<<<<<<< HEAD
                     android:visibility="gone"
                     android:id="@+id/tv_detail_cancel"
                     android:layout_marginLeft="8dp"
@@ -109,6 +127,16 @@
                     android:layout_height="wrap_content"
                     android:textSize="14dp"
                     android:text="취소"/>
+=======
+                    android:id="@+id/tv_detail_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="8dp"
+                    android:text="취소"
+                    android:textSize="14dp"
+                    android:visibility="gone" />
+>>>>>>> 727c6ef4aee99fe7df47bd0c3cfbfd1ab2e008e1
             </LinearLayout>
 
         </LinearLayout>
@@ -116,6 +144,7 @@
 
     <!-- 나중에 탭선택으로 수정하던지 하자 : 수정완-->
     <com.google.android.material.tabs.TabLayout
+<<<<<<< HEAD
         android:layout_marginTop="2dp"
         android:id="@+id/tabs"
         android:layout_width="match_parent"
@@ -139,5 +168,33 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+=======
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/tab_background"
+        android:elevation="2dp"
+        android:paddingHorizontal="6dp"
+        app:tabIndicatorColor="#27383e"
+        app:tabIndicatorFullWidth="false"
+        app:tabIndicatorGravity="bottom"
+        app:tabIndicatorHeight="2dp"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="#F4F4F4"
+        app:tabTextColor="#a9a9a9" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.9dp"
+        android:layout_marginBottom="2dp"
+        android:background="#a9a9a9" />
+
+    <FrameLayout
+        android:id="@+id/container_model_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+>>>>>>> 727c6ef4aee99fe7df47bd0c3cfbfd1ab2e008e1
     </FrameLayout>
 </LinearLayout>
