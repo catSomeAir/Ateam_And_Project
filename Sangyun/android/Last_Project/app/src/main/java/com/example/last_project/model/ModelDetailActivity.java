@@ -2,8 +2,6 @@ package com.example.last_project.model;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -14,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.last_project.R;
 import com.example.last_project.category.CategoryActivity;
+import com.example.last_project.common.CommonMethod;
 import com.example.last_project.model.detail.AfterServiceFragment;
 import com.example.last_project.model.detail.ManualFragment;
 import com.example.last_project.model.detail.WritingFragment;
@@ -74,27 +73,69 @@ public class ModelDetailActivity extends AppCompatActivity  {
         });
 
 
-        //검색------------
-        //검색창 옆 취소
+//        //검색------------
+//        //검색창 옆 취소
         tv_detail_cancel = findViewById(R.id.tv_detail_cancel);
-        //검색창 옆 취소아이콘
+//        //검색창 옆 취소아이콘
         imgv_detail_cancel = findViewById(R.id.imgv_detail_cancel);
-        //검색창
+//        //검색창
         edt_search = findViewById(R.id.edt_search);
+//
+//        //검색창 포커스 있을때 취소 글씨 보기
+//        edt_search.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+//            @Override
+//            public void onFocusChange(View v, boolean hasFocus) {
+//                if(hasFocus){
+//                    tv_detail_cancel.setVisibility(View.VISIBLE);
+//                }else{
+//                    tv_detail_cancel.setVisibility(View.GONE);
+//                }
+//            }
+//        });
+//
+//
+//        tv_detail_cancel.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                edt_search.setText("");
+//                edt_search.clearFocus();
+//                InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+//                imm.hideSoftInputFromWindow(edt_search.getWindowToken(), 0);
+//            }
+//        });
+//
+//
+//
+//        edt_search.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence s, int start, int before, int count) {
+//                //검색창 글 입력된경우 취소이미지 보이기
+//                if(edt_search.getText().length() > 0){
+//                    imgv_detail_cancel.setVisibility(View.VISIBLE);
+//                }else{
+//                    imgv_detail_cancel.setVisibility(View.GONE);
+//                }
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable s) {
+//
+//            }
+//        });
+//
+//        imgv_detail_cancel.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                edt_search.setText("");
+//            }
+//        });
 
-        //검색창 포커스 있을때 취소 글씨 보기
-        edt_search.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if(hasFocus){
-                    tv_detail_cancel.setVisibility(View.VISIBLE);
-                }else{
-                    tv_detail_cancel.setVisibility(View.GONE);
-                }
-            }
-        });
-
-
+        CommonMethod.edittext_change(edt_search, tv_detail_cancel, imgv_detail_cancel, ModelDetailActivity.this);
         tv_detail_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -104,39 +145,6 @@ public class ModelDetailActivity extends AppCompatActivity  {
                 imm.hideSoftInputFromWindow(edt_search.getWindowToken(), 0);
             }
         });
-
-
-
-        edt_search.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                //검색창 글 입력된경우 취소이미지 보이기
-                if(edt_search.getText().length() > 0){
-                    imgv_detail_cancel.setVisibility(View.VISIBLE);
-                }else{
-                    imgv_detail_cancel.setVisibility(View.GONE);
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-
-        imgv_detail_cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                edt_search.setText("");
-            }
-        });
-
-
 //        ln_model_detail_writing = findViewById(R.id.ln_model_detail_writing );
 //        ln_model_detail_writing.setOnClickListener(new View.OnClickListener() {
 //            @Override
