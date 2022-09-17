@@ -12,7 +12,6 @@
         android:orientation="horizontal">
 
         <TextView
-            android:onClick="onClick"
             android:id="@+id/tv_l_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

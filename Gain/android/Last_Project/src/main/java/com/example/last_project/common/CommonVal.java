@@ -1,14 +1,9 @@
 package com.example.last_project.common;
 
 
-import android.widget.LinearLayout;
-
-import androidx.recyclerview.widget.RecyclerView;
-
-import java.util.ArrayList;
+import com.example.last_project.member.MemberVO;
 
 public class CommonVal {
-    public static ArrayList<LinearLayout> ln_list = null;
-    public static ArrayList<RecyclerView> recv_list = null;
+        public static MemberVO userInfo = null;
 
 }
