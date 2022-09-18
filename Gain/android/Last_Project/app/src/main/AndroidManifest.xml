@@ -25,6 +25,9 @@
         android:theme="@style/Theme.Last_Project"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".category.CategoryActivity"
+            android:exported="true" />
+        <activity
             android:name=".mypage.MypageActivity"
             android:exported="true" />
         <activity
@@ -43,7 +46,7 @@
             android:name=".member.Login_in_Activity"
             android:exported="true" />
         <activity
-            android:name=".category.CategoryActivity"
+            android:name=".point.PointActivity"
             android:exported="true" />
         <activity
             android:name=".member.JoinActivity"
@@ -55,7 +58,7 @@
             android:name=".member.LoginActivity"
             android:exported="true" />
         <activity
-            android:name=".point.PointActivity"
+            android:name=".postList.postListActivity"
             android:exported="true"
             tools:ignore="DuplicateActivity">
             <intent-filter>

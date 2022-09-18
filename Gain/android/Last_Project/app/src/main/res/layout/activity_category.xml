@@ -115,6 +115,7 @@
                                 android:textStyle="bold" />
 
                             <LinearLayout
+                                android:id="@+id/ll_postlist"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginVertical="8dp"
@@ -210,6 +211,7 @@
                             android:paddingVertical="10dp">
 
                             <LinearLayout
+                                android:id="@+id/ll_mypage"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="14dp"
@@ -238,6 +240,7 @@
                                 android:background="#898989" />
 
                             <LinearLayout
+                                android:id="@+id/ll_notice"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="14dp"
@@ -266,6 +269,7 @@
                                 android:background="#898989" />
 
                             <LinearLayout
+                                android:id="@+id/ll_event"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="14dp"
@@ -294,6 +298,7 @@
                                 android:background="#898989" />
 
                             <LinearLayout
+                                android:id="@+id/ll_point"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="14dp"
