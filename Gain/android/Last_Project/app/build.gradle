@@ -59,7 +59,6 @@ dependencies {
     //바텀네비 UI API
     implementation 'com.github.ibrahimsn98:SmoothBottomBar:1.7.9'
 
-
     //네이버 맵 API
     implementation 'com.naver.maps:map-sdk:3.15.0'
 

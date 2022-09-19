@@ -64,7 +64,13 @@
         android:theme="@style/Theme.Last_Project"
         android:usesCleartextTraffic="true" >
         <activity
-            android:name="com.example.last_project.mypage.MypageActivity"
+            android:name="com.example.last_project.MainActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.last_project.category.CategoryActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.last_project.postList.postListActivity"
             android:exported="true" />
         <activity
             android:name="com.example.last_project.event.EventActivity"
@@ -82,7 +88,7 @@
             android:name="com.example.last_project.member.Login_in_Activity"
             android:exported="true" />
         <activity
-            android:name="com.example.last_project.category.CategoryActivity"
+            android:name="com.example.last_project.point.PointActivity"
             android:exported="true" />
         <activity
             android:name="com.example.last_project.member.JoinActivity"
@@ -94,7 +100,10 @@
             android:name="com.example.last_project.member.LoginActivity"
             android:exported="true" />
         <activity
-            android:name="com.example.last_project.point.PointActivity"
+            android:name="com.example.last_project.mypage.MypageActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.last_project.mypage.EditProfileActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -25,10 +25,13 @@
         android:theme="@style/Theme.Last_Project"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+        <activity
             android:name=".category.CategoryActivity"
             android:exported="true" />
         <activity
-            android:name=".mypage.MypageActivity"
+            android:name=".postList.postListActivity"
             android:exported="true" />
         <activity
             android:name=".event.EventActivity"
@@ -58,7 +61,10 @@
             android:name=".member.LoginActivity"
             android:exported="true" />
         <activity
-            android:name=".postList.postListActivity"
+            android:name=".mypage.MypageActivity"
+            android:exported="true" />
+        <activity
+            android:name=".mypage.EditProfileActivity"
             android:exported="true"
             tools:ignore="DuplicateActivity">
             <intent-filter>

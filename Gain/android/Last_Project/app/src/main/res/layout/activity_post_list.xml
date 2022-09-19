@@ -55,7 +55,7 @@
             android:id="@+id/tab_Item2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="내가 쓴 댓글" />
+            android:text="내가 쓴 답글" />
     </com.google.android.material.tabs.TabLayout>
 
     <FrameLayout

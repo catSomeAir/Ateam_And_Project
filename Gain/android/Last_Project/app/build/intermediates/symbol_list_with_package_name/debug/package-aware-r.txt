@@ -2638,6 +2638,9 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable edit_profile_button_custom
+drawable editicon
+drawable edittext_rounded_corner_rectangle
 drawable eventheader
 drawable heart_empty
 drawable ic_baseline_keyboard_arrow_right_24
@@ -2947,6 +2950,7 @@ id constraint
 id container
 id container_main
 id container_model_detail
+id container_post_list
 id container_search
 id content
 id contentPanel
@@ -2959,6 +2963,7 @@ id currentState
 id custom
 id customPanel
 id cut
+id date
 id date_picker_actions
 id decelerate
 id decelerateAndComplete
@@ -3084,7 +3089,11 @@ id line3
 id linear
 id listMode
 id list_item
-id ll
+id ll_event
+id ll_mypage
+id ll_notice
+id ll_point
+id ll_postlist
 id ln_as_call
 id ln_as_homepage
 id ln_category_login
@@ -3147,6 +3156,7 @@ id media_actions
 id message
 id middle
 id mini
+id mola
 id month_grid
 id month_navigation_bar
 id month_navigation_fragment_toggle
@@ -3178,6 +3188,8 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
+id mypost_recv
+id myreply_recv
 id nav_controller_view_tag
 id nav_host_fragment_container
 id navermap_bar
@@ -3266,6 +3278,7 @@ id recv_main_manysearch
 id recv_notice
 id recv_search_relate
 id recv_search_result
+id reply
 id restart
 id reverse
 id reverseSawtooth
@@ -3340,6 +3353,8 @@ id submenuarrow
 id submit_area
 id supportScrollUp
 id tabMode
+id tab_Item1
+id tab_Item2
 id tabs
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
@@ -3539,6 +3554,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_category
+layout activity_edit_profile
 layout activity_event
 layout activity_join
 layout activity_login
@@ -3549,6 +3565,7 @@ layout activity_mypage
 layout activity_notice
 layout activity_oauth_webview
 layout activity_point
+layout activity_post_list
 layout activity_search
 layout activity_splash
 layout activity_talk_auth_code
@@ -3584,8 +3601,12 @@ layout fragment_main__tab__my_manaul
 layout fragment_main__tab__recentl
 layout fragment_manual
 layout fragment_my_info
+layout fragment_my_post
+layout fragment_my_reply
 layout fragment_search_result
 layout fragment_writing
+layout item__mypost__recv
+layout item__myreply__recv
 layout item_category
 layout item_event_recv
 layout item_in_category

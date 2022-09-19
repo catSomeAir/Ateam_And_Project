@@ -198,7 +198,7 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
             startActivity(intent);
 
 
-            //onBackPressed();
+            onBackPressed();
         }
 
         //대분류 클릭시 - 중분류 레이아웃 보이도록, 스크롤뷰 위치 이동
