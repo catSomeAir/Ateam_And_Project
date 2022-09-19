@@ -1,5 +1,6 @@
 package com.example.last_project.postList.adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,22 +11,29 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.last_project.R;
 import com.example.last_project.postList.ReplyDTO;
+import com.example.last_project.postList.myReplyFragment;
 
 import java.util.ArrayList;
 
 public class MyReplyAdapter extends RecyclerView.Adapter<MyReplyAdapter.ViewHolder>{
     LayoutInflater inflater;
     ArrayList<ReplyDTO> list;
+    Context context;
+    myReplyFragment fragment;
 
-    public MyReplyAdapter(LayoutInflater inflater, ArrayList<ReplyDTO> list) {
+    public MyReplyAdapter(LayoutInflater inflater, ArrayList<ReplyDTO> list, Context context, myReplyFragment fragment) {
         this.inflater = inflater;
         this.list = list;
+        this.context = context;
+        this.fragment = fragment;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(inflater.inflate(R.layout.item__myreply__recv, parent, false));
+        View v = inflater.inflate(R.layout.item__myreply__recv,parent,false);
+        ViewHolder vh = new ViewHolder(v);
+        return vh;
     }
 
     @Override

@@ -3,8 +3,11 @@ package com.example.last_project.postList;
 public class ReplyDTO {
     private String date,title;
 
-    public ReplyDTO(String 가짜_답글, String s) {
+    public ReplyDTO(String title, String date) {
+        this.title = title;
+        this.date = date;
     }
+
 
     public String getDate() {
         return date;
