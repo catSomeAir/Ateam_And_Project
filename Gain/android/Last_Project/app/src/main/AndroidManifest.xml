@@ -25,6 +25,9 @@
         android:theme="@style/Theme.Last_Project"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".mypage.EditProfileActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true" />
         <activity
@@ -64,7 +67,7 @@
             android:name=".mypage.MypageActivity"
             android:exported="true" />
         <activity
-            android:name=".mypage.EditProfileActivity"
+            android:name=".postList.BookmarkedPostActivity"
             android:exported="true"
             tools:ignore="DuplicateActivity">
             <intent-filter>

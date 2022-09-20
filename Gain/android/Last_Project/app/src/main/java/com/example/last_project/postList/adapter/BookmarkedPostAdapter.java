@@ -1,6 +1,5 @@
 package com.example.last_project.postList.adapter;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,31 +9,22 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.last_project.R;
-import com.example.last_project.postList.PostDTO;
-import com.example.last_project.postList.myPostFragment;
 
 import java.util.ArrayList;
 
-public class MyPostAdapter extends RecyclerView.Adapter<MyPostAdapter.ViewHolder>{
+public class BookmarkedPostAdapter extends RecyclerView.Adapter<BookmarkedPostAdapter.ViewHolder>{
     LayoutInflater inflater;
-    ArrayList<PostDTO> list;
-    Context context;
-    myPostFragment fragment;
+    ArrayList<String> list;
 
-    public MyPostAdapter(LayoutInflater inflater, ArrayList<PostDTO> list, Context context, myPostFragment fragment) {
+    public BookmarkedPostAdapter(LayoutInflater inflater, ArrayList<String> list) {
         this.inflater = inflater;
         this.list = list;
-        this.context = context;
-        this.fragment = fragment;
     }
-
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = inflater.inflate(R.layout.item__mypost__recv,parent,false);
-        ViewHolder vh = new ViewHolder(v);
-        return vh;
+        return new ViewHolder(inflater.inflate(R.layout.item_bookmarked_post, parent, false));
     }
 
     @Override
@@ -48,17 +38,14 @@ public class MyPostAdapter extends RecyclerView.Adapter<MyPostAdapter.ViewHolder
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView title,date;
-
+        TextView tv_bookmarked_name;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            title = itemView.findViewById(R.id.title);
-            date = itemView.findViewById(R.id.date);
+            tv_bookmarked_name = itemView.findViewById(R.id.tv_bookmarked_name);
         }
-
-        public void bind(@NonNull ViewHolder h, int i){
-            h.title.setText(list.get(i).getTitle()+"");
-            h.date.setText(list.get(i).getDate()+"");
+        public void bind(@NonNull ViewHolder h,int i){
+            h.tv_bookmarked_name.setText(list.get(i)+"");
         }
     }
+
 }
