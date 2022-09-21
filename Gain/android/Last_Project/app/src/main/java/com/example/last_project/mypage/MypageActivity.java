@@ -11,8 +11,7 @@ import com.example.last_project.R;
 import com.example.last_project.point.PointActivity;
 import com.example.last_project.postList.BookmarkedPostActivity;
 import com.example.last_project.postList.RequestedPostActivity;
-import com.example.last_project.postList.myPostFragment;
-import com.example.last_project.postList.myReplyFragment;
+import com.example.last_project.postList.postListActivity;
 
 public class MypageActivity extends AppCompatActivity {
     LinearLayout edit_profile,my_post,my_reply,requested_post,point,구매내역,bookmarked_post;
@@ -46,14 +45,14 @@ public class MypageActivity extends AppCompatActivity {
         my_post.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), myPostFragment.class);
+                Intent intent = new Intent(getApplicationContext(), postListActivity.class);
                 startActivity(intent);
             }
         });
         my_reply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), myReplyFragment.class);
+                Intent intent = new Intent(getApplicationContext(), postListActivity.class);
                 startActivity(intent);
             }
         });

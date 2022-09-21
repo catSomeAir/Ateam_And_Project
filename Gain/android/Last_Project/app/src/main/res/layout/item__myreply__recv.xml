@@ -5,34 +5,84 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
     <LinearLayout
-        android:gravity="center_vertical"
+        android:paddingVertical="8dp"
+        android:paddingHorizontal="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="5dp"
-        android:layout_marginVertical="10dp"
+        android:layout_marginVertical="4dp"
+        android:gravity="center_vertical"
         android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/reply"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="2"
             android:layout_height="wrap_content"
-            android:text="답글"
-            android:textColor="#000"
-            android:textSize="15dp"
-            android:textStyle="bold" />
-        <Space
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:id="@+id/date"
-            android:layout_gravity="right"
-            android:layout_width="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_marginVertical="6dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+
+
+                <TextView
+                    android:id="@+id/reply"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="답글"
+                    android:textStyle="bold"
+                    android:textColor="#000"
+                    android:textSize="12dp" />
+
+
+            </LinearLayout>
+
+           <!-- 해당글 보러가기 누르면 원글이 나오게-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/bentarrow"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:layout_marginLeft="5dp"
+                android:text="해당글 보러가기"
+                android:textColor="#000"
+                android:textSize="12dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:layout_width="0dp"
+            android:layout_weight="0.4"
             android:layout_height="wrap_content"
-            android:text="2002.09.14"
-            android:textColor="#a9a9a9"
-            android:textSize="13dp" />
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_marginHorizontal="6dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2002.09.14"
+                android:textColor="#a9a9a9"
+                android:textSize="10dp" />
+
+        </LinearLayout>
 
     </LinearLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
