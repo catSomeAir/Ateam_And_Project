@@ -64,7 +64,13 @@
         android:theme="@style/Theme.Last_Project"
         android:usesCleartextTraffic="true" >
         <activity
-            android:name="com.example.last_project.MainActivity"
+            android:name="com.example.last_project.postList.RequestedPostActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.last_project.mypage.EditProfileActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.last_project.postList.BookmarkedPostActivity"
             android:exported="true" />
         <activity
             android:name="com.example.last_project.category.CategoryActivity"
@@ -103,7 +109,7 @@
             android:name="com.example.last_project.mypage.MypageActivity"
             android:exported="true" />
         <activity
-            android:name="com.example.last_project.mypage.EditProfileActivity"
+            android:name="com.example.last_project.MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -111,6 +117,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- 카카오로그안을 위해 추가함 -->
+        <activity
+            android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:theme="@style/TransparentCompat" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <!-- Redirect URI: "kakao${NATIVE_APP_KEY}://oauth" -->
+                <data
+                    android:host="oauth"
+                    android:scheme="kakao6a8daeb1b5866edc7517304827ad84ae" />
+            </intent-filter>
+        </activity>
+
         <!-- <activity -->
         <!-- android:name="com.nhn.android.naverlogin.ui.OAuthLoginActivity" -->
         <!-- android:configChanges="orientation|screenSize" -->
@@ -148,10 +173,6 @@
         <activity
             android:name="com.kakao.sdk.auth.TalkAuthCodeActivity"
             android:exported="false"
-            android:launchMode="singleTask"
-            android:theme="@style/TransparentCompat" />
-        <activity
-            android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
             android:launchMode="singleTask"
             android:theme="@style/TransparentCompat" />
         <activity

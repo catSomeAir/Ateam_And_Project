@@ -10,19 +10,23 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
     <androidx.appcompat.widget.AppCompatButton
-        android:layout_marginLeft="170dp"
+        android:layout_marginLeft="150dp"
         android:layout_marginRight="10dp"
-        android:layout_width="100dp"
+        android:layout_marginVertical="10dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
-        android:background="@drawable/edit_profile_button_custom"
+        android:background="#020E20"
+        android:paddingHorizontal="30dp"
         android:text="편집하기"/>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
-        android:background="@drawable/edit_profile_button_custom"
+        android:layout_marginVertical="10dp"
+        android:paddingHorizontal="30dp"
+        android:background="#020E20"
         android:text="삭제하기"/>
     </LinearLayout>
 

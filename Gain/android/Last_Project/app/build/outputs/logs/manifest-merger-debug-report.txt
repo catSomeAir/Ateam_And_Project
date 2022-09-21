@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:2:1-78:12
-INJECTED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:2:1-78:12
-INJECTED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:2:1-78:12
-INJECTED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:2:1-78:12
+ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:2:1-101:12
+INJECTED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:2:1-101:12
+INJECTED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:2:1-101:12
+INJECTED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:2:1-101:12
 MERGED from [com.github.ibrahimsn98:SmoothBottomBar:1.7.9] C:\Users\hanul\.gradle\caches\transforms-3\16ab9db55f59ddd663c2ede3a4ca5985\transformed\jetified-SmoothBottomBar-1.7.9\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.navigation:navigation-ui-ktx:2.3.5] C:\Users\hanul\.gradle\caches\transforms-3\c132cf9c5eedaf91ec43bdb77a2c1d5f\transformed\navigation-ui-ktx-2.3.5\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.navigation:navigation-ui:2.3.5] C:\Users\hanul\.gradle\caches\transforms-3\56442dbac01c176803152a59cf1c1ae9\transformed\navigation-ui-2.3.5\AndroidManifest.xml:17:1-24:12
@@ -83,22 +83,22 @@ MERGED from [androidx.print:print:1.0.0] C:\Users\hanul\.gradle\caches\transform
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\hanul\.gradle\caches\transforms-3\2c33c4bae6ea4f0acc28f0ec64c6b2d4\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\hanul\.gradle\caches\transforms-3\111e6e9be3df0e16ccb2077e691a9413\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.getkeepsafe.relinker:relinker:1.4.3] C:\Users\hanul\.gradle\caches\transforms-3\88a0305c559782c80feffccbc1f10cc8\transformed\jetified-relinker-1.4.3\AndroidManifest.xml:2:1-7:12
-INJECTED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:2:1-78:12
-INJECTED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:2:1-78:12
-INJECTED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:2:1-78:12
+INJECTED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:2:1-101:12
+INJECTED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:2:1-101:12
+INJECTED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:2:1-101:12
 	package
 		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:4:5-39
 		INJECTED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml
 		INJECTED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml
-		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:2:1-78:12
+		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:2:1-101:12
 		INJECTED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml
-		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:2:1-78:12
+		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:2:1-101:12
 		INJECTED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:2:11-69
@@ -151,7 +151,7 @@ ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest
 	android:name
 		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:16:9-48
 application
-ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:19:5-76:19
+ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:19:5-99:19
 MERGED from [com.google.android.material:material:1.6.1] C:\Users\hanul\.gradle\caches\transforms-3\799e25c0219bea28c68cb1e12a86b0fc\transformed\material-1.6.1\AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.material:material:1.6.1] C:\Users\hanul\.gradle\caches\transforms-3\799e25c0219bea28c68cb1e12a86b0fc\transformed\material-1.6.1\AndroidManifest.xml:24:5-20
 MERGED from [com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:25:5-62:19
@@ -196,102 +196,146 @@ MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\hanul\.gradle\cach
 		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:25:9-50
 	android:usesCleartextTraffic
 		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:26:9-44
-activity#com.example.last_project.MainActivity
+activity#com.example.last_project.postList.RequestedPostActivity
 ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:27:9-29:39
 	android:exported
 		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:29:13-36
 	android:name
-		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:28:13-41
-activity#com.example.last_project.category.CategoryActivity
+		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:28:13-59
+activity#com.example.last_project.mypage.EditProfileActivity
 ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:30:9-32:39
 	android:exported
 		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:32:13-36
 	android:name
-		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:31:13-54
-activity#com.example.last_project.postList.postListActivity
+		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:31:13-55
+activity#com.example.last_project.postList.BookmarkedPostActivity
 ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:33:9-35:39
 	android:exported
 		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:35:13-36
 	android:name
-		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:34:13-54
-activity#com.example.last_project.event.EventActivity
+		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:34:13-60
+activity#com.example.last_project.category.CategoryActivity
 ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:36:9-38:39
 	android:exported
 		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:38:13-36
 	android:name
-		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:37:13-48
-activity#com.example.last_project.WebviewActivity
+		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:37:13-54
+activity#com.example.last_project.postList.postListActivity
 ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:39:9-41:39
 	android:exported
 		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:41:13-36
 	android:name
-		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:40:13-44
-activity#com.example.last_project.model.ModelDetailActivity
+		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:40:13-54
+activity#com.example.last_project.event.EventActivity
 ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:42:9-44:39
 	android:exported
 		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:44:13-36
 	android:name
-		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:43:13-54
-activity#com.example.last_project.search.SearchActivity
+		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:43:13-48
+activity#com.example.last_project.WebviewActivity
 ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:45:9-47:39
 	android:exported
 		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:47:13-36
 	android:name
-		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:46:13-50
-activity#com.example.last_project.member.Login_in_Activity
+		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:46:13-44
+activity#com.example.last_project.model.ModelDetailActivity
 ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:48:9-50:39
 	android:exported
 		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:50:13-36
 	android:name
-		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:49:13-53
-activity#com.example.last_project.point.PointActivity
+		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:49:13-54
+activity#com.example.last_project.search.SearchActivity
 ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:51:9-53:39
 	android:exported
 		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:53:13-36
 	android:name
-		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:52:13-48
-activity#com.example.last_project.member.JoinActivity
+		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:52:13-50
+activity#com.example.last_project.member.Login_in_Activity
 ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:54:9-56:39
 	android:exported
 		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:56:13-36
 	android:name
-		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:55:13-48
-activity#com.example.last_project.SplashActivity
+		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:55:13-53
+activity#com.example.last_project.point.PointActivity
 ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:57:9-59:39
 	android:exported
 		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:59:13-36
 	android:name
-		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:58:13-43
-activity#com.example.last_project.member.LoginActivity
+		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:58:13-48
+activity#com.example.last_project.member.JoinActivity
 ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:60:9-62:39
 	android:exported
 		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:62:13-36
 	android:name
-		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:61:13-49
-activity#com.example.last_project.mypage.MypageActivity
+		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:61:13-48
+activity#com.example.last_project.SplashActivity
 ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:63:9-65:39
 	android:exported
 		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:65:13-36
 	android:name
-		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:64:13-50
-activity#com.example.last_project.mypage.EditProfileActivity
-ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:66:9-75:20
+		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:64:13-43
+activity#com.example.last_project.member.LoginActivity
+ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:66:9-68:39
 	android:exported
 		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:68:13-36
+	android:name
+		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:67:13-49
+activity#com.example.last_project.mypage.MypageActivity
+ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:69:9-71:39
+	android:exported
+		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:71:13-36
+	android:name
+		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:70:13-50
+activity#com.example.last_project.MainActivity
+ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:72:9-81:20
+	android:exported
+		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:74:13-36
 	tools:ignore
-		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:69:13-45
+		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:75:13-45
 	android:name
-		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:67:13-55
+		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:73:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:70:13-74:29
+ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:76:13-80:29
 action#android.intent.action.MAIN
-ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:71:17-69
+ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:77:17-69
 	android:name
-		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:71:25-66
+		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:77:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:73:17-77
+ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:79:17-77
 	android:name
-		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:73:27-74
+		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:79:27-74
+activity#com.kakao.sdk.auth.AuthCodeHandlerActivity
+ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:83:9-97:20
+MERGED from [com.kakao.sdk:v2-auth:2.11.0] C:\Users\hanul\.gradle\caches\transforms-3\1d683a1ddfb7112dc7e25fde49d0e296\transformed\jetified-v2-auth-2.11.0\AndroidManifest.xml:15:9-18:56
+MERGED from [com.kakao.sdk:v2-auth:2.11.0] C:\Users\hanul\.gradle\caches\transforms-3\1d683a1ddfb7112dc7e25fde49d0e296\transformed\jetified-v2-auth-2.11.0\AndroidManifest.xml:15:9-18:56
+	android:launchMode
+		ADDED from [com.kakao.sdk:v2-auth:2.11.0] C:\Users\hanul\.gradle\caches\transforms-3\1d683a1ddfb7112dc7e25fde49d0e296\transformed\jetified-v2-auth-2.11.0\AndroidManifest.xml:17:13-44
+	android:exported
+		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:85:13-36
+	android:theme
+		ADDED from [com.kakao.sdk:v2-auth:2.11.0] C:\Users\hanul\.gradle\caches\transforms-3\1d683a1ddfb7112dc7e25fde49d0e296\transformed\jetified-v2-auth-2.11.0\AndroidManifest.xml:18:13-53
+	android:name
+		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:84:13-70
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:oauth+data:scheme:kakao6a8daeb1b5866edc7517304827ad84ae
+ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:86:13-96:29
+action#android.intent.action.VIEW
+ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:87:17-69
+	android:name
+		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:87:25-66
+category#android.intent.category.DEFAULT
+ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:89:17-76
+	android:name
+		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:89:27-73
+category#android.intent.category.BROWSABLE
+ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:90:17-78
+	android:name
+		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:90:27-75
+data
+ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:93:17-95:78
+	android:host
+		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:94:21-41
+	android:scheme
+		ADDED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml:95:21-75
 uses-sdk
 INJECTED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\Study_Android\WorkSpace\Last_Project_\app\src\main\AndroidManifest.xml
@@ -520,26 +564,6 @@ ADDED from [com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transfo
 		ADDED from [com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:43:13-86
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:authorize+data:path:/+data:scheme:naver3rdpartylogin
 ADDED from [com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:50:13-60:29
-action#android.intent.action.VIEW
-ADDED from [com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:51:17-69
-	android:name
-		ADDED from [com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:51:25-66
-category#android.intent.category.DEFAULT
-ADDED from [com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:53:17-76
-	android:name
-		ADDED from [com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:53:27-73
-category#android.intent.category.BROWSABLE
-ADDED from [com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:54:17-78
-	android:name
-		ADDED from [com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:54:27-75
-data
-ADDED from [com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:56:17-59:59
-	android:path
-		ADDED from [com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:58:21-37
-	android:host
-		ADDED from [com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:57:21-45
-	android:scheme
-		ADDED from [com.navercorp.nid:oauth:5.1.1] C:\Users\hanul\.gradle\caches\transforms-3\6cfd162fffa10a0ca953ee02d97d8fb0\transformed\jetified-oauth-5.1.1\AndroidManifest.xml:59:21-56
 activity#com.kakao.sdk.auth.TalkAuthCodeActivity
 ADDED from [com.kakao.sdk:v2-auth:2.11.0] C:\Users\hanul\.gradle\caches\transforms-3\1d683a1ddfb7112dc7e25fde49d0e296\transformed\jetified-v2-auth-2.11.0\AndroidManifest.xml:10:9-14:56
 	android:launchMode
@@ -550,14 +574,6 @@ ADDED from [com.kakao.sdk:v2-auth:2.11.0] C:\Users\hanul\.gradle\caches\transfor
 		ADDED from [com.kakao.sdk:v2-auth:2.11.0] C:\Users\hanul\.gradle\caches\transforms-3\1d683a1ddfb7112dc7e25fde49d0e296\transformed\jetified-v2-auth-2.11.0\AndroidManifest.xml:14:13-53
 	android:name
 		ADDED from [com.kakao.sdk:v2-auth:2.11.0] C:\Users\hanul\.gradle\caches\transforms-3\1d683a1ddfb7112dc7e25fde49d0e296\transformed\jetified-v2-auth-2.11.0\AndroidManifest.xml:11:13-67
-activity#com.kakao.sdk.auth.AuthCodeHandlerActivity
-ADDED from [com.kakao.sdk:v2-auth:2.11.0] C:\Users\hanul\.gradle\caches\transforms-3\1d683a1ddfb7112dc7e25fde49d0e296\transformed\jetified-v2-auth-2.11.0\AndroidManifest.xml:15:9-18:56
-	android:launchMode
-		ADDED from [com.kakao.sdk:v2-auth:2.11.0] C:\Users\hanul\.gradle\caches\transforms-3\1d683a1ddfb7112dc7e25fde49d0e296\transformed\jetified-v2-auth-2.11.0\AndroidManifest.xml:17:13-44
-	android:theme
-		ADDED from [com.kakao.sdk:v2-auth:2.11.0] C:\Users\hanul\.gradle\caches\transforms-3\1d683a1ddfb7112dc7e25fde49d0e296\transformed\jetified-v2-auth-2.11.0\AndroidManifest.xml:18:13-53
-	android:name
-		ADDED from [com.kakao.sdk:v2-auth:2.11.0] C:\Users\hanul\.gradle\caches\transforms-3\1d683a1ddfb7112dc7e25fde49d0e296\transformed\jetified-v2-auth-2.11.0\AndroidManifest.xml:16:13-70
 uses-feature#0x00020000
 ADDED from [com.naver.maps:map-sdk:3.15.0] C:\Users\hanul\.gradle\caches\transforms-3\689b0c63d649114c821454a91592f34a\transformed\jetified-map-sdk-3.15.0\AndroidManifest.xml:9:5-11:35
 	android:glEsVersion

@@ -1891,6 +1891,7 @@ color nid_progress_dialog_text
 color notification_action_color_filter
 color notification_icon_bg_color
 color notification_material_background_media_default_color
+color orange
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -2610,6 +2611,7 @@ drawable banner3
 drawable banner4
 drawable banner5
 drawable banner6
+drawable bentarrow
 drawable border_layout
 drawable bottom_background_img
 drawable btn_checkbox_checked_mtrl
@@ -2642,6 +2644,7 @@ drawable edit_profile_button_custom
 drawable editicon
 drawable edittext_rounded_corner_rectangle
 drawable eventheader
+drawable hamburger
 drawable heart_empty
 drawable ic_baseline_keyboard_arrow_right_24
 drawable ic_clock_black_24dp
@@ -2666,6 +2669,9 @@ drawable icon_x
 drawable img_main_top1
 drawable img_main_top2
 drawable julgyochatgi
+drawable kakao_login_large_wide
+drawable kakao_login_medium_narrow
+drawable kakao_login_medium_wide
 drawable login_btn_img
 drawable logo
 drawable logo_light_navy
@@ -2899,6 +2905,7 @@ id beginOnFirstDraw
 id beginning
 id bestChoice
 id blocking
+id bookmarked_post_recv
 id bottom
 id bottom_left
 id bottom_right
@@ -2913,6 +2920,7 @@ id browser_actions_menu_items
 id browser_actions_menu_view
 id btn_category_login
 id btn_category_logout
+id btn_kakao
 id btn_login_local
 id buttonPanel
 id cache_measures
@@ -2928,6 +2936,7 @@ id center_vertical
 id chain
 id chain2
 id chains
+id check1
 id checkbox
 id checked
 id chip
@@ -3089,11 +3098,17 @@ id line3
 id linear
 id listMode
 id list_item
+id ll_bookmarked_post
+id ll_edit_profile
 id ll_event
+id ll_my_post
+id ll_my_reply
 id ll_mypage
 id ll_notice
 id ll_point
 id ll_postlist
+id ll_requested_post
+id ll_구매내역
 id ln_as_call
 id ln_as_homepage
 id ln_category_login
@@ -3279,6 +3294,7 @@ id recv_notice
 id recv_search_relate
 id recv_search_result
 id reply
+id requested_post_recv
 id restart
 id reverse
 id reverseSawtooth
@@ -3409,6 +3425,8 @@ id transition_transform
 id triangle
 id tv_as_call
 id tv_as_homepage
+id tv_bookmarked_name
+id tv_brand_name
 id tv_category_comment_count
 id tv_category_count
 id tv_category_nickname
@@ -3418,6 +3436,8 @@ id tv_m_name
 id tv_main_manysearch_brand
 id tv_main_manysearch_model_code
 id tv_main_manysearch_model_name
+id tv_model_code
+id tv_model_name
 id tv_notice_content
 id tv_notice_date
 id tv_notice_title
@@ -3553,6 +3573,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_bookmarked_post
 layout activity_category
 layout activity_edit_profile
 layout activity_event
@@ -3566,6 +3587,7 @@ layout activity_notice
 layout activity_oauth_webview
 layout activity_point
 layout activity_post_list
+layout activity_requested_post
 layout activity_search
 layout activity_splash
 layout activity_talk_auth_code
@@ -3607,11 +3629,13 @@ layout fragment_search_result
 layout fragment_writing
 layout item__mypost__recv
 layout item__myreply__recv
+layout item_bookmarked_post
 layout item_category
 layout item_event_recv
 layout item_in_category
 layout item_main_manysearch
 layout item_notice_recv
+layout item_requested_post
 layout item_search_result
 layout item_serach_relate
 layout item_spinner

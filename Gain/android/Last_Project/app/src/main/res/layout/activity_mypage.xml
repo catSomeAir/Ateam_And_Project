@@ -74,6 +74,7 @@
         android:layout_height="1dp"
         android:background="@color/lightgray"/>
     <LinearLayout
+        android:id="@+id/ll_edit_profile"
         android:layout_width="match_parent"
         android:layout_height="50dp">
         <TextView
@@ -100,6 +101,7 @@
         android:layout_width="match_parent"
         android:layout_height="100dp">
         <LinearLayout
+           android:id="@+id/ll_my_post"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -118,7 +120,7 @@
             android:layout_weight="1"
             android:textSize="16dp"
             android:gravity="center"
-            android:text="작성한 글"/>
+            android:text="작성한 글" />
         </LinearLayout>
         <View
             android:layout_width="2dp"
@@ -126,6 +128,7 @@
             android:background="@color/lightgray"
             android:layout_gravity="center_vertical"/>
         <LinearLayout
+            android:id="@+id/ll_my_reply"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
@@ -155,6 +158,7 @@
             android:layout_gravity="center_vertical"/>
 
         <LinearLayout
+            android:id="@+id/ll_requested_post"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
@@ -220,6 +224,7 @@
         android:layout_width="match_parent"
         android:layout_height="90dp">
        <LinearLayout
+           android:id="@+id/ll_point"
            android:layout_width="0dp"
            android:layout_height="match_parent"
            android:layout_weight="1"
@@ -256,6 +261,7 @@
             android:background="@color/lightgray"
             android:layout_gravity="center_vertical"/>
         <LinearLayout
+            android:id="@+id/ll_구매내역"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -320,6 +326,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <LinearLayout
+            android:id="@+id/ll_bookmarked_post"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">

@@ -25,10 +25,13 @@
         android:theme="@style/Theme.Last_Project"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".postList.RequestedPostActivity"
+            android:exported="true" />
+        <activity
             android:name=".mypage.EditProfileActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".postList.BookmarkedPostActivity"
             android:exported="true" />
         <activity
             android:name=".category.CategoryActivity"
@@ -67,7 +70,7 @@
             android:name=".mypage.MypageActivity"
             android:exported="true" />
         <activity
-            android:name=".postList.BookmarkedPostActivity"
+            android:name=".MainActivity"
             android:exported="true"
             tools:ignore="DuplicateActivity">
             <intent-filter>
@@ -76,6 +79,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!--카카오로그안을 위해 추가함-->
+        <activity
+            android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <!-- Redirect URI: "kakao${NATIVE_APP_KEY}://oauth" -->
+                <data
+                    android:host="oauth"
+                    android:scheme="kakao6a8daeb1b5866edc7517304827ad84ae" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>
