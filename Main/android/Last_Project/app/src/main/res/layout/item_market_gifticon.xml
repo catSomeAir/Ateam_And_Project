@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/o0"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@drawable/market_dialog_bg"
+        >
+
+        <ImageView
+            android:id="@+id/market_imgv_gift_img"
+            android:layout_width="250dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="30dp"
+            android:background="#00000000"
+            android:src="@drawable/market_gifticon2" />
+
+
+        <TextView
+            android:id="@+id/market_tv_gift_brand_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:text="스타벅스"
+            android:textAlignment="center"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/market_tv_gift_menu_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="아이스 카페아메리카노 Tall 2잔"
+            android:textAlignment="center"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:textColor="@color/market_font"
+
+            />
+
+        <ImageView
+            android:id="@+id/gift_barcode_img"
+            android:layout_width="350dp"
+            android:layout_height="140dp"
+            android:layout_gravity="center"
+            android:src="@drawable/gifticon_barcode"
+            android:layout_margin="12dp"
+            />
+    </LinearLayout>
+</LinearLayout>

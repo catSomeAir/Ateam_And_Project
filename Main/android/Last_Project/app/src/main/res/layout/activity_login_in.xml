@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#020E20"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    tools:context=".member.Login_in_Activity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical"
+        android:padding="18dp">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.3" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginVertical="4dp"
+                android:text="나에게 꼭 필요한 설명서"
+                android:textColor="#d9d9d9"
+                android:textSize="12dp" />
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:elevation="1dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="나의 설명서"
+                    android:textColor="#d9d9d9"
+                    android:textSize="40dp" />
+                <TextView
+                    android:layout_marginTop="2dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="나의 설명서"
+                    android:textColor="#000"
+                    android:textSize="40dp" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+
+        <!--  <TextView
+              android:layout_gravity="center_horizontal"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Sign up for Free"
+              android:textSize="16dp"
+              android:textColor="#fff"/>-->
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.8" />
+
+
+        <LinearLayout
+            android:layout_marginHorizontal="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/shape_border"
+            android:elevation="20dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/login_edt_id"
+                android:singleLine="true"
+                android:layout_width="60dp"
+                android:layout_height="52dp"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:hint="나의설명서 ID (e-mail)"
+                android:textColor="#020E20"
+                android:textSize="16dp" />
+
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2" />
+        <LinearLayout
+            android:layout_marginHorizontal="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/shape_border"
+            android:orientation="horizontal">
+
+
+            <EditText
+                android:id="@+id/login_edt_pw"
+                android:singleLine="true"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="1"
+                android:textSize="16dp"
+                android:background="@android:color/transparent"
+                android:hint="비밀번호"
+                android:textColor="#020E20"
+                android:inputType="textPassword" />
+
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.3" />
+        <LinearLayout
+            android:paddingRight="10dp"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal">
+                <CheckBox
+                    android:id="@+id/chkbox_login_in"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="자동 로그인"
+                    android:textColor="#d9d9d9"
+                    android:textSize="14dp"/>
+            </LinearLayout>
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="아이디 찾기"
+                android:textColor="#d9d9d9"
+                android:textSize="12dp"/>
+            <View
+                android:layout_width="0.8dp"
+                android:layout_height="12dp"
+                android:background="#d9d9d9"
+                android:layout_marginHorizontal="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="비밀번호 찾기"
+                android:textColor="#d9d9d9"
+                android:textSize="12dp"/>
+
+        </LinearLayout>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.2" />
+        <Button
+            android:id="@+id/btn_login_local"
+            android:layout_marginHorizontal="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="#D2002C47"
+            android:elevation="50dp"
+            android:text="로그인"
+            android:textSize="16dp"
+            android:textColor="#dcdbd9"
+            android:textStyle="bold" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginVertical="10dp"
+            android:gravity="center_horizontal"
+            android:text="ⓒ 2022 Hanul Ateam Production Inc."
+            android:textColor="#fff"
+            android:textSize="10dp" />
+
+        <!--<LinearLayout
+            android:padding="1dp"
+            android:layout_gravity="center"
+            android:layout_width="233dp"
+            android:background="@drawable/shape_kakao"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="30dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/btn_kakao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:src="@drawable/btn_kakao"/>
+
+        </LinearLayout>-->
+
+    </LinearLayout>
+</LinearLayout>
