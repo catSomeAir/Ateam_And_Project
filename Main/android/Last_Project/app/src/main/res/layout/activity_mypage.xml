@@ -61,8 +61,8 @@
 
             <ImageView
                 android:id="@+id/imgv_category_profile"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
                 android:elevation="20dp"
                 android:src="@drawable/category_profile" />
         </androidx.cardview.widget.CardView>
