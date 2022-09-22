@@ -19,8 +19,13 @@ import com.bumptech.glide.Glide;
 import com.example.last_project.R;
 import com.example.last_project.common.CommonVal;
 import com.example.last_project.conn.CommonConn;
+import com.example.last_project.event.EventActivity;
 import com.example.last_project.member.LoginActivity;
 import com.example.last_project.member.MemberVO;
+import com.example.last_project.mypage.MypageActivity;
+import com.example.last_project.notice.NoticeActivity;
+import com.example.last_project.point.PointActivity;
+import com.example.last_project.postList.postListActivity;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -35,6 +40,9 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
     //로그인 시 프로필 정보
     ImageView imgv_category_back, imgv_category_profile;    //프로필이미지
     TextView tv_category_nickname, tv_category_count, tv_category_comment_count;    //닉네임, 쓴글 수 , 쓴 댓글수
+
+    //My, 공지사항, 이벤트,포인트 화면연결 위해 추가
+    LinearLayout ll_mypage,ll_notice,ll_event,ll_point,ll_postlist;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -116,7 +124,54 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
         }
 
         //쓴글 수 , 댓글 수 -> 이후 생명주기 고려해서 넣기
+        //가인- 화면 전환위해 찾아놓음
+        ll_mypage= findViewById(R.id.ll_mypage);
+        ll_notice =findViewById(R.id.ll_notice);
+        ll_event = findViewById(R.id.ll_event);
+        ll_point = findViewById(R.id.ll_point);
 
+
+        ll_postlist = findViewById(R.id.ll_postlist);
+        //mypage로 이동
+        ll_mypage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MypageActivity.class);
+                startActivity(intent);
+            }
+        });
+        //notice로 이동
+        ll_notice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), NoticeActivity.class);
+                startActivity(intent);
+            }
+        });
+        //event로 이동
+        ll_event.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), EventActivity.class);
+                startActivity(intent);
+            }
+        });
+        //point로 이동
+        ll_point.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), PointActivity.class);
+                startActivity(intent);
+            }
+        });
+        //postlist로 이동
+        ll_postlist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), postListActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     //뒤로가기 누르면 애니메이션 효과
