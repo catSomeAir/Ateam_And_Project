@@ -19,8 +19,18 @@ import com.bumptech.glide.Glide;
 import com.example.last_project.R;
 import com.example.last_project.common.CommonVal;
 import com.example.last_project.conn.CommonConn;
+<<<<<<< HEAD
 import com.example.last_project.member.LoginActivity;
 import com.example.last_project.member.MemberVO;
+=======
+import com.example.last_project.event.EventActivity;
+import com.example.last_project.member.LoginActivity;
+import com.example.last_project.member.MemberVO;
+import com.example.last_project.mypage.MypageActivity;
+import com.example.last_project.notice.NoticeActivity;
+import com.example.last_project.point.PointActivity;
+import com.example.last_project.postList.postListActivity;
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -36,6 +46,12 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
     ImageView imgv_category_back, imgv_category_profile;    //프로필이미지
     TextView tv_category_nickname, tv_category_count, tv_category_comment_count;    //닉네임, 쓴글 수 , 쓴 댓글수
 
+<<<<<<< HEAD
+=======
+    //My, 공지사항, 이벤트,포인트 화면연결 위해 추가
+    LinearLayout ll_mypage,ll_notice,ll_event,ll_point,ll_postlist;
+
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +62,7 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
         btn_category_logout = findViewById(R.id.btn_category_logout);
         btn_category_logout.setOnClickListener(this);
 
+<<<<<<< HEAD
         if( CommonVal.userInfo != null ){
             btn_category_logout.setVisibility(View.VISIBLE);
         }else{
@@ -61,6 +78,17 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
             ln_l_list[i].setOnClickListener(this);
         }
 
+=======
+        //분류 선언, 아이디지정
+        l_list_id = new Integer[]{R.id.ln_l_list1, R.id.ln_l_list2, R.id.ln_l_list3, R.id.ln_l_list4, R.id.ln_l_list5, R.id.ln_l_list6, R.id.ln_l_list7, R.id.ln_l_list8};
+        m_list_id = new Integer[]{R.id.ln_m_list1, R.id.ln_m_list2, R.id.ln_m_list3, R.id.ln_m_list4, R.id.ln_m_list5, R.id.ln_m_list6, R.id.ln_m_list7, R.id.ln_m_list8};
+        ln_l_list = new LinearLayout[]{findViewById(R.id.ln_l_list1), findViewById(R.id.ln_l_list2), findViewById(R.id.ln_l_list3), findViewById(R.id.ln_l_list4), findViewById(R.id.ln_l_list5), findViewById(R.id.ln_l_list6), findViewById(R.id.ln_l_list7), findViewById(R.id.ln_l_list8)};
+        ln_m_list = new LinearLayout[]{findViewById(R.id.ln_m_list1), findViewById(R.id.ln_m_list2), findViewById(R.id.ln_m_list3), findViewById(R.id.ln_m_list4), findViewById(R.id.ln_m_list5), findViewById(R.id.ln_m_list6), findViewById(R.id.ln_m_list7), findViewById(R.id.ln_m_list8)};
+        for (int i = 0; i < l_list_id.length; i++) {
+            ln_l_list[i].setOnClickListener(this);
+        }
+
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
         //뒤로가기버튼
         imgv_category_back = findViewById(R.id.imgv_category_back);
         imgv_category_back.setOnClickListener(new View.OnClickListener() {
@@ -91,6 +119,34 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
         tv_category_nickname = findViewById(R.id.tv_category_nickname);
         tv_category_count = findViewById(R.id.tv_category_count);
         tv_category_comment_count = findViewById(R.id.tv_category_comment_count);
+<<<<<<< HEAD
+=======
+
+        if (CommonVal.userInfo != null) {
+            MemberVO vo = CommonVal.userInfo;
+            if (vo.getProfile_img() != null) {
+                //피카소 글라이드 비교해봐야할듯
+//            Picasso.get().load(CommonVal.userInfo.getProfile_img()).into(imgv_category_profile);
+                Glide.with(CategoryActivity.this).load(vo.getProfile_img()).into(imgv_category_profile);
+            }
+            tv_category_nickname.setText(vo.getNickname());
+            CommonConn conn = new CommonConn(CategoryActivity.this, "count.ct");
+            conn.addParams("email", vo.getEmail());
+            conn.executeConn(new CommonConn.ConnCallback() {
+                @Override
+                public void onResult(boolean isResult, String data) {
+                    if (isResult) {
+                        HashMap<String, String> map = new Gson().fromJson(data, new TypeToken<HashMap<String, String>>() {
+                        }.getType());
+                        tv_category_count.setText(map.get("board_count"));
+                        tv_category_comment_count.setText(map.get("reply_count"));
+                    }
+                }
+            });
+        }
+
+        //쓴글 수 , 댓글 수 -> 이후 생명주기 고려해서 넣기
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
 
         if (CommonVal.userInfo != null) {
             MemberVO vo = CommonVal.userInfo;
@@ -117,6 +173,52 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
 
         //쓴글 수 , 댓글 수 -> 이후 생명주기 고려해서 넣기
 
+        //가인- 화면 전환위해 찾아놓음
+        ll_mypage= findViewById(R.id.ll_mypage);
+        ll_notice =findViewById(R.id.ll_notice);
+        ll_event = findViewById(R.id.ll_event);
+        ll_point = findViewById(R.id.ll_point);
+        ll_postlist = findViewById(R.id.ll_postlist);
+        //mypage로 이동
+        ll_mypage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MypageActivity.class);
+                startActivity(intent);
+            }
+        });
+        //notice로 이동
+        ll_notice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), NoticeActivity.class);
+                startActivity(intent);
+            }
+        });
+        //event로 이동
+        ll_event.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), EventActivity.class);
+                startActivity(intent);
+            }
+        });
+        //point로 이동
+        ll_point.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), PointActivity.class);
+                startActivity(intent);
+            }
+        });
+        //postlist로 이동
+        ll_postlist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), postListActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     //뒤로가기 누르면 애니메이션 효과

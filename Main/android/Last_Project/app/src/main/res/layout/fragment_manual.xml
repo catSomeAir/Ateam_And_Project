@@ -1,21 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< HEAD
     xmlns:app="http://schemas.android.com/apk/res-auto"
+=======
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".model.detail.ManualFragment">
+<<<<<<< HEAD
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/scrollView"
+=======
+    <androidx.core.widget.NestedScrollView
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:descendantFocusability="blocksDescendants"
+=======
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
             android:orientation="vertical">
 
             <LinearLayout
@@ -78,6 +88,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.9dp"
+<<<<<<< HEAD
                 android:background="#a9a9a9" />
 
             <LinearLayout
@@ -88,6 +99,17 @@
                 android:paddingHorizontal="18dp"
                 android:paddingTop="22dp"
                 android:paddingBottom="12dp">
+=======
+                android:background="#d9d9d9" />
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="18dp"
+                android:paddingVertical="22dp">
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -95,11 +117,19 @@
                     android:orientation="horizontal">
 
                     <TextView
+<<<<<<< HEAD
                         android:id="@+id/tv_manual_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="삼성 비스포크 4도어 냉장고 605L RF61R91C324"
                         android:textColor="#151515"
+=======
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="삼성 비스포크 4도어 냉장고 605L RF61R91C324"
+                        android:textColor="#000"
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
                         android:textSize="19dp"
                         android:textStyle="bold" />
 
@@ -107,12 +137,20 @@
                 </LinearLayout>
 
                 <LinearLayout
+<<<<<<< HEAD
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
                     android:paddingTop="8dp">
+=======
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
 
                     <LinearLayout
                         android:id="@+id/ln_model_detail_writing"
@@ -127,6 +165,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="상품의견"
+<<<<<<< HEAD
                             android:textStyle="bold"
                             android:textColor="#d9d9d9"
                             android:textSize="12dp" />
@@ -137,6 +176,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="8dp"
+=======
+                            android:textColor="#d9d9d9"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginHorizontal="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
                         android:background="@drawable/shape_navy_fill"
                         android:paddingHorizontal="12dp"
                         android:paddingVertical="6dp">
@@ -153,6 +201,7 @@
                     <Space
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+<<<<<<< HEAD
                         android:layout_weight="1" />
 
                     <ImageView
@@ -178,23 +227,50 @@
                 </LinearLayout>
 
 
+=======
+                        android:layout_weight="1"/>
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_marginVertical="4dp"
+                        android:src="@drawable/heart_empty" />
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_marginHorizontal="4dp"
+                        android:src="@drawable/heart_empty" />
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/heart_empty" />
+
+                </LinearLayout>
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.9dp"
+<<<<<<< HEAD
                 android:background="#a9a9a9" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.9dp"
                 android:background="#a9a9a9" />
+=======
+                android:background="#d9d9d9" />
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
 
             <com.github.barteksc.pdfviewer.PDFView
                 android:id="@+id/pdfView"
                 android:layout_width="match_parent"
                 android:layout_height="650dp" />
 
+<<<<<<< HEAD
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -346,6 +422,10 @@
                     android:textSize="10dp" />
 
             </LinearLayout>
+=======
+
+
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
 
         </LinearLayout>
 

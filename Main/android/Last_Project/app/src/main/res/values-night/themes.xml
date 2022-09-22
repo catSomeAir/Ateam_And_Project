@@ -5,7 +5,11 @@
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">#0F0303</item>
+<<<<<<< HEAD
         <!--<item name="android:windowFullscreen">true</item>-->
+=======
+        <item name="android:windowFullscreen">true</item>
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>

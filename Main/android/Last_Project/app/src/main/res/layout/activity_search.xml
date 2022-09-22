@@ -7,6 +7,42 @@
     android:orientation="vertical"
     tools:context=".search.SearchActivity">
 
+<<<<<<< HEAD
+=======
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#020E20"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingHorizontal="14dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <!-- <ImageView
+                 android:id="@+id/imgv_category_back"
+                 android:layout_width="34dp"
+                 android:layout_height="wrap_content"
+                 android:adjustViewBounds="true"
+                 android:src="@drawable/back_arrow_white" />-->
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/logo_navy" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,6 +68,7 @@
                 android:src="@drawable/menu_buger" />
 
 
+<<<<<<< HEAD
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="38dp"
@@ -42,13 +79,27 @@
                 android:background="@drawable/shape_border"
                     android:layout_width="0dp"
                     android:layout_weight="1"
+=======
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_marginHorizontal="8dp"
+                android:background="@drawable/shape_border"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
                     android:paddingLeft="1dp">
 
                     <EditText
+<<<<<<< HEAD
                         android:inputType="textNoSuggestions"
+=======
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
                         android:id="@+id/edt_search"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -59,6 +110,7 @@
                         android:paddingVertical="2dp"
                         android:paddingLeft="10dp"
                         android:singleLine="true"
+<<<<<<< HEAD
                         android:maxLines="1"
                         android:lines="1"
                         android:textSize="14dp" />
@@ -84,6 +136,15 @@
                     android:text="취소"/>
 
             </LinearLayout>
+=======
+                        android:textSize="14dp" />
+
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>

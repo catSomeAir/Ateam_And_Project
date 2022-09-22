@@ -115,6 +115,7 @@
                                 android:textStyle="bold" />
 
                             <LinearLayout
+                                android:id="@+id/ll_postlist"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginVertical="8dp"
@@ -210,6 +211,7 @@
                             android:paddingVertical="10dp">
 
                             <LinearLayout
+                                android:id="@+id/ll_mypage"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="14dp"
@@ -238,6 +240,7 @@
                                 android:background="#898989" />
 
                             <LinearLayout
+                                android:id="@+id/ll_notice"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="14dp"
@@ -266,6 +269,7 @@
                                 android:background="#898989" />
 
                             <LinearLayout
+                                android:id="@+id/ll_event"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="14dp"
@@ -294,6 +298,7 @@
                                 android:background="#898989" />
 
                             <LinearLayout
+                                android:id="@+id/ll_point"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="14dp"
@@ -516,10 +521,14 @@
                             android:textColor="#000"
                             android:textSize="14dp" />
                     </LinearLayout>
+<<<<<<< HEAD
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1.4dp"
                         android:background="#E6E6E6" />
+=======
+
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -595,10 +604,14 @@
                             android:textColor="#000"
                             android:textSize="14dp" />
                     </LinearLayout>
+<<<<<<< HEAD
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1.4dp"
                         android:background="#E6E6E6" />
+=======
+
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -674,10 +687,14 @@
                             android:textColor="#000"
                             android:textSize="14dp" />
                     </LinearLayout>
+<<<<<<< HEAD
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1.4dp"
                         android:background="#E6E6E6" />
+=======
+
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -753,10 +770,14 @@
                             android:textColor="#000"
                             android:textSize="14dp" />
                     </LinearLayout>
+<<<<<<< HEAD
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1.4dp"
                         android:background="#E6E6E6" />
+=======
+
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -832,10 +853,14 @@
                             android:textColor="#000"
                             android:textSize="14dp" />
                     </LinearLayout>
+<<<<<<< HEAD
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1.4dp"
                         android:background="#E6E6E6" />
+=======
+
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -911,10 +936,14 @@
                             android:textColor="#000"
                             android:textSize="14dp" />
                     </LinearLayout>
+<<<<<<< HEAD
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1.4dp"
                         android:background="#E6E6E6" />
+=======
+
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -990,10 +1019,14 @@
                             android:textColor="#000"
                             android:textSize="14dp" />
                     </LinearLayout>
+<<<<<<< HEAD
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1.4dp"
                         android:background="#E6E6E6" />
+=======
+
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -1010,10 +1043,14 @@
                             android:textColor="#000"
                             android:textSize="14dp" />
                     </LinearLayout>
+<<<<<<< HEAD
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1.4dp"
                         android:background="#E6E6E6" />
+=======
+
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -1030,10 +1067,14 @@
                             android:textColor="#000"
                             android:textSize="14dp" />
                     </LinearLayout>
+<<<<<<< HEAD
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1.4dp"
                         android:background="#E6E6E6" />
+=======
+
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -1109,10 +1150,14 @@
                             android:textColor="#000"
                             android:textSize="14dp" />
                     </LinearLayout>
+<<<<<<< HEAD
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1.4dp"
                         android:background="#E6E6E6" />
+=======
+
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -1129,10 +1174,14 @@
                             android:textColor="#000"
                             android:textSize="14dp" />
                     </LinearLayout>
+<<<<<<< HEAD
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1.4dp"
                         android:background="#E6E6E6" />
+=======
+
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -1173,16 +1222,27 @@
                 android:layout_height="60dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginHorizontal="10dp"
+<<<<<<< HEAD
                 android:backgroundTint="#020E20"
                 android:elevation="50dp"
                 android:text="로그아웃"
                 android:textColor="#D9D9D9"
+=======
+                android:backgroundTint="#DCDBD9"
+                android:elevation="50dp"
+                android:text="로그아웃"
+                android:textColor="#898989"
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
                 android:textSize="16dp"
                 android:textStyle="bold" />
 
             <Space
                 android:layout_width="match_parent"
+<<<<<<< HEAD
                 android:layout_height="200dp" />
+=======
+                android:layout_height="500dp" />
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
 
             <!--            <androidx.recyclerview.widget.RecyclerView-->
             <!--                android:paddingHorizontal="10dp"-->

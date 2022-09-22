@@ -25,6 +25,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
 }
 
 dependencies {
@@ -59,7 +60,6 @@ dependencies {
     //바텀네비 UI API
     implementation 'com.github.ibrahimsn98:SmoothBottomBar:1.7.9'
 
-
     //네이버 맵 API
     implementation 'com.naver.maps:map-sdk:3.15.0'
 
@@ -76,6 +76,7 @@ dependencies {
     //pdf viwer
 //    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
     implementation 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1'
+<<<<<<< HEAD
 
     //DialogSpinner
     implementation 'com.github.hamzaahmedkhan:SpinnerDialog:v1.2.3'
@@ -92,4 +93,6 @@ dependencies {
     implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
 
 
+=======
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
 }

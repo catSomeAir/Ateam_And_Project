@@ -1,5 +1,6 @@
 package com.example.last_project.model.detail;
 
+<<<<<<< HEAD
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -19,23 +20,41 @@ import androidx.fragment.app.Fragment;
 
 import com.example.last_project.R;
 import com.example.last_project.WebviewActivity;
+=======
+import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import androidx.fragment.app.Fragment;
+
+import com.example.last_project.R;
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
 import com.github.barteksc.pdfviewer.PDFView;
 import com.github.barteksc.pdfviewer.listener.OnLoadCompleteListener;
 import com.github.barteksc.pdfviewer.listener.OnPageChangeListener;
 import com.github.barteksc.pdfviewer.scroll.DefaultScrollHandle;
+<<<<<<< HEAD
 import com.google.android.material.tabs.TabLayout;
+=======
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
 import com.shockwave.pdfium.PdfDocument;
 
 import java.util.List;
 
 public class ManualFragment extends Fragment implements OnPageChangeListener, OnLoadCompleteListener {
+<<<<<<< HEAD
 
     GestureDetector detector;
     Context context;
+=======
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
     PDFView pdfView;
     String SAMPLE_FILE = "test.pdf";
     Integer pageNumber = 0;
     String  pdfFileName;
+<<<<<<< HEAD
     LinearLayout ln_model_detail_writing, ln_model_detail_as;
     ImageView imgv_manual_zzim, imgv_manual_link, imgv_manual_download; //* 다운로드 버튼 구현예정
 
@@ -54,11 +73,14 @@ public class ManualFragment extends Fragment implements OnPageChangeListener, On
         this.context = context;
     }
 
+=======
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_manual, container, false);
 
+<<<<<<< HEAD
         //전체 스크롤뷰
         scrollView = v.findViewById(R.id.scrollView);
 
@@ -137,6 +159,10 @@ public class ManualFragment extends Fragment implements OnPageChangeListener, On
                 startActivity(intent);
             }
         });
+=======
+        pdfView= (PDFView)v.findViewById(R.id.pdfView);
+        displayFromAsset(SAMPLE_FILE);
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
         return v;
     }
     private void displayFromAsset(String assetFileName) {
@@ -156,6 +182,7 @@ public class ManualFragment extends Fragment implements OnPageChangeListener, On
                 .scrollHandle(new DefaultScrollHandle(getContext()))
                 .load();
 
+<<<<<<< HEAD
         if(pdfView.isSwipeEnabled()){
             pdfView.setSwipeEnabled(true);
             scrollView.requestDisallowInterceptTouchEvent(true);
@@ -208,6 +235,8 @@ public class ManualFragment extends Fragment implements OnPageChangeListener, On
                 return false;
             }
         });
+=======
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
     }
 
 

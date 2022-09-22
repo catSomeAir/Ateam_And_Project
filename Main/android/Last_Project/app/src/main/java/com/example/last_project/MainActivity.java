@@ -10,7 +10,10 @@ import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+<<<<<<< HEAD
 import androidx.cardview.widget.CardView;
+=======
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -27,9 +30,12 @@ public class MainActivity extends AppCompatActivity {
     TabLayout tabs;
     LinearLayout ln_main_search;
     RecyclerView recv_main_manysearch;
+<<<<<<< HEAD
     CircleMenuView menuView;
 
     CardView cdv_plus;
+=======
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

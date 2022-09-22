@@ -5,7 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+<<<<<<< HEAD
     tools:context=".model.detail.writng.WritingFragment">
+=======
+    tools:context=".model.detail.WritingFragment">
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
 
 
     <LinearLayout
@@ -84,7 +88,10 @@
                 app:cardCornerRadius="18dp">
 
                 <EditText
+<<<<<<< HEAD
                     android:id="@+id/edt_writing"
+=======
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="8dp"

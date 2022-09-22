@@ -18,16 +18,25 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.last_project.R;
 import com.example.last_project.category.CategoryActivity;
+<<<<<<< HEAD
 import com.example.last_project.common.CommonMethod;
+=======
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
 
 import java.util.ArrayList;
 
 public class SearchActivity extends AppCompatActivity {
     LinearLayout ln_search_list;
     RecyclerView recv_search_relate;
+<<<<<<< HEAD
     ImageView imgv_search_category, imgv_search_find, imgv_cancel;
     EditText edt_search;
     TextView tv_search_findtext, tv_cancel;
+=======
+    ImageView imgv_search_category, imgv_search_find;
+    EditText edt_search;
+    TextView tv_search_findtext;
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
     boolean search = true;
 
     @Override
@@ -35,10 +44,13 @@ public class SearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         ln_search_list = findViewById(R.id.ln_search_list);
+<<<<<<< HEAD
         tv_cancel = findViewById(R.id.tv_cancel);
         imgv_cancel = findViewById(R.id.imgv_cancel);
 
 
+=======
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
 
         imgv_search_category = findViewById(R.id.imgv_search_category);
         imgv_search_category.setOnClickListener(new View.OnClickListener() {
@@ -68,6 +80,7 @@ public class SearchActivity extends AppCompatActivity {
         imgv_search_find.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+<<<<<<< HEAD
 
 //                //CommonVal 에 현재 검색한 검색어 search_text로 사용 할 예정
 //                CommonVal.search_text = edt_search.getText().toString();
@@ -81,6 +94,9 @@ public class SearchActivity extends AppCompatActivity {
 
 
 
+=======
+                getSupportFragmentManager().beginTransaction().replace(R.id.container_search, new SearchResultFragment()).commit();
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
                 edt_search.setText("");
                 edt_search.clearFocus();
                 recv_search_relate.setVisibility(View.GONE);
@@ -121,14 +137,19 @@ public class SearchActivity extends AppCompatActivity {
         edt_search.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
+<<<<<<< HEAD
 //                Log.d("키코드", "onKey: " + KeyEvent.KEYCODE_ENTER);
 //                Log.d("키코드", "onKey: " + edt_search.getText().toString());
                 if(keyCode == KeyEvent.KEYCODE_ENTER){
                     edt_search.setText(edt_search.getText().toString().replace("\n" ,""));
+=======
+                if(keyCode == KeyEvent.KEYCODE_ENTER){
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
                     imgv_search_find.performClick();
                     edt_search.clearFocus();
                     InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
                     imm.hideSoftInputFromWindow(edt_search.getWindowToken(), 0);
+<<<<<<< HEAD
 
 
                 }
@@ -145,6 +166,10 @@ public class SearchActivity extends AppCompatActivity {
                 edt_search.clearFocus();
                 InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(edt_search.getWindowToken(), 0);
+=======
+                }
+                return true;
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
             }
         });
 

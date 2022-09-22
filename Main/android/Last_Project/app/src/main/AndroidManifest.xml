@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.last_project">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
@@ -25,6 +26,7 @@
         android:theme="@style/Theme.Last_Project"
         android:usesCleartextTraffic="true">
         <activity
+<<<<<<< HEAD
             android:name=".barcord.BarcordActivity"
             android:exported="true" />
         <activity
@@ -56,9 +58,45 @@
             android:exported="true" />
         <activity
             android:name=".member.Login_in_Activity"
+=======
+            android:name=".postList.ReplyDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".model.WritingDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".postList.RequestedPostActivity"
+            android:exported="true" />
+        <activity
+            android:name=".mypage.EditProfileActivity"
+            android:exported="true" />
+        <activity
+            android:name=".postList.BookmarkedPostActivity"
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
             android:exported="true" />
         <activity
             android:name=".category.CategoryActivity"
+            android:exported="true" />
+        <activity
+            android:name=".postList.postListActivity"
+            android:exported="true" />
+        <activity
+            android:name=".event.EventActivity"
+            android:exported="true" />
+        <activity
+            android:name=".WebviewActivity"
+            android:exported="true" />
+        <activity
+            android:name=".model.ModelDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".search.SearchActivity"
+            android:exported="true" />
+        <activity
+            android:name=".member.Login_in_Activity"
+            android:exported="true" />
+        <activity
+            android:name=".point.PointActivity"
             android:exported="true" />
         <activity
             android:name=".member.JoinActivity"
@@ -70,12 +108,31 @@
             android:name=".member.LoginActivity"
             android:exported="true" />
         <activity
+            android:name=".mypage.MypageActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            tools:ignore="DuplicateActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- 카카오로그안을 위해 추가함 -->
+        <activity
+            android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <!-- Redirect URI: "kakao${NATIVE_APP_KEY}://oauth" -->
+                <data
+                    android:host="oauth"
+                    android:scheme="kakao6a8daeb1b5866edc7517304827ad84ae" />
             </intent-filter>
         </activity>
 

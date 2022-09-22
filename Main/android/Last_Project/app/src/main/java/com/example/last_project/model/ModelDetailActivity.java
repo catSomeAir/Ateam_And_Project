@@ -2,6 +2,11 @@ package com.example.last_project.model;
 
 import android.content.Intent;
 import android.os.Bundle;
+<<<<<<< HEAD
+=======
+import android.text.Editable;
+import android.text.TextWatcher;
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -12,11 +17,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.last_project.R;
 import com.example.last_project.category.CategoryActivity;
+<<<<<<< HEAD
 import com.example.last_project.common.CommonMethod;
 import com.example.last_project.model.detail.as.AfterServiceFragment;
 import com.example.last_project.model.detail.ManualFragment;
 import com.example.last_project.model.detail.writng.WritingFragment;
 import com.example.last_project.model.detail.as.UnrelatedASFragment;
+=======
+import com.example.last_project.model.detail.AfterServiceFragment;
+import com.example.last_project.model.detail.ManualFragment;
+import com.example.last_project.model.detail.WritingFragment;
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
 import com.google.android.material.tabs.TabLayout;
 
 public class ModelDetailActivity extends AppCompatActivity  {
@@ -46,7 +57,11 @@ public class ModelDetailActivity extends AppCompatActivity  {
         tabs.getTabAt(0).select();
 
 
+<<<<<<< HEAD
         getSupportFragmentManager().beginTransaction().replace(R.id.container_model_detail, new ManualFragment(ModelDetailActivity.this)).commit();
+=======
+        getSupportFragmentManager().beginTransaction().replace(R.id.container_model_detail, new ManualFragment()).commit();
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
 
         //탭레이아웃 선택 이벤트
         tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -54,14 +69,21 @@ public class ModelDetailActivity extends AppCompatActivity  {
             public void onTabSelected(TabLayout.Tab tab) {
 
                 if(tab.getPosition()==0){
+<<<<<<< HEAD
                     getSupportFragmentManager().beginTransaction().replace(R.id.container_model_detail, new ManualFragment(ModelDetailActivity.this)).commit();
+=======
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container_model_detail, new ManualFragment()).commit();
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
                 }else if(tab.getPosition()==1){
                     getSupportFragmentManager().beginTransaction().replace(R.id.container_model_detail, new WritingFragment()).commit();
                 }else if(tab.getPosition()==2){
                     getSupportFragmentManager().beginTransaction().replace(R.id.container_model_detail, new AfterServiceFragment()).commit();
+<<<<<<< HEAD
                     if(edt_search.getText().toString().equals("ㅇ")){
                         getSupportFragmentManager().beginTransaction().replace(R.id.container_model_detail, new UnrelatedASFragment()).commit();//* 임시로 AS센터 없는 경우 확인하기 위해 만들어둠
                     }
+=======
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
                 }
             }
 
@@ -77,6 +99,7 @@ public class ModelDetailActivity extends AppCompatActivity  {
         });
 
 
+<<<<<<< HEAD
 //        //검색------------
 //        //검색창 옆 취소
         tv_detail_cancel = findViewById(R.id.tv_detail_cancel);
@@ -140,6 +163,29 @@ public class ModelDetailActivity extends AppCompatActivity  {
 //        });
 
         CommonMethod.edittext_change(edt_search, tv_detail_cancel, imgv_detail_cancel, ModelDetailActivity.this);
+=======
+        //검색------------
+        //검색창 옆 취소
+        tv_detail_cancel = findViewById(R.id.tv_detail_cancel);
+        //검색창 옆 취소아이콘
+        imgv_detail_cancel = findViewById(R.id.imgv_detail_cancel);
+        //검색창
+        edt_search = findViewById(R.id.edt_search);
+
+        //검색창 포커스 있을때 취소 글씨 보기
+        edt_search.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(hasFocus){
+                    tv_detail_cancel.setVisibility(View.VISIBLE);
+                }else{
+                    tv_detail_cancel.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
         tv_detail_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -149,6 +195,42 @@ public class ModelDetailActivity extends AppCompatActivity  {
                 imm.hideSoftInputFromWindow(edt_search.getWindowToken(), 0);
             }
         });
+<<<<<<< HEAD
+=======
+
+
+
+        edt_search.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                //검색창 글 입력된경우 취소이미지 보이기
+                if(edt_search.getText().length() > 0){
+                    imgv_detail_cancel.setVisibility(View.VISIBLE);
+                }else{
+                    imgv_detail_cancel.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        imgv_detail_cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                edt_search.setText("");
+            }
+        });
+
+
+>>>>>>> 456bce5d00044f8495d6999f8f1c61bdf6d5fd46
 //        ln_model_detail_writing = findViewById(R.id.ln_model_detail_writing );
 //        ln_model_detail_writing.setOnClickListener(new View.OnClickListener() {
 //            @Override
