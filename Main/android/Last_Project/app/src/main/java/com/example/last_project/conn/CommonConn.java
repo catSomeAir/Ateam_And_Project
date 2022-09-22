@@ -56,7 +56,6 @@ public class CommonConn {
         call.enqueue(new Callback<String>() {
 
             // onResponse : 서버와 통신성공( +반환데이터 ) -> true 와 date 리턴
-
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
                 callback.onResult(true, response.body());

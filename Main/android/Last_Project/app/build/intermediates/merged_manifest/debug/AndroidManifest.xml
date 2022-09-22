@@ -8,6 +8,7 @@
         android:minSdkVersion="21"
         android:targetSdkVersion="31" />
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -49,12 +50,29 @@
         android:required="true" />
     <uses-feature
         android:name="android.hardware.wifi"
+        android:required="false" /> <!-- Don't require camera, as this requires a rear camera. This allows it to work on the Nexus 7 -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="false" /> <!-- TODO replace above two with next line after Android 4.2 -->
+    <!-- <uses-feature android:name="android.hardware.camera.any"/> -->
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.screen.landscape"
         android:required="false" />
 
     <application
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
+        android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -62,6 +80,36 @@
         android:testOnly="true"
         android:theme="@style/Theme.Last_Project"
         android:usesCleartextTraffic="true" >
+        <activity
+            android:name="com.example.last_project.barcord.BarcordActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.last_project.model.detail.as.AfterServiceActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.last_project.request.RequestResultActivity"
+            android:exported="true" />
+
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="693dd02df8fe8f8ace3aaaefb130bc94" />
+
+        <activity
+            android:name="com.example.last_project.request.RequestCancelActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Transparent.NoActionBar" />
+        <activity
+            android:name="com.example.last_project.request.RequestManualActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.last_project.WebviewActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.last_project.model.ModelDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.last_project.search.SearchActivity"
+            android:exported="true" />
         <activity
             android:name="com.example.last_project.member.Login_in_Activity"
             android:exported="true" />
@@ -86,6 +134,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.last_project.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_path" />
+        </provider>
+
         <!-- <activity -->
         <!-- android:name="com.nhn.android.naverlogin.ui.OAuthLoginActivity" -->
         <!-- android:configChanges="orientation|screenSize" -->
@@ -149,6 +208,15 @@
             android:name="com.squareup.picasso.PicassoProvider"
             android:authorities="com.example.last_project.com.squareup.picasso"
             android:exported="false" />
+
+        <activity
+            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+            android:clearTaskOnLaunch="true"
+            android:screenOrientation="sensorLandscape"
+            android:stateNotNeeded="true"
+            android:theme="@style/zxing_CaptureTheme"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
         <provider
             android:name="androidx.startup.InitializationProvider"
             android:authorities="com.example.last_project.androidx-startup"

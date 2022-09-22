@@ -6,37 +6,42 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".category.CategoryActivity">
-<<<<<<< HEAD
 
     <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="#020E20"
+        android:gravity="center"
         android:orientation="horizontal"
-        android:gravity="center">
+        android:paddingHorizontal="14dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/imgv_category_back"
+                android:layout_width="34dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/back_arrow_white" />
+        </LinearLayout>
 
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@drawable/logo_navy" />
 
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
     </LinearLayout>
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/scv_category"
-=======
-    <LinearLayout
-        android:background="#004771"
-        android:layout_width="match_parent"
-        android:gravity="center"
-        android:layout_height="50dp">
-    <ImageView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:src="@drawable/logo"/>
-    </LinearLayout>
-    <androidx.core.widget.NestedScrollView
->>>>>>> 1a48d713eaf7e24bb931b82edd57d7eff58f0b4a
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -47,7 +52,6 @@
             android:orientation="vertical">
 
             <FrameLayout
-<<<<<<< HEAD
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="14dp"
@@ -56,15 +60,6 @@
                 <!--로그인 됐을 경우-->
                 <LinearLayout
                     android:id="@+id/ln_category_login"
-=======
-                android:layout_marginBottom="14dp"
-                android:paddingHorizontal="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <!--로그인 됐을 경우-->
-                <LinearLayout
->>>>>>> 1a48d713eaf7e24bb931b82edd57d7eff58f0b4a
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
@@ -91,13 +86,10 @@
                             app:cardCornerRadius="100dp">
 
                             <ImageView
-<<<<<<< HEAD
-                                android:elevation="20dp"
                                 android:id="@+id/imgv_category_profile"
-=======
->>>>>>> 1a48d713eaf7e24bb931b82edd57d7eff58f0b4a
                                 android:layout_width="60dp"
                                 android:layout_height="60dp"
+                                android:elevation="20dp"
                                 android:src="@drawable/category_profile" />
                         </androidx.cardview.widget.CardView>
 
@@ -113,21 +105,12 @@
 
 
                             <TextView
-<<<<<<< HEAD
                                 android:id="@+id/tv_category_nickname"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
                                 android:text="닉네임"
                                 android:textColor="#020E20"
-=======
-                                android:layout_width="wrap_content"
-
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
-                                android:text="닉네임"
-                                android:textColor="#004771"
->>>>>>> 1a48d713eaf7e24bb931b82edd57d7eff58f0b4a
                                 android:textSize="18dp"
                                 android:textStyle="bold" />
 
@@ -147,10 +130,7 @@
                                     android:textSize="14dp" />
 
                                 <TextView
-<<<<<<< HEAD
                                     android:id="@+id/tv_category_count"
-=======
->>>>>>> 1a48d713eaf7e24bb931b82edd57d7eff58f0b4a
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="12"
@@ -176,18 +156,11 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="내가 댓쓴 글 : "
-<<<<<<< HEAD
                                         android:textColor="#4A4A4A"
                                         android:textSize="14dp" />
 
                                     <TextView
                                         android:id="@+id/tv_category_comment_count"
-=======
-                                        android:textColor="#a9a9a9"
-                                        android:textSize="14dp" />
-
-                                    <TextView
->>>>>>> 1a48d713eaf7e24bb931b82edd57d7eff58f0b4a
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="23"
@@ -253,12 +226,8 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="My"
-<<<<<<< HEAD
-                                    android:textSize="12dp"
-                                    android:textColor="#020E20" />
-=======
-                                    android:textColor="#004771" />
->>>>>>> 1a48d713eaf7e24bb931b82edd57d7eff58f0b4a
+                                    android:textColor="#020E20"
+                                    android:textSize="12dp" />
                             </LinearLayout>
 
                             <View
@@ -283,16 +252,10 @@
 
                                 <TextView
                                     android:layout_width="wrap_content"
-<<<<<<< HEAD
-                                    android:textSize="12dp"
                                     android:layout_height="wrap_content"
                                     android:text="공지사항"
-                                    android:textColor="#020E20" />
-=======
-                                    android:layout_height="wrap_content"
-                                    android:text="공지사항"
-                                    android:textColor="#004771" />
->>>>>>> 1a48d713eaf7e24bb931b82edd57d7eff58f0b4a
+                                    android:textColor="#020E20"
+                                    android:textSize="12dp" />
                             </LinearLayout>
 
                             <View
@@ -317,16 +280,10 @@
 
                                 <TextView
                                     android:layout_width="wrap_content"
-<<<<<<< HEAD
-                                    android:textSize="12dp"
                                     android:layout_height="wrap_content"
                                     android:text="이벤트"
-                                    android:textColor="#020E20" />
-=======
-                                    android:layout_height="wrap_content"
-                                    android:text="이벤트"
-                                    android:textColor="#004771" />
->>>>>>> 1a48d713eaf7e24bb931b82edd57d7eff58f0b4a
+                                    android:textColor="#020E20"
+                                    android:textSize="12dp" />
                             </LinearLayout>
 
                             <View
@@ -352,14 +309,9 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-<<<<<<< HEAD
-                                    android:textSize="12dp"
                                     android:text="포인트"
-                                    android:textColor="#020E20" />
-=======
-                                    android:text="포인트"
-                                    android:textColor="#004771" />
->>>>>>> 1a48d713eaf7e24bb931b82edd57d7eff58f0b4a
+                                    android:textColor="#020E20"
+                                    android:textSize="12dp" />
                             </LinearLayout>
                         </LinearLayout>
 
@@ -456,22 +408,14 @@
                 </LinearLayout>
                 <!--로그인 안된 경우-->
                 <LinearLayout
-<<<<<<< HEAD
                     android:id="@+id/ln_category_not_login"
-=======
-                    android:visibility="gone"
->>>>>>> 1a48d713eaf7e24bb931b82edd57d7eff58f0b4a
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:background="@drawable/shape_border_navy"
                     android:orientation="vertical"
-<<<<<<< HEAD
                     android:padding="24dp"
                     android:visibility="gone">
-=======
-                    android:padding="24dp">
->>>>>>> 1a48d713eaf7e24bb931b82edd57d7eff58f0b4a
 
                     <ImageView
                         android:layout_width="68dp"
@@ -481,10 +425,7 @@
 
 
                     <Button
-<<<<<<< HEAD
                         android:id="@+id/btn_category_login"
-=======
->>>>>>> 1a48d713eaf7e24bb931b82edd57d7eff58f0b4a
                         android:layout_width="180dp"
                         android:layout_height="50dp"
                         android:layout_gravity="center_horizontal"
@@ -510,23 +451,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="12dp"
-<<<<<<< HEAD
                 android:layout_marginLeft="16dp"
-=======
-                android:layout_marginLeft="10dp"
->>>>>>> 1a48d713eaf7e24bb931b82edd57d7eff58f0b4a
                 android:text="전체 카테고리 >"
                 android:textColor="#000"
                 android:textSize="16dp"
                 android:textStyle="bold" />
 
-<<<<<<< HEAD
             <LinearLayout
-                android:paddingHorizontal="14dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:animateLayoutChanges="true"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingHorizontal="14dp">
 
                 <LinearLayout
                     android:id="@+id/ln_l_list1"
@@ -542,8 +478,7 @@
                         android:layout_marginLeft="4dp"
                         android:text="가전/TV"
                         android:textColor="#000"
-                        android:textSize="18dp"
-                        />
+                        android:textSize="18dp" />
 
                     <Space
                         android:layout_width="0dp"
@@ -558,11 +493,11 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:visibility="gone"
                     android:id="@+id/ln_m_list1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
 
                     <LinearLayout
@@ -581,7 +516,10 @@
                             android:textColor="#000"
                             android:textSize="14dp" />
                     </LinearLayout>
-
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1.4dp"
+                        android:background="#E6E6E6" />
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -619,8 +557,7 @@
                         android:layout_marginLeft="4dp"
                         android:text="컴퓨터·노트북"
                         android:textColor="#000"
-                        android:textSize="18dp"
-                        />
+                        android:textSize="18dp" />
 
                     <Space
                         android:layout_width="0dp"
@@ -635,11 +572,11 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:visibility="gone"
                     android:id="@+id/ln_m_list2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
 
                     <LinearLayout
@@ -658,7 +595,10 @@
                             android:textColor="#000"
                             android:textSize="14dp" />
                     </LinearLayout>
-
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1.4dp"
+                        android:background="#E6E6E6" />
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -681,6 +621,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="1.4dp"
                     android:background="#E6E6E6" />
+
                 <LinearLayout
                     android:id="@+id/ln_l_list3"
                     android:layout_width="match_parent"
@@ -695,8 +636,7 @@
                         android:layout_marginLeft="4dp"
                         android:text="태블릿·모바일"
                         android:textColor="#000"
-                        android:textSize="18dp"
-                         />
+                        android:textSize="18dp" />
 
                     <Space
                         android:layout_width="0dp"
@@ -711,11 +651,11 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:visibility="gone"
                     android:id="@+id/ln_m_list3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
 
                     <LinearLayout
@@ -734,7 +674,10 @@
                             android:textColor="#000"
                             android:textSize="14dp" />
                     </LinearLayout>
-
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1.4dp"
+                        android:background="#E6E6E6" />
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -757,6 +700,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="1.4dp"
                     android:background="#E6E6E6" />
+
                 <LinearLayout
                     android:id="@+id/ln_l_list4"
                     android:layout_width="match_parent"
@@ -771,8 +715,7 @@
                         android:layout_marginLeft="4dp"
                         android:text="자동차용품·공구"
                         android:textColor="#000"
-                        android:textSize="18dp"
-                         />
+                        android:textSize="18dp" />
 
                     <Space
                         android:layout_width="0dp"
@@ -787,11 +730,11 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:visibility="gone"
                     android:id="@+id/ln_m_list4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
 
                     <LinearLayout
@@ -810,7 +753,10 @@
                             android:textColor="#000"
                             android:textSize="14dp" />
                     </LinearLayout>
-
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1.4dp"
+                        android:background="#E6E6E6" />
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -833,6 +779,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="1.4dp"
                     android:background="#E6E6E6" />
+
                 <LinearLayout
                     android:id="@+id/ln_l_list5"
                     android:layout_width="match_parent"
@@ -847,8 +794,7 @@
                         android:layout_marginLeft="4dp"
                         android:text="가구·조명"
                         android:textColor="#000"
-                        android:textSize="18dp"
-                         />
+                        android:textSize="18dp" />
 
                     <Space
                         android:layout_width="0dp"
@@ -863,11 +809,11 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:visibility="gone"
                     android:id="@+id/ln_m_list5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
 
                     <LinearLayout
@@ -886,7 +832,10 @@
                             android:textColor="#000"
                             android:textSize="14dp" />
                     </LinearLayout>
-
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1.4dp"
+                        android:background="#E6E6E6" />
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -909,6 +858,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="1.4dp"
                     android:background="#E6E6E6" />
+
                 <LinearLayout
                     android:id="@+id/ln_l_list6"
                     android:layout_width="match_parent"
@@ -923,8 +873,7 @@
                         android:layout_marginLeft="4dp"
                         android:text="아동·유아"
                         android:textColor="#000"
-                        android:textSize="18dp"
-                         />
+                        android:textSize="18dp" />
 
                     <Space
                         android:layout_width="0dp"
@@ -939,11 +888,11 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:visibility="gone"
                     android:id="@+id/ln_m_list6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
 
                     <LinearLayout
@@ -962,7 +911,10 @@
                             android:textColor="#000"
                             android:textSize="14dp" />
                     </LinearLayout>
-
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1.4dp"
+                        android:background="#E6E6E6" />
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -985,6 +937,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="1.4dp"
                     android:background="#E6E6E6" />
+
                 <LinearLayout
                     android:id="@+id/ln_l_list7"
                     android:layout_width="match_parent"
@@ -999,8 +952,7 @@
                         android:layout_marginLeft="4dp"
                         android:text="사무"
                         android:textColor="#000"
-                        android:textSize="18dp"
-                         />
+                        android:textSize="18dp" />
 
                     <Space
                         android:layout_width="0dp"
@@ -1015,11 +967,11 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:visibility="gone"
                     android:id="@+id/ln_m_list7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
 
                     <LinearLayout
@@ -1038,7 +990,10 @@
                             android:textColor="#000"
                             android:textSize="14dp" />
                     </LinearLayout>
-
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1.4dp"
+                        android:background="#E6E6E6" />
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -1055,6 +1010,10 @@
                             android:textColor="#000"
                             android:textSize="14dp" />
                     </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1.4dp"
+                        android:background="#E6E6E6" />
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -1071,6 +1030,10 @@
                             android:textColor="#000"
                             android:textSize="14dp" />
                     </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1.4dp"
+                        android:background="#E6E6E6" />
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -1093,6 +1056,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="1.4dp"
                     android:background="#E6E6E6" />
+
                 <LinearLayout
                     android:id="@+id/ln_l_list8"
                     android:layout_width="match_parent"
@@ -1107,8 +1071,7 @@
                         android:layout_marginLeft="4dp"
                         android:text="취미·레저"
                         android:textColor="#000"
-                        android:textSize="18dp"
-                        />
+                        android:textSize="18dp" />
 
                     <Space
                         android:layout_width="0dp"
@@ -1123,11 +1086,11 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:visibility="gone"
                     android:id="@+id/ln_m_list8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
 
                     <LinearLayout
@@ -1146,7 +1109,10 @@
                             android:textColor="#000"
                             android:textSize="14dp" />
                     </LinearLayout>
-
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1.4dp"
+                        android:background="#E6E6E6" />
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -1163,6 +1129,10 @@
                             android:textColor="#000"
                             android:textSize="14dp" />
                     </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1.4dp"
+                        android:background="#E6E6E6" />
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -1192,25 +1162,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="1.4dp"
                 android:background="#E6E6E6" />
+
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="90dp"/>
+                android:layout_height="90dp" />
+
             <Button
                 android:id="@+id/btn_category_logout"
-                android:layout_marginHorizontal="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_gravity="center_horizontal"
-                android:backgroundTint="#DCDBD9"
+                android:layout_marginHorizontal="10dp"
+                android:backgroundTint="#020E20"
                 android:elevation="50dp"
                 android:text="로그아웃"
+                android:textColor="#D9D9D9"
                 android:textSize="16dp"
-                android:textColor="#898989"
                 android:textStyle="bold" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="500dp"/>
+                android:layout_height="200dp" />
 
             <!--            <androidx.recyclerview.widget.RecyclerView-->
             <!--                android:paddingHorizontal="10dp"-->
@@ -1221,15 +1193,6 @@
             <!--            </androidx.recyclerview.widget.RecyclerView>-->
 
 
-=======
-            <androidx.recyclerview.widget.RecyclerView
-                android:paddingHorizontal="10dp"
-                android:id="@+id/recv_l_category"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            </androidx.recyclerview.widget.RecyclerView>
->>>>>>> 1a48d713eaf7e24bb931b82edd57d7eff58f0b4a
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </LinearLayout>

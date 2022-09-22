@@ -7,7 +7,7 @@
   </component>
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
@@ -22,7 +22,7 @@
   <component name="CodeInsightWorkspaceSettings">
     <option name="optimizeImportsOnTheFly" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\hanul\.android\avd\Pixel_4_API_30_1.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[R3CM80CK81Y]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -59,8 +59,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="resourceFile" />
         <option value="layoutResourceFile" />
         <option value="Class" />
+        <option value="valueResourceFile" />
       </list>
     </option>
   </component>
@@ -80,19 +82,32 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android-custom-viewC:/Users/hanul/.gradle/caches/modules-2/files-2.1/androidx.viewpager2/viewpager2/1.0.0/3c3569044e6969f1ee5c3aa03b08e6717a2d782f/viewpager2-1.0.0-sources.jar!/androidx/viewpager2/widget/ViewPager2.java_SELECTED" value="ViewPager2" />
+    <property name="android-custom-viewC:/Users/hanul/AppData/Local/Android/Sdk/sources/android-31/android/view/View.java_SELECTED" value="View" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../Study_Android/Project03_Last" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="android.template.1572477565">
       <recent name="com.example.last_project.member" />
     </key>
+    <key name="android.template.-1824226053">
+      <recent name="com.example.last_project.barcord" />
+      <recent name="com.example.last_project.model.detail.as" />
+      <recent name="com.example.last_project.request" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\project\android\andworkspace\Last_Project\app\src\main\res\drawable" />
-      <recent name="D:\project\android\andworkspace\Last_Project\app\src\main\res\layout" />
-      <recent name="D:\project\android\andworkspace\Last_Project\app\src\main\res\anim" />
-      <recent name="D:\project\android\andworkspace\Last_Project\app\src\main\java\com\example\last_project\conn" />
-      <recent name="D:\project\android\andworkspace\Last_Project\app\src\main\res\drawable-v24" />
+      <recent name="D:\project\android\andworkspace\Last_Project\app\src\main\res" />
+      <recent name="D:\project\android\andworkspace\Last_Project\app\src\main\java\com\example\last_project" />
+      <recent name="D:\project\android\andworkspace\Last_Project\app\src\main" />
+      <recent name="D:\project\android\andworkspace\Last_Project\app" />
+    </key>
+    <key name="android.template.1605874967">
+      <recent name="com.example.last_project.search" />
     </key>
     <key name="android.template.-789916835">
       <recent name="com.example.last_project.category" />
@@ -104,6 +119,16 @@
     </key>
     <key name="android.template.-312160126">
       <recent name="com.example.last_project.member" />
+    </key>
+    <key name="android.template.-1734097288">
+      <recent name="com.example.last_project" />
+      <recent name="com.example.last_project.writing" />
+    </key>
+    <key name="android.template.1883236844">
+      <recent name="com.example.last_project.request" />
+    </key>
+    <key name="android.template.-401249265">
+      <recent name="com.example.last_project.model" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.last_project.category.recyclerview" />
@@ -194,11 +219,10 @@
           <line>69</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-method">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/last_project/member/Login_in_Activity.java</url>
-          <line>40</line>
-          <properties method="onResult" />
-          <option name="timeStamp" value="19" />
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/last_project/search/SearchResultFragment.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
