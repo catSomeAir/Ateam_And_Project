@@ -1,6 +1,7 @@
 package com.example.last_project.main.market;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -20,8 +21,16 @@ public class MarketActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_market);
-        Main_MarketFragment fragment = new Main_MarketFragment();
-        getSupportFragmentManager().beginTransaction().replace(R.id.market_container, fragment).commit();
+
+        Intent intent = getIntent();
+        int item = intent.getIntExtra("item_num",-1);
+
+        if( item == 1 ){
+            getSupportFragmentManager().beginTransaction().replace(R.id.market_container, new Main_MarketFragment()).commit();
+        }else if( item == 2 ){
+            getSupportFragmentManager().beginTransaction().replace(R.id.market_container, new Main_Market_gifticon_Fragment()).commit();
+        }
+
 
         market_btn = findViewById(R.id.market_btn);
         market_dialog = new Dialog(MarketActivity.this);

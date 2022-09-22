@@ -24,7 +24,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Last_Project"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <!-- Redirect URI: "kakao${NATIVE_APP_KEY}://oauth" -->
+                <data
+                    android:host="oauth"
+                    android:scheme="kakao6a8daeb1b5866edc7517304827ad84ae" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".main.market.MarketActivity"
+            android:exported="true" />
         <activity
             android:name=".member.join.JoinActivity"
             android:exported="true" />
@@ -33,6 +50,9 @@
             android:exported="true" />
         <activity
             android:name=".postList.ReplyDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".notice.NoticeActivity"
             android:exported="true" />
         <activity
             android:name=".postList.RequestedPostActivity"

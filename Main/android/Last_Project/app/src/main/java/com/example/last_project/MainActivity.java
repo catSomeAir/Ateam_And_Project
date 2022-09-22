@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.last_project.barcord.BarcordActivity;
 import com.example.last_project.category.CategoryActivity;
 import com.example.last_project.main.manysearch.ManySearchAdapter;
+import com.example.last_project.main.market.MarketActivity;
 import com.example.last_project.main.tab.Main_Tab_HomeFragment;
 import com.example.last_project.search.SearchActivity;
 import com.google.android.material.tabs.TabLayout;
@@ -31,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
 
     CardView cdv_plus;
 
+    //마켓
+    LinearLayout ln_main_market1, ln_main_market2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -175,7 +178,28 @@ public class MainActivity extends AppCompatActivity {
         recv_main_manysearch.setAdapter(adapter);
 
 
-    }
+
+        //마켓
+        ln_main_market1 = findViewById(R.id.ln_main_market1);
+        ln_main_market1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MarketActivity.class);
+                intent.putExtra("item_num",1);
+                startActivity(intent);
+            }
+        });
+        ln_main_market2 = findViewById(R.id.ln_main_market2);
+        ln_main_market2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MarketActivity.class);
+                intent.putExtra("item_num",2);
+                startActivity(intent);
+            }
+        });
+
+    }//oncreate
 
 
 }

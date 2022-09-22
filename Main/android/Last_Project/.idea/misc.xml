@@ -14,6 +14,7 @@
         <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/layout/activity_event.xml" value="0.18697916666666667" />
         <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/layout/activity_join.xml" value="0.18697916666666667" />
         <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/layout/activity_market.xml" value="0.18697916666666667" />
         <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/layout/activity_mypage.xml" value="0.25" />
         <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/layout/activity_notice.xml" value="0.18697916666666667" />
@@ -25,9 +26,10 @@
         <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/layout/fragment_join__password_.xml" value="0.18697916666666667" />
         <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/layout/fragment_join__user_info_.xml" value="0.18697916666666667" />
         <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/layout/fragment_join_main_.xml" value="0.18697916666666667" />
-        <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/layout/fragment_main__market.xml" value="0.21" />
+        <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/layout/fragment_main__market.xml" value="0.33" />
         <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/layout/fragment_main__market__tab__b_.xml" value="0.75" />
         <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/layout/fragment_main__market__tab_a.xml" value="0.67" />
+        <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/layout/fragment_main__market_gifticon_.xml" value="0.67" />
         <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/layout/fragment_my_post.xml" value="0.18697916666666667" />
         <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/layout/item__mypost__recv.xml" value="0.33" />
         <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/layout/item__myreply__recv.xml" value="0.18697916666666667" />
@@ -36,7 +38,7 @@
         <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/layout/item_market_recv.xml" value="0.5" />
         <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/layout/item_notice_recv.xml" value="0.18697916666666667" />
         <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/layout/item_requested_post.xml" value="0.18697916666666667" />
-        <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/layout/market_dialog.xml" value="0.18697916666666667" />
+        <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/layout/market_dialog.xml" value="0.18" />
         <entry key="..\:/project/android/andworkspace/Last_Project/app/src/main/res/drawable-v24/ic_baseline_keyboard_arrow_right_24.xml" value="0.17291666666666666" />
         <entry key="..\:/project/android/andworkspace/Last_Project/app/src/main/res/drawable/shape_border.xml" value="0.17291666666666666" />
         <entry key="..\:/project/android/andworkspace/Last_Project/app/src/main/res/drawable/shape_border_black.xml" value="0.21145833333333333" />
