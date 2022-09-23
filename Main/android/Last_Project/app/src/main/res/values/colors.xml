@@ -8,6 +8,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#808080</color>
+<<<<<<< HEAD
     <color name="lightgray">#d3d3d3</color>
     <color name="orange">#FF7F00</color>
+=======
+    <color name="test">#818080</color>
+
+>>>>>>> temp
 </resources>
