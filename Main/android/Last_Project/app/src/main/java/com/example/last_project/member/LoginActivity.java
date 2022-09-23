@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
@@ -30,20 +32,19 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 
 public class LoginActivity extends AppCompatActivity {
-    //    private static OAuthLogin mOAuthLoginInstance;
+//    private static OAuthLogin mOAuthLoginInstance;
 //    private static Context mContext;
     NidOAuthLoginButton login_btn_naver;
     Button btn_login_local; //db접속 로그인 버튼
-    //    EditText login_edt_id;
+//    EditText login_edt_id;
     LinearLayout ln_login, ln_login_guest;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-//        requestWindowFeature(Window.FEATURE_NO_TITLE);
-//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-//                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_login);
 
@@ -54,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, Login_in_Activity.class);
-                startActivityForResult(intent, 0);
+                startActivityForResult(intent,0);
                 overridePendingTransition(R.anim.slideing_left_enter, R.anim.hold);
             }
         });
@@ -62,9 +63,9 @@ public class LoginActivity extends AppCompatActivity {
 
         //소셜로그인---------------------------------------------------------------------------
 
-        //네이버---------------------------------------------------------------------------
+            //네이버---------------------------------------------------------------------------
         login_btn_naver = findViewById(R.id.login_btn_naver);
-        NaverIdLoginSDK.INSTANCE.initialize(this, getString(R.string.naver_client_id), getString(R.string.naver_client_secret), getString(R.string.app_name));
+        NaverIdLoginSDK.INSTANCE.initialize(this, getString(R.string.naver_client_id) , getString(R.string.naver_client_secret), getString(R.string.app_name));
 //        login_btn_naver.setImageResource(R.drawable.naver);
         login_btn_naver.setOAuthLoginCallback(new OAuthLoginCallback() {
             @Override
@@ -84,7 +85,9 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
+
         //-------------------------------------------------------------------------------------
+
         //-------소셜로그인 카카오
         KakaoSdk.init(this, "6a8daeb1b5866edc7517304827ad84ae");
 
@@ -97,15 +100,15 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //(OAuthToken?, Throwable?) ->Unit
-                Function2<OAuthToken, Throwable, Unit> callback = new Function2<OAuthToken, Throwable, Unit>() {
+                Function2<OAuthToken, Throwable , Unit> callback = new Function2<OAuthToken, Throwable, Unit>() {
                     @Override
                     public Unit invoke(OAuthToken oAuthToken, Throwable throwable) {
-                        if (oAuthToken != null) {
+                        if(oAuthToken != null){
                             Log.d("토큰", "invoke: 받아옴");
                             kakao_profile();
 
                         }
-                        if (throwable != null) {
+                        if(throwable != null){
                             Log.d("토큰", "invoke: 오류있음");
                         }
                         return null;
@@ -114,10 +117,10 @@ public class LoginActivity extends AppCompatActivity {
 
 
                 // 카카오톡 앱 설치 여부를 판단. 깔려있으면 카톡 앱으로 인증.
-                if (UserApiClient.getInstance().isKakaoTalkLoginAvailable(LoginActivity.this)) {
-                    UserApiClient.getInstance().loginWithKakaoTalk(LoginActivity.this, callback);
-                } else {
-                    UserApiClient.getInstance().loginWithKakaoAccount(LoginActivity.this, callback);
+                if(UserApiClient.getInstance().isKakaoTalkLoginAvailable(LoginActivity.this)){
+                    UserApiClient.getInstance().loginWithKakaoTalk(LoginActivity.this,callback);
+                }else{
+                    UserApiClient.getInstance().loginWithKakaoAccount(LoginActivity.this,callback);
                 }
 
                 /*    // 카카오톡이 설치되어 있으면 카카오톡으로 로그인, 아니면 카카오계정으로 로그인
@@ -131,27 +134,35 @@ public class LoginActivity extends AppCompatActivity {
 
         getHashKey();
 
-    }
+    }//oncreate
 
     /*카카오로그인*/
-    public void kakao_profile() {
+    public void kakao_profile(){
         UserApiClient.getInstance().me((user, throwable) -> {
-            if (throwable != null) {
+            if(throwable != null){
                 //오류가 났을때 어떤 오류인지 코드로 줌 KOE + 숫자 ( 단무지가 있음 )
-            } else {
-                Log.d("카카오", "kakao_profile: " + user.getKakaoAccount().getProfile().getNickname());
-                Log.d("카카오", "kakao_profile: " + user.getKakaoAccount().getProfile().getThumbnailImageUrl());
-                Log.d("카카오", "kakao_profile: " + user.getKakaoAccount().getEmail());
-                Log.d("카카오", "kakao_profile: " + user.getKakaoAccount().getName());
+            }else{
+                Log.d("카카오", "kakao_profile: " +  user.getKakaoAccount().getProfile().getNickname());
+                Log.d("카카오", "kakao_profile: " +  user.getKakaoAccount().getProfile().getThumbnailImageUrl());
+                Log.d("카카오", "kakao_profile: " +  user.getKakaoAccount().getEmail());
+                Log.d("카카오", "kakao_profile: " +  user.getKakaoAccount().getName());
 
             }
 
 
             return null;
         });
+
+
+     /*   UserApiClient.getInstance().me(new Function2<User, Throwable, Unit>() {
+            @Override
+            public Unit invoke(User user, Throwable throwable) {
+                return null;
+            }
+        });*/
     }
 
-    private void getHashKey() {
+    private void getHashKey(){
         PackageInfo packageInfo = null;
         try {
             packageInfo = getPackageManager().getPackageInfo(getPackageName(), PackageManager.GET_SIGNATURES);
@@ -172,10 +183,12 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == 1) {
+        if(resultCode ==1){
+
             finish();
         }
     }

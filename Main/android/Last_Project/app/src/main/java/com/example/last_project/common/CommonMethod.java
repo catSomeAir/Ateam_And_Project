@@ -4,13 +4,16 @@ import android.content.Context;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.last_project.R;
+
 public class CommonMethod {
 
-
+    static String INPUT_METHOD_SERVICE;
     //EditText내용 있는지 없는지
     //로그인 액티비티
     //회원가입 액티비티 등에서 EditText 입력값을 파라메터로 활용할 경우들에서 모두 사용
@@ -47,7 +50,15 @@ public class CommonMethod {
         });
 
 
-
+        tv_cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                edt_search.setText("");
+                edt_search.clearFocus();
+                InputMethodManager imm = (InputMethodManager) context.getSystemService(INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(edt_search.getWindowToken(), 0);
+            }
+        });
 
 
 
