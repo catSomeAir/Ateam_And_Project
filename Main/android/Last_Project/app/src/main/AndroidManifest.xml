@@ -28,9 +28,6 @@
             android:name=".postList.ReplyDetailActivity"
             android:exported="true" />
         <activity
-            android:name=".model.WritingDetailActivity"
-            android:exported="true" />
-        <activity
             android:name=".postList.RequestedPostActivity"
             android:exported="true" />
         <activity
@@ -64,7 +61,7 @@
             android:name=".point.PointActivity"
             android:exported="true" />
         <activity
-            android:name=".member.JoinActivity"
+            android:name=".member.join.JoinActivity"
             android:exported="true" />
         <activity
             android:name=".SplashActivity"

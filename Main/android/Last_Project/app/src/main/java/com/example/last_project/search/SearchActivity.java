@@ -34,20 +34,16 @@ public class SearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         ln_search_list = findViewById(R.id.ln_search_list);
-<<<<<<< HEAD
-        tv_cancel = findViewById(R.id.tv_cancel);
-        imgv_cancel = findViewById(R.id.imgv_cancel);
 
-<<<<<<< HEAD
+//        tv_cancel = findViewById(R.id.tv_cancel);
+//        imgv_cancel = findViewById(R.id.imgv_cancel);
+
+
         //* 임시로 바코드 검색 데이터 넘어오는곳 : 추후 수정
 
 
         String barcord_search_name = getIntent().getStringExtra("barcord_search_name");
-=======
->>>>>>> 67d7b248d5491efa70614e8291fddc2859d434ca
 
-=======
->>>>>>> 0aa601af0922ce687e890d8a9106c83da0ba9e14
 
         imgv_search_category = findViewById(R.id.imgv_search_category);
         imgv_search_category.setOnClickListener(new View.OnClickListener() {
