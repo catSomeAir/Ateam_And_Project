@@ -4,6 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+import com.example.last_project.main.tab.Main_Tab_HomeFragment;
+import com.example.last_project.main.tab.Main_Tab_MyManaulFragment;
+
 public class HomeFragmentAdapter extends FragmentStateAdapter {
     public int count;
 

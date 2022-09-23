@@ -1,8 +1,8 @@
 package com.example.last_project;
 
-import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
 
 public class SplashActivity extends AppCompatActivity {
 

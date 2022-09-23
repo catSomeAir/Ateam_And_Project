@@ -18,16 +18,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.last_project.R;
 import com.example.last_project.category.CategoryActivity;
-import com.example.last_project.common.CommonMethod;
 
 import java.util.ArrayList;
 
 public class SearchActivity extends AppCompatActivity {
     LinearLayout ln_search_list;
     RecyclerView recv_search_relate;
-    ImageView imgv_search_category, imgv_search_find, imgv_cancel;
+    ImageView imgv_search_category, imgv_search_find;
     EditText edt_search;
-    TextView tv_search_findtext, tv_cancel;
+    TextView tv_search_findtext;
     boolean search = true;
 
     @Override
@@ -35,10 +34,6 @@ public class SearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         ln_search_list = findViewById(R.id.ln_search_list);
-        tv_cancel = findViewById(R.id.tv_cancel);
-        imgv_cancel = findViewById(R.id.imgv_cancel);
-
-
 
         imgv_search_category = findViewById(R.id.imgv_search_category);
         imgv_search_category.setOnClickListener(new View.OnClickListener() {
@@ -68,19 +63,7 @@ public class SearchActivity extends AppCompatActivity {
         imgv_search_find.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-//                //CommonVal 에 현재 검색한 검색어 search_text로 사용 할 예정
-//                CommonVal.search_text = edt_search.getText().toString();
-
-                //DB에서 조회해서 데이터 검색결과 유무로 Framgment를 SearchResultFragment(검색결과 있는경우) , NotFoundFragment(없는경우)
-
-                //검색데이터가 있는경우 임시( 비스포크라고 쳤을 경우로 테스트중 )
-
-
-                getSupportFragmentManager().beginTransaction().replace(R.id.container_search, new SearchResultFragment(edt_search.getText()+"")).commit();
-
-
-
+                getSupportFragmentManager().beginTransaction().replace(R.id.container_search, new SearchResultFragment()).commit();
                 edt_search.setText("");
                 edt_search.clearFocus();
                 recv_search_relate.setVisibility(View.GONE);
@@ -121,30 +104,13 @@ public class SearchActivity extends AppCompatActivity {
         edt_search.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
-//                Log.d("키코드", "onKey: " + KeyEvent.KEYCODE_ENTER);
-//                Log.d("키코드", "onKey: " + edt_search.getText().toString());
                 if(keyCode == KeyEvent.KEYCODE_ENTER){
-                    edt_search.setText(edt_search.getText().toString().replace("\n" ,""));
                     imgv_search_find.performClick();
                     edt_search.clearFocus();
                     InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
                     imm.hideSoftInputFromWindow(edt_search.getWindowToken(), 0);
-
-
                 }
-                return false;
-            }
-        });
-
-        //취소 글씨선택, x 아이콘으로 Edittext 텍스트 지우기
-        CommonMethod.edittext_change(edt_search, tv_cancel, imgv_cancel, SearchActivity.this);
-        tv_cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                edt_search.setText("");
-                edt_search.clearFocus();
-                InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-                imm.hideSoftInputFromWindow(edt_search.getWindowToken(), 0);
+                return true;
             }
         });
 
