@@ -161,7 +161,6 @@
                 android:layout_marginVertical="8dp" />
 
         </LinearLayout>
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -169,10 +168,10 @@
 
             <ImageView
                 android:id="@+id/btn_kakao"
-                android:layout_width="232dp"
-                android:layout_height="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
-                android:scaleType="fitXY"
+                android:adjustViewBounds="true"
                 android:src="@drawable/kakao_login_large_wide" />
 
 

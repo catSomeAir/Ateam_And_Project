@@ -25,7 +25,6 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
 }
 
 dependencies {
@@ -60,6 +59,7 @@ dependencies {
     //바텀네비 UI API
     implementation 'com.github.ibrahimsn98:SmoothBottomBar:1.7.9'
 
+
     //네이버 맵 API
     implementation 'com.naver.maps:map-sdk:3.15.0'
 
@@ -76,4 +76,29 @@ dependencies {
     //pdf viwer
 //    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
     implementation 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1'
+
+    //DialogSpinner
+    implementation 'com.github.hamzaahmedkhan:SpinnerDialog:v1.2.3'
+
+    //kakao 지도 api 사용시 jar파일 import
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation files('libs/libDaumMapAndroid.jar')
+    implementation files('libs/libDaumMapEngineApi.jar')
+
+    //Circle-menu : 메인 하단 원형 네비
+    implementation 'com.ramotion.circlemenu:circle-menu:0.3.2'
+
+    //바코드
+    implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
+
+    //상윤----------------------------------------
+
+    //---------------------------------------------
+    //가인
+
+    //---------------------------------------------
+    //아인
+
+    //---------------------------------------------
+
 }

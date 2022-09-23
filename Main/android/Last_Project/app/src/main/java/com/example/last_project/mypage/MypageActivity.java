@@ -15,6 +15,7 @@ import com.example.last_project.postList.postListActivity;
 
 public class MypageActivity extends AppCompatActivity {
     LinearLayout edit_profile,my_post,my_reply,requested_post,point,구매내역,bookmarked_post;
+    //뒤로가기버튼
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

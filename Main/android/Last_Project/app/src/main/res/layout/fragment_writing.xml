@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".model.detail.WritingFragment">
+    tools:context=".model.detail.writng.WritingFragment">
 
 
     <LinearLayout
@@ -84,6 +84,7 @@
                 app:cardCornerRadius="18dp">
 
                 <EditText
+                    android:id="@+id/edt_writing"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="8dp"

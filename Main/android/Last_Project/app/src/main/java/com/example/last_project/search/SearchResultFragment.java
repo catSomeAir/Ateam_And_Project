@@ -23,7 +23,13 @@ public class SearchResultFragment extends Fragment {
     TabLayout tabs;
     RecyclerView recv_search_result;
     ArrayList<ModelInfoVO> list = null;
+    String search_text;
     LinearLayout ln_test; // 리사이클러뷰 대신 임시로 -> 검색결과 클릭시 상세페이지로 이동시키기
+
+    public SearchResultFragment(String search_text) {
+        this.search_text = search_text;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -48,7 +54,11 @@ public class SearchResultFragment extends Fragment {
         tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-
+                if(tab.getPosition()==1){
+                    getChildFragmentManager().beginTransaction().replace(R.id.container_search_result, new NotFoundFragment(search_text)).commit();
+                    ln_test.setVisibility(View.GONE);
+                }else if(tab.getPosition()==0){
+                }
             }
 
             @Override
@@ -76,6 +86,7 @@ public class SearchResultFragment extends Fragment {
 //        });
 //        Glide.with(this).load("http://192.168.0.33/iot/upload/board/2022/08/31/52d5d963-2b23-4823-a752-4f48be5727f5_banner2.jpg").into(temp_img);
 
+        //임시테스트
         //상세페이지 이동하는 레이아웃 : 사실 이거 adpater에서 해야하므로 db연동시 이거 adpater쪽으로 이동
         ln_test= v.findViewById(R.id.ln_test);
         ln_test.setOnClickListener(new View.OnClickListener() {
@@ -87,6 +98,13 @@ public class SearchResultFragment extends Fragment {
 
             }
         });
+
+        //임시테스트 : 검색어 일치 결과 없는 경우
+
+        if(!search_text.equals("비스포크")){
+            getChildFragmentManager().beginTransaction().replace(R.id.container_search_result, new NotFoundFragment(search_text)).commit();
+            ln_test.setVisibility(View.GONE);
+        }
         return v;
     }
 }
