@@ -1,9 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".member.JoinActivity">
+    tools:context=".member.join.JoinActivity"
+    android:orientation="vertical"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        >
+        <ImageView
+            android:id="@+id/join_imgv_back"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="30dp"
+            android:src="@drawable/back_left_hai"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="9.5"
+            android:layout_height="wrap_content"
+            android:text="회원 가입"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@color/market_font"
+            />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/member_join_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/market_dialog_bg"
+        android:layout_margin="16dp"
+        >
+    <Button
+        android:id="@+id/join_btn_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="계속하기"
+        android:textSize="18dp"
+        android:enabled="true"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        />
+    </LinearLayout>
+</LinearLayout>

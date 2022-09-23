@@ -54,6 +54,12 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
         btn_category_logout = findViewById(R.id.btn_category_logout);
         btn_category_logout.setOnClickListener(this);
 
+        if( CommonVal.userInfo != null ){
+            btn_category_logout.setVisibility(View.VISIBLE);
+        }else{
+            btn_category_logout.setVisibility(View.GONE);
+        }
+
         //분류 선언, 아이디지정
         l_list_id = new Integer[]{R.id.ln_l_list1, R.id.ln_l_list2, R.id.ln_l_list3, R.id.ln_l_list4, R.id.ln_l_list5, R.id.ln_l_list6, R.id.ln_l_list7, R.id.ln_l_list8};
         m_list_id = new Integer[]{R.id.ln_m_list1, R.id.ln_m_list2, R.id.ln_m_list3, R.id.ln_m_list4, R.id.ln_m_list5, R.id.ln_m_list6, R.id.ln_m_list7, R.id.ln_m_list8};
@@ -118,13 +124,13 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
         }
 
         //쓴글 수 , 댓글 수 -> 이후 생명주기 고려해서 넣기
-
-
         //가인- 화면 전환위해 찾아놓음
         ll_mypage= findViewById(R.id.ll_mypage);
         ll_notice =findViewById(R.id.ll_notice);
         ll_event = findViewById(R.id.ll_event);
         ll_point = findViewById(R.id.ll_point);
+
+
         ll_postlist = findViewById(R.id.ll_postlist);
         //mypage로 이동
         ll_mypage.setOnClickListener(new View.OnClickListener() {
