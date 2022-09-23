@@ -36,6 +36,10 @@ public class SearchResultFragment extends Fragment {
         View v =  inflater.inflate(R.layout.fragment_search_result, container, false);
         recv_search_result = v.findViewById(R.id.recv_search_result);
 
+        //* 임시로 바코드 검색 넘어오는 부분
+
+
+
         //리사이클러뷰 붙이기
         SearchResultAdapter adapter = new SearchResultAdapter(getLayoutInflater(), SearchResultFragment.this);// 나중에 list보내줘야함
         RecyclerView.LayoutManager manager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL,false);
