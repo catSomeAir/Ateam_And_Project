@@ -14,6 +14,10 @@ import com.example.last_project.R;
 import com.example.last_project.conn.CommonConn;
 import com.example.last_project.search.SearchActivity;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4d97385f6d231c1f51aca71e3d49aa3482964608
 import com.journeyapps.barcodescanner.ScanContract;
 import com.journeyapps.barcodescanner.ScanOptions;
 
