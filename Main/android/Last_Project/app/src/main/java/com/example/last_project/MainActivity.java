@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     CardView cdv_plus;
 
+    ImageView imgv_middle_banner;
     //마켓
     LinearLayout ln_main_market1, ln_main_market2;
     @Override
@@ -217,6 +218,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent = new Intent(MainActivity.this, MarketActivity.class);
                 intent.putExtra("item_num",2);
                 startActivity(intent);
+            }
+        });
+
+        imgv_middle_banner = findViewById(R.id.imgv_middle_banner);
+        imgv_middle_banner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
 

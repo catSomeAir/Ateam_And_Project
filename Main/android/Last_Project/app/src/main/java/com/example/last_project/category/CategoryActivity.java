@@ -236,15 +236,15 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
 
 
     }
-        //구글 로그인 정보 받아오기
-        Intent intent = getIntent();
-        String nickName = intent.getStringExtra("nickName");
-        String photoUrl = intent.getStringExtra("photoUrl");
-        tv_category_nickname.setText(nickName);
-        Glide.with(this).load(photoUrl).into(imgv_category_profile); //프로필 url을 이미지 뷰에 세팅
+//        //구글 로그인 정보 받아오기
+//        Intent intent = getIntent();
+//        String nickName = intent.getStringExtra("nickName");
+//        String photoUrl = intent.getStringExtra("photoUrl");
+//        tv_category_nickname.setText(nickName);
+//        Glide.with(this).load(photoUrl).into(imgv_category_profile); //프로필 url을 이미지 뷰에 세팅
 
 
-    }//oncreate
+//oncreate
 
 
     //뒤로가기 누르면 애니메이션 효과
@@ -280,12 +280,12 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
             onBackPressed();
         }
 
-        if(v.getId() == R.id.ln_m_list1_1) {
+        if (v.getId() == R.id.ln_m_list1_1) {
             Intent intent = new Intent(CategoryActivity.this, CategorySearchActivity.class);
             intent.putExtra("m_category", "가전");
             startActivity(intent);
             finish();
-        }else if(v.getId() == R.id.ln_m_list1_2) {
+        } else if (v.getId() == R.id.ln_m_list1_2) {
             Intent intent = new Intent(CategoryActivity.this, CategorySearchActivity.class);
             intent.putExtra("l_category", "가전/TV");
             intent.putExtra("m_category", "TV");

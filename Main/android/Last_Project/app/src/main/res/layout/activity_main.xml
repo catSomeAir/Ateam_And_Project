@@ -24,12 +24,16 @@
             android:orientation="horizontal"
             android:padding="10dp">
 
+           <!-- <ImageView
+                android:id="@+id/imgv_main_category"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/menu_icon" />-->
             <ImageView
                 android:id="@+id/imgv_main_category"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:src="@drawable/menu_icon" />
-
+                android:src="@drawable/hamburger" />
             <ImageView
                 android:layout_width="28dp"
                 android:layout_height="28dp"
@@ -420,6 +424,7 @@
                 android:layout_marginBottom="2dp"
                 android:background="#e9e9e9" />
             <ImageView
+                android:id="@+id/imgv_middle_banner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"

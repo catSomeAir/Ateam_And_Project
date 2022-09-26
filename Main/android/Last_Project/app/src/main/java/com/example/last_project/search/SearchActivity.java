@@ -18,15 +18,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.last_project.R;
 import com.example.last_project.category.CategoryActivity;
-<<<<<<< HEAD
 import com.example.last_project.category.recyclerview.RelateSearchAdapter;
 import com.example.last_project.common.CommonMethod;
 import com.example.last_project.conn.CommonConn;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-=======
-import com.example.last_project.common.CommonMethod;
->>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
+
+
 
 import java.util.ArrayList;
 
@@ -49,11 +47,6 @@ public class SearchActivity extends AppCompatActivity {
         imgv_cancel = findViewById(R.id.imgv_cancel);
 
         //* 임시로 바코드 검색 데이터 넘어오는곳 : 추후 수정
-
-
-        String barcord_search_name = getIntent().getStringExtra("barcord_search_name");
-
-
         imgv_search_category = findViewById(R.id.imgv_search_category);
         imgv_search_category.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -159,8 +159,8 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                 .build();
 
         googleApiClient = new GoogleApiClient.Builder(this)
-                .enableAutoManage(this,this)
-                .addApi(Auth.GOOGLE_SIGN_IN_API,googleSignInOptions)
+                .enableAutoManage(this, this)
+                .addApi(Auth.GOOGLE_SIGN_IN_API, googleSignInOptions)
                 .build();
         auth = FirebaseAuth.getInstance(); //파이어베이스 인증 객체 초기화
 
@@ -168,12 +168,12 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         btn_google.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent =Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
+                Intent intent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
                 startActivityForResult(intent, REQ_SIGN_GOOGLE);
             }
         });
 
-}/* oncreate */
+    }/* oncreate */
 
     /*카카오로그인*/
     public void kakao_profile() {
@@ -192,6 +192,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             return null;
         });
     }
+
     /*카카오 로그인*/
     private void getHashKey() {
         PackageInfo packageInfo = null;
@@ -216,34 +217,35 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
 
     //구글 로그인
-   @Override
+    @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         //구글 로그인 인증을 요청 했을 떄 결과 값을 되돌려 받는 곳
         if (resultCode == REQ_SIGN_GOOGLE) {
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
-            if(result.isSuccess()){
+            if (result.isSuccess()) {
                 GoogleSignInAccount account = result.getSignInAccount();//account 라는 데이터는 구글 로그인 정보를 담고 있음 (닉네임,프로필Url,이메일주소)
                 resultLogin(account); //로그인 결과 값 출력 수행하라는 메소드
             }
         }
-         if (resultCode == 1) {
+        if (resultCode == 1) {
             finish();
+        }
     }
 
     private void resultLogin(GoogleSignInAccount account) { //구글 로그인 실제 성공했냐 안했냐
-        AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(),null);
+        AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
         auth.signInWithCredential(credential)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){ //로그인 성공했으면
-                            Toast.makeText(LoginActivity.this,"로그인성공",Toast.LENGTH_SHORT).show();
+                        if (task.isSuccessful()) { //로그인 성공했으면
+                            Toast.makeText(LoginActivity.this, "로그인성공", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(getApplicationContext(), CategoryActivity.class); //로그인 했을 때 카테고리 액티비티로 넘어가게
-                            intent.putExtra("nickname",account.getDisplayName());
-                            intent.putExtra("photoUrl",String.valueOf(account.getPhotoUrl()));
-                        }else{//로그인 실패시
-                            Toast.makeText(LoginActivity.this,"로그인실패",Toast.LENGTH_SHORT).show();
+                            intent.putExtra("nickname", account.getDisplayName());
+                            intent.putExtra("photoUrl", String.valueOf(account.getPhotoUrl()));
+                        } else {//로그인 실패시
+                            Toast.makeText(LoginActivity.this, "로그인실패", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

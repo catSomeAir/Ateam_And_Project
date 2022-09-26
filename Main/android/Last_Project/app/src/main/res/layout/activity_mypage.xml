@@ -45,7 +45,6 @@
     </LinearLayout>
 
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -120,15 +119,13 @@
             android:text="📝 내 정보 수정 "
             android:textSize="17dp" />
 
-<<<<<<< HEAD
+
         <View
             android:layout_width="2dp"
             android:layout_height="30dp"
             android:layout_gravity="center_vertical"
             android:background="@color/lightgray" />
 
-=======
->>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
     </LinearLayout>
 
     <View
@@ -136,96 +133,96 @@
         android:layout_height="6dp"
         android:background="#EEEEEE" />
 
-   <!-- <LinearLayout
-        android:id="@+id/mola"
-        android:layout_width="match_parent"
-        android:layout_height="80dp">
+    <!-- <LinearLayout
+         android:id="@+id/mola"
+         android:layout_width="match_parent"
+         android:layout_height="80dp">
 
-        <LinearLayout
-            android:id="@+id/ll_my_post"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+         <LinearLayout
+             android:id="@+id/ll_my_post"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_weight="1"
+             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:gravity="center"
-                android:text="0"
-                android:textSize="20dp" />
+             <TextView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="30dp"
+                 android:gravity="center"
+                 android:text="0"
+                 android:textSize="20dp" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="작성한 글"
-                android:textSize="16dp" />
-        </LinearLayout>
+             <TextView
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:layout_weight="1"
+                 android:gravity="center"
+                 android:text="작성한 글"
+                 android:textSize="16dp" />
+         </LinearLayout>
 
-        <View
-            android:layout_width="2dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_vertical"
-            android:background="@color/lightgray" />
+         <View
+             android:layout_width="2dp"
+             android:layout_height="40dp"
+             android:layout_gravity="center_vertical"
+             android:background="@color/lightgray" />
 
-        <LinearLayout
-            android:id="@+id/ll_my_reply"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+         <LinearLayout
+             android:id="@+id/ll_my_reply"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_weight="1"
+             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:gravity="center"
-                android:text="0"
-                android:textSize="20dp" />
+             <TextView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="30dp"
+                 android:gravity="center"
+                 android:text="0"
+                 android:textSize="20dp" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="작성한 답글"
-                android:textSize="16dp" />
-        </LinearLayout>
+             <TextView
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:layout_weight="1"
+                 android:gravity="center"
+                 android:text="작성한 답글"
+                 android:textSize="16dp" />
+         </LinearLayout>
 
-        <View
-            android:layout_width="2dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_vertical"
-            android:background="@color/lightgray" />
+         <View
+             android:layout_width="2dp"
+             android:layout_height="40dp"
+             android:layout_gravity="center_vertical"
+             android:background="@color/lightgray" />
 
-        <LinearLayout
-            android:id="@+id/ll_requested_post"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+         <LinearLayout
+             android:id="@+id/ll_requested_post"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_weight="1"
+             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:gravity="center"
-                android:text="0"
-                android:textSize="20dp" />
+             <TextView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="30dp"
+                 android:gravity="center"
+                 android:text="0"
+                 android:textSize="20dp" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="요청한 설명서"
-                android:textSize="15dp" />
-        </LinearLayout>
+             <TextView
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:layout_weight="1"
+                 android:gravity="center"
+                 android:text="요청한 설명서"
+                 android:textSize="15dp" />
+         </LinearLayout>
 
-    </LinearLayout>-->
+     </LinearLayout>-->
 
     <View
         android:layout_width="match_parent"
@@ -298,6 +295,7 @@
                     android:layout_marginLeft="20dp"
                     android:text="P"
                     android:textSize="16dp" />
+
                 <ImageView
                     android:layout_width="22dp"
                     android:layout_height="22dp"
@@ -346,6 +344,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="개" />
+
                 <ImageView
                     android:layout_width="22dp"
                     android:layout_height="22dp"
@@ -361,6 +360,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/lightgray" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -385,7 +385,8 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/lightgray"/>
+        android:background="@color/lightgray" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="90dp">
@@ -424,6 +425,7 @@
                     android:layout_marginLeft="20dp"
                     android:text="개"
                     android:textSize="16dp" />
+
                 <ImageView
                     android:layout_width="22dp"
                     android:layout_height="22dp"
@@ -472,6 +474,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="개" />
+
                 <ImageView
                     android:layout_width="22dp"
                     android:layout_height="22dp"
@@ -482,10 +485,12 @@
         </LinearLayout>
 
     </LinearLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/lightgray" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -506,22 +511,53 @@
             android:textColor="@color/black"
             android:textSize="15dp" />
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/lightgray" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/lightgray" />
 
         <LinearLayout
-            android:id="@+id/ll_bookmarked_post"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_bookmarked_post"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:text="내가 찜한 설명서"
+                    android:textSize="17dp" />
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/arrowright" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#EEEEEE" />
+
+        <LinearLayout
+            android:id="@+id/ll_requested_post"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -530,7 +566,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
-                android:text="내가 찜한 설명서"
+                android:text="내가 요청한 설명서"
                 android:textSize="17dp" />
 
             <ImageView
@@ -540,33 +576,6 @@
                 android:layout_marginRight="10dp"
                 android:src="@drawable/arrowright" />
         </LinearLayout>
-
-
-    </LinearLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#EEEEEE" />
-    <LinearLayout
-        android:id="@+id/ll_requested_post"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="15dp"
-            android:text="내가 요청한 설명서"
-            android:textSize="17dp" />
-
-        <ImageView
-            android:layout_width="22dp"
-            android:layout_height="22dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginRight="10dp"
-            android:src="@drawable/arrowright" />
-    </LinearLayout>
 
     </LinearLayout>
 
