@@ -28,7 +28,7 @@
                 android:id="@+id/imgv_main_category"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:src="@drawable/menu_buger" />
+                android:src="@drawable/menu_icon" />
 
             <ImageView
                 android:layout_width="28dp"
@@ -199,7 +199,7 @@
                         <ImageView
                             android:layout_width="44dp"
                             android:layout_height="44dp"
-                            android:src="@drawable/temp1" />
+                            android:src="@drawable/refrigerator_icon" />
 
                         <TextView
                             android:layout_width="wrap_content"

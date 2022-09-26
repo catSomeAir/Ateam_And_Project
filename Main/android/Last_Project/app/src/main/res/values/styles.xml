@@ -25,4 +25,13 @@
     <style name="MyCustomTabLayout" parent="Widget.Design.TabLayout">
         <item name="tabBackground">@drawable/market_tab_bg</item>
     </style>
+        <!--HAI edt-->
+    <style name="liner_underline">
+        <item name="colorControlActivated">@color/edt_select</item>
+        <item name="colorControlNormal">@color/gray</item>
+        <item name="android:textColorHighlight">@color/edt_highlight</item>
+        <item name="android:textSelectHandle">@color/edt_handle</item>
+        <item name="android:textCursorDrawable">@color/edt_cursor</item>
+
+    </style>
 </resources>
