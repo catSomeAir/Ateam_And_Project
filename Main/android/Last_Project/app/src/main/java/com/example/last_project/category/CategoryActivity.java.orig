@@ -66,9 +66,15 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
         btn_category_logout = findViewById(R.id.btn_category_logout);
         btn_category_logout.setOnClickListener(this);
 
+<<<<<<< HEAD
         if (CommonVal.userInfo != null) {
             btn_category_logout.setVisibility(View.VISIBLE);
         } else {
+=======
+        if( CommonVal.userInfo != null ){
+            btn_category_logout.setVisibility(View.VISIBLE);
+        }else{
+>>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
             btn_category_logout.setVisibility(View.GONE);
         }
 
@@ -185,6 +191,7 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
             }
         });
 
+<<<<<<< HEAD
         //메인에서 카테고리 클릭시 중분류 열리는 이벤트
         int category = getIntent().getIntExtra("category", 0);
 
@@ -236,6 +243,7 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
 
 
     }
+=======
         //구글 로그인 정보 받아오기
         Intent intent = getIntent();
         String nickName = intent.getStringExtra("nickName");
@@ -245,6 +253,7 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
 
 
     }//oncreate
+>>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
 
 
     //뒤로가기 누르면 애니메이션 효과

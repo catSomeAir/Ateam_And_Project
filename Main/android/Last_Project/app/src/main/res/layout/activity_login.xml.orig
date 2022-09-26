@@ -206,6 +206,9 @@
                 android:src="@drawable/kakao_login_large_wide" />
 
 
+<<<<<<< HEAD
+        </LinearLayout>
+=======
         </LinearLayout>
 
         <!--구글 로그인 이미지 일단 넣어놈-->
@@ -227,6 +230,7 @@
                 android:layout_marginVertical="8dp"/>-->
         </LinearLayout>
 
+>>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
         <!--<LinearLayout
             android:layout_gravity="center_horizontal"
             android:layout_marginVertical="4dp"

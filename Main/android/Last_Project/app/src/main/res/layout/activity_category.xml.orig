@@ -522,6 +522,10 @@
                             android:textColor="#000"
                             android:textSize="14dp" />
                     </LinearLayout>
+<<<<<<< HEAD
+
+=======
+>>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1.4dp"

@@ -59,6 +59,10 @@
             android:text="내가 쓴 답글" />
     </com.google.android.material.tabs.TabLayout>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
     <FrameLayout
         android:id="@+id/container_post_list"
         android:layout_width="match_parent"

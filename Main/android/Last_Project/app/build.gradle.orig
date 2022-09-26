@@ -96,6 +96,9 @@ dependencies {
 
     //---------------------------------------------
     //가인
+<<<<<<< HEAD
+
+=======
     //----구글 인증 라이브러리 추가
     implementation 'com.google.firebase:firebase-auth:19.0.0'
     implementation 'com.google.android.gms:play-services-auth:17.0.0'
@@ -109,11 +112,16 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:17.2.1' //파이어베이스 코어
     implementation 'com.github.bumptech.glide:glide:4.9.0'//글라이드 이미지 로딩
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'//글라이드 이미지 로딩2
+>>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
     //---------------------------------------------
     //아인
 
     //---------------------------------------------
 
+<<<<<<< HEAD
+}
+=======
 }
 //가인 구글 로그인
 apply plugin: 'com.google.gms.google-services'
+>>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0

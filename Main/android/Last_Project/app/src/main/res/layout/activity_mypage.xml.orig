@@ -96,7 +96,11 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+<<<<<<< HEAD
+                    android:text="lv.1" />
+=======
                     android:text="lv.99" />
+>>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
             </LinearLayout>
         </LinearLayout>
 
@@ -136,10 +140,17 @@
         android:layout_height="6dp"
         android:background="#EEEEEE" />
 
+<<<<<<< HEAD
+    <LinearLayout
+        android:id="@+id/mola"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+=======
    <!-- <LinearLayout
         android:id="@+id/mola"
         android:layout_width="match_parent"
         android:layout_height="80dp">
+>>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
 
         <LinearLayout
             android:id="@+id/ll_my_post"
@@ -225,7 +236,22 @@
                 android:textSize="15dp" />
         </LinearLayout>
 
+<<<<<<< HEAD
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="#EEEEEE" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/banner1" />
+=======
     </LinearLayout>-->
+>>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
 
     <View
         android:layout_width="match_parent"
@@ -239,8 +265,13 @@
         android:orientation="horizontal">
 
         <ImageView
+<<<<<<< HEAD
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+=======
             android:layout_width="30dp"
             android:layout_height="30dp"
+>>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
             android:src="@drawable/shoppingicon" />
@@ -248,6 +279,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
+            android:paddingVertical="16dp"
+            android:text="나의설명서 쇼핑"
+=======
             android:paddingVertical="10dp"
             android:text=" 나의설명서 쇼핑"
             android:textColor="@color/black"
@@ -378,6 +413,7 @@
             android:layout_height="wrap_content"
             android:paddingVertical="10dp"
             android:text=" 글 목록"
+>>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
             android:textColor="@color/black"
             android:textSize="15dp" />
     </LinearLayout>
@@ -385,13 +421,22 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
+<<<<<<< HEAD
+        android:background="@color/lightgray" />
+
+=======
         android:background="@color/lightgray"/>
+>>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="90dp">
 
         <LinearLayout
+<<<<<<< HEAD
+            android:id="@+id/ll_point"
+=======
             android:id="@+id/ll_my_post"
+>>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -402,7 +447,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
+<<<<<<< HEAD
+                android:text="포인트"
+=======
                 android:text="내가 쓴 글"
+>>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
                 android:textSize="17dp" />
 
             <LinearLayout
@@ -422,6 +471,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
+<<<<<<< HEAD
+                    android:text="P"
+                    android:textSize="16dp" />
+=======
                     android:text="개"
                     android:textSize="16dp" />
                 <ImageView
@@ -430,6 +483,7 @@
                     android:layout_marginTop="20dp"
                     android:layout_marginLeft="50dp"
                     android:src="@drawable/arrowright" />
+>>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
             </LinearLayout>
         </LinearLayout>
 
@@ -440,7 +494,11 @@
             android:background="@color/lightgray" />
 
         <LinearLayout
+<<<<<<< HEAD
+            android:id="@+id/ll_구매내역"
+=======
             android:id="@+id/ll_my_reply"
+>>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -451,7 +509,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
+<<<<<<< HEAD
+                android:text="구매내역"
+=======
                 android:text="내가 쓴 답글"
+>>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
                 android:textSize="17dp" />
 
             <LinearLayout
@@ -472,28 +534,44 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="개" />
+<<<<<<< HEAD
+=======
                 <ImageView
                     android:layout_width="22dp"
                     android:layout_height="22dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginLeft="50dp"
                     android:src="@drawable/arrowright" />
+>>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
             </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>
+<<<<<<< HEAD
+
+=======
+>>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/lightgray" />
+<<<<<<< HEAD
+
+=======
+>>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <ImageView
+<<<<<<< HEAD
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+=======
             android:layout_width="30dp"
             android:layout_height="30dp"
+>>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
             android:src="@drawable/julgyochatgi" />
@@ -501,6 +579,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
+            android:paddingVertical="16dp"
+            android:text="즐겨찾기"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+    </LinearLayout>
+
+=======
             android:paddingVertical="10dp"
             android:text=" 즐겨찾기"
             android:textColor="@color/black"
@@ -510,6 +596,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+>>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -541,6 +628,12 @@
                 android:src="@drawable/arrowright" />
         </LinearLayout>
 
+<<<<<<< HEAD
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/lightgray" />
+=======
 
     </LinearLayout>
     <View
@@ -566,6 +659,7 @@
             android:layout_marginTop="12dp"
             android:layout_marginRight="10dp"
             android:src="@drawable/arrowright" />
+>>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
     </LinearLayout>
 
     </LinearLayout>

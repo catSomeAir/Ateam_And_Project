@@ -56,7 +56,7 @@ public class MyReplyAdapter extends RecyclerView.Adapter<MyReplyAdapter.ViewHold
         }
         public void bind(@NonNull ViewHolder h, int i) {
             h.title.setText(list.get(i).getTitle()+"");
-            h.date.setText(list.get(i).getDate()+"");
+            //h.date.setText(list.get(i).getDate()+"");
         }
     }
 }

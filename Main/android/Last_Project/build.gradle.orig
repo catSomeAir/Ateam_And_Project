@@ -10,9 +10,13 @@ buildscript {
     }
     dependencies {
         classpath "com.android.tools.build:gradle:7.0.0"
+<<<<<<< HEAD
+
+=======
         //가인
         //구글 로그인 위해 추가
         classpath 'com.google.gms:google-services:4.3.13'
+>>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }

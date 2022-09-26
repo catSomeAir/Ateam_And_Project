@@ -45,13 +45,22 @@ import java.security.NoSuchAlgorithmException;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 
+<<<<<<< HEAD
+public class LoginActivity extends AppCompatActivity {
+    //    private static OAuthLogin mOAuthLoginInstance;
+//    private static Context mContext;
+=======
 public class LoginActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
     //    private static OAuthLogin mOAuthLoginInstance;
     //    private static Context mContext;
+>>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
     NidOAuthLoginButton login_btn_naver;
     Button btn_login_local; //db접속 로그인 버튼
     //    EditText login_edt_id;
     LinearLayout ln_login, ln_login_guest;
+<<<<<<< HEAD
+
+=======
     //구글 로그인을 위한 전역변수
     private SignInButton btn_google; //구글 로그인 버튼
     private FirebaseAuth auth;      //파이어 베이스 인증 객체
@@ -59,6 +68,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     private static final int REQ_SIGN_GOOGLE = 1; //구글 로그인 결과 코드
 
     @SuppressLint("WrongViewCast")
+>>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
     @Override
     protected void onCreate(Bundle savedInstanceState) { //앱이 실행될 때 처음 수행되는 곳
         super.onCreate(savedInstanceState);
@@ -152,6 +162,9 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
         getHashKey();
 
+<<<<<<< HEAD
+    }
+=======
         /*구글 로그인*/
         GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
@@ -174,6 +187,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         });
 
 }/* oncreate */
+>>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
 
     /*카카오로그인*/
     public void kakao_profile() {
@@ -192,7 +206,11 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             return null;
         });
     }
+<<<<<<< HEAD
+
+=======
     /*카카오 로그인*/
+>>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
     private void getHashKey() {
         PackageInfo packageInfo = null;
         try {
@@ -214,6 +232,13 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         }
     }
 
+<<<<<<< HEAD
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == 1) {
+            finish();
+=======
 
     //구글 로그인
    @Override
@@ -226,9 +251,8 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                 GoogleSignInAccount account = result.getSignInAccount();//account 라는 데이터는 구글 로그인 정보를 담고 있음 (닉네임,프로필Url,이메일주소)
                 resultLogin(account); //로그인 결과 값 출력 수행하라는 메소드
             }
+>>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
         }
-         if (resultCode == 1) {
-            finish();
     }
 
     private void resultLogin(GoogleSignInAccount account) { //구글 로그인 실제 성공했냐 안했냐

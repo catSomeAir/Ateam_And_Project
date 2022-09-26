@@ -16,7 +16,10 @@ import com.google.android.material.tabs.TabLayout;
 
 public class MypageActivity extends AppCompatActivity {
     LinearLayout edit_profile,my_post,my_reply,requested_post,point,구매내역,bookmarked_post;
+<<<<<<< HEAD
+=======
     TabLayout tabs;
+>>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
     //뒤로가기버튼
     @Override
     protected void onCreate(Bundle savedInstanceState) {

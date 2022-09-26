@@ -32,7 +32,11 @@ import java.util.ArrayList;
 
 public class SearchActivity extends AppCompatActivity {
     LinearLayout ln_search_list;
+<<<<<<< HEAD
     RecyclerView recv_search_relate, recv_search_input_relate;
+=======
+    RecyclerView recv_search_relate;
+>>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
     ImageView imgv_search_category, imgv_search_find, imgv_cancel;
     EditText edt_search;
     TextView tv_search_findtext, tv_cancel;
@@ -48,11 +52,14 @@ public class SearchActivity extends AppCompatActivity {
         tv_cancel = findViewById(R.id.tv_cancel);
         imgv_cancel = findViewById(R.id.imgv_cancel);
 
+<<<<<<< HEAD
+=======
         //* 임시로 바코드 검색 데이터 넘어오는곳 : 추후 수정
 
 
         String barcord_search_name = getIntent().getStringExtra("barcord_search_name");
 
+>>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
 
         imgv_search_category = findViewById(R.id.imgv_search_category);
         imgv_search_category.setOnClickListener(new View.OnClickListener() {
@@ -96,7 +103,12 @@ public class SearchActivity extends AppCompatActivity {
                 //검색데이터가 있는경우 임시( 비스포크라고 쳤을 경우로 테스트중 )
 
 
+<<<<<<< HEAD
                 getSupportFragmentManager().beginTransaction().replace(R.id.container_search, new SearchResultFragment(edt_search.getText() + "", search_div_text)).commit();
+=======
+                getSupportFragmentManager().beginTransaction().replace(R.id.container_search, new SearchResultFragment(edt_search.getText()+"")).commit();
+
+>>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
 
 
                 edt_search.setText("");
@@ -168,8 +180,13 @@ public class SearchActivity extends AppCompatActivity {
             public boolean onKey(View v, int keyCode, KeyEvent event) {
 //                Log.d("키코드", "onKey: " + KeyEvent.KEYCODE_ENTER);
 //                Log.d("키코드", "onKey: " + edt_search.getText().toString());
+<<<<<<< HEAD
                 if (keyCode == KeyEvent.KEYCODE_ENTER) {
                     edt_search.setText(edt_search.getText().toString().replace("\n", ""));
+=======
+                if(keyCode == KeyEvent.KEYCODE_ENTER){
+                    edt_search.setText(edt_search.getText().toString().replace("\n" ,""));
+>>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
                     imgv_search_find.performClick();
                     edt_search.clearFocus();
                     InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
@@ -178,6 +195,8 @@ public class SearchActivity extends AppCompatActivity {
 
                 }
                 return false;
+<<<<<<< HEAD
+=======
             }
         });
 
@@ -190,6 +209,7 @@ public class SearchActivity extends AppCompatActivity {
                 edt_search.clearFocus();
                 InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(edt_search.getWindowToken(), 0);
+>>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
             }
         });
 
