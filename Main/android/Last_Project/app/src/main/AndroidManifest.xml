@@ -26,6 +26,13 @@
         android:theme="@style/Theme.Last_Project"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".request.RequestEmptyActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Transparent.NoActionBar" />
+        <activity
+            android:name=".main.banner.BannerActivity"
+            android:exported="true" />
+        <activity
             android:name=".category.CategorySearchActivity"
             android:exported="true" />
         <activity
@@ -90,6 +97,10 @@
             android:name="com.kakao.sdk.AppKey"
             android:value="693dd02df8fe8f8ace3aaaefb130bc94" />
 
+        <activity
+            android:name=".search.NotFoundAlertActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Transparent.NoActionBar" />
         <activity
             android:name=".request.RequestCancelActivity"
             android:exported="true"

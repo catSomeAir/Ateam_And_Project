@@ -38,15 +38,20 @@ import androidx.core.content.FileProvider;
 
 import com.bumptech.glide.Glide;
 import com.example.last_project.R;
+import com.example.last_project.common.CommonVal;
 import com.example.last_project.conn.ApiClient;
 import com.example.last_project.conn.ApiInterface;
+import com.example.last_project.member.MemberVO;
+import com.google.gson.Gson;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -56,6 +61,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class RequestManualActivity extends AppCompatActivity {
+
+    //이미지 파일경로 list
+    ArrayList<String> paths = new ArrayList<>();
 
     //분류 선택시 스피너
     Spinner spinner;
@@ -70,7 +78,7 @@ public class RequestManualActivity extends AppCompatActivity {
 
 
     //Edittext
-    EditText edt_request_content;
+    EditText edt_request_title, edt_request_content;
     //내용레이아웃
     LinearLayout ln_request_content;
     //내용 byte수
@@ -92,6 +100,11 @@ public class RequestManualActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_request_manual);
         checkDangerousPermissions();
+
+        //제목
+        edt_request_title = findViewById(R.id.edt_request_title);
+
+
         //첨부파일용량
         tv_request_img_size = findViewById(R.id.tv_request_img_size);
 
@@ -137,17 +150,18 @@ public class RequestManualActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (imgv_request_remove3.getVisibility() == View.VISIBLE && imgv_request_remove2.getVisibility() == View.VISIBLE) { // 2, 3, 다 차있는경우면
-//                    imgv_request_picture3.setImageResource(imgv_request_picture2.getAndroid());
+//                   imgv_request_picture3.setImageResource(imgv_request_picture2.getAndroid());
                     copy_picture((BitmapDrawable) imgv_request_picture2.getDrawable(), imgv_request_picture);  //2이미지를 1로 ,
-
+                    imgv_request_picture.setTag(imgv_request_picture2.getTag());
 
                     copy_picture((BitmapDrawable) imgv_request_picture3.getDrawable(), imgv_request_picture2);  //3이미지를 2로 ,
+                    imgv_request_picture2.setTag(imgv_request_picture3.getTag());
 
                     imgv_request_remove3.setVisibility(View.INVISIBLE);
                     imgv_request_picture3.setImageResource(R.drawable.icon_plus);
 
                     total_size -= chk_index1;
-                    tv_request_img_size.setText(format.format(total_size/1024/1024) + "");
+                    tv_request_img_size.setText(format.format(total_size / 1024 / 1024) + "");
 //                    tv_request_img_size.setText(format.format(Double.parseDouble(tv_request_img_size.getText().toString()) - chk_index1)+"");
                     chk_index1 = chk_index2;
                     chk_index2 = chk_index3;
@@ -155,13 +169,14 @@ public class RequestManualActivity extends AppCompatActivity {
 
                 } else if (imgv_request_remove3.getVisibility() == View.INVISIBLE && imgv_request_remove2.getVisibility() == View.VISIBLE) {// 1, 2만 차있는경우면
                     copy_picture((BitmapDrawable) imgv_request_picture2.getDrawable(), imgv_request_picture);  //2이미지를 1로
+                    imgv_request_picture.setTag(imgv_request_picture2.getTag());
 
                     ln_request_picture3.setVisibility(View.INVISIBLE);  //3레이아웃 안보이게
                     imgv_request_remove2.setVisibility(View.INVISIBLE);
                     imgv_request_picture2.setImageResource(R.drawable.icon_plus);
 
                     total_size -= chk_index1;
-                    tv_request_img_size.setText(format.format(total_size/1024/1024) + "");
+                    tv_request_img_size.setText(format.format(total_size / 1024 / 1024) + "");
 
                     chk_index1 = chk_index2;
                     chk_index2 = 0;
@@ -177,6 +192,7 @@ public class RequestManualActivity extends AppCompatActivity {
                     chk_index1 = 0;
                 }
 
+                paths.remove(0);
             }
         });
 
@@ -186,25 +202,27 @@ public class RequestManualActivity extends AppCompatActivity {
                 if (imgv_request_remove3.getVisibility() == View.VISIBLE) { //1,2,3이 차있는경우면
 
                     copy_picture((BitmapDrawable) imgv_request_picture3.getDrawable(), imgv_request_picture2);  //3이미지를 2로 ,
+                    imgv_request_picture2.setTag(imgv_request_picture3.getTag());
                     imgv_request_remove3.setVisibility(View.INVISIBLE);
                     imgv_request_picture3.setImageResource(R.drawable.icon_plus);
 
                     total_size -= chk_index2;
-                    tv_request_img_size.setText(format.format(total_size/1024/1024) + "");
+                    tv_request_img_size.setText(format.format(total_size / 1024 / 1024) + "");
                     chk_index2 = chk_index3;
                     chk_index3 = 0;
 
 
                 } else if (imgv_request_remove3.getVisibility() == View.INVISIBLE) {// 1,2만 차있는경우면
+
                     ln_request_picture3.setVisibility(View.INVISIBLE);  //3레이아웃 안보이게
                     imgv_request_remove2.setVisibility(View.INVISIBLE);
                     imgv_request_picture2.setImageResource(R.drawable.icon_plus);
 
                     total_size -= chk_index2;
-                    tv_request_img_size.setText(format.format(total_size/1024/1024) + "");
+                    tv_request_img_size.setText(format.format(total_size / 1024 / 1024) + "");
                     chk_index2 = 0;
                 }
-
+                paths.remove(1);
 //                tv_request_img_size.setText(format.format(Double.parseDouble(tv_request_img_size.getText().toString()) - chk_index2)+"");
             }
         });
@@ -215,9 +233,9 @@ public class RequestManualActivity extends AppCompatActivity {
                 imgv_request_remove3.setVisibility(View.INVISIBLE);
                 imgv_request_picture3.setImageResource(R.drawable.icon_plus);
                 total_size -= chk_index3;
-                tv_request_img_size.setText(format.format(total_size/1024/1024) + "");
+                tv_request_img_size.setText(format.format(total_size / 1024 / 1024) + "");
 //                tv_request_img_size.setText(format.format(Double.parseDouble(tv_request_img_size.getText().toString()) - chk_index3)+"");
-
+                paths.remove(2);
             }
         });
 
@@ -272,8 +290,11 @@ public class RequestManualActivity extends AppCompatActivity {
         btn_request_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(RequestManualActivity.this, RequestResultActivity.class);
-                startActivity(intent);
+                if (empty_alert()) {
+                    Intent intent = new Intent(RequestManualActivity.this, RequestResultActivity.class);
+                    startActivity(intent);
+
+                }
             }
         });
 
@@ -330,18 +351,18 @@ public class RequestManualActivity extends AppCompatActivity {
 ////                        tv_request_img_size.setText(Double.parseDouble(String.valueOf(format.format( Double.parseDouble(tv_request_img_size.getText().toString())  +  sizeInMB /25.3)))+"");
 //                    }
 //                });
-        if(ln_page == 1){
-            chk_index1 =  new File(img_path).length();
+        if (ln_page == 1) {
+            chk_index1 = new File(img_path).length();
             total_size += chk_index1;
-        }else if(ln_page ==2){
+        } else if (ln_page == 2) {
             chk_index2 = new File(img_path).length();
             total_size += chk_index2;
-        }else if(ln_page ==3){
+        } else if (ln_page == 3) {
             chk_index3 = new File(img_path).length();
             total_size += chk_index3;
         }
 
-        tv_request_img_size.setText(format.format(total_size/1024/1024)+"");
+        tv_request_img_size.setText(format.format(total_size / 1024 / 1024) + "");
     }
 
     //gif 는 오류남
@@ -399,7 +420,8 @@ public class RequestManualActivity extends AppCompatActivity {
                             Intent intent = new Intent();   //생성자에 어떤 작업을 할건지 액션을 지정해도됨 , setter
                             intent.setType("image/");   //이미지 전체폴더에
                             intent.setAction(Intent.ACTION_PICK);
-                            startActivityForResult(Intent.createChooser(intent, "Select Picture"), LOAD_IMG);
+//                            intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);       //한번에 여러파일 첨부할 경우 true주면된다.
+                            startActivityForResult(Intent.createChooser(intent, "Select Picture"), LOAD_IMG);   //, GELLARY_CODE 멀티로 하는 경우 LOAD_IMG대신에
 
                         }
 
@@ -444,7 +466,7 @@ public class RequestManualActivity extends AppCompatActivity {
         if (resultCode == 1) {
             finish();
             return;
-        }else if(resultCode == 2){
+        } else if (resultCode == 2) {
             return;
         }
 
@@ -459,15 +481,21 @@ public class RequestManualActivity extends AppCompatActivity {
             String img_path = getRealPath(data.getData());      //Uri 가상 : data.getData()
             if (ln_page == 1) {
                 Glide.with(RequestManualActivity.this).load(img_path).into(imgv_request_picture);
+                imgv_request_picture.setTag(img_path);  //file경로를 담는 paths의 배열에 담기 위한 태그
+
                 imgv_request_remove.setVisibility(View.VISIBLE);
                 ln_request_picture2.setVisibility(View.VISIBLE);
 
             } else if (ln_page == 2) {
                 Glide.with(RequestManualActivity.this).load(img_path).into(imgv_request_picture2);
+                imgv_request_picture.setTag(img_path);  //file경로를 담는 paths의 배열에 담기 위한 태그
+
                 imgv_request_remove2.setVisibility(View.VISIBLE);
                 ln_request_picture3.setVisibility(View.VISIBLE);
             } else if (ln_page == 3) {
                 Glide.with(RequestManualActivity.this).load(img_path).into(imgv_request_picture3);
+                imgv_request_picture.setTag(img_path);  //file경로를 담는 paths의 배열에 담기 위한 태그
+
                 imgv_request_remove3.setVisibility(View.VISIBLE);
             }
             //넣은 이미지 용량 표시하기
@@ -497,15 +525,21 @@ public class RequestManualActivity extends AppCompatActivity {
 
             if (ln_page == 1) {
                 Glide.with(RequestManualActivity.this).load(imgFilePath).into(imgv_request_picture);
+                imgv_request_picture.setTag(imgFilePath); //file경로를 담는 paths의 배열에 담기 위한 태그
+
                 imgv_request_remove.setVisibility(View.VISIBLE);
                 ln_request_picture2.setVisibility(View.VISIBLE);
 
             } else if (ln_page == 2) {
                 Glide.with(RequestManualActivity.this).load(imgFilePath).into(imgv_request_picture2);
+                imgv_request_remove2.setTag(imgFilePath); //file경로를 담는 paths의 배열에 담기 위한 태그
+
                 imgv_request_remove2.setVisibility(View.VISIBLE);
                 ln_request_picture3.setVisibility(View.VISIBLE);
-            } else if (ln_page == 3) {
+            } else if (ln_page == 3) {  //파일경로 배열에담기
                 Glide.with(RequestManualActivity.this).load(imgFilePath).into(imgv_request_picture3);
+                imgv_request_remove3.setTag(imgFilePath); //file경로를 담는 paths의 배열에 담기 위한 태그
+
                 imgv_request_remove3.setVisibility(View.VISIBLE);
             }
             bitmap_size(imgFilePath);
@@ -558,6 +592,7 @@ public class RequestManualActivity extends AppCompatActivity {
                 Toast.makeText(this, "권한 설명 필요함.", Toast.LENGTH_LONG).show();
             } else {
                 ActivityCompat.requestPermissions(this, permissions, 1);
+
             }
         }
     }
@@ -588,4 +623,91 @@ public class RequestManualActivity extends AppCompatActivity {
         }
         return false;
     }
+
+    //입력 안된사항 알려주기
+
+    public boolean empty_alert() {
+        Intent intent = new Intent(RequestManualActivity.this, RequestEmptyActivity.class);
+
+        if (select_category == "제품 분류를 선택하세요") {
+            intent.putExtra("text", "제품 분류가 선택되지 않았습니다");
+            startActivity(intent);
+            return false;
+        } else if (edt_request_title.getText().toString().length() == 0) {
+            intent.putExtra("text", "제목이 입력되지 않았습니다");
+            startActivity(intent);
+            return false;
+        } else if (edt_request_content.getText().toString().length() == 0) {
+            intent.putExtra("text", "내용이 입력되지 않았습니다");
+            startActivity(intent);
+            return false;
+        } else {
+            MemberVO userinfo = CommonVal.userInfo;
+            RequestManualVO vo = new RequestManualVO(userinfo.getEmail(), edt_request_title.getText().toString(), edt_request_content.getText().toString(), select_category);
+//하나 보내는경우
+//            RequestBody fileBody = RequestBody.create(MediaType.parse("image/jpeg"), new File(imgFilePath)); //MediaType은 무슨타입인지 지정, 스트링형태의 파일패스
+//            MultipartBody.Part filePart = MultipartBody.Part.createFormData("file", "test.jpg", fileBody);//첫번째 데이터는 이름, 두번째는 실제 파일이름, 세번째는 만들어진 파일바디
+//
+            RequestBody dataTest =
+                    RequestBody.create(
+                            MediaType.parse("multipart/form-data"), new Gson().toJson(vo));
+
+
+            ApiInterface apiInterface = ApiClient.getApiclient().create(ApiInterface.class);
+
+            //* 수정중
+
+            List<MultipartBody.Part> fileList = new ArrayList<>();
+
+            //이미지 파일경로 paths에 담기
+            if(imgv_request_remove.getVisibility()==View.VISIBLE ){
+                paths.add(imgv_request_picture.getTag().toString());
+            }else if(imgv_request_remove2.getVisibility()==View.VISIBLE ){
+                paths.add(imgv_request_picture2.getTag().toString());
+            }else if(imgv_request_remove3.getVisibility()==View.VISIBLE ){
+                paths.add(imgv_request_picture3.getTag().toString());
+            }
+
+            //List<MultipartBody.Part> fileList paths에 저장된 경로의 파일 담기
+            for (int i = 0; i < paths.size(); i++) {
+                RequestBody fileBody = RequestBody.create(MediaType.parse("image/jpeg") , new File(paths.get(i)) );
+                fileList.add(MultipartBody.Part.createFormData("file"+i , "test" + i +".jpg" , fileBody) );
+            }
+
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    apiInterface.sendFile_VO(dataTest, fileList).enqueue(new Callback<String>() {
+                        @Override
+                        public void onResponse(Call<String> call, Response<String> response) {
+                            paths.clear();
+                        }
+
+                        @Override
+                        public void onFailure(Call<String> call, Throwable t) {
+
+                        }
+                    });
+                 
+//                    paths = new ArrayList<>();
+                }
+            }).start();
+
+
+//            CommonConn conn = new CommonConn(RequestManualActivity.this, "request_manual");
+//
+//
+//            conn.addParams("data", new Gson().toJson(vo));
+//            conn.executeConn(new CommonConn.ConnCallback() {
+//                @Override
+//                public void onResult(boolean isResult, String data) {
+//                    if (isResult) {
+//                        //* 여기서 성공, 실패 확인해서 페이지 처리해야할듯
+//                    }
+//                }
+//            });
+        }
+        return true;
+    }
+
 }

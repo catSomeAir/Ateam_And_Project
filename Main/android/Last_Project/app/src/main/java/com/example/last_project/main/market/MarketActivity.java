@@ -43,7 +43,7 @@ public class MarketActivity extends AppCompatActivity {
         }
 
 
-//        market_btn = findViewById(R.id.market_btn); // fragment 로 버튼 옮길 예정
+        market_btn = findViewById(R.id.market_btn); // fragment 로 버튼 옮길 예정
         market_dialog = new Dialog(MarketActivity.this);
         market_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         market_dialog.setContentView(R.layout.market_dialog);

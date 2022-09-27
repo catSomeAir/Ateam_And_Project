@@ -18,6 +18,7 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
 import com.example.last_project.R;
+import com.example.last_project.common.CommonVal;
 import com.example.last_project.request.RequestManualActivity;
 
 
@@ -59,9 +60,16 @@ public class NotFoundFragment extends Fragment {
         ln_not_found_request.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(CommonVal.userInfo != null){
+
                 Intent intent = new Intent(getContext(), RequestManualActivity.class);
                 startActivity(intent);
                 getActivity().finish();
+                }else {
+                    Intent intent = new Intent(getContext(), NotFoundAlertActivity.class);
+                    startActivity(intent);
+
+                }
 
             }
         });

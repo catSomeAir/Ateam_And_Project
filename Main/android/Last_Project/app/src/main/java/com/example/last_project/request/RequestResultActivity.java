@@ -1,6 +1,7 @@
 package com.example.last_project.request;
 
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -32,5 +33,14 @@ public class RequestResultActivity extends AppCompatActivity implements View.OnC
             setResult(1);
             finish();
         }
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if(keyCode == KeyEvent.KEYCODE_BACK){
+            finish();
+            overridePendingTransition(0, 0);
+        }
+        return true;
     }
 }

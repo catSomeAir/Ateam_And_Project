@@ -16,6 +16,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.last_project.barcord.BarcordActivity;
 import com.example.last_project.category.CategoryActivity;
+import com.example.last_project.common.CommonVal;
+import com.example.last_project.main.banner.BannerActivity;
 import com.example.last_project.main.manysearch.ManySearchAdapter;
 import com.example.last_project.main.market.MarketActivity;
 import com.example.last_project.main.tab.Main_Tab_HomeFragment;
@@ -115,6 +117,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(index==0){
                     Intent intent = new Intent(MainActivity.this, BarcordActivity.class);
                     startActivity(intent);
+                }else if(index ==1){
+
+                }else if(index ==2){
+
+                }else if(index ==3){
+                    Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+                    startActivity(intent);
+
+                }else if(index ==4){
+                    if(CommonVal.userInfo != null){
+                        Intent intent = new Intent(MainActivity.this, CategoryActivity.class);
+
+                    }
                 }
             }
 
@@ -225,7 +240,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         imgv_middle_banner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(MainActivity.this, BannerActivity.class);
+                startActivity(intent);
             }
         });
 

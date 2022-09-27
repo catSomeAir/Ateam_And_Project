@@ -31,8 +31,8 @@
                 android:src="@drawable/menu_icon" />-->
             <ImageView
                 android:id="@+id/imgv_main_category"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
                 android:src="@drawable/hamburger" />
             <ImageView
                 android:layout_width="28dp"

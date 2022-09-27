@@ -27,6 +27,7 @@ import com.example.last_project.mypage.MypageActivity;
 import com.example.last_project.notice.NoticeActivity;
 import com.example.last_project.point.PointActivity;
 import com.example.last_project.postList.postListActivity;
+import com.example.last_project.search.SearchActivity;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -229,7 +230,7 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
                                 }
                             }, 500); //딜레이 타임 조절
                         }
-                    }, 50); //딜레이 타임 조절
+                    }, 70); //딜레이 타임 조절
                 }
             }
         }
@@ -280,14 +281,14 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
             onBackPressed();
         }
 
+        //중분류 클릭시 해당 제품정보 보이도록 하기
         if (v.getId() == R.id.ln_m_list1_1) {
-            Intent intent = new Intent(CategoryActivity.this, CategorySearchActivity.class);
+            Intent intent = new Intent(CategoryActivity.this, SearchActivity.class);
             intent.putExtra("m_category", "가전");
             startActivity(intent);
             finish();
         } else if (v.getId() == R.id.ln_m_list1_2) {
-            Intent intent = new Intent(CategoryActivity.this, CategorySearchActivity.class);
-            intent.putExtra("l_category", "가전/TV");
+            Intent intent = new Intent(CategoryActivity.this, SearchActivity.class);
             intent.putExtra("m_category", "TV");
             startActivity(intent);
             finish();

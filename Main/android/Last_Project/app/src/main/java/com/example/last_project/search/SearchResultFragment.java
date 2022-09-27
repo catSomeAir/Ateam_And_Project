@@ -26,6 +26,9 @@ public class SearchResultFragment extends Fragment {
     String search_div_text;
 //    LinearLayout ln_test; // 리사이클러뷰 대신 임시로 -> 검색결과 클릭시 상세페이지로 이동시키기
 
+    //카테고리로 검색시
+    String m_category;
+
     //바코드로 검색시에
     String[] barcord_div_name;
     String barcord_search_name;
@@ -33,8 +36,10 @@ public class SearchResultFragment extends Fragment {
     //검색 타입 : 검색어(text), 바코드(barcord), 카테고리(category)
     String search_type = "";
 
-    public SearchResultFragment(String search_text) {
-        this.search_text = search_text;
+
+
+    public SearchResultFragment(String m_category) {
+        this.m_category = m_category;
 
     }
     public SearchResultFragment(String search_text,String search_div_text) {
@@ -213,6 +218,24 @@ public class SearchResultFragment extends Fragment {
                 }
             });
         }
+        //카테고리로 검색
+        if(m_category != null){
+
+            CommonConn conn = new CommonConn(getContext(), "list.mo");
+            conn.addParams("m_name",m_category);
+            conn.executeConn(new CommonConn.ConnCallback() {
+                @Override
+                public void onResult(boolean isResult, String data) {
+                    if(isResult){
+                        ArrayList<CategorySearchVO> list = new Gson().fromJson(data,
+                                new TypeToken<ArrayList<CategorySearchVO>>() {
+                                }.getType());
+
+                        getChildFragmentManager().beginTransaction().replace(R.id.container_search_result, new SearchResultExistFragment(list)).commit();
+                    }
+                }
+            });
+        }
 
         //바코드 검색 : 실제 데이터 확인해야함!!!!!!!!!!!!!!!!!!
         if(barcord_search_name != null){
@@ -243,11 +266,10 @@ public class SearchResultFragment extends Fragment {
                 }
             });
 
-
-
         }
 
 
+        //카테고리로 검색 넘어옴
 
 
 

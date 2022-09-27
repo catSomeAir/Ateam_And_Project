@@ -1,8 +1,10 @@
 package com.example.last_project.conn;
 
 import java.util.HashMap;
+import java.util.List;
 
 import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
@@ -33,4 +35,12 @@ public interface ApiInterface {
     @POST("file.f")//1. 멀티파트 어노테이션
     @Multipart      //2. Part어노테이션 파라메터  MultipartBody.Par  -> fileMap에 접속되고 추가 (파라메터)
     Call<String> sendFile(@Part MultipartBody.Part file);
+
+
+
+    //VO + file 동시에 보내기
+    @POST("request_manual")
+    @Multipart
+    Call<String> sendFile_VO(@Part("vo") RequestBody data , @Part List<MultipartBody.Part> files); //@FieldMap 접속 되고 추가  파일만 보낼때
+//    Call<String> sendFile_VO(@Part("vo") RequestBody data , @Part List<MultipartBody.Part> files); //@FieldMap 접속 되고 추가  파일만 보낼때
 }
