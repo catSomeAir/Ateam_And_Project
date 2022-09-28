@@ -150,15 +150,10 @@ public class RequestManualActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (imgv_request_remove3.getVisibility() == View.VISIBLE && imgv_request_remove2.getVisibility() == View.VISIBLE) { // 2, 3, 다 차있는경우면
-//                   imgv_request_picture3.setImageResource(imgv_request_picture2.getAndroid());
                     copy_picture((BitmapDrawable) imgv_request_picture2.getDrawable(), imgv_request_picture);  //2이미지를 1로 ,
-                    imgv_request_picture.setTag(imgv_request_picture2.getTag());
-
                     copy_picture((BitmapDrawable) imgv_request_picture3.getDrawable(), imgv_request_picture2);  //3이미지를 2로 ,
-                    imgv_request_picture2.setTag(imgv_request_picture3.getTag());
-
                     imgv_request_remove3.setVisibility(View.INVISIBLE);
-                    imgv_request_picture3.setImageResource(R.drawable.icon_plus);
+                   // imgv_request_picture3.setImageResource(R.drawable.icon_plus);
 
                     total_size -= chk_index1;
                     tv_request_img_size.setText(format.format(total_size / 1024 / 1024) + "");
@@ -191,7 +186,7 @@ public class RequestManualActivity extends AppCompatActivity {
                     tv_request_img_size.setText("0.00");
                     chk_index1 = 0;
                 }
-
+                //첫번째 이미지 지우면 패스지움
                 paths.remove(0);
             }
         });
@@ -222,6 +217,8 @@ public class RequestManualActivity extends AppCompatActivity {
                     tv_request_img_size.setText(format.format(total_size / 1024 / 1024) + "");
                     chk_index2 = 0;
                 }
+
+                //두번째이미지지우면 paths에서 지움
                 paths.remove(1);
 //                tv_request_img_size.setText(format.format(Double.parseDouble(tv_request_img_size.getText().toString()) - chk_index2)+"");
             }
@@ -234,8 +231,9 @@ public class RequestManualActivity extends AppCompatActivity {
                 imgv_request_picture3.setImageResource(R.drawable.icon_plus);
                 total_size -= chk_index3;
                 tv_request_img_size.setText(format.format(total_size / 1024 / 1024) + "");
-//                tv_request_img_size.setText(format.format(Double.parseDouble(tv_request_img_size.getText().toString()) - chk_index3)+"");
                 paths.remove(2);
+
+//                tv_request_img_size.setText(format.format(Double.parseDouble(tv_request_img_size.getText().toString()) - chk_index3)+"");
             }
         });
 
@@ -293,6 +291,7 @@ public class RequestManualActivity extends AppCompatActivity {
                 if (empty_alert()) {
                     Intent intent = new Intent(RequestManualActivity.this, RequestResultActivity.class);
                     startActivity(intent);
+                    finish();
 
                 }
             }
@@ -463,6 +462,10 @@ public class RequestManualActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode ==3){
+            finish();
+
+        }
         if (resultCode == 1) {
             finish();
             return;
@@ -481,65 +484,59 @@ public class RequestManualActivity extends AppCompatActivity {
             String img_path = getRealPath(data.getData());      //Uri 가상 : data.getData()
             if (ln_page == 1) {
                 Glide.with(RequestManualActivity.this).load(img_path).into(imgv_request_picture);
-                imgv_request_picture.setTag(img_path);  //file경로를 담는 paths의 배열에 담기 위한 태그
-
+                paths.add(img_path);
                 imgv_request_remove.setVisibility(View.VISIBLE);
                 ln_request_picture2.setVisibility(View.VISIBLE);
 
             } else if (ln_page == 2) {
                 Glide.with(RequestManualActivity.this).load(img_path).into(imgv_request_picture2);
-                imgv_request_picture.setTag(img_path);  //file경로를 담는 paths의 배열에 담기 위한 태그
-
+                paths.add(img_path);
                 imgv_request_remove2.setVisibility(View.VISIBLE);
                 ln_request_picture3.setVisibility(View.VISIBLE);
             } else if (ln_page == 3) {
                 Glide.with(RequestManualActivity.this).load(img_path).into(imgv_request_picture3);
-                imgv_request_picture.setTag(img_path);  //file경로를 담는 paths의 배열에 담기 위한 태그
-
+                paths.add(img_path);
                 imgv_request_remove3.setVisibility(View.VISIBLE);
             }
             //넣은 이미지 용량 표시하기
             bitmap_size(img_path);
 
-            //Multipart 형태로 전송 ~ File ~ : 파일 받는형태 RequestBody , create( 타입, content타입(실제경로) )
-            //1. RequestBody
-            RequestBody fileBody = RequestBody.create(MediaType.parse("image/jpeg"), new File(img_path));
-
-            //2. MultipartBody.Part
-            MultipartBody.Part filePart = MultipartBody.Part.createFormData("file", "test.jpg", fileBody);
-            //3. ApiInterface에 sendFile() 추가
-            //4. ApiInterface
-            ApiInterface apiInterface = ApiClient.getApiclient().create(ApiInterface.class);
-            apiInterface.sendFile(filePart).enqueue(new Callback<String>() {
-                @Override
-                public void onResponse(Call<String> call, Response<String> response) {
-
-                }
-
-                @Override
-                public void onFailure(Call<String> call, Throwable t) {
-
-                }
-            });
+//            //Multipart 형태로 전송 ~ File ~ : 파일 받는형태 RequestBody , create( 타입, content타입(실제경로) )
+//            //1. RequestBody
+//            RequestBody fileBody = RequestBody.create(MediaType.parse("image/jpeg"), new File(img_path));
+//
+//            //2. MultipartBody.Part
+//            MultipartBody.Part filePart = MultipartBody.Part.createFormData("file", "test.jpg", fileBody);
+//            //3. ApiInterface에 sendFile() 추가
+//            //4. ApiInterface
+//            ApiInterface apiInterface = ApiClient.getApiclient().create(ApiInterface.class);
+//            apiInterface.sendFile(filePart).enqueue(new Callback<String>() {
+//                @Override
+//                public void onResponse(Call<String> call, Response<String> response) {
+//
+//                }
+//
+//                @Override
+//                public void onFailure(Call<String> call, Throwable t) {
+//
+//                }
+//            });
         } else if (requestCode == CAMERA_CODE && resultCode == RESULT_OK) {
 
             if (ln_page == 1) {
                 Glide.with(RequestManualActivity.this).load(imgFilePath).into(imgv_request_picture);
-                imgv_request_picture.setTag(imgFilePath); //file경로를 담는 paths의 배열에 담기 위한 태그
-
+                paths.add(0,imgFilePath);
                 imgv_request_remove.setVisibility(View.VISIBLE);
                 ln_request_picture2.setVisibility(View.VISIBLE);
 
             } else if (ln_page == 2) {
                 Glide.with(RequestManualActivity.this).load(imgFilePath).into(imgv_request_picture2);
-                imgv_request_remove2.setTag(imgFilePath); //file경로를 담는 paths의 배열에 담기 위한 태그
-
+                paths.add(1,imgFilePath);
                 imgv_request_remove2.setVisibility(View.VISIBLE);
                 ln_request_picture3.setVisibility(View.VISIBLE);
             } else if (ln_page == 3) {  //파일경로 배열에담기
                 Glide.with(RequestManualActivity.this).load(imgFilePath).into(imgv_request_picture3);
-                imgv_request_remove3.setTag(imgFilePath); //file경로를 담는 paths의 배열에 담기 위한 태그
-
+                paths.add(2,imgFilePath);
                 imgv_request_remove3.setVisibility(View.VISIBLE);
             }
             bitmap_size(imgFilePath);
@@ -660,13 +657,15 @@ public class RequestManualActivity extends AppCompatActivity {
             List<MultipartBody.Part> fileList = new ArrayList<>();
 
             //이미지 파일경로 paths에 담기
-            if(imgv_request_remove.getVisibility()==View.VISIBLE ){
+          /*  if(imgv_request_remove.getVisibility()==View.VISIBLE ){
                 paths.add(imgv_request_picture.getTag().toString());
-            }else if(imgv_request_remove2.getVisibility()==View.VISIBLE ){
-                paths.add(imgv_request_picture2.getTag().toString());
-            }else if(imgv_request_remove3.getVisibility()==View.VISIBLE ){
-                paths.add(imgv_request_picture3.getTag().toString());
             }
+            if(imgv_request_remove2.getVisibility()==View.VISIBLE ){
+                paths.add(imgv_request_picture2.getTag().toString());
+            }
+            if(imgv_request_remove3.getVisibility()==View.VISIBLE ){
+                paths.add(imgv_request_picture3.getTag().toString());
+            }*/
 
             //List<MultipartBody.Part> fileList paths에 저장된 경로의 파일 담기
             for (int i = 0; i < paths.size(); i++) {

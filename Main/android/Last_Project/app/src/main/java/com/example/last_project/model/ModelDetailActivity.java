@@ -17,6 +17,7 @@ import com.example.last_project.model.detail.as.AfterServiceFragment;
 import com.example.last_project.model.detail.ManualFragment;
 import com.example.last_project.model.detail.writng.WritingFragment;
 import com.example.last_project.model.detail.as.UnrelatedASFragment;
+import com.example.last_project.search.category_search.CategorySearchVO;
 import com.google.android.material.tabs.TabLayout;
 
 public class ModelDetailActivity extends AppCompatActivity  {
@@ -25,11 +26,13 @@ public class ModelDetailActivity extends AppCompatActivity  {
     TabLayout tabs;
     EditText edt_search;
     TextView tv_detail_cancel;
+    CategorySearchVO model_info;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_model_detail);
 
+        //카테고리 버튼 선택시 카테고리 엑티비티 뜨도록 설정
         imgv_detail_category = findViewById(R.id.imgv_detail_category);
         imgv_detail_category.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,8 +48,13 @@ public class ModelDetailActivity extends AppCompatActivity  {
         tabs.addTab(tabs.newTab().setText("A/S센터").setTag(3));
         tabs.getTabAt(0).select();
 
+        //검색리스트에서 클릭해서 넘어온 모델정보
+        model_info = (CategorySearchVO) getIntent().getSerializableExtra("model_info");
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.container_model_detail, new ManualFragment(ModelDetailActivity.this)).commit();
+
+
+        //처음은 바로 설명서 Fragment띄우기
+        getSupportFragmentManager().beginTransaction().replace(R.id.container_model_detail, new ManualFragment(ModelDetailActivity.this, model_info)).commit();
 
         //탭레이아웃 선택 이벤트
         tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -54,7 +62,7 @@ public class ModelDetailActivity extends AppCompatActivity  {
             public void onTabSelected(TabLayout.Tab tab) {
 
                 if(tab.getPosition()==0){
-                    getSupportFragmentManager().beginTransaction().replace(R.id.container_model_detail, new ManualFragment(ModelDetailActivity.this)).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container_model_detail, new ManualFragment(ModelDetailActivity.this, model_info)).commit();
                 }else if(tab.getPosition()==1){
                     getSupportFragmentManager().beginTransaction().replace(R.id.container_model_detail, new WritingFragment()).commit();
                 }else if(tab.getPosition()==2){

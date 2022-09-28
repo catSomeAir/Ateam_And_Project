@@ -22,6 +22,8 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
     RadioGroup radiogroup_writting;
     RadioButton radio_all, radio_opinion, radio_qna;
     EditText edt_writing;
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

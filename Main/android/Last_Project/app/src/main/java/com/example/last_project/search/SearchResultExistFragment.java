@@ -29,7 +29,7 @@ public class SearchResultExistFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_search_result_exist, container, false);
         recv_search_result = v.findViewById(R.id.recv_search_result);
 
-        SearchResultAdapter adapter = new SearchResultAdapter(getLayoutInflater(), SearchResultExistFragment.this, list);// 나중에 list보내줘야함
+        SearchResultAdapter adapter = new SearchResultAdapter(getLayoutInflater(), SearchResultExistFragment.this, list, getContext());// 나중에 list보내줘야함
         RecyclerView.LayoutManager manager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL,false);
         recv_search_result.setLayoutManager(manager);
         recv_search_result.setAdapter(adapter);

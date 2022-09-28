@@ -16,14 +16,22 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.last_project.barcord.BarcordActivity;
 import com.example.last_project.category.CategoryActivity;
+import com.example.last_project.common.CommonMethod;
 import com.example.last_project.common.CommonVal;
+import com.example.last_project.conn.CommonConn;
 import com.example.last_project.main.banner.BannerActivity;
 import com.example.last_project.main.manysearch.ManySearchAdapter;
+import com.example.last_project.main.manysearch.ManySearchVO;
 import com.example.last_project.main.market.MarketActivity;
 import com.example.last_project.main.tab.Main_Tab_HomeFragment;
+import com.example.last_project.main.tab.Main_Tab_RecentFragment;
 import com.example.last_project.search.SearchActivity;
 import com.google.android.material.tabs.TabLayout;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.ramotion.circlemenu.CircleMenuView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     ImageView imgv_main_category;
@@ -61,6 +69,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ln_ctg_samu.setOnClickListener(this);
         ln_ctg_leisure = findViewById(R.id.ln_ctg_leisure);
         ln_ctg_leisure.setOnClickListener(this);
+
+
+        //최근 본 list 담겨있는거 사용
+        if(CommonVal.recent_list != null){
+            CommonVal.recent_list.clear();
+            CommonVal.recent_list.addAll(CommonMethod.getStringArrayPref(MainActivity.this, "recent_list"));
+        }
+
 
 
         //하단 circle menu나오도록하는 +버튼
@@ -170,7 +186,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     intent.putExtra("url", "https://m.map.kakao.com/actions/searchView?q=%EC%82%BC%EC%84%B1%EC%84%9C%EB%B9%84%EC%8A%A4%EC%84%BC%ED%84%B0&wxEnc=LVSOTP&wyEnc=QNLTTMN&lvl=4");//placeSearch
                     startActivity(intent);
                 }else{
-
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container_main, new Main_Tab_RecentFragment()).commit();
                 }
             }
 
@@ -207,12 +223,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-        //많이 검색한목록
+        //많이 검색한목록 : DB에서 조회
+
         recv_main_manysearch = findViewById(R.id.recv_main_manysearch);
-        ManySearchAdapter adapter = new ManySearchAdapter(getLayoutInflater());
-        RecyclerView.LayoutManager manager = new LinearLayoutManager(MainActivity.this, RecyclerView.HORIZONTAL , false);
-        recv_main_manysearch.setLayoutManager(manager);
-        recv_main_manysearch.setAdapter(adapter);
+
+
+        CommonConn conn = new CommonConn(MainActivity.this, "main_many_list");
+        conn.executeConn(new CommonConn.ConnCallback() {
+            @Override
+            public void onResult(boolean isResult, String data) {
+                if(isResult){
+                    ArrayList<ManySearchVO> list = new Gson().fromJson(data,new TypeToken<ArrayList<ManySearchVO>>() {}.getType());
+                    ManySearchAdapter adapter = new ManySearchAdapter(getLayoutInflater(), list, MainActivity.this);
+                    RecyclerView.LayoutManager manager = new LinearLayoutManager(MainActivity.this, RecyclerView.HORIZONTAL , false);
+                    recv_main_manysearch.setLayoutManager(manager);
+                    recv_main_manysearch.setAdapter(adapter);
+                }
+            }
+        });
+
+
 
 
 

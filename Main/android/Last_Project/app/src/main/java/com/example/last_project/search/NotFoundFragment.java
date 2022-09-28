@@ -67,6 +67,7 @@ public class NotFoundFragment extends Fragment {
                 getActivity().finish();
                 }else {
                     Intent intent = new Intent(getContext(), NotFoundAlertActivity.class);
+                    getActivity().overridePendingTransition(0, 0);
                     startActivity(intent);
 
                 }
