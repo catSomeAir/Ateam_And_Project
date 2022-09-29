@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -21,11 +22,11 @@ import com.example.last_project.common.CommonVal;
 import com.example.last_project.conn.CommonConn;
 import com.example.last_project.main.banner.BannerActivity;
 import com.example.last_project.main.manysearch.ManySearchAdapter;
-import com.example.last_project.main.manysearch.ManySearchVO;
 import com.example.last_project.main.market.MarketActivity;
 import com.example.last_project.main.tab.Main_Tab_HomeFragment;
 import com.example.last_project.main.tab.Main_Tab_RecentFragment;
 import com.example.last_project.search.SearchActivity;
+import com.example.last_project.search.category_search.CategorySearchVO;
 import com.google.android.material.tabs.TabLayout;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -45,6 +46,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     CardView cdv_plus;
 
     ImageView imgv_middle_banner;
+
+    NestedScrollView scrollView;
     //마켓
     LinearLayout ln_main_market1, ln_main_market2;
     @Override
@@ -70,14 +73,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ln_ctg_leisure = findViewById(R.id.ln_ctg_leisure);
         ln_ctg_leisure.setOnClickListener(this);
 
+        scrollView = findViewById(R.id.scrollView);
 
         //최근 본 list 담겨있는거 사용
-        if(CommonVal.recent_list != null){
-            CommonVal.recent_list.clear();
-            CommonVal.recent_list.addAll(CommonMethod.getStringArrayPref(MainActivity.this, "recent_list"));
-        }
-
-
+        CommonVal.recent_list = CommonMethod.getStringArrayPref(MainActivity.this, "recent_list");
 
         //하단 circle menu나오도록하는 +버튼
         cdv_plus = findViewById(R.id.cdv_plus);
@@ -233,7 +232,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onResult(boolean isResult, String data) {
                 if(isResult){
-                    ArrayList<ManySearchVO> list = new Gson().fromJson(data,new TypeToken<ArrayList<ManySearchVO>>() {}.getType());
+                    ArrayList<CategorySearchVO> list = new Gson().fromJson(data,new TypeToken<ArrayList<CategorySearchVO>>() {}.getType());
                     ManySearchAdapter adapter = new ManySearchAdapter(getLayoutInflater(), list, MainActivity.this);
                     RecyclerView.LayoutManager manager = new LinearLayoutManager(MainActivity.this, RecyclerView.HORIZONTAL , false);
                     recv_main_manysearch.setLayoutManager(manager);
@@ -302,6 +301,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             intent.putExtra("category", 8);
         }
         startActivity(intent);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        tabs.getTabAt(0).select();
+        scrollView.smoothScrollTo(0,0);
+        recv_main_manysearch.scrollToPosition(0 );
+
     }
 }
 

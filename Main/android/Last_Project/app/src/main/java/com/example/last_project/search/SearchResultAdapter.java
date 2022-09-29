@@ -62,14 +62,12 @@ public class SearchResultAdapter extends RecyclerView.Adapter<SearchResultAdapte
     public class ViewHolder extends RecyclerView.ViewHolder {
         LinearLayout ln_search_result;
         ImageView imgv_search_result;
-        TextView tv_search_result_l_catg, tv_search_result_m_catg, tv_search_result_s_catg, tv_search_result_category_name, tv_search_result_model_name, tv_search_result_model_code, tv_search_result_brand;
+        TextView tv_search_result_category_name, tv_search_result_model_name, tv_search_result_model_code, tv_search_result_brand;
 
         public ViewHolder(@NonNull View v) {
             super(v);
             imgv_search_result = v.findViewById(R.id.imgv_search_result);
             tv_search_result_category_name = v.findViewById(R.id.tv_search_result_category_name);
-//            tv_search_result_m_catg = v.findViewById(R.id.tv_search_result_m_catg);
-//            tv_search_result_s_catg = v.findViewById(R.id.tv_search_result_s_catg);
             tv_search_result_model_name = v.findViewById(R.id.tv_search_result_model_name);
             tv_search_result_model_code = v.findViewById(R.id.tv_search_result_model_code);
             tv_search_result_brand = v.findViewById(R.id.tv_search_result_brand);

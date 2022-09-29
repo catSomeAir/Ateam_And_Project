@@ -1,6 +1,7 @@
 package com.example.last_project.main.tab;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,9 +11,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.last_project.R;
-import com.example.last_project.common.CommonVal;
+import com.example.last_project.common.CommonMethod;
 import com.example.last_project.conn.CommonConn;
-import com.example.last_project.main.manysearch.ManySearchVO;
+import com.example.last_project.search.category_search.CategorySearchVO;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -38,13 +39,14 @@ public class RecentResultFragment extends Fragment {
 
         }else if(result_type==2){
             CommonConn conn = new CommonConn(getContext(), "recent_list");
-            conn.addParams("data", CommonVal.recent_list);
+            conn.addParams("data", new Gson().toJson(CommonMethod.getStringArrayPref(getContext(),"recent_list")));
             conn.executeConn(new CommonConn.ConnCallback() {
                 @Override
                 public void onResult(boolean isResult, String data) {
-                    ArrayList<ManySearchVO> list = new Gson().fromJson(data,
-                            new TypeToken<ArrayList<ManySearchVO>>() {
+                    ArrayList<CategorySearchVO> list = new Gson().fromJson(data,
+                            new TypeToken<ArrayList<CategorySearchVO>>() {
                             }.getType());
+                    Log.d("232323", "onResult: "+data);
                     Main_Tab_Adapter adapter = new Main_Tab_Adapter(getContext(), getLayoutInflater(),list);
                     RecyclerView.LayoutManager manager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
                     recv_main_recent.setLayoutManager(manager);

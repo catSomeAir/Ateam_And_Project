@@ -1,6 +1,8 @@
 package com.example.last_project.main.manysearch;
 
-public class ManySearchVO {
+import java.io.Serializable;
+
+public class ManySearchVO implements Serializable {
     private String model_code, model_name, filepath, brand_name;
 
     public String getModel_code() {

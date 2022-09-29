@@ -1,27 +1,28 @@
 package com.example.last_project.model.detail.writng;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import com.example.last_project.R;
+import com.example.last_project.common.CommonVal;
+import com.example.last_project.search.NotFoundAlertActivity;
 
 public class WritingFragment extends Fragment implements View.OnClickListener {
 
     LinearLayout ln_writing_all, ln_writing_opinion, ln_writing_qna;
     TextView tv_writing_all, tv_writing_opinion, tv_writing_qna;
-    RadioGroup radiogroup_writting;
-    RadioButton radio_all, radio_opinion, radio_qna;
-    EditText edt_writing;
+
+
+    CardView edt_writing;
 
 
     @Override
@@ -39,26 +40,27 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
         ln_writing_opinion.setOnClickListener(this);
         ln_writing_qna.setOnClickListener(this);
 
+
+
         //edittext
         edt_writing = v.findViewById(R.id.edt_writing);
 
-        //버튼
-        radiogroup_writting = v.findViewById(R.id.radiogroup_writting);
-        radio_all = v.findViewById(R.id.radio_all);
-        radio_opinion = v.findViewById(R.id.radio_opinion);
-        radio_qna = v.findViewById(R.id.radio_qna);
-        radiogroup_writting.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+
+        edt_writing.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if(group.getCheckedRadioButtonId() == R.id.radio_all){
-
-                }else if(group.getCheckedRadioButtonId() == R.id.radio_opinion){
-
-                }else if(group.getCheckedRadioButtonId() == R.id.radio_qna){
-
+            public void onClick(View v) {
+                if (CommonVal.userInfo == null) {
+                    Intent intent = new Intent(getContext(), NotFoundAlertActivity.class);   //이름은 다른데 같은기능이라 그냥씀
+                    intent.putExtra("intent_type", "write"); //글쓰기에서 띄운 alert
+                    edt_writing.clearFocus();
+                    startActivity(intent);
+                }else if( CommonVal.userInfo != null){
+                    Intent intent = new Intent(getContext(), WriteSpaceActivity.class);
+                    startActivity(intent);
                 }
             }
         });
+
         return v;
     }
 
