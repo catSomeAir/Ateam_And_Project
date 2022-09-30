@@ -44,488 +44,328 @@
             android:layout_weight="1" />
     </LinearLayout>
 
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:paddingLeft="10dp">
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="100dp">
-
-            <ImageView
-                android:id="@+id/imgv_category_profile"
-                android:layout_width="160dp"
-                android:layout_height="160dp"
-                android:elevation="20dp"
-                android:src="@drawable/category_profile" />
-        </androidx.cardview.widget.CardView>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="10dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="8dp"
-                android:text="닉네임"
-                android:textColor="@color/black"
-                android:textSize="20dp" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="내 등급 : " />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="lv.99" />
-            </LinearLayout>
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/lightgray" />
-
-    <LinearLayout
-        android:id="@+id/ll_edit_profile"
-        android:layout_width="match_parent"
-        android:layout_height="50dp">
-
-        <TextView
-            android:layout_width="0dip"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="📝 내 정보 수정 "
-            android:textSize="17dp" />
-
-
-        <View
-            android:layout_width="2dp"
-            android:layout_height="30dp"
-            android:layout_gravity="center_vertical"
-            android:background="@color/lightgray" />
-
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="6dp"
-        android:background="#EEEEEE" />
-
-    <!-- <LinearLayout
-         android:id="@+id/mola"
-         android:layout_width="match_parent"
-         android:layout_height="80dp">
-
-         <LinearLayout
-             android:id="@+id/ll_my_post"
-             android:layout_width="0dp"
-             android:layout_height="wrap_content"
-             android:layout_weight="1"
-             android:orientation="vertical">
-
-             <TextView
-                 android:layout_width="match_parent"
-                 android:layout_height="wrap_content"
-                 android:layout_marginTop="30dp"
-                 android:gravity="center"
-                 android:text="0"
-                 android:textSize="20dp" />
-
-             <TextView
-                 android:layout_width="match_parent"
-                 android:layout_height="match_parent"
-                 android:layout_weight="1"
-                 android:gravity="center"
-                 android:text="작성한 글"
-                 android:textSize="16dp" />
-         </LinearLayout>
-
-         <View
-             android:layout_width="2dp"
-             android:layout_height="40dp"
-             android:layout_gravity="center_vertical"
-             android:background="@color/lightgray" />
-
-         <LinearLayout
-             android:id="@+id/ll_my_reply"
-             android:layout_width="0dp"
-             android:layout_height="wrap_content"
-             android:layout_weight="1"
-             android:orientation="vertical">
-
-             <TextView
-                 android:layout_width="match_parent"
-                 android:layout_height="wrap_content"
-                 android:layout_marginTop="30dp"
-                 android:gravity="center"
-                 android:text="0"
-                 android:textSize="20dp" />
-
-             <TextView
-                 android:layout_width="match_parent"
-                 android:layout_height="match_parent"
-                 android:layout_weight="1"
-                 android:gravity="center"
-                 android:text="작성한 답글"
-                 android:textSize="16dp" />
-         </LinearLayout>
-
-         <View
-             android:layout_width="2dp"
-             android:layout_height="40dp"
-             android:layout_gravity="center_vertical"
-             android:background="@color/lightgray" />
-
-         <LinearLayout
-             android:id="@+id/ll_requested_post"
-             android:layout_width="0dp"
-             android:layout_height="wrap_content"
-             android:layout_weight="1"
-             android:orientation="vertical">
-
-             <TextView
-                 android:layout_width="match_parent"
-                 android:layout_height="wrap_content"
-                 android:layout_marginTop="30dp"
-                 android:gravity="center"
-                 android:text="0"
-                 android:textSize="20dp" />
-
-             <TextView
-                 android:layout_width="match_parent"
-                 android:layout_height="match_parent"
-                 android:layout_weight="1"
-                 android:gravity="center"
-                 android:text="요청한 설명서"
-                 android:textSize="15dp" />
-         </LinearLayout>
-
-     </LinearLayout>-->
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="5dp"
-        android:layout_centerInParent="true"
-        android:background="#EEEEEE" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:src="@drawable/shoppingicon" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingVertical="10dp"
-            android:text=" 나의설명서 쇼핑"
-            android:textColor="@color/black"
-            android:textSize="15dp" />
-    </LinearLayout>
-
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/lightgray" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="90dp">
-
-        <LinearLayout
-            android:id="@+id/ll_point"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:text="포인트"
-                android:textSize="17dp" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="70dp"
-                    android:layout_marginTop="5dp"
-                    android:text="0"
-                    android:textSize="30dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:text="P"
-                    android:textSize="16dp" />
-
-                <ImageView
-                    android:layout_width="22dp"
-                    android:layout_height="22dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginLeft="50dp"
-                    android:src="@drawable/arrowright" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <View
-            android:layout_width="2dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_vertical"
-            android:background="@color/lightgray" />
-
-        <LinearLayout
-            android:id="@+id/market_buy_list"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:text="구매내역"
-                android:textSize="17dp" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
-
-                <TextView
-                    android:id="@+id/market_buy_qty"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="70dp"
-                    android:layout_marginTop="5dp"
-                    android:text="0"
-                    android:textSize="30dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:text="건" />
-
-                <ImageView
-                    android:layout_width="22dp"
-                    android:layout_height="22dp"
-                    android:layout_marginLeft="50dp"
-                    android:layout_marginTop="20dp"
-                    android:src="@drawable/arrowright" />
-            </LinearLayout>
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/lightgray" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:src="@drawable/mypage_postlisticon" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingVertical="10dp"
-            android:text=" 글 목록"
-            android:textColor="@color/black"
-            android:textSize="15dp" />
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/lightgray" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="90dp">
-
-        <LinearLayout
-            android:id="@+id/ll_my_post"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:text="내가 쓴 글"
-                android:textSize="17dp" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="70dp"
-                    android:layout_marginTop="5dp"
-                    android:text="0"
-                    android:textSize="30dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:text="개"
-                    android:textSize="16dp" />
-
-                <ImageView
-                    android:layout_width="22dp"
-                    android:layout_height="22dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginLeft="50dp"
-                    android:src="@drawable/arrowright" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <View
-            android:layout_width="2dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_vertical"
-            android:background="@color/lightgray" />
-
-        <LinearLayout
-            android:id="@+id/ll_my_reply"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:text="내가 쓴 답글"
-                android:textSize="17dp" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="70dp"
-                    android:layout_marginTop="5dp"
-                    android:text="0"
-                    android:textSize="30dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:text="개" />
-
-                <ImageView
-                    android:layout_width="22dp"
-                    android:layout_height="22dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginLeft="50dp"
-                    android:src="@drawable/arrowright" />
-            </LinearLayout>
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/lightgray" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:src="@drawable/julgyochatgi" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingVertical="10dp"
-            android:text=" 즐겨찾기"
-            android:textColor="@color/black"
-            android:textSize="15dp" />
-    </LinearLayout>
+        android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="10dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="100dp">
+
+                <ImageView
+                    android:id="@+id/imgv_category_profile"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:elevation="20dp"
+                    android:src="@drawable/category_profile" />
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="8dp"
+                    android:text="닉네임"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="내 등급 : " />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="lv.99" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/lightgray" />
+
+        <LinearLayout
+            android:id="@+id/ll_edit_profile"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="📝 내 정보 수정 "
+                android:textSize="17dp" />
+
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:background="@color/lightgray" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:background="#EEEEEE" />
+
+        <!-- <LinearLayout
+             android:id="@+id/mola"
+             android:layout_width="match_parent"
+             android:layout_height="80dp">
+
+             <LinearLayout
+                 android:id="@+id/ll_my_post"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1"
+                 android:orientation="vertical">
+
+                 <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginTop="30dp"
+                     android:gravity="center"
+                     android:text="0"
+                     android:textSize="20dp" />
+
+                 <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:layout_weight="1"
+                     android:gravity="center"
+                     android:text="작성한 글"
+                     android:textSize="16dp" />
+             </LinearLayout>
+
+             <View
+                 android:layout_width="2dp"
+                 android:layout_height="40dp"
+                 android:layout_gravity="center_vertical"
+                 android:background="@color/lightgray" />
+
+             <LinearLayout
+                 android:id="@+id/ll_my_reply"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1"
+                 android:orientation="vertical">
+
+                 <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginTop="30dp"
+                     android:gravity="center"
+                     android:text="0"
+                     android:textSize="20dp" />
+
+                 <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:layout_weight="1"
+                     android:gravity="center"
+                     android:text="작성한 답글"
+                     android:textSize="16dp" />
+             </LinearLayout>
+
+             <View
+                 android:layout_width="2dp"
+                 android:layout_height="40dp"
+                 android:layout_gravity="center_vertical"
+                 android:background="@color/lightgray" />
+
+             <LinearLayout
+                 android:id="@+id/ll_requested_post"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1"
+                 android:orientation="vertical">
+
+                 <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginTop="30dp"
+                     android:gravity="center"
+                     android:text="0"
+                     android:textSize="20dp" />
+
+                 <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:layout_weight="1"
+                     android:gravity="center"
+                     android:text="요청한 설명서"
+                     android:textSize="15dp" />
+             </LinearLayout>
+
+         </LinearLayout>-->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_centerInParent="true"
+            android:background="#EEEEEE" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/shoppingicon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="10dp"
+                android:text=" 나의설명서 쇼핑"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/lightgray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dp">
+
+            <LinearLayout
+                android:id="@+id/ll_point"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="포인트"
+                    android:textSize="17dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="70dp"
+                        android:layout_marginTop="5dp"
+                        android:text="0"
+                        android:textSize="30dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="P"
+                        android:textSize="16dp" />
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/arrowright" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:background="@color/lightgray" />
+
+            <LinearLayout
+                android:id="@+id/market_buy_list"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="구매내역"
+                    android:textSize="17dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/market_buy_qty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="70dp"
+                        android:layout_marginTop="5dp"
+                        android:text="0"
+                        android:textSize="30dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="건" />
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/arrowright" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
 
         <View
             android:layout_width="match_parent"
@@ -535,28 +375,197 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/mypage_postlisticon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="10dp"
+                android:text=" 글 목록"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/lightgray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dp">
 
             <LinearLayout
-                android:id="@+id/ll_bookmarked_post"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:id="@+id/ll_my_post"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="15dp"
-                    android:text="내가 찜한 설명서"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="내가 쓴 글"
                     android:textSize="17dp" />
 
-                <ImageView
-                    android:layout_width="22dp"
-                    android:layout_height="22dp"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginRight="10dp"
-                    android:src="@drawable/arrowright" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="70dp"
+                        android:layout_marginTop="5dp"
+                        android:text="0"
+                        android:textSize="30dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="개"
+                        android:textSize="16dp" />
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/arrowright" />
+                </LinearLayout>
             </LinearLayout>
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:background="@color/lightgray" />
+
+            <LinearLayout
+                android:id="@+id/ll_my_reply"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="내가 쓴 답글"
+                    android:textSize="17dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="70dp"
+                        android:layout_marginTop="5dp"
+                        android:text="0"
+                        android:textSize="30dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="개" />
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/arrowright" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/lightgray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/julgyochatgi" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="10dp"
+                android:text=" 즐겨찾기"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/lightgray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/ll_bookmarked_post"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="15dp"
+                        android:text="내가 찜한 설명서"
+                        android:textSize="17dp" />
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/arrowright" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#EEEEEE" />
 
 
         </LinearLayout>
@@ -586,34 +595,6 @@
                 android:layout_marginRight="10dp"
                 android:src="@drawable/arrowright" />
         </LinearLayout>
-
-
     </LinearLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#EEEEEE" />
-    <LinearLayout
-        android:id="@+id/ll_requested_post"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="15dp"
-            android:text="내가 요청한 설명서"
-            android:textSize="17dp" />
-
-        <ImageView
-            android:layout_width="22dp"
-            android:layout_height="22dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginRight="10dp"
-            android:src="@drawable/arrowright" />
-    </LinearLayout>
-    </LinearLayout>
-</LinearLayout>
-</ScrollView>
+    </ScrollView>
 </LinearLayout>

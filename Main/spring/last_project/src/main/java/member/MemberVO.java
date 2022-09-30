@@ -1,10 +1,26 @@
 package member;
 
 public class MemberVO {
-	private String email, pw, name, nickname, phone, join_date, amdin, social_code, filepath;
+	private String email, pw, name, nickname, phone, join_date, amdin, social_code, filepath, point, filename;
 
 	public String getEmail() {
 		return email;
+	}
+
+	public String getPoint() {
+		return point;
+	}
+
+	public void setPoint(String point) {
+		this.point = point;
+	}
+
+	public String getFilename() {
+		return filename;
+	}
+
+	public void setFilename(String filename) {
+		this.filename = filename;
 	}
 
 	public void setEmail(String email) {

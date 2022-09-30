@@ -37,8 +37,6 @@ public class SearchResultFragment extends Fragment {
     //검색 타입 : 검색어(text), 바코드(barcord), 카테고리(category)
     String search_type = "";
 
-
-
     public SearchResultFragment(String m_category) {
         this.m_category = m_category;
 
@@ -57,8 +55,6 @@ public class SearchResultFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v =  inflater.inflate(R.layout.fragment_search_result, container, false);
-//        recv_search_result = v.findViewById(R.id.recv_search_result);
-//        ln_search_exist  = v.findViewById(R.id.ln_search_exist);
 
         //검색 탭레이아웃--------------------------------------------------------------------
         tabs =v.findViewById(R.id.tabs);
@@ -90,18 +86,10 @@ public class SearchResultFragment extends Fragment {
                                 ArrayList<CategorySearchVO> list = new Gson().fromJson(data, new TypeToken<ArrayList<CategorySearchVO>>(){}.getType());
                                 if(list !=null &&list.size() != 0){
                                     getChildFragmentManager().beginTransaction().replace(R.id.container_search_result, new SearchResultExistFragment(list)).commit();
-//                                    SearchResultAdapter adapter = new SearchResultAdapter(getLayoutInflater(), SearchResultFragment.this, list);// 나중에 list보내줘야함
-//                                    RecyclerView.LayoutManager manager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL,false);
-//                                    recv_search_result.setLayoutManager(manager);
-//                                    recv_search_result.setAdapter(adapter);
-//                                    ln_search_exist.setVisibility(View.VISIBLE);
-//                                    recv_search_result.setVisibility(View.VISIBLE);
-
 
                                 }else {
                                     getChildFragmentManager().beginTransaction().replace(R.id.container_search_result, new NotFoundFragment(search_text)).commit();
-//                                    ln_search_exist.setVisibility(View.GONE);
-//                                    recv_search_result.setVisibility(View.GONE);
+
 
                                 }
                             }
@@ -118,17 +106,11 @@ public class SearchResultFragment extends Fragment {
                                 ArrayList<CategorySearchVO> list = new Gson().fromJson(data, new TypeToken<ArrayList<CategorySearchVO>>(){}.getType());
                                 if(list !=null &&list.size() != 0){
                                     getChildFragmentManager().beginTransaction().replace(R.id.container_search_result, new SearchResultExistFragment(list)).commit();
-//                                    SearchResultAdapter adapter = new SearchResultAdapter(getLayoutInflater(), SearchResultFragment.this, list);// 나중에 list보내줘야함
-//                                    RecyclerView.LayoutManager manager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL,false);
-//                                    recv_search_result.setLayoutManager(manager);
-//                                    recv_search_result.setAdapter(adapter);
-//                                    ln_search_exist.setVisibility(View.VISIBLE);
-//                                    recv_search_result.setVisibility(View.VISIBLE);
+
 
                                 }else {
                                     getChildFragmentManager().beginTransaction().replace(R.id.container_search_result, new NotFoundFragment(search_text)).commit();
-//                                    ln_search_exist.setVisibility(View.GONE);
-//                                    recv_search_result.setVisibility(View.GONE);
+
 
                                 }
                             }
@@ -146,17 +128,11 @@ public class SearchResultFragment extends Fragment {
                                 ArrayList<CategorySearchVO> list = new Gson().fromJson(data, new TypeToken<ArrayList<CategorySearchVO>>(){}.getType());
                                 if(list !=null &&list.size() != 0){
                                     getChildFragmentManager().beginTransaction().replace(R.id.container_search_result, new SearchResultExistFragment(list)).commit();
-//                                    SearchResultAdapter adapter = new SearchResultAdapter(getLayoutInflater(), SearchResultFragment.this, list);// 나중에 list보내줘야함
-//                                    RecyclerView.LayoutManager manager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL,false);
-//                                    recv_search_result.setLayoutManager(manager);
-//                                    recv_search_result.setAdapter(adapter);
-//                                    ln_search_exist.setVisibility(View.VISIBLE);
-//                                    recv_search_result.setVisibility(View.VISIBLE);
+
 
                                 }else {
                                     getChildFragmentManager().beginTransaction().replace(R.id.container_search_result, new NotFoundFragment(search_text)).commit();
-//                                    ln_search_exist.setVisibility(View.GONE);
-//                                    recv_search_result.setVisibility(View.GONE);
+
 
 
                                 }
@@ -177,19 +153,6 @@ public class SearchResultFragment extends Fragment {
             }
         });
         //-------------------------------------------------------------------------------------
-        //DB연결해서 붙이기
-//        CommonConn conn = new CommonConn(getContext(), "test.up");
-//        conn.executeConn(new CommonConn.ConnCallback() {
-//            @Override
-//            public void onResult(boolean isResult, String data) {
-//                if(isResult){
-//                    list = new Gson().fromJson(data, new TypeToken<ArrayList<ModelInfoVO>>() {
-//                            }.getType());
-//                    Glide.with(getContext()).load(list.get(0).getFilepath()).into(temp_img);
-//                }
-//            }
-//        });
-//        Glide.with(this).load("http://192.168.0.33/iot/upload/board/2022/08/31/52d5d963-2b23-4823-a752-4f48be5727f5_banner2.jpg").into(temp_img);
 
         //Activity에서 검색받음 : seach_text 가 null이 아님
          //검색 여러방법으로 하기
@@ -204,17 +167,12 @@ public class SearchResultFragment extends Fragment {
                     ArrayList<CategorySearchVO> list = new Gson().fromJson(data, new TypeToken<ArrayList<CategorySearchVO>>(){}.getType());
                     if(list !=null &&list.size() != 0){
                         getChildFragmentManager().beginTransaction().replace(R.id.container_search_result, new SearchResultExistFragment(list)).commit();
-//                        SearchResultAdapter adapter = new SearchResultAdapter(getLayoutInflater(), SearchResultFragment.this, list);// 나중에 list보내줘야함
-//                        RecyclerView.LayoutManager manager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL,false);
-//                        recv_search_result.setLayoutManager(manager);
-//                        recv_search_result.setAdapter(adapter);
+
                         search_type = "text";    //탭레이아웃에서 뭐 검색해서 온지 파악용
-//                        ln_search_exist.setVisibility(View.VISIBLE);
-//                        recv_search_result.setVisibility(View.VISIBLE);
+
                     }else {
                         getChildFragmentManager().beginTransaction().replace(R.id.container_search_result, new NotFoundFragment(search_text)).commit();
-//                        ln_search_exist.setVisibility(View.GONE);
-//                        recv_search_result.setVisibility(View.GONE);
+
                     }
                 }
             });
@@ -233,17 +191,12 @@ public class SearchResultFragment extends Fragment {
                     if(list.size() != 0){
 
                         getChildFragmentManager().beginTransaction().replace(R.id.container_search_result, new SearchResultExistFragment(list)).commit();
-//                        SearchResultAdapter adapter = new SearchResultAdapter(getLayoutInflater(), SearchResultFragment.this, list);// 나중에 list보내줘야함
-//                        RecyclerView.LayoutManager manager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL,false);
-//                        recv_search_result.setLayoutManager(manager);
-//                        recv_search_result.setAdapter(adapter);
+
                         search_type = "barcord";    //탭레이아웃에서 뭐 검색해서 온지 파악용
-//                        ln_search_exist.setVisibility(View.VISIBLE);
-//                        recv_search_result.setVisibility(View.VISIBLE);
+
                     }else {
                         getChildFragmentManager().beginTransaction().replace(R.id.container_search_result, new NotFoundFragment(barcord_search_name)).commit();
-//                        ln_search_exist.setVisibility(View.GONE);
-//                        recv_search_result.setVisibility(View.GONE);
+
                     }
 
                 }
@@ -253,61 +206,24 @@ public class SearchResultFragment extends Fragment {
 
 
         //카테고리로 검색 넘어옴
+        //카테고리로 검색
+        if(m_category != null){
 
+            CommonConn conn = new CommonConn(getContext(), "list.mo");
+            conn.addParams("m_name",m_category);
+            conn.executeConn(new CommonConn.ConnCallback() {
+                @Override
+                public void onResult(boolean isResult, String data) {
+                    if(isResult){
+                        ArrayList<CategorySearchVO> list = new Gson().fromJson(data,
+                                new TypeToken<ArrayList<CategorySearchVO>>() {
+                                }.getType());
 
-
-
-
-
-
-
-       /* //임시테스트
-        //상세페이지 이동하는 레이아웃 : 사실 이거 adpater에서 해야하므로 db연동시 이거 adpater쪽으로 이동
-        ln_test= v.findViewById(R.id.ln_test);
-        ln_test.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), ModelDetailActivity.class);
-
-                startActivity(intent);
-
-            }
-        });
-
-        //임시테스트 : 검색어 일치 결과 없는 경우
-
-        if(!search_text.equals("비스포크")){
-
-            getChildFragmentManager().beginTransaction().replace(R.id.container_search_result, new NotFoundFragment(search_text)).commit();
-            ln_test.setVisibility(View.GONE);
-        }
-
-
-
-
-
-        //리사이클러뷰 붙이기
-//* 임시 : 비스포크 검색시 DB에 있는 데이터 받아오기
-        CommonConn conn = new CommonConn(getContext(), "list.mo");
-//        conn.addParams("search_text",search_text); DB 맵퍼에ㅔ서 were조건이 되어질검색어에 해당 우선은 데이터 받아와 지는지 확인한 뒤에 추후 수정
-        conn.executeConn(new CommonConn.ConnCallback() {
-            @Override
-            public void onResult(boolean isResult, String data) {
-                if(isResult){
-                    ArrayList<CategorySearchVO> list = new Gson().fromJson(data,
-                            new TypeToken<ArrayList<CategorySearchVO>>() {
-                            }.getType());
-
-                    SearchResultAdapter adapter = new SearchResultAdapter(getLayoutInflater(), SearchResultFragment.this, list);// 나중에 list보내줘야함
-                    RecyclerView.LayoutManager manager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL,false);
-                    recv_search_result.setLayoutManager(manager);
-                    recv_search_result.setAdapter(adapter);
+                        getChildFragmentManager().beginTransaction().replace(R.id.container_search_result, new SearchResultExistFragment(list)).commit();
+                    }
                 }
-            }
-        });*/
-
-
-
+            });
+        }
 
 
 
