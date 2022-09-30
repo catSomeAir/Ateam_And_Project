@@ -115,10 +115,10 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
 
         if (CommonVal.userInfo != null) {
             MemberVO vo = CommonVal.userInfo;
-            if (vo.getProfile_img() != null) {
+            if (vo.getFilepath() != null) {
                 //피카소 글라이드 비교해봐야할듯
 //            Picasso.get().load(CommonVal.userInfo.getProfile_img()).into(imgv_category_profile);
-                Glide.with(CategoryActivity.this).load(vo.getProfile_img()).into(imgv_category_profile);
+                Glide.with(CategoryActivity.this).load(vo.getFilepath()).into(imgv_category_profile);
             }
             tv_category_nickname.setText(vo.getNickname());
             CommonConn conn = new CommonConn(CategoryActivity.this, "count.ct");

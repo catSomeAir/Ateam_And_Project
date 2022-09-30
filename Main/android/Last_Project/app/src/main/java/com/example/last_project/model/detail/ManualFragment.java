@@ -38,6 +38,8 @@ public class ManualFragment extends Fragment implements OnPageChangeListener, On
     String SAMPLE_FILE = "test.pdf";
     Integer pageNumber = 0;
     String  pdfFileName;
+
+
     LinearLayout ln_model_detail_writing, ln_model_detail_as;
     ImageView imgv_manual_zzim, imgv_manual_link, imgv_manual_download; //* 다운로드 버튼 구현예정
 
@@ -59,7 +61,8 @@ public class ManualFragment extends Fragment implements OnPageChangeListener, On
 
     //DB에서넘어온 모델정보
     CategorySearchVO model_info;
-
+    public ManualFragment() {
+    }
     public ManualFragment(Context context, CategorySearchVO model_info) {
         this.context = context;
         this.model_info = model_info;

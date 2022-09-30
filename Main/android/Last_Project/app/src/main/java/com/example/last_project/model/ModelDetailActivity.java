@@ -1,9 +1,7 @@
 package com.example.last_project.model;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -68,7 +66,7 @@ public class ModelDetailActivity extends AppCompatActivity  {
                 if(tab.getPosition()==0){
                     getSupportFragmentManager().beginTransaction().replace(R.id.container_model_detail, new ManualFragment(ModelDetailActivity.this, model_info)).commit();
                 }else if(tab.getPosition()==1){
-                    getSupportFragmentManager().beginTransaction().replace(R.id.container_model_detail, new WritingFragment()).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container_model_detail, new WritingFragment(model_info.getModel_code())).commit();
                 }else if(tab.getPosition()==2){
                     getSupportFragmentManager().beginTransaction().replace(R.id.container_model_detail, new AfterServiceFragment()).commit();
 
@@ -177,7 +175,8 @@ public class ModelDetailActivity extends AppCompatActivity  {
     @Override
     protected void onResume() {
         super.onResume();
-        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        getSupportFragmentManager().beginTransaction().replace(R.id.container_model_detail, new WritingFragment(model_info.getModel_code())).commit();
+
 
     }
 }

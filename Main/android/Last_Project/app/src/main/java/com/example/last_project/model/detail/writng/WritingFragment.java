@@ -6,12 +6,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
 import com.example.last_project.R;
 import com.example.last_project.common.CommonVal;
 import com.example.last_project.search.NotFoundAlertActivity;
@@ -20,15 +22,25 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
 
     LinearLayout ln_writing_all, ln_writing_opinion, ln_writing_qna;
     TextView tv_writing_all, tv_writing_opinion, tv_writing_qna;
-
-
+    String model_code;
+    ImageView imgv_profile;
     CardView edt_writing;
 
+    public WritingFragment(String model_code) {
+        this.model_code = model_code;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_writing, container, false);
+        imgv_profile = v.findViewById(R.id.imgv_profile);
+        //로그인 유저
+        if (CommonVal.userInfo != null) {
+            if (CommonVal.userInfo.getFilepath() != null) {
+                Glide.with(getContext()).load(CommonVal.userInfo.getFilepath()).into(imgv_profile);
+            }
+        }
 
         ln_writing_all = v.findViewById(R.id.ln_writing_all);
         ln_writing_opinion = v.findViewById(R.id.ln_writing_opinion);
@@ -39,7 +51,6 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
         ln_writing_all.setOnClickListener(this);
         ln_writing_opinion.setOnClickListener(this);
         ln_writing_qna.setOnClickListener(this);
-
 
 
         //edittext
@@ -54,8 +65,9 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
                     intent.putExtra("intent_type", "write"); //글쓰기에서 띄운 alert
                     edt_writing.clearFocus();
                     startActivity(intent);
-                }else if( CommonVal.userInfo != null){
+                } else if (CommonVal.userInfo != null) {  //로그인 된 상태에서 입력할 수 있는 엑티비티로 이동
                     Intent intent = new Intent(getContext(), WriteSpaceActivity.class);
+                    intent.putExtra("model_code", model_code);
                     startActivity(intent);
                 }
             }
