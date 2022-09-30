@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="test">
+<select id="hotdog" resultType="test.TestHotdogVO">
+select * from userinfo where email=#{email}
+</select>
+
+<select id="list" resultType="test.TestVO">
+	SELECT		*
+	FROM		l_catg
+</select>
+
+<select id="model_list" resultType="test.ModelInfoVO">
+  SELECT  model.model_code, brand.brand_name, model.model_name , img.filename, img.filepath, l_catg.l_name, m_catg.m_name, s_catg.s_name 
+  FROM    model_info model LEFT OUTER JOIN model_img img
+  ON      model.model_code = img.model_code LEFT OUTER JOIN l_catg 
+  ON      model.l_code = l_catg.l_code LEFT OUTER JOIN m_catg
+  
+  ON      model.m_code = m_catg.m_code LEFT OUTER JOIN as_info
+  ON      model.as_code = as_info.as_code LEFT OUTER JOIN brand
+  ON      model.brand_code = brand.brand_code LEFT OUTER JOIN s_catg
+  ON      model.s_code = s_catg.s_code 
+</select>
+</mapper>

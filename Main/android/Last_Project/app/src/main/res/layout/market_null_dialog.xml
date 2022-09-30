@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/market_dialog_bg"
+    android:gravity="center"
+    >
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:padding="14dp"
+        android:orientation="vertical"
+
+        >
+    <TextView
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="로그인이 필요한 서비스입니다"
+        android:textSize="20dp"
+        android:textColor="@color/market_font"
+        android:layout_margin="10dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <Button
+            android:id="@+id/market_btn_cancel"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="취소"
+            android:textSize="18dp"
+            android:textColor="@color/market_font"
+            android:layout_marginTop="10dp"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            />
+    <Button
+        android:id="@+id/market_btn_login"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:text="확인"
+        android:textSize="18dp"
+        android:textColor="@color/market_font"
+        android:layout_marginTop="10dp"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".main.market.Main_Market_gifticon_Fragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="지금"
+                    android:textColor="@color/market_font"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:text="27"
+                    android:textColor="#FF0000"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:text="개 남음"
+                    android:textColor="@color/market_font"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/market_imgv_buy_menu_img"
+                android:layout_width="250dp"
+                android:layout_height="300dp"
+                android:layout_marginTop="30dp"
+                android:background="#00000000"
+                android:src="@drawable/br__gifticon" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/market_tv_menu_brand_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="1dp"
+                    android:text="베스킨라빈스"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/market_tv_menu_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="1dp"
+                    android:text="패밀리 아이스크림"
+                    android:textColor="#000"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/market_tv_menu_price1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:text="24,000원"
+                    android:textColor="#000"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+
+                    >
+
+                    <TextView
+                        android:id="@+id/market_tv_menu_pct"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10%"
+                        android:textColor="#FF0000"
+                        android:textSize="12dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/market_tv_menu_price2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:text="21,600"
+                        android:textColor="#000"
+                        android:textSize="12dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/market_tv_menu_won"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:text="원"
+                        android:textColor="#000"
+                        android:textSize="12dp" />
+
+                </LinearLayout><!--할인 가격 묶음-->
+            </LinearLayout><!--상품 내역-->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="10dp"
+                android:text="포인트로만 결제할 수 있으며, 구매하기 화면에서 포인트 결제 금액을 확인할 수 있습니다."
+                android:textColor="#555555"
+                android:textSize="14dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:background="@drawable/shape_market_background"
+                android:padding="10dp"
+                android:text="모바일 교환권\n유효기간 93일\n이용매장 상품 정보 참조"
+                android:textColor="#313840"
+                android:layout_marginBottom="10dp"
+                />
+
+            android <com.google.android.material.tabs.TabLayout
+            android:id="@+id/market_tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabTextColor="#898989"
+            app:tabSelectedTextColor="#2B2926"
+            app:tabRippleColor="@color/o0"
+            app:tabIndicatorColor="@color/o0"
+            app:tabTextAppearance="@style/tabTextSizeBold"
+            style="@style/MyCustomTabLayout"
+            >
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/market_tab_a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="상품설명" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/market_tab_b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="상세정보" />
+        </com.google.android.material.tabs.TabLayout>
+
+            <FrameLayout
+                android:id="@+id/market_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
