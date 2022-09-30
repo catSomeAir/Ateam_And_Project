@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="SpinnerDivideStyle" parent="@style/Theme.Last_Project">
+        <item name="android:divider">#000000</item> <!-- divider 색 -->
+        <item name="android:dividerHeight">2dp</item> <!-- divider 높이 -->
+    </style>
+
+    <style name="Base.Widget.Design.TabLayout" parent="android:Widget">
+        <item name="tabBackground">@drawable/tab_background</item>
+        <item name="tabIndicatorColor">#e9e9e9</item>
+        <item name="tabIndicatorHeight">2dp</item>
+    </style>
+
+    <style name="SpinnerTheme" parent="@style/Theme.Last_Project">
+        <item name="android:dropDownListViewStyle">@style/SpinnerDivideStyle</item>
+    </style>
+    <style name="Edt_theme">
+        <item name="android:editTextStyle" >@drawable/edt_stroke</item>
+        <item name="android:background">@null</item>
+    </style>
+    <style name="tabTextSizeBold" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">14dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="MyCustomTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabBackground">@drawable/market_tab_bg</item>
+    </style>
+        <!--HAI edt-->
+    <style name="liner_underline">
+        <item name="colorControlActivated">@color/edt_select</item>
+        <item name="colorControlNormal">@color/gray</item>
+        <item name="android:textColorHighlight">@color/edt_highlight</item>
+        <item name="android:textSelectHandle">@color/edt_handle</item>
+        <item name="android:textCursorDrawable">@color/edt_cursor</item>
+
+    </style>
+</resources>
