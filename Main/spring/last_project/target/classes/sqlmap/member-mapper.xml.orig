@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="member">
+<select id="login" resultType="member.MemberVO">
+	SELECT		*
+<<<<<<< HEAD
+	FROM		userinfo	
+	WHERE		email=#{email}
+	AND			pw=#{pw, jdbcType=VARCHAR}
+</select>
+=======
+	FROM		userinfo
+	WHERE		email=#{email}
+	AND			pw=#{pw, jdbcType=VARCHAR}
+</select>
+<insert id="insertgoogle">
+ INSERT INTO userinfo
+(email,social_code)
+values
+(#{email},#{social})
+</insert>
+>>>>>>> 144ad70411e2a3cdcc02553e902dfa9031416d22
+</mapper>

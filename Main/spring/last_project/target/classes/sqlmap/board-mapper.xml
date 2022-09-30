@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="board">
+<!-- 	<selectKey keyProperty="board_id" order="AFTER" resultType="Integer">
+		SELECT seq_board.currval FROM dual
+	</selectKey> -->
+<insert id="insert">
+
+		INSERT INTO	board (email,  content,  model_code, cmt_code)
+		VALUES		(#{email}, #{content}, #{model_code},  #{cmt_code})
+</insert>
+</mapper>
