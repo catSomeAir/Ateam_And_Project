@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.last_project">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-feature
+        android:name="android.hardware.camera2"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Last_Project"
+        android:usesCleartextTraffic="true">
+        <activity
+<<<<<<< HEAD
+            android:name=".category.CategorySearchActivity"
+            android:exported="true" />
+        <activity
+=======
+>>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
+            android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <!-- Redirect URI: "kakao${NATIVE_APP_KEY}://oauth" -->
+                <data
+                    android:host="oauth"
+                    android:scheme="kakao6a8daeb1b5866edc7517304827ad84ae" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".main.market.MarketActivity"
+            android:exported="true" />
+        <activity
+            android:name=".member.join.JoinActivity"
+            android:exported="true" />
+        <activity
+            android:name=".postList.postListActivity"
+            android:exported="true" />
+        <activity
+            android:name=".postList.ReplyDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".notice.NoticeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".postList.RequestedPostActivity"
+            android:exported="true" />
+        <activity
+            android:name=".mypage.EditProfileActivity"
+            android:exported="true" />
+        <activity
+            android:name=".postList.BookmarkedPostActivity"
+            android:exported="true" />
+        <activity
+            android:name=".event.EventActivity"
+            android:exported="true" />
+        <activity
+            android:name=".point.PointActivity"
+            android:exported="true" />
+        <activity
+<<<<<<< HEAD
+            android:name=".mypage.MypageActivity"
+            android:exported="true" />
+        <activity
+            android:name=".barcord.BarcordActivity"
+            android:exported="true" />
+=======
+            android:name=".MainActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".barcord.BarcordActivity"
+            android:exported="true" />
+
+>>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
+        <activity
+            android:name=".model.detail.as.AfterServiceActivity"
+            android:exported="true" />
+        <activity
+            android:name=".request.RequestResultActivity"
+            android:exported="true" />
+
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="693dd02df8fe8f8ace3aaaefb130bc94" />
+
+        <activity
+            android:name=".request.RequestCancelActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Transparent.NoActionBar" />
+        <activity
+            android:name=".request.RequestManualActivity"
+            android:exported="true" />
+        <activity
+            android:name=".WebviewActivity"
+            android:exported="true" />
+        <activity
+            android:name=".model.ModelDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".search.SearchActivity"
+            android:exported="true" />
+        <activity
+            android:name=".member.Login_in_Activity"
+            android:exported="true" />
+        <activity
+            android:name=".category.CategoryActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true" />
+        <activity
+            android:name=".member.LoginActivity"
+            android:exported="true" />
+        <activity
+<<<<<<< HEAD
+            android:name=".MainActivity"
+=======
+            android:name=".mypage.MypageActivity"
+>>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_path" />
+<<<<<<< HEAD
+        </provider>
+=======
+
+        </provider>
+
+>>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
+    </application>
+
+</manifest>
