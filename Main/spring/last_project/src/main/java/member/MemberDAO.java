@@ -16,25 +16,4 @@ public class MemberDAO implements MemberService {
 	}
 
 
-	public int g_list_save(HashMap<String, String> map) {
-		return sql.insert("member.insertgoogle", map);
-	}
-
-
-
-	@Override
-	public int join(MemberVO joinVo) {
-		
-		return sql.insert("member.join", joinVo);
-	}
-
-	@Override
-	public int email_check(String email) {
-		HashMap<String, String> map = new HashMap<String, String>();
-		map.put("email", email);
-		int test = sql.selectOne("member.email_check",map);
-		System.out.println(test);
-		return test;
-	
-	}
 }

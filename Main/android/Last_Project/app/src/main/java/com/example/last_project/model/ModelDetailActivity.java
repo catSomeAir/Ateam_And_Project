@@ -175,10 +175,8 @@ public class ModelDetailActivity extends AppCompatActivity  {
     @Override
     protected void onResume() {
         super.onResume();
-        if(tabs.getSelectedTabPosition() == 1){
-            getSupportFragmentManager().beginTransaction().replace(R.id.container_model_detail, new WritingFragment(model_info.getModel_code())).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.container_model_detail, new WritingFragment(model_info.getModel_code())).commit();
 
-        }
 
     }
 }

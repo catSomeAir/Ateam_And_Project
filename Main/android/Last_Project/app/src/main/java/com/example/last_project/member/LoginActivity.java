@@ -13,14 +13,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.last_project.R;
 import com.example.last_project.conn.CommonConn;
-import com.example.last_project.member.join.JoinActivity;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.example.last_project.category.CategoryActivity;
+import com.example.last_project.member.join.JoinActivity;
+import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -164,7 +167,11 @@ public class LoginActivity extends AppCompatActivity {
         SignInButton signInButton = findViewById(R.id.btn_google);
         signInButton.setSize(SignInButton.SIZE_STANDARD);
 
-
+        googleApiClient = new GoogleApiClient.Builder(this)
+                .enableAutoManage(this, this)
+                .addApi(Auth.GOOGLE_SIGN_IN_API, googleSignInOptions)
+                .build();
+        auth = FirebaseAuth.getInstance(); //파이어베이스 인증 객체 초기화
         ln_login_google = findViewById(R.id.ln_login_google);
         btn_google = findViewById(R.id.btn_google);
         btn_google.setBackgroundResource(R.drawable.google);
@@ -177,8 +184,8 @@ public class LoginActivity extends AppCompatActivity {
         btn_google.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-                startActivityForResult(signInIntent, RC_SIGN_IN);
+                Intent intent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
+                startActivityForResult(intent, REQ_SIGN_GOOGLE);
             }
         });
 
