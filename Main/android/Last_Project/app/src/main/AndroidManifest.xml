@@ -41,6 +41,8 @@
             android:theme="@style/Theme.AppCompat.Transparent.NoActionBar" />
         <activity
             android:name=".main.banner.BannerActivity"
+            android:exported="true" />
+        <activity
             android:name=".postList.MyPostDetailActivity"
             android:exported="true" />
         <activity
@@ -53,8 +55,11 @@
             android:name=".postList.EdtBookmarkedPostActivity"
             android:exported="true" />
         <activity
-            android:name=".event.EventDetailActivity"
             android:name=".main.market.Market_BuyDialog_Activity"
+            android:exported="true" />
+
+        <activity
+            android:name=".event.EventDetailActivity"
             android:exported="true" />
         <activity
             android:name=".main.market.Market_Grid_Activity"
