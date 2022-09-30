@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="market_font">#020E20</color>
+
+    <!--투명도 조절위해 추가 - 아인-->
+    <color name="o0">#00000000</color>
+    <color name="o3">#4D000000</color>
+    <color name="o5">#0D000000</color>
+    <color name="o10">#1A000000</color>
+    <color name="o15">#26000000</color>
+    <color name="o20">#33000000</color>
+    <color name="o25">#40000000</color>
+    <color name="o30">#4D000000</color>
+    <color name="o35">#59000000</color>
+    <color name="o40">#66000000</color>
+    <color name="o45">#73000000</color>
+    <color name="o50">#80000000</color>
+    <color name="o55">#8C000000</color>
+    <color name="o60">#99000000</color>
+    <color name="o65">#A6000000</color>
+    <color name="o70">#B3000000</color>
+    <color name="o75">#BF000000</color>
+    <color name="o80">#CC000000</color>
+    <color name="o85">#D9000000</color>
+    <color name="o88">#E0000000</color>
+    <color name="o90">#E6000000</color>
+    <color name="o95">#F2000000</color>
+    <color name="o98">#FA000000</color>
+    <color name="o99">#FD000000</color>
+    <color name="o99.5">#FE000000</color>
+
+    <!--아인 EditText style -->
+    <color name="edt_highlight">#E6EEFF</color>
+    <color name="edt_handle">#051B45</color>
+    <color name="edt_cursor">#031539</color>
+    <color name="edt_select">#031539</color>
+    
+    <!--가인-->
+    <color name="lightgray">#d3d3d3</color>
+    <color name="gray">#808080</color>
+    <color name="test">#818080</color>
+
+</resources>
