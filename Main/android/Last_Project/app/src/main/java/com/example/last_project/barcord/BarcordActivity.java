@@ -34,8 +34,9 @@ public class BarcordActivity extends AppCompatActivity {
                         @Override
                         public void onResult(boolean isResult, String data) {
                             Intent intent = new Intent(BarcordActivity.this, SearchActivity.class);
-                            intent.putExtra("barcord_search_name", result.getContents() );
+                            intent.putExtra("barcord_search_name", data );
                             startActivity(intent);
+                            finish();
                         }
                     });
                 }

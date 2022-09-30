@@ -1,8 +1,15 @@
 package com.example.last_project.common;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.text.Editable;
+import android.text.Spannable;
+import android.text.SpannableString;
 import android.text.TextWatcher;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.RelativeSizeSpan;
+import android.text.style.StyleSpan;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -15,7 +22,7 @@ public class CommonMethod {
     //로그인 액티비티
     //회원가입 액티비티 등에서 EditText 입력값을 파라메터로 활용할 경우들에서 모두 사용
 
-    public static boolean isCheckEditText(EditText edt){
+    public static boolean isCheckEditText(EditText edt) {
         try {   //try-catch 는 EditText의 findViewById 입력안해서 null 뜨는 경우 예외처리
             if (edt.getText().toString() == null || edt.getText().toString().trim().length() < 1) {
                 return false;
@@ -27,7 +34,7 @@ public class CommonMethod {
     }
 
 
-    public static void edittext_change(EditText edt_search, TextView tv_cancel, ImageView imgv_cancel, Context context){
+    public static void edittext_change(EditText edt_search, TextView tv_cancel, ImageView imgv_cancel, Context context) {
 //        tv_detail_cancel = findViewById(R.id.tv_detail_cancel);
 //        //검색창 옆 취소아이콘
 //        imgv_detail_cancel = findViewById(R.id.imgv_detail_cancel);
@@ -38,17 +45,13 @@ public class CommonMethod {
         edt_search.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                if(hasFocus){
+                if (hasFocus) {
                     tv_cancel.setVisibility(View.VISIBLE);
-                }else{
+                } else {
                     tv_cancel.setVisibility(View.GONE);
                 }
             }
         });
-
-
-
-
 
 
         edt_search.addTextChangedListener(new TextWatcher() {
@@ -60,9 +63,9 @@ public class CommonMethod {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 //검색창 글 입력된경우 취소이미지 보이기
-                if(edt_search.getText().length() > 0){
+                if (edt_search.getText().length() > 0) {
                     imgv_cancel.setVisibility(View.VISIBLE);
-                }else{
+                } else {
                     imgv_cancel.setVisibility(View.GONE);
                 }
             }
@@ -80,4 +83,55 @@ public class CommonMethod {
             }
         });
     }
+
+    public static String text_div(String text) {
+        String[] CHO = {"ㄱ", "ㄲ", "ㄴ", "ㄷ", "ㄸ", "ㄹ", "ㅁ", "ㅂ", "ㅃ",
+                "ㅅ", "ㅆ", "ㅇ", "ㅈ", "ㅉ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"};
+
+        String[] JOONG = {"ㅏ", "ㅐ", "ㅑ", "ㅒ", "ㅓ", "ㅔ", "ㅕ", "ㅖ", "ㅗ", "ㅘ",
+                "ㅙ", "ㅚ", "ㅛ", "ㅜ", "ㅝ", "ㅞ", "ㅟ", "ㅠ", "ㅡ", "ㅢ", "ㅣ"};
+
+        String[] JONG = {"", "ㄱ", "ㄲ", "ㄳ", "ㄴ", "ㄵ", "ㄶ", "ㄷ", "ㄹ", "ㄺ", "ㄻ", "ㄼ",
+                "ㄽ", "ㄾ", "ㄿ", "ㅀ", "ㅁ", "ㅂ", "ㅄ", "ㅅ", "ㅆ", "ㅇ", "ㅈ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"};
+        String result = "";
+        for (int i = 0; i < text.length(); i++) {
+            char uniVal = text.charAt(i);
+
+            // 한글일 경우만 시작해야 하기 때문에 0xAC00부터 아래의 로직을 실행한다
+            if (uniVal >= 0xAC00) {
+                System.out.print(uniVal + "=>");
+                uniVal = (char) (uniVal - 0xAC00);
+
+                char cho = (char) (uniVal / 28 / 21);
+                char joong = (char) ((uniVal) / 28 % 21);
+                char jong = (char) (uniVal % 28);    // 종성의 첫번째는 채움이기 때문에
+
+                result = (CHO[cho] + JOONG[joong] + JONG[jong]);
+            } else {
+                result =  String.valueOf(uniVal);
+            }
+        }
+        return result;
+    }
+
+    public static void change_text(String content, String search_text, TextView textView){
+        //해당문자 색 바꾸기
+
+        SpannableString spannableString = new SpannableString(content);
+        try {
+            String word = search_text;  //유저가 검색한 검색어 여기다 넣기
+    //        int start = content.indexOf(word);
+    //        int end = start + word.length();
+            int start = content.indexOf(word);
+            int end = start + word.length();
+            spannableString.setSpan(new ForegroundColorSpan(Color.parseColor("#0C2843")), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            spannableString.setSpan(new StyleSpan(Typeface.BOLD), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            spannableString.setSpan(new RelativeSizeSpan(1.05f), start, end, SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
+            textView.setText(spannableString);
+
+        }catch (Exception e){
+
+        }
+    }
+
 }

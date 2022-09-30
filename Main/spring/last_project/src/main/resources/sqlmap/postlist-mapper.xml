@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="postlist">
+<select id="select" resultType="postlist.MyPostVO">
+SELECT TITLE,WRITEDATE,CMT_CODE
+FROM BOARD
+WHERE EMAIL=#{email}
+</select>
+
+<select id="selectAll" resultType="postlist.MyPostVO">
+SELECT TITLE,CONTENT,WRITEDATE,HELP_cmCNT,MODEL_CODE,CMT_CODE
+FROM BOARD
+WHERE EMAIL=#{email}
+</select>
+
+<select id="selectreply" resultType="">
+select content,writedate
+from reply
+where email=#{email}
+</select>
+</mapper>

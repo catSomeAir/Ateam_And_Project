@@ -72,7 +72,33 @@ public class CommonConn {
             }
         });
     }
+    public void executeConn_no_dialog(ConnCallback callback){
+        this.callback = callback;
 
+        ApiInterface apiInterface = ApiClient.getApiclient().create(ApiInterface.class);
+
+        //Call 은 retrofit2를 import 한다!!!
+        Call<String> call = apiInterface.getData(url,params);
+        //실행부분 enque 비동기
+        call.enqueue(new Callback<String>() {
+
+            // onResponse : 서버와 통신성공( +반환데이터 ) -> true 와 date 리턴
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+                callback.onResult(true, response.body());
+
+            }
+
+            // onFailure : 서버와 통신실패( +반환오류메시지 ) -> false 와 Throwable
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+                callback.onResult(false, t.getMessage());
+
+                //로그찍고, 토스트 창으로 서버이상 이라고 메시지나오게 해보기
+                Toast.makeText(context, "서버이상", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
     public interface ConnCallback{
         public void onResult(boolean isResult, String data);
     }

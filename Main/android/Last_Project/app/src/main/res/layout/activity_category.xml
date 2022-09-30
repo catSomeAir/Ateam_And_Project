@@ -502,10 +502,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:visibility="gone">
+                    android:visibility="visible">
 
 
                     <LinearLayout
+                        android:id="@+id/ln_m_list1_1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#F2F2F2"
@@ -526,6 +527,7 @@
                         android:layout_height="1.4dp"
                         android:background="#E6E6E6" />
                     <LinearLayout
+                        android:id="@+id/ln_m_list1_2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#F2F2F2"

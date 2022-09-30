@@ -14,20 +14,27 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.last_project.R;
+import com.example.last_project.search.category_search.CategorySearchVO;
+
+import java.util.ArrayList;
 
 public class SearchResultAdapter extends RecyclerView.Adapter<SearchResultAdapter.ViewHolder> {
     LayoutInflater inflater;
     Context context;
-    SearchResultFragment searchResultFragment;
+    SearchResultExistFragment searchResultExistFragment;
+    ArrayList<CategorySearchVO> list;
+
     public SearchResultAdapter(LayoutInflater inflater, Context context) {
         this.context = context;
         this.inflater = inflater;
     }
 
-    public SearchResultAdapter(LayoutInflater inflater, SearchResultFragment searchResultFragment) {
+    public SearchResultAdapter(LayoutInflater inflater,  SearchResultExistFragment searchResultExistFragment, ArrayList<CategorySearchVO> list) {
         this.inflater = inflater;
-        this.searchResultFragment = searchResultFragment;
+        this.searchResultExistFragment = searchResultExistFragment;
+        this.list = list;
     }
 
     @NonNull
@@ -38,25 +45,25 @@ public class SearchResultAdapter extends RecyclerView.Adapter<SearchResultAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-//        holder.bind(holder, position);
+        holder.bind(holder, position);
     }
 
     @Override
     public int getItemCount() {
-        return 10;
+        return list.size();
     }
 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         LinearLayout ln_search_result;
         ImageView imgv_search_result;
-        TextView tv_search_result_l_catg, tv_search_result_m_catg, tv_search_result_s_catg, tv_search_result_model_name, tv_search_result_model_code, tv_search_result_brand;
+        TextView tv_search_result_l_catg, tv_search_result_m_catg, tv_search_result_s_catg,tv_search_result_category_name, tv_search_result_model_name, tv_search_result_model_code, tv_search_result_brand;
         public ViewHolder(@NonNull View v) {
             super(v);
             imgv_search_result = v.findViewById(R.id.imgv_search_result);
-            tv_search_result_l_catg = v.findViewById(R.id.tv_search_result_l_catg);
-            tv_search_result_m_catg = v.findViewById(R.id.tv_search_result_m_catg);
-            tv_search_result_s_catg = v.findViewById(R.id.tv_search_result_s_catg);
+            tv_search_result_category_name = v.findViewById(R.id.tv_search_result_category_name);
+//            tv_search_result_m_catg = v.findViewById(R.id.tv_search_result_m_catg);
+//            tv_search_result_s_catg = v.findViewById(R.id.tv_search_result_s_catg);
             tv_search_result_model_name = v.findViewById(R.id.tv_search_result_model_name);
             tv_search_result_model_code = v.findViewById(R.id.tv_search_result_model_code);
             tv_search_result_brand = v.findViewById(R.id.tv_search_result_brand);
@@ -64,8 +71,15 @@ public class SearchResultAdapter extends RecyclerView.Adapter<SearchResultAdapte
         }
 
         public void bind(@NonNull ViewHolder h, int i){
-            InputMethodManager imm = (InputMethodManager) context.getSystemService(INPUT_METHOD_SERVICE);
-            imm.hideSoftInputFromWindow( searchResultFragment.getActivity().findViewById(R.id.edt_search).getWindowToken(), 0);
+            InputMethodManager imm = (InputMethodManager) searchResultExistFragment.getActivity().getSystemService(INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow( searchResultExistFragment.getActivity().findViewById(R.id.edt_search).getWindowToken(), 0);
+
+            Glide.with(searchResultExistFragment.getActivity()).load(list.get(i).getFilepath().replace("localhost","192.168.0.33")).into(h.imgv_search_result);
+            h.tv_search_result_model_name.setText(list.get(i).getModel_name());
+            h.tv_search_result_model_code.setText(list.get(i).getModel_code());
+            h.tv_search_result_brand.setText(list.get(i).getBrand_name());
+            h.tv_search_result_category_name.setText(list.get(i).getCategory_name());
+
         }
     }
 

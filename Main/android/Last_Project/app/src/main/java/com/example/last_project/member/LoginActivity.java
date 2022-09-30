@@ -5,39 +5,35 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.last_project.R;
-import com.example.last_project.category.CategoryActivity;
-import com.google.android.gms.auth.api.Auth;
+import com.example.last_project.conn.CommonConn;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.auth.api.signin.GoogleSignInResult;
-import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.SignInButton;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthCredential;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.GoogleAuthProvider;
 import com.kakao.sdk.auth.model.OAuthToken;
 import com.kakao.sdk.common.KakaoSdk;
 import com.kakao.sdk.user.UserApiClient;
 import com.navercorp.nid.NaverIdLoginSDK;
+import com.navercorp.nid.oauth.NidOAuthLogin;
 import com.navercorp.nid.oauth.OAuthLoginCallback;
 import com.navercorp.nid.oauth.view.NidOAuthLoginButton;
+import com.navercorp.nid.profile.NidProfileCallback;
+import com.navercorp.nid.profile.data.NidProfileResponse;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -45,18 +41,16 @@ import java.security.NoSuchAlgorithmException;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 
-public class LoginActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
-    //    private static OAuthLogin mOAuthLoginInstance;
-    //    private static Context mContext;
+public class LoginActivity extends AppCompatActivity {
+
     NidOAuthLoginButton login_btn_naver;
     Button btn_login_local; //db접속 로그인 버튼
     //    EditText login_edt_id;
     LinearLayout ln_login, ln_login_guest;
     //구글 로그인을 위한 전역변수
     private SignInButton btn_google; //구글 로그인 버튼
-    private FirebaseAuth auth;      //파이어 베이스 인증 객체
-    private GoogleApiClient googleApiClient;    //구글 API 클라이언트객체
-    private static final int REQ_SIGN_GOOGLE = 1; //구글 로그인 결과 코드
+    private final int RC_SIGN_IN = 1000;
+    GoogleSignInClient mGoogleSignInClient;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -68,7 +62,6 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 //                WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_login);
-
         //일반로그인 ------------------------------------------------------------------------
         ln_login = findViewById(R.id.ln_login);
         ln_login.setOnClickListener(new View.OnClickListener() {
@@ -90,17 +83,19 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         login_btn_naver.setOAuthLoginCallback(new OAuthLoginCallback() {
             @Override
             public void onSuccess() {
-
+                Log.d("네이버", "onSuccess: " + NaverIdLoginSDK.INSTANCE.getAccessToken());
+                naver_profile();
             }
 
             @Override
             public void onFailure(int i, @NonNull String s) {
+                Log.d("네이버", "onFailure: " + s);
 
             }
 
             @Override
             public void onError(int i, @NonNull String s) {
-
+                Log.d("네이버", "onError: " + s);
             }
         });
 
@@ -133,65 +128,102 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                     }
                 };
 
-
                 // 카카오톡 앱 설치 여부를 판단. 깔려있으면 카톡 앱으로 인증.
                 if (UserApiClient.getInstance().isKakaoTalkLoginAvailable(LoginActivity.this)) {
                     UserApiClient.getInstance().loginWithKakaoTalk(LoginActivity.this, callback);
                 } else {
                     UserApiClient.getInstance().loginWithKakaoAccount(LoginActivity.this, callback);
                 }
-
-                /*    // 카카오톡이 설치되어 있으면 카카오톡으로 로그인, 아니면 카카오계정으로 로그인
-                if (UserApiClient.instance.isKakaoTalkLoginAvailable(context)) {
-
-                } else {
-                    UserApiClient.instance.loginWithKakaoAccount(context, callback = callback)
-                }*/
             }
         });
 
         getHashKey();
 
-        /*구글 로그인*/
-        GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))
+        // google
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
+        // Build a GoogleSignInClient with the options specified by gso.
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+        SignInButton signInButton = findViewById(R.id.btn_google);
+        signInButton.setSize(SignInButton.SIZE_STANDARD);
 
-        googleApiClient = new GoogleApiClient.Builder(this)
-                .enableAutoManage(this,this)
-                .addApi(Auth.GOOGLE_SIGN_IN_API,googleSignInOptions)
-                .build();
-        auth = FirebaseAuth.getInstance(); //파이어베이스 인증 객체 초기화
 
-        btn_google = findViewById(R.id.btn_google);
-        btn_google.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent =Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
-                startActivityForResult(intent, REQ_SIGN_GOOGLE);
-            }
+        findViewById(R.id.btn_google).setOnClickListener(v->{
+            Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+            startActivityForResult(signInIntent, RC_SIGN_IN);
         });
 
-}/* oncreate */
+    }/* oncreate */
+
+    /*네이버 로그인*/
+
+    //setOAuthLoginCallback 을 이용을 해서 success가 되었을때 (token이있을때) 정보를 받아올수있는 객체를
+    //사용해서 정보를 얻어오면된다.
+    public void naver_profile(){
+        //NidOAuthLogin().callProfileApi(nidProfileCallback) Kotiln
+        NidOAuthLogin authLogin = new NidOAuthLogin();
+        authLogin.callProfileApi(new NidProfileCallback<NidProfileResponse>() {
+            @Override
+            public void onSuccess(NidProfileResponse res) {
+                Log.d("프로필", "onSuccess: ");
+                Log.d("프로필", "onSuccess: " + res.getProfile().getEmail());
+                Log.d("프로필", "onSuccess: " + res.getProfile().getMobile());
+                Log.d("프로필", "onSuccess: " + res.getProfile().getName());
+                CommonConn conn = new CommonConn(LoginActivity.this,"socialinfo.me");
+                conn.addParams("email",res.getProfile().getEmail());
+                conn.addParams("social","N");
+                conn.executeConn(new CommonConn.ConnCallback() {
+                    @Override
+                    public void onResult(boolean isResult, String data) {
+                        Log.d("Result", "onResult: "+ isResult);
+                    }
+                });
+
+            }
+            @Override
+            public void onFailure(int i, String s) {
+                Log.d("프로필", "onFailure: " + s);
+            }
+
+            @Override
+            public void onError(int i, @NonNull String s) {
+                Log.d("프로필", "onError: "  + s);
+            }
+        });
+        finish();
+    }
 
     /*카카오로그인*/
     public void kakao_profile() {
         UserApiClient.getInstance().me((user, throwable) -> {
             if (throwable != null) {
                 //오류가 났을때 어떤 오류인지 코드로 줌 KOE + 숫자 ( 단무지가 있음 )
+                /*Intent kakaofailintent = new Intent(getApplicationContext(), JoinActivity.class);
+                kakaofailintent.putExtra("present_email",user.getKakaoAccount().getEmail());
+                startActivity(kakaofailintent);*/
             } else {
                 Log.d("카카오", "kakao_profile: " + user.getKakaoAccount().getProfile().getNickname());
                 Log.d("카카오", "kakao_profile: " + user.getKakaoAccount().getProfile().getThumbnailImageUrl());
                 Log.d("카카오", "kakao_profile: " + user.getKakaoAccount().getEmail());
                 Log.d("카카오", "kakao_profile: " + user.getKakaoAccount().getName());
+                CommonConn conn = new CommonConn(LoginActivity.this,"socialinfo.me");
+                conn.addParams("email",user.getKakaoAccount().getEmail());
+                conn.addParams("social","K");
+                conn.executeConn(new CommonConn.ConnCallback() {
+                    @Override
+                    public void onResult(boolean isResult, String data) {
+                        Log.d("Result", "onResult: "+ isResult);
+                    }
+                });
 
             }
-
-
+            //카카오로그인 성공시 메인 액티비티로
+            finish();
             return null;
         });
     }
+
     /*카카오 로그인*/
     private void getHashKey() {
         PackageInfo packageInfo = null;
@@ -214,41 +246,46 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         }
     }
 
-
-    //구글 로그인
+   /* 구글 로그인*/
    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        //구글 로그인 인증을 요청 했을 떄 결과 값을 되돌려 받는 곳
-        if (resultCode == REQ_SIGN_GOOGLE) {
-            GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
-            if(result.isSuccess()){
-                GoogleSignInAccount account = result.getSignInAccount();//account 라는 데이터는 구글 로그인 정보를 담고 있음 (닉네임,프로필Url,이메일주소)
-                resultLogin(account); //로그인 결과 값 출력 수행하라는 메소드
-            }
-        }
-    }
+   public void onActivityResult(int requestCode, int resultCode, Intent data) {
+       super.onActivityResult(requestCode, resultCode, data);
 
-    private void resultLogin(GoogleSignInAccount account) { //구글 로그인 실제 성공했냐 안했냐
-        AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(),null);
-        auth.signInWithCredential(credential)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){ //로그인 성공했으면
-                            Toast.makeText(LoginActivity.this,"로그인성공",Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(getApplicationContext(), CategoryActivity.class); //로그인 했을 때 카테고리 액티비티로 넘어가게
-                            intent.putExtra("nickname",account.getDisplayName());
-                            intent.putExtra("photoUrl",String.valueOf(account.getPhotoUrl()));
-                        }else{//로그인 실패시
-                            Toast.makeText(LoginActivity.this,"로그인실패",Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-    }
+       // Result returned from launching the Intent from GoogleSignInClient.getSignInIntent(...);
+       if (requestCode == RC_SIGN_IN) {
+           // The Task returned from this call is always completed, no need to attach
+           // a listener.
+           Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+           try {
+               task.getResult(ApiException.class);
+               GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
+               if (acct != null) {
+                   String personName = acct.getDisplayName();
+                   String personGivenName = acct.getGivenName();
+                   String personFamilyName = acct.getFamilyName();
+                   String personEmail = acct.getEmail();
+                   String personId = acct.getId();
+                   Uri personPhoto = acct.getPhotoUrl();
+                   /*구글 로그인 정보 DB에 저장*/
+                   CommonConn conn = new CommonConn(LoginActivity.this,"socialinfo.me");
+                   conn.addParams("email",acct.getEmail());
+                   conn.addParams("social","G");
+                   conn.executeConn(new CommonConn.ConnCallback() {
+                       @Override
+                       public void onResult(boolean isResult, String data) {
+                           Log.d("Result", "onResult: "+ isResult);
+                       }
+                   });
+                   finish();
+               }
+           } catch (ApiException e) {
+               e.printStackTrace();
+           }
+           //handleSignInResult(task);
 
-    @Override
-    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+       }
+   }
 
-    }
+
 }
+

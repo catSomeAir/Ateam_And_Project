@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -42,7 +43,10 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
     TextView tv_category_nickname, tv_category_count, tv_category_comment_count;    //닉네임, 쓴글 수 , 쓴 댓글수
 
     //My, 공지사항, 이벤트,포인트 화면연결 위해 추가
-    LinearLayout ll_mypage,ll_notice,ll_event,ll_point,ll_postlist;
+    LinearLayout ll_mypage, ll_notice, ll_event, ll_point, ll_postlist;
+
+    //중분류 레이아웃 : 수정중
+    LinearLayout ln_m_list1_1, ln_m_list1_2;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -50,13 +54,21 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
 
+
+        //중분류레이아웃
+        ln_m_list1_1 = findViewById(R.id.ln_m_list1_1);
+        ln_m_list1_1.setOnClickListener(this);
+        ln_m_list1_2 = findViewById(R.id.ln_m_list1_2);
+        ln_m_list1_2.setOnClickListener(this);
+
+
         //로그아웃버튼
         btn_category_logout = findViewById(R.id.btn_category_logout);
         btn_category_logout.setOnClickListener(this);
 
-        if( CommonVal.userInfo != null ){
+        if (CommonVal.userInfo != null) {
             btn_category_logout.setVisibility(View.VISIBLE);
-        }else{
+        } else {
             btn_category_logout.setVisibility(View.GONE);
         }
 
@@ -125,8 +137,8 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
 
         //쓴글 수 , 댓글 수 -> 이후 생명주기 고려해서 넣기
         //가인- 화면 전환위해 찾아놓음
-        ll_mypage= findViewById(R.id.ll_mypage);
-        ll_notice =findViewById(R.id.ll_notice);
+        ll_mypage = findViewById(R.id.ll_mypage);
+        ll_notice = findViewById(R.id.ll_notice);
         ll_event = findViewById(R.id.ll_event);
         ll_point = findViewById(R.id.ll_point);
 
@@ -173,15 +185,66 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
             }
         });
 
-        //구글 로그인 정보 받아오기
-        Intent intent = getIntent();
+        //메인에서 카테고리 클릭시 중분류 열리는 이벤트
+        int category = getIntent().getIntExtra("category", 0);
+
+        if (category != -1) {
+            for (int i = 0; i < l_list_id.length; i++) {
+                if (category - 1 == i) {
+                    Handler handler = new Handler();
+                    int finalI = i;
+                    int finalI1 = i;
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (finalI1 == 0) {
+                                scv_category.smoothScrollTo(0, 1000, 900);
+
+                            } else if (finalI1 == 1) {
+                                scv_category.smoothScrollTo(0, 1100, 900);
+                            } else if (finalI1 == 2) {
+                                scv_category.smoothScrollTo(0, 1200, 900);
+                            } else if (finalI1 == 3) {
+                                scv_category.smoothScrollTo(0, 1320, 900);
+                            } else if (finalI1 == 4) {
+                                scv_category.smoothScrollTo(0, 1500, 900);
+                            } else if (finalI1 == 5) {
+                                scv_category.smoothScrollTo(0, 1600, 900);
+                            } else if (finalI1 == 6) {
+                                scv_category.smoothScrollTo(0, 1780, 900);
+                            } else if (finalI1 == 7) {
+                                scv_category.smoothScrollTo(0, 1900, 900);
+                            }
+                            Handler handler = new Handler();
+
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    for (int j = 0; j < l_list_id.length; j++) {
+
+                                        ln_m_list[j].setVisibility(View.GONE);
+                                    }
+                                    ln_m_list[finalI].setVisibility(View.VISIBLE);
+
+                                }
+                            }, 500); //딜레이 타임 조절
+                        }
+                    }, 50); //딜레이 타임 조절
+                }
+            }
+        }
+
+
+    //구글 로그인 정보 받아오기 주석처리함
+     /*   Intent intent = getIntent();
         String nickName = intent.getStringExtra("nickName");
         String photoUrl = intent.getStringExtra("photoUrl");
         tv_category_nickname.setText(nickName);
-        Glide.with(this).load(photoUrl).into(imgv_category_profile); //프로필 url을 이미지 뷰에 세팅
+        Glide.with(this).load(photoUrl).into(imgv_category_profile); //프로필 url을 이미지 뷰에 세팅*/
 
 
     }//oncreate
+
 
     //뒤로가기 누르면 애니메이션 효과
     @Override
@@ -195,9 +258,9 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View v) {
 
-        if(v.getId() == R.id.btn_category_logout){
+        if (v.getId() == R.id.btn_category_logout) {
             CommonVal.userInfo = null;
-            SharedPreferences preferences = getSharedPreferences("login",MODE_PRIVATE);
+            SharedPreferences preferences = getSharedPreferences("login", MODE_PRIVATE);
 
             SharedPreferences.Editor editor = preferences.edit();//edit()
             editor.clear();
@@ -214,6 +277,19 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
 
 
             onBackPressed();
+        }
+
+        if(v.getId() == R.id.ln_m_list1_1) {
+            Intent intent = new Intent(CategoryActivity.this, CategorySearchActivity.class);
+            intent.putExtra("m_category", "가전");
+            startActivity(intent);
+            finish();
+        }else if(v.getId() == R.id.ln_m_list1_2) {
+            Intent intent = new Intent(CategoryActivity.this, CategorySearchActivity.class);
+            intent.putExtra("l_category", "가전/TV");
+            intent.putExtra("m_category", "TV");
+            startActivity(intent);
+            finish();
         }
 
         //대분류 클릭시 - 중분류 레이아웃 보이도록, 스크롤뷰 위치 이동

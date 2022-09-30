@@ -10,18 +10,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.last_project.R;
-import com.example.last_project.postList.ReplyDTO;
+import com.example.last_project.postList.MyReplyVO;
 import com.example.last_project.postList.myReplyFragment;
 
 import java.util.ArrayList;
 
 public class MyReplyAdapter extends RecyclerView.Adapter<MyReplyAdapter.ViewHolder>{
     LayoutInflater inflater;
-    ArrayList<ReplyDTO> list;
+    ArrayList<MyReplyVO> list;
     Context context;
     myReplyFragment fragment;
 
-    public MyReplyAdapter(LayoutInflater inflater, ArrayList<ReplyDTO> list, Context context, myReplyFragment fragment) {
+    public MyReplyAdapter(LayoutInflater inflater, ArrayList<MyReplyVO> list, Context context, myReplyFragment fragment) {
         this.inflater = inflater;
         this.list = list;
         this.context = context;
@@ -55,7 +55,7 @@ public class MyReplyAdapter extends RecyclerView.Adapter<MyReplyAdapter.ViewHold
             date =itemView.findViewById(R.id.date);
         }
         public void bind(@NonNull ViewHolder h, int i) {
-            h.title.setText(list.get(i).getTitle()+"");
+
             //h.date.setText(list.get(i).getDate()+"");
         }
     }

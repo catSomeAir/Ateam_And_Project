@@ -149,6 +149,35 @@
         </FrameLayout>-->
 
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@color/o0"
+            >
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="1dp"
+                android:textAlignment="center"
+                android:background="@color/white"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="소셜로 시작하기"
+                android:textColor="@color/white"
+                android:textSize="12dp"
+                />
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="1dp"
+                android:textAlignment="center"
+                android:background="@color/white"
+                />
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -158,7 +187,9 @@
 
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:layout_marginVertical="8dp" />
+                android:layout_marginVertical="8dp"
+                android:src="@drawable/naver_btn_logo"
+                />
 
         </LinearLayout>
         <LinearLayout
@@ -177,15 +208,18 @@
 
         </LinearLayout>
 
-        <!--구글 로그인 이미지 일단 넣어놈-->
+        <!--구글 로그인 이미지 G마크는 앱 실행시키면 나옴-->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+            <!--구글 로그인 이미지 G마크 는 여기에서는 안보이나앱 실행시키면 나옴-->
             <com.google.android.gms.common.SignInButton
                 android:id="@+id/btn_google"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_marginLeft="40dp"
+                android:layout_width="232dp"
+                android:layout_height="50dp"/>
+            <!--구글 로그인 이미지 G마크 는 앱 실행시키면 나옴-->
             <!--<ImageView
                 android:id="@+id/btn_google"
                 android:layout_width="232dp"
@@ -218,7 +252,20 @@
         <Space
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="10" />
+            android:layout_weight="9" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="회원가입"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
         <TextView
             android:layout_width="wrap_content"

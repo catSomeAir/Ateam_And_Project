@@ -89,7 +89,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="4dp"
-                    android:text="9,000원"
+                    android:text="9,000P"
                     android:textColor="#000"
                     android:textSize="12dp"
                     android:textStyle="bold" />
@@ -115,19 +115,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="4dp"
-                        android:text="8,100"
+                        android:text="8,100P"
                         android:textColor="#000"
                         android:textSize="12dp"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/market_tv_menu_won"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="4dp"
-                        android:text="원"
-                        android:textColor="#000"
-                        android:textSize="12dp" />
 
                 </LinearLayout><!--할인 가격 묶음-->
             </LinearLayout><!--상품 내역-->

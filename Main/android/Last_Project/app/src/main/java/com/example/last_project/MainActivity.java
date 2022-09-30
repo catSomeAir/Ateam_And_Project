@@ -23,12 +23,14 @@ import com.example.last_project.search.SearchActivity;
 import com.google.android.material.tabs.TabLayout;
 import com.ramotion.circlemenu.CircleMenuView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     ImageView imgv_main_category;
     TabLayout tabs;
     LinearLayout ln_main_search;
     RecyclerView recv_main_manysearch;
     CircleMenuView menuView;
+    //카테고리 클릭
+    LinearLayout ln_ctg_gajeon, ln_ctg_computer, ln_ctg_mobile, ln_ctg_car, ln_ctg_gagu, ln_ctg_adong, ln_ctg_samu, ln_ctg_leisure;
 
     CardView cdv_plus;
 
@@ -38,6 +40,25 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //카테고리 클릭 -> 이벤트는 OnClickListener에
+        ln_ctg_gajeon = findViewById(R.id.ln_ctg_gajeon);
+        ln_ctg_gajeon.setOnClickListener(this);
+        ln_ctg_computer = findViewById(R.id.ln_ctg_computer);
+        ln_ctg_computer.setOnClickListener(this);
+        ln_ctg_mobile = findViewById(R.id.ln_ctg_mobile);
+        ln_ctg_mobile.setOnClickListener(this);
+        ln_ctg_car = findViewById(R.id.ln_ctg_car);
+        ln_ctg_car.setOnClickListener(this);
+        ln_ctg_gagu = findViewById(R.id.ln_ctg_gagu);
+        ln_ctg_gagu.setOnClickListener(this);
+        ln_ctg_adong = findViewById(R.id.ln_ctg_adong);
+        ln_ctg_adong.setOnClickListener(this);
+        ln_ctg_samu = findViewById(R.id.ln_ctg_samu);
+        ln_ctg_samu.setOnClickListener(this);
+        ln_ctg_leisure = findViewById(R.id.ln_ctg_leisure);
+        ln_ctg_leisure.setOnClickListener(this);
+
 
         //하단 circle menu나오도록하는 +버튼
         cdv_plus = findViewById(R.id.cdv_plus);
@@ -202,6 +223,31 @@ public class MainActivity extends AppCompatActivity {
     }//oncreate
 
 
+    @Override
+    public void onClick(View v) {
+       // ln_ctg_gajeon, ln_ctg_computer, ln_ctg_mobile, ln_ctg_car, ln_ctg_gagu, ln_ctg_adong, ln_ctg_samu, ln_ctg_leisure;
+
+        Intent intent = new Intent(MainActivity.this, CategoryActivity.class);
+
+        if(v.getId() == R.id.ln_ctg_gajeon){
+            intent.putExtra("category", 1);
+        }else if(v.getId() == R.id.ln_ctg_computer){
+            intent.putExtra("category", 2);
+        }else if(v.getId() == R.id.ln_ctg_mobile){
+            intent.putExtra("category", 3);
+        }else if(v.getId() == R.id.ln_ctg_car){
+            intent.putExtra("category", 4);
+        }else if(v.getId() == R.id.ln_ctg_gagu){
+            intent.putExtra("category", 5);
+        }else if(v.getId() == R.id.ln_ctg_adong){
+            intent.putExtra("category", 6);
+        }else if(v.getId() == R.id.ln_ctg_samu){
+            intent.putExtra("category", 7);
+        }else if(v.getId() == R.id.ln_ctg_leisure){
+            intent.putExtra("category", 8);
+        }
+        startActivity(intent);
+    }
 }
 
 

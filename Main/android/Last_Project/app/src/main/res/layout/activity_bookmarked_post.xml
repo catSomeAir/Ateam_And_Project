@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".postList.BookmarkedPostActivity"
     android:orientation="vertical">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -15,12 +14,10 @@
         android:gravity="center"
         android:orientation="horizontal"
         android:paddingHorizontal="14dp">
-
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1">
-
             <ImageView
                 android:id="@+id/imgv_category_back"
                 android:layout_width="34dp"
@@ -40,15 +37,34 @@
             android:layout_height="wrap_content"
             android:layout_weight="1" />
     </LinearLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"/>
+
 
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="#EEEEEE"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Space
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"/>
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_edt_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_marginVertical="10dp"
+            android:paddingHorizontal="30dp"
+            android:background="#020E20"
+            android:text="편집하기"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"/>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/bookmarked_post_recv"
         android:layout_width="match_parent"

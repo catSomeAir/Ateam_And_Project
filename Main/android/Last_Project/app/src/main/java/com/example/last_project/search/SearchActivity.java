@@ -18,18 +18,24 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.last_project.R;
 import com.example.last_project.category.CategoryActivity;
+import com.example.last_project.category.recyclerview.RelateSearchAdapter;
 import com.example.last_project.common.CommonMethod;
+import com.example.last_project.conn.CommonConn;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import java.util.ArrayList;
 
 public class SearchActivity extends AppCompatActivity {
     LinearLayout ln_search_list;
-    RecyclerView recv_search_relate;
+    RecyclerView recv_search_relate, recv_search_input_relate;
     ImageView imgv_search_category, imgv_search_find, imgv_cancel;
     EditText edt_search;
     TextView tv_search_findtext, tv_cancel;
     boolean search = true;
 
+    String search_text ="";
+    String search_div_text ="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,9 +47,6 @@ public class SearchActivity extends AppCompatActivity {
         //* 임시로 바코드 검색 데이터 넘어오는곳 : 추후 수정
 
 
-        String barcord_search_name = getIntent().getStringExtra("barcord_search_name");
-
-
         imgv_search_category = findViewById(R.id.imgv_search_category);
         imgv_search_category.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,9 +56,13 @@ public class SearchActivity extends AppCompatActivity {
                 overridePendingTransition(R.anim.slideing_left_enter, R.anim.hold);
             }
         });
-        //연관검색어
+
+        //DB연관된 검색어 뜨도록 하는곳
         recv_search_relate = findViewById(R.id.recv_search_relate);
+
+
         ArrayList<String> list = new ArrayList<>();
+        //연관검색어
         list.add("# 연관검색");
         list.add("# 검색어");
         list.add("# 검색");
@@ -66,6 +73,7 @@ public class SearchActivity extends AppCompatActivity {
         RecyclerView.LayoutManager manager = new LinearLayoutManager(SearchActivity.this, LinearLayoutManager.HORIZONTAL, false);
         recv_search_relate.setAdapter(adapter);
         recv_search_relate.setLayoutManager(manager);
+
 
         //검색 돋보기 이미지
         imgv_search_find = findViewById(R.id.imgv_search_find);
@@ -81,8 +89,7 @@ public class SearchActivity extends AppCompatActivity {
                 //검색데이터가 있는경우 임시( 비스포크라고 쳤을 경우로 테스트중 )
 
 
-                getSupportFragmentManager().beginTransaction().replace(R.id.container_search, new SearchResultFragment(edt_search.getText()+"")).commit();
-
+                getSupportFragmentManager().beginTransaction().replace(R.id.container_search, new SearchResultFragment(edt_search.getText() + "", search_div_text)).commit();
 
 
                 edt_search.setText("");
@@ -96,6 +103,11 @@ public class SearchActivity extends AppCompatActivity {
         edt_search = findViewById(R.id.edt_search);
         edt_search.requestFocus();
         tv_search_findtext = findViewById(R.id.tv_search_findtext);
+
+        //검색어와 연관된 DB저장된 데이터 뿌리는 리사이클러뷰
+        recv_search_input_relate = findViewById(R.id.recv_search_input_relate);
+
+
         edt_search.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -104,9 +116,30 @@ public class SearchActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
+                CommonConn conn = new CommonConn(SearchActivity.this, "search.re"); //입력한 검색어와 최대한 비슷한 정보
+                search_text = edt_search.getText().toString();
+                search_div_text = CommonMethod.text_div(search_text);
+                conn.addParams("search_text", search_div_text);
+                conn.executeConn_no_dialog(new CommonConn.ConnCallback() {
+                    @Override
+                    public void onResult(boolean isResult, String data) {
+                        if (isResult) {
+                            String[] list = new Gson().fromJson(data, new TypeToken<String[]>() {
+                            }.getType());
+                            if (list != null) {
+
+                                RelateSearchAdapter adapter = new RelateSearchAdapter(getLayoutInflater(), SearchActivity.this, list, search_text, getSupportFragmentManager(), SearchActivity.this);
+                                RecyclerView.LayoutManager manager = new LinearLayoutManager(SearchActivity.this, RecyclerView.VERTICAL, false);
+                                recv_search_input_relate.setLayoutManager(manager);
+                                recv_search_input_relate.setAdapter(adapter);
+                            }
+
+                        }
+                    }
+                });
                 if (edt_search.getText().length() == 0) {
                     ln_search_list.setVisibility(View.GONE);
-                    if(search){     //검색시도 하기전임
+                    if (search) {     //검색시도 하기전임
                         recv_search_relate.setVisibility(View.VISIBLE);
                     }
                 } else {
@@ -121,14 +154,15 @@ public class SearchActivity extends AppCompatActivity {
 
             }
         });
+
         //엔터키
         edt_search.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
 //                Log.d("키코드", "onKey: " + KeyEvent.KEYCODE_ENTER);
 //                Log.d("키코드", "onKey: " + edt_search.getText().toString());
-                if(keyCode == KeyEvent.KEYCODE_ENTER){
-                    edt_search.setText(edt_search.getText().toString().replace("\n" ,""));
+                if (keyCode == KeyEvent.KEYCODE_ENTER) {
+                    edt_search.setText(edt_search.getText().toString().replace("\n", ""));
                     imgv_search_find.performClick();
                     edt_search.clearFocus();
                     InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
@@ -152,5 +186,38 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
+        //* 임시로 바코드 검색 데이터 넘어오는곳 : 추후 수정
+        String barcord_search_name = getIntent().getStringExtra("barcord_search_name");
+        if (barcord_search_name != null) {
+            if (barcord_search_name == "") {
+                barcord_search_name = "해당하는 제품정보";
+            }
+             String[] barcord_div_name = barcord_search_name.split("");
+            getSupportFragmentManager().beginTransaction().replace(R.id.container_search, new SearchResultFragment(barcord_search_name, barcord_div_name)).commit();
+            recv_search_relate.setVisibility(View.GONE);
+            search = false;
+//            Bundle bundle = new Bundle();
+//            bundle.putString("barcord_search_name",barcord_search_name);
+//            SearchResultFragment fragment = new SearchResultFragment();
+//            fragment.setArguments(bundle);
+        }
+
+
+        //취소 글씨선택, x 아이콘으로 Edittext 텍스트 지우기
+        CommonMethod.edittext_change(edt_search, tv_cancel, imgv_cancel, SearchActivity.this);
+        tv_cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                edt_search.setText("");
+                edt_search.clearFocus();
+                InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(edt_search.getWindowToken(), 0);
+            }
+        });
+
+
     }
+
+
+
 }

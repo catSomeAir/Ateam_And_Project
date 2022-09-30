@@ -26,6 +26,24 @@
         android:theme="@style/Theme.Last_Project"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".postList.MyPostDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".postList.DownloadedManualActivity"
+            android:exported="true" />
+        <activity
+            android:name=".member.LoginActivity"
+            android:exported="true" />
+        <activity
+            android:name=".postList.EdtBookmarkedPostActivity"
+            android:exported="true" />
+        <activity
+            android:name=".event.EventDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".category.CategorySearchActivity"
+            android:exported="true" />
+        <activity
             android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
             android:exported="true">
             <intent-filter>
@@ -71,13 +89,11 @@
             android:name=".point.PointActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".mypage.MypageActivity"
             android:exported="true" />
-
         <activity
             android:name=".barcord.BarcordActivity"
             android:exported="true" />
-
         <activity
             android:name=".model.detail.as.AfterServiceActivity"
             android:exported="true" />
@@ -115,10 +131,7 @@
             android:name=".SplashActivity"
             android:exported="true" />
         <activity
-            android:name=".member.LoginActivity"
-            android:exported="true" />
-        <activity
-            android:name=".mypage.MypageActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -135,9 +148,7 @@
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_path" />
-
         </provider>
-
     </application>
 
 </manifest>
