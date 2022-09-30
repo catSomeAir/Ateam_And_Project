@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/o0"
+    >
+    <LinearLayout
+    android:background="@drawable/market_dialog_bg"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="24dp"
+        android:orientation="vertical"
+
+        >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="구매가 완료되었습니다."
+        android:textSize="20dp"
+        android:textColor="@color/market_font"
+        android:layout_margin="10dp"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="자세한 확인은 구매내역에서\n확인가능합니다"
+        android:textAlignment="center"
+        android:textSize="14dp"
+        />
+    <Button
+        android:id="@+id/market_btn_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="확인"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="@color/market_font"
+        android:layout_marginTop="10dp"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        />
+    </LinearLayout>
+</LinearLayout>
