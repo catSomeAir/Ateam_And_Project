@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--임시파일경로임 매니페스트에 provider 만든거랑 연결
+    카메라로 사진찍으면 임시파일경로에 저장되는거라서...
+-->
+<paths>
+<external-path
+    name="storage/emulated/0/Pictures"
+    path="." />
+<root-path name="root" part="."/>
+</paths>
