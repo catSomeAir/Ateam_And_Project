@@ -1,7 +1,7 @@
 package member;
 
 public class MemberVO {
-	private String email, pw, name, nickname, phone, join_date, amdin, social_code, profile_img;
+	private String email, pw, name, nickname, phone, join_date, amdin, social_code, filepath;
 
 	public String getEmail() {
 		return email;
@@ -67,13 +67,14 @@ public class MemberVO {
 		this.social_code = social_code;
 	}
 
-	public String getProfile_img() {
-		return profile_img;
+	public String getFilepath() {
+		return filepath;
 	}
 
-	public void setProfile_img(String profile_img) {
-		this.profile_img = profile_img;
+	public void setFilepath(String filepath) {
+		this.filepath = filepath;
 	}
+
 	
 	
 }

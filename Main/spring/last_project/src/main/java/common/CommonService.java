@@ -41,13 +41,13 @@ public class CommonService {
 		mail.setDebug(true);
 		
 		//로그인 아이디 비번
-		mail.setAuthentication("아이디", "비이번");
+		mail.setAuthentication("아이디", "비번");
 		//로그인버튼 누르기
 		mail.setSSLOnConnect(true);
 		
 		//보내는사람 메일
 		try {
-			mail.setFrom("이메일주소","지능형 IoT 관리자");
+			mail.setFrom("메일주소","지능형 IoT 관리자");
 			//받는사람 설정
 			mail.addTo(email, name);
 			
@@ -152,7 +152,8 @@ public class CommonService {
 		String path = "d://app"+ req.getContextPath();	//contextpath = iot
 		
 		//업로드시킬 폴더 upload/profile/2022/08/23 로 만들거야
-		String upload = "/upload/" + category + new SimpleDateFormat("/yyyy/MM/dd").format(new Date());
+//		String upload = "/upload/" + category + new SimpleDateFormat("/yyyy/MM/dd").format(new Date());	파일경로 수정
+		String upload = "/upload/" + new SimpleDateFormat("/yyyy/MM/dd").format(new Date());
 		
 		path += upload;	//경로의 풀네임 완성시키기
 		

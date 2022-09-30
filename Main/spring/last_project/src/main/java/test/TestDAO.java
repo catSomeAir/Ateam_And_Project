@@ -22,4 +22,10 @@ public class TestDAO implements TestService {
 		return sql.selectOne("test.hotdog",email);
 	}
 
+	@Override
+	public List<ModelInfoVO> 안생겨요() {
+		
+		return sql.selectList("test.model_list");
+	}
+
 }

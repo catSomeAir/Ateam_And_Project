@@ -20,4 +20,9 @@ public class TestServiceImpl implements TestService {
 		return dao.testhotdog(email);
 	}
 
+	@Override
+	public List<ModelInfoVO> 안생겨요() {
+		return dao.안생겨요();
+	}
+
 }
