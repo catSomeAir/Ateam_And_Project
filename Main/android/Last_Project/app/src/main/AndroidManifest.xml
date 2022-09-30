@@ -41,6 +41,19 @@
             android:theme="@style/Theme.AppCompat.Transparent.NoActionBar" />
         <activity
             android:name=".main.banner.BannerActivity"
+            android:name=".postList.MyPostDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".postList.DownloadedManualActivity"
+            android:exported="true" />
+        <activity
+            android:name=".member.LoginActivity"
+            android:exported="true" />
+        <activity
+            android:name=".postList.EdtBookmarkedPostActivity"
+            android:exported="true" />
+        <activity
+            android:name=".event.EventDetailActivity"
             android:exported="true" />
         <activity
             android:name=".category.CategorySearchActivity"
@@ -135,9 +148,6 @@
             android:exported="true" />
         <activity
             android:name=".SplashActivity"
-            android:exported="true" />
-        <activity
-            android:name=".member.LoginActivity"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

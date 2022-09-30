@@ -27,11 +27,41 @@
         android:usesCleartextTraffic="true">
         <activity
 <<<<<<< HEAD
+            android:name=".CommonAlertActivity"
+            android:theme="@style/Theme.AppCompat.Transparent.NoActionBar"
+            android:exported="true" />
+        <activity
+            android:name=".model.detail.writng.WriteSpaceActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Transparent.NoActionBar"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".request.RequestEmptyActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Transparent.NoActionBar" />
+        <activity
+            android:name=".main.banner.BannerActivity"
+=======
+            android:name=".postList.MyPostDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".postList.DownloadedManualActivity"
+            android:exported="true" />
+        <activity
+            android:name=".member.LoginActivity"
+            android:exported="true" />
+        <activity
+            android:name=".postList.EdtBookmarkedPostActivity"
+            android:exported="true" />
+        <activity
+            android:name=".event.EventDetailActivity"
+>>>>>>> 144ad70411e2a3cdcc02553e902dfa9031416d22
+            android:exported="true" />
+        <activity
             android:name=".category.CategorySearchActivity"
             android:exported="true" />
         <activity
-=======
->>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
             android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
             android:exported="true">
             <intent-filter>
@@ -77,21 +107,11 @@
             android:name=".point.PointActivity"
             android:exported="true" />
         <activity
-<<<<<<< HEAD
             android:name=".mypage.MypageActivity"
             android:exported="true" />
         <activity
             android:name=".barcord.BarcordActivity"
             android:exported="true" />
-=======
-            android:name=".MainActivity"
-            android:exported="true" />
-
-        <activity
-            android:name=".barcord.BarcordActivity"
-            android:exported="true" />
-
->>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
         <activity
             android:name=".model.detail.as.AfterServiceActivity"
             android:exported="true" />
@@ -103,6 +123,10 @@
             android:name="com.kakao.sdk.AppKey"
             android:value="693dd02df8fe8f8ace3aaaefb130bc94" />
 
+        <activity
+            android:name=".search.NotFoundAlertActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Transparent.NoActionBar" />
         <activity
             android:name=".request.RequestCancelActivity"
             android:exported="true"
@@ -129,14 +153,13 @@
             android:name=".SplashActivity"
             android:exported="true" />
         <activity
+<<<<<<< HEAD
             android:name=".member.LoginActivity"
             android:exported="true" />
         <activity
-<<<<<<< HEAD
-            android:name=".MainActivity"
 =======
-            android:name=".mypage.MypageActivity"
->>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
+>>>>>>> 144ad70411e2a3cdcc02553e902dfa9031416d22
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -153,13 +176,7 @@
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_path" />
-<<<<<<< HEAD
         </provider>
-=======
-
-        </provider>
-
->>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
     </application>
 
 </manifest>

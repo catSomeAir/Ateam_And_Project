@@ -26,6 +26,17 @@ public class SearchResultFragment extends Fragment {
     String search_div_text;
 //    LinearLayout ln_test; // 리사이클러뷰 대신 임시로 -> 검색결과 클릭시 상세페이지로 이동시키기
 
+    //바코드로 검색시에
+    String[] barcord_div_name;
+    String barcord_search_name;
+
+    //검색 타입 : 검색어(text), 바코드(barcord), 카테고리(category)
+    String search_type = "";
+
+    String search_text;
+    String search_div_text;
+//    LinearLayout ln_test; // 리사이클러뷰 대신 임시로 -> 검색결과 클릭시 상세페이지로 이동시키기
+
     //카테고리로 검색시
     String m_category;
 
@@ -44,6 +55,13 @@ public class SearchResultFragment extends Fragment {
     }
     public SearchResultFragment(String search_text,String search_div_text) {
         this.search_text = search_text;
+<<<<<<< HEAD
+=======
+
+    }
+    public SearchResultFragment(String search_text,String search_div_text) {
+        this.search_text = search_text;
+>>>>>>> 144ad70411e2a3cdcc02553e902dfa9031416d22
         this.search_div_text = search_div_text;
     }
 
@@ -214,24 +232,6 @@ public class SearchResultFragment extends Fragment {
                         getChildFragmentManager().beginTransaction().replace(R.id.container_search_result, new NotFoundFragment(search_text)).commit();
 //                        ln_search_exist.setVisibility(View.GONE);
 //                        recv_search_result.setVisibility(View.GONE);
-                    }
-                }
-            });
-        }
-        //카테고리로 검색
-        if(m_category != null){
-
-            CommonConn conn = new CommonConn(getContext(), "list.mo");
-            conn.addParams("m_name",m_category);
-            conn.executeConn(new CommonConn.ConnCallback() {
-                @Override
-                public void onResult(boolean isResult, String data) {
-                    if(isResult){
-                        ArrayList<CategorySearchVO> list = new Gson().fromJson(data,
-                                new TypeToken<ArrayList<CategorySearchVO>>() {
-                                }.getType());
-
-                        getChildFragmentManager().beginTransaction().replace(R.id.container_search_result, new SearchResultExistFragment(list)).commit();
                     }
                 }
             });

@@ -248,6 +248,7 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
 //oncreate
 
 
+
     //뒤로가기 누르면 애니메이션 효과
     @Override
     public void onBackPressed() {

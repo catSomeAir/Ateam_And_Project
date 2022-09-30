@@ -208,15 +208,18 @@
 
         </LinearLayout>
 
-        <!--구글 로그인 이미지 일단 넣어놈-->
+        <!--구글 로그인 이미지 G마크는 앱 실행시키면 나옴-->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+            <!--구글 로그인 이미지 G마크 는 여기에서는 안보이나앱 실행시키면 나옴-->
             <com.google.android.gms.common.SignInButton
                 android:id="@+id/btn_google"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_marginLeft="40dp"
+                android:layout_width="232dp"
+                android:layout_height="50dp"/>
+            <!--구글 로그인 이미지 G마크 는 앱 실행시키면 나옴-->
             <!--<ImageView
                 android:id="@+id/btn_google"
                 android:layout_width="232dp"

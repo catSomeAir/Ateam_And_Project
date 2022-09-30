@@ -41,13 +41,13 @@ public class CommonService {
 		mail.setDebug(true);
 		
 		//로그인 아이디 비번
-		mail.setAuthentication("ta2080", ")%)$Tkddbs2did");
+		mail.setAuthentication("아이디", "비이번");
 		//로그인버튼 누르기
 		mail.setSSLOnConnect(true);
 		
 		//보내는사람 메일
 		try {
-			mail.setFrom("ta2080@naver.com)","지능형 IoT 관리자");
+			mail.setFrom("이메일주소","지능형 IoT 관리자");
 			//받는사람 설정
 			mail.addTo(email, name);
 			

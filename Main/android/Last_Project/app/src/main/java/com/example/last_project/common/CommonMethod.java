@@ -1,10 +1,15 @@
 package com.example.last_project.common;
 
 import android.content.Context;
+<<<<<<< HEAD
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.preference.PreferenceManager;
+=======
+import android.graphics.Color;
+import android.graphics.Typeface;
+>>>>>>> 144ad70411e2a3cdcc02553e902dfa9031416d22
 import android.text.Editable;
 import android.text.Spannable;
 import android.text.SpannableString;

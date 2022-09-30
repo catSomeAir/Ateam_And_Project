@@ -3,7 +3,6 @@ package com.example.last_project.member.join;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -64,6 +63,8 @@ public class JoinActivity extends AppCompatActivity {
 
             }
         });
+        /*Intent kakaofailintent = getIntent();
+        join_edt_email.setText(kakaofailintent.getStringExtra("present_email"));*/
 //        join_edt_pw.addTextChangedListener(new TextWatcher() {
 //            @Override
 //            public void beforeTextChanged(CharSequence s, int start, int count, int after) {

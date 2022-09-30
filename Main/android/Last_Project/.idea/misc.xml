@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/drawable/market_tab_notselected.xml" value="0.40260416666666665" />
+<<<<<<< HEAD
         <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/drawable/shape_border_navy.xml" value="0.40260416666666665" />
         <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/drawable/shape_navy_bottomright_radius4.xml" value="0.18645833333333334" />
         <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/drawable/shape_navy_bottomright_radius8.xml" value="0.40260416666666665" />
@@ -47,6 +48,43 @@
         <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/layout/item_serach_relate.xml" value="0.9" />
         <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/layout/item_write_board.xml" value="0.4629156010230179" />
         <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/layout/item_write_board_reply.xml" value="0.38645833333333335" />
+=======
+        <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/layout/activity_after_service.xml" value="0.18489583333333334" />
+        <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/layout/activity_category.xml" value="0.67" />
+        <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/layout/activity_category_search.xml" value="0.1" />
+        <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/layout/activity_main.xml" value="0.2203125" />
+        <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/layout/activity_model_detail.xml" value="0.18489583333333334" />
+        <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/layout/activity_mypage.xml" value="0.171875" />
+        <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/layout/activity_search.xml" value="0.38645833333333335" />
+        <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/layout/fragment_after_service.xml" value="0.18489583333333334" />
+        <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/layout/fragment_category.xml" value="0.2203125" />
+        <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/layout/fragment_search_result.xml" value="0.33" />
+        <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/layout/fragment_search_result_exist.xml" value="0.38645833333333335" />
+        <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/layout/item_relate_search.xml" value="0.38645833333333335" />
+        <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/layout/item_search_result.xml" value="0.33" />
+        <entry key="..\:/Project_Git/Main/android/Last_Project/app/src/main/res/layout/item_serach_relate.xml" value="0.9" />
+        <entry key="..\:/Study_Android/WorkSpace/Last_Project/app/src/main/res/layout/activity_bookmarked_post.xml" value="0.36614583333333334" />
+        <entry key="..\:/Study_Android/WorkSpace/Last_Project/app/src/main/res/layout/activity_downloaded_manual.xml" value="0.259963768115942" />
+        <entry key="..\:/Study_Android/WorkSpace/Last_Project/app/src/main/res/layout/activity_edit_profile.xml" value="0.2817028985507246" />
+        <entry key="..\:/Study_Android/WorkSpace/Last_Project/app/src/main/res/layout/activity_edt_bookmarked_post.xml" value="0.36614583333333334" />
+        <entry key="..\:/Study_Android/WorkSpace/Last_Project/app/src/main/res/layout/activity_event.xml" value="0.2817028985507246" />
+        <entry key="..\:/Study_Android/WorkSpace/Last_Project/app/src/main/res/layout/activity_event_detail.xml" value="0.36614583333333334" />
+        <entry key="..\:/Study_Android/WorkSpace/Last_Project/app/src/main/res/layout/activity_google_login.xml" value="0.3614583333333333" />
+        <entry key="..\:/Study_Android/WorkSpace/Last_Project/app/src/main/res/layout/activity_join.xml" value="0.36614583333333334" />
+        <entry key="..\:/Study_Android/WorkSpace/Last_Project/app/src/main/res/layout/activity_my_post_detail.xml" value="0.21784420289855072" />
+        <entry key="..\:/Study_Android/WorkSpace/Last_Project/app/src/main/res/layout/activity_mypage.xml" value="0.26992753623188404" />
+        <entry key="..\:/Study_Android/WorkSpace/Last_Project/app/src/main/res/layout/activity_point.xml" value="0.36614583333333334" />
+        <entry key="..\:/Study_Android/WorkSpace/Last_Project/app/src/main/res/layout/activity_request_manual.xml" value="0.3203125" />
+        <entry key="..\:/Study_Android/WorkSpace/Last_Project/app/src/main/res/layout/activity_request_result.xml" value="0.3203125" />
+        <entry key="..\:/Study_Android/WorkSpace/Last_Project/app/src/main/res/layout/activity_requested_post.xml" value="0.3203125" />
+        <entry key="..\:/Study_Android/WorkSpace/Last_Project/app/src/main/res/layout/fragment_my_post.xml" value="0.2105978260869565" />
+        <entry key="..\:/Study_Android/WorkSpace/Last_Project/app/src/main/res/layout/item__mypost__recv.xml" value="0.5" />
+        <entry key="..\:/Study_Android/WorkSpace/Last_Project/app/src/main/res/layout/item__myreply__recv.xml" value="0.5" />
+        <entry key="..\:/Study_Android/WorkSpace/Last_Project/app/src/main/res/layout/item_bookmarked_post.xml" value="0.36614583333333334" />
+        <entry key="..\:/Study_Android/WorkSpace/Last_Project/app/src/main/res/layout/item_edt_bookmarked_post.xml" value="0.36614583333333334" />
+        <entry key="..\:/Study_Android/WorkSpace/Last_Project/app/src/main/res/layout/item_requested_post.xml" value="0.3203125" />
+        <entry key="..\:/Study_Android/WorkSpace/Last_Project/app/src/main/res/xml/network_security_config.xml" value="0.36614583333333334" />
+>>>>>>> 144ad70411e2a3cdcc02553e902dfa9031416d22
         <entry key="..\:/Study_Android/WorkSpace/Last_Project_/app/src/main/res/drawable/border_layout.xml" value="0.38229166666666664" />
         <entry key="..\:/Study_Android/WorkSpace/Last_Project_/app/src/main/res/drawable/edit_profile_button_custom.xml" value="0.3026041666666667" />
         <entry key="..\:/Study_Android/WorkSpace/Last_Project_/app/src/main/res/drawable/edittext_rounded_corner_rectangle.xml" value="0.3026041666666667" />

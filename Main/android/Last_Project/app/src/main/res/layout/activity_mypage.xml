@@ -44,7 +44,13 @@
             android:layout_weight="1" />
     </LinearLayout>
 
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -371,7 +377,7 @@
             android:layout_height="30dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
-            android:src="@drawable/shoppingicon" />
+            android:src="@drawable/mypage_postlisticon" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -577,6 +583,33 @@
                 android:src="@drawable/arrowright" />
         </LinearLayout>
 
-    </LinearLayout>
 
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#EEEEEE" />
+    <LinearLayout
+        android:id="@+id/ll_requested_post"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:text="내가 요청한 설명서"
+            android:textSize="17dp" />
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/arrowright" />
+    </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+</ScrollView>
 </LinearLayout>

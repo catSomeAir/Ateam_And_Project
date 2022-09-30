@@ -47,6 +47,8 @@ public class SearchActivity extends AppCompatActivity {
         imgv_cancel = findViewById(R.id.imgv_cancel);
 
         //* 임시로 바코드 검색 데이터 넘어오는곳 : 추후 수정
+
+
         imgv_search_category = findViewById(R.id.imgv_search_category);
         imgv_search_category.setOnClickListener(new View.OnClickListener() {
             @Override

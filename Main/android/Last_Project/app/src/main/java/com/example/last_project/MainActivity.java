@@ -32,8 +32,11 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.ramotion.circlemenu.CircleMenuView;
 
+<<<<<<< HEAD
 import java.util.ArrayList;
 
+=======
+>>>>>>> 144ad70411e2a3cdcc02553e902dfa9031416d22
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     ImageView imgv_main_category;
     TabLayout tabs;

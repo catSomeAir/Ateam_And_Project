@@ -9,15 +9,15 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.last_project.R;
-import com.example.last_project.postList.RequestedPostDTO;
+import com.example.last_project.postList.RequestedPostVO;
 
 import java.util.ArrayList;
 
 public class RequestedPostAdapter extends RecyclerView.Adapter<RequestedPostAdapter.ViewHolder> {
     LayoutInflater inflater;
-    ArrayList<RequestedPostDTO> list;
+    ArrayList<RequestedPostVO> list;
 
-    public RequestedPostAdapter(LayoutInflater inflater, ArrayList<RequestedPostDTO> list) {
+    public RequestedPostAdapter(LayoutInflater inflater, ArrayList<RequestedPostVO> list) {
         this.inflater = inflater;
         this.list = list;
     }
@@ -39,19 +39,23 @@ public class RequestedPostAdapter extends RecyclerView.Adapter<RequestedPostAdap
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView model_name,model_code,brand_name;
+        TextView tv_category,tv_title,tv_content,tv_writedate,tv_commit;
 
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            model_name = itemView.findViewById(R.id.tv_model_name);
-            model_code = itemView.findViewById(R.id.tv_model_code);
-            brand_name = itemView.findViewById(R.id.tv_brand_name);
+        public ViewHolder(@NonNull View v) {
+            super(v);
+            tv_category =v.findViewById(R.id.tv_category);
+            tv_title =v.findViewById(R.id.tv_title);
+            tv_content =v.findViewById(R.id.tv_content);
+            tv_writedate =v.findViewById(R.id.tv_writedate);
+            tv_commit =v.findViewById(R.id.tv_commit);
         }
 
-        public void bind(@NonNull ViewHolder holder, int i) {
-            holder.model_name.setText(list.get(i).getModel_name()+"");
-            holder.model_code.setText(list.get(i).getModel_code()+"");
-            holder.brand_name.setText(list.get(i).getBrand_name()+"");
+        public void bind(@NonNull ViewHolder h, int i) {
+            h.tv_category.setText(list.get(i).getL_catg()+"");
+            h.tv_title.setText(list.get(i).getReq_title()+"");
+            h.tv_content.setText(list.get(i).getReq_content()+"");
+            h.tv_writedate.setText(list.get(i).getReq_writedate()+"");
+            h.tv_commit.setText(list.get(i).getCommit()=="N"? "미완료" : "완료");
         }
     }
 }
