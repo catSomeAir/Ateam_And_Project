@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="230dp"
+    tools:context=".main.tab.Main_Tab_HomeFragment">
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vp_main_tap_home"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:saveEnabled="false"
+        />
+
+    <me.relex.circleindicator.CircleIndicator3
+        android:id="@+id/indicator_main_tap_home"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginTop="15dp"
+         />
+
+</FrameLayout>

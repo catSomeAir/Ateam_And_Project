@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Last_Project</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="naver_client_id">q4cPwDi2e5PHJjOkfQmy</string>
+    <string name="naver_client_secret">BJbZC7mICm</string>
+    <string name="naver_client_name">Last_Project</string>
+    <string name="join_signup">Sign Up</string>
+</resources>
