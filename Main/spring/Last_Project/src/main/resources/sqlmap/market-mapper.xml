@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="market">
+
+<select id="gift_list" resultType="market.GiftVO"> 
+SELECT G.*
+FROM USERINFO U LEFT OUTER JOIN GIFT G
+ON U.EMAIL = G.EMAIL
+WHERE U.EMAIL = #{EMAIL}
+</select>
+
+</mapper>
