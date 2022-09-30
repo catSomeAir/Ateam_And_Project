@@ -143,6 +143,56 @@
         <entry key="..\:/Study_Android/WorkSpace/Last_Project_/app/src/main/res/layout/item_search_result.xml" value="0.36614583333333334" />
         <entry key="..\:/Study_Android/WorkSpace/Last_Project_/app/src/main/res/layout/item_serach_relate.xml" value="0.36614583333333334" />
         <entry key="..\:/Study_Android/WorkSpace/Last_Project_/app/src/main/res/layout/item_spinner.xml" value="0.36614583333333334" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/drawable/market_dialog_bg.xml" value="0.23055555555555557" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/drawable/market_gifticon_shape.xml" value="0.24537037037037038" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/drawable/shape_border.xml" value="0.24537037037037038" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/drawable/shape_border_item_gifticon.xml" value="0.24537037037037038" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/drawable/shape_login.xml" value="0.22916666666666666" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/drawable/shape_login_google.xml" value="0.22916666666666666" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/drawable/shape_login_kakao.xml" value="0.22916666666666666" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/drawable/shape_market_btn.xml" value="0.23055555555555557" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/activity_after_service.xml" value="0.30416666666666664" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/activity_barcord.xml" value="0.30416666666666664" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/activity_bookmarked_post.xml" value="0.2513586956521739" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/activity_category.xml" value="0.5" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/activity_category_search.xml" value="0.30416666666666664" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/activity_edit_profile.xml" value="0.3614583333333333" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/activity_event.xml" value="0.2513586956521739" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/activity_join.xml" value="0.25" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/activity_login.xml" value="0.5" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/activity_login_in.xml" value="0.3351449275362319" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/activity_main.xml" value="0.4554794520547945" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/activity_market.xml" value="0.1342451874366768" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/activity_market_buy_dialog.xml" value="0.17806484295845998" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/activity_market_grid.xml" value="0.33" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/activity_mypage.xml" value="0.1" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/activity_point.xml" value="0.36614583333333334" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/activity_reqeuest_cancel.xml" value="0.3654891304347826" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/activity_request_manual.xml" value="0.3654891304347826" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/activity_request_result.xml" value="0.3654891304347826" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/activity_splash.xml" value="0.1388888888888889" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/activity_webview.xml" value="0.2513586956521739" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/fragment_category.xml" value="0.2513586956521739" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/fragment_gift__grid__list_.xml" value="0.2318840579710145" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/fragment_join__password_.xml" value="0.3052536231884058" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/fragment_join__user_info_.xml" value="0.3052536231884058" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/fragment_join_main_.xml" value="0.3052536231884058" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/fragment_login.xml" value="0.3614583333333333" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/fragment_main__many_search.xml" value="0.2513586956521739" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/fragment_main__market.xml" value="0.27449617790132036" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/fragment_main__market_buy_.xml" value="0.25869565217391305" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/fragment_main__market_gifticon_.xml" value="0.25" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/fragment_main__tab__home.xml" value="0.3614583333333333" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/fragment_my_info.xml" value="0.30416666666666664" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/fragment_not_found.xml" value="0.36614583333333334" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/item_event_recv.xml" value="0.3614583333333333" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/item_in_category.xml" value="0.2513586956521739" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/item_main_manysearch.xml" value="0.3614583333333333" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/item_market_gridv.xml" value="0.5" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/item_market_recv.xml" value="0.5" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/join_dialog.xml" value="0.3351449275362319" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/market_dialog.xml" value="0.17222222222222222" />
+        <entry key="..\:/Stydy_Android/WorkSpace/Last_Project/app/src/main/res/layout/market_null_dialog.xml" value="0.1" />
         <entry key="..\:/project/android/andworkspace/Last_Project/app/src/main/res/drawable-v24/ic_baseline_keyboard_arrow_right_24.xml" value="0.17291666666666666" />
         <entry key="..\:/project/android/andworkspace/Last_Project/app/src/main/res/drawable/shape_border.xml" value="0.17291666666666666" />
         <entry key="..\:/project/android/andworkspace/Last_Project/app/src/main/res/drawable/shape_border_light_gray.xml" value="0.17291666666666666" />
@@ -188,7 +238,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

@@ -20,38 +20,6 @@
             android:gravity="center_horizontal"
             >
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="지금"
-                    android:textColor="@color/market_font"
-                    android:textSize="16dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="4dp"
-                    android:text="27"
-                    android:textColor="#FF0000"
-                    android:textSize="16dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="4dp"
-                    android:text="개 남음"
-                    android:textColor="@color/market_font"
-                    android:textSize="16dp" />
-            </LinearLayout>
-
             <ImageView
                 android:id="@+id/market_imgv_buy_menu_img"
                 android:layout_width="250dp"
@@ -89,7 +57,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="4dp"
-                    android:text="24,000원"
+                    android:text="2400 P"
                     android:textColor="#000"
                     android:textSize="12dp"
                     android:textStyle="bold" />
@@ -115,19 +83,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="4dp"
-                        android:text="21,600"
+                        android:text="2160 P"
                         android:textColor="#000"
                         android:textSize="12dp"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/market_tv_menu_won"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="4dp"
-                        android:text="원"
-                        android:textColor="#000"
-                        android:textSize="12dp" />
 
                 </LinearLayout><!--할인 가격 묶음-->
             </LinearLayout><!--상품 내역-->

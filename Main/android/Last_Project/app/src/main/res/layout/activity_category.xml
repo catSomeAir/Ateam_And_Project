@@ -220,9 +220,9 @@
                                 android:orientation="vertical">
 
                                 <ImageView
-                                    android:layout_width="52dp"
-                                    android:layout_height="52dp"
-                                    android:src="@drawable/category_my" />
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:src="@drawable/user_icon" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -249,9 +249,9 @@
                                 android:orientation="vertical">
 
                                 <ImageView
-                                    android:layout_width="52dp"
-                                    android:layout_height="52dp"
-                                    android:src="@drawable/category_notice" />
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:src="@drawable/icon" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -278,9 +278,9 @@
                                 android:orientation="vertical">
 
                                 <ImageView
-                                    android:layout_width="52dp"
-                                    android:layout_height="52dp"
-                                    android:src="@drawable/category_event" />
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:src="@drawable/icon_event" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -385,6 +385,7 @@
                                     android:layout_weight="1" />
 
                                 <TextView
+                                    android:id="@+id/catg_tv_point"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="1,000"

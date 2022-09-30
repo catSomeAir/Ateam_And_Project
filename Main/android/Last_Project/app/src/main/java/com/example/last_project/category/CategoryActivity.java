@@ -13,10 +13,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.widget.NestedScrollView;
 
 import com.bumptech.glide.Glide;
+import com.example.last_project.MainActivity;
 import com.example.last_project.R;
 import com.example.last_project.common.CommonVal;
 import com.example.last_project.conn.CommonConn;
@@ -41,7 +43,7 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
     Button btn_category_login, btn_category_logout; //로그인, 로그아웃버튼
     //로그인 시 프로필 정보
     ImageView imgv_category_back, imgv_category_profile;    //프로필이미지
-    TextView tv_category_nickname, tv_category_count, tv_category_comment_count;    //닉네임, 쓴글 수 , 쓴 댓글수
+    TextView tv_category_nickname, tv_category_count, tv_category_comment_count, catg_tv_point;    //닉네임, 쓴글 수 , 쓴 댓글수
 
     //My, 공지사항, 이벤트,포인트 화면연결 위해 추가
     LinearLayout ll_mypage, ll_notice, ll_event, ll_point, ll_postlist;
@@ -61,6 +63,8 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
         ln_m_list1_1.setOnClickListener(this);
         ln_m_list1_2 = findViewById(R.id.ln_m_list1_2);
         ln_m_list1_2.setOnClickListener(this);
+
+
 
 
         //로그아웃버튼
@@ -113,6 +117,10 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
         tv_category_count = findViewById(R.id.tv_category_count);
         tv_category_comment_count = findViewById(R.id.tv_category_comment_count);
 
+        //포인트
+        catg_tv_point = findViewById(R.id.catg_tv_point);
+
+
         if (CommonVal.userInfo != null) {
             MemberVO vo = CommonVal.userInfo;
             if (vo.getFilepath() != null) {
@@ -120,6 +128,9 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
 //            Picasso.get().load(CommonVal.userInfo.getProfile_img()).into(imgv_category_profile);
                 Glide.with(CategoryActivity.this).load(vo.getFilepath()).into(imgv_category_profile);
             }
+            //아인---------------------------------------------------------------------------------------------------
+            catg_tv_point.setText(vo.getPoint());//로그인 후 페이지 회원이 가진 포인트 뿌리기
+            //---▲---------------------------------------------------------------------------------------------------
             tv_category_nickname.setText(vo.getNickname());
             CommonConn conn = new CommonConn(CategoryActivity.this, "count.ct");
             conn.addParams("email", vo.getEmail());
@@ -247,6 +258,15 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
 
 //oncreate
 
+//아인 setResult 코드 사용위해 추가 --------------------------------------------------------------------------
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode == 100){
+            finish();
+        }
+    }
+//------▲---------------------------------------------------------------------------------------------------
 
 
     //뒤로가기 누르면 애니메이션 효과

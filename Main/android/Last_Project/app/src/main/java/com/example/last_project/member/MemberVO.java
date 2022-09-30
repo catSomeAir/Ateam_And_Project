@@ -1,7 +1,17 @@
 package com.example.last_project.member;
 
-public class MemberVO {
-    private String email, pw, name, nickname, phone, join_date, amdin, social_code, filepath;
+import java.io.Serializable;
+
+public class MemberVO implements Serializable {
+    private String email, pw, name, nickname, phone, join_date, amdin, social_code, filepath, point;
+
+    public String getPoint() {
+        return point;
+    }
+
+    public void setPoint(String point) {
+        this.point = point;
+    }
 
     public String getEmail() {
         return email;

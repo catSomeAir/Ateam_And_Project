@@ -54,6 +54,10 @@
             android:exported="true" />
         <activity
             android:name=".event.EventDetailActivity"
+            android:name=".main.market.Market_BuyDialog_Activity"
+            android:exported="true" />
+        <activity
+            android:name=".main.market.Market_Grid_Activity"
             android:exported="true" />
         <activity
             android:name=".category.CategorySearchActivity"

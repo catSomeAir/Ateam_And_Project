@@ -12,6 +12,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +21,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.last_project.R;
 import com.example.last_project.conn.CommonConn;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.example.last_project.category.CategoryActivity;
+import com.example.last_project.member.join.JoinActivity;
+import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -46,7 +51,8 @@ public class LoginActivity extends AppCompatActivity {
     NidOAuthLoginButton login_btn_naver;
     Button btn_login_local; //db접속 로그인 버튼
     //    EditText login_edt_id;
-    LinearLayout ln_login, ln_login_guest;
+    LinearLayout ln_login, ln_login_google, ln_login_guest;
+    TextView login_btn_join;
     //구글 로그인을 위한 전역변수
     private SignInButton btn_google; //구글 로그인 버튼
     private final int RC_SIGN_IN = 1000;
@@ -62,6 +68,19 @@ public class LoginActivity extends AppCompatActivity {
 //                WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_login);
+        //회원가입(HAI)--------------------------------------------------------------------
+        login_btn_join = findViewById(R.id.login_btn_join);
+        login_btn_join.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Intent intent = new Intent(LoginActivity.this, JoinActivity.class);
+                startActivityForResult(new Intent(LoginActivity.this, JoinActivity.class),100);
+
+            }
+        });
+
+
+
         //일반로그인 ------------------------------------------------------------------------
         ln_login = findViewById(R.id.ln_login);
         ln_login.setOnClickListener(new View.OnClickListener() {
@@ -148,10 +167,26 @@ public class LoginActivity extends AppCompatActivity {
         SignInButton signInButton = findViewById(R.id.btn_google);
         signInButton.setSize(SignInButton.SIZE_STANDARD);
 
-
-        findViewById(R.id.btn_google).setOnClickListener(v->{
-            Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-            startActivityForResult(signInIntent, RC_SIGN_IN);
+        googleApiClient = new GoogleApiClient.Builder(this)
+                .enableAutoManage(this, this)
+                .addApi(Auth.GOOGLE_SIGN_IN_API, googleSignInOptions)
+                .build();
+        auth = FirebaseAuth.getInstance(); //파이어베이스 인증 객체 초기화
+        ln_login_google = findViewById(R.id.ln_login_google);
+        btn_google = findViewById(R.id.btn_google);
+        btn_google.setBackgroundResource(R.drawable.google);
+        ln_login_google.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //구글 로그인 버튼 위 레이아웃으로 버튼 만듦/ 본래 버튼 안눌림
+            }
+        });
+        btn_google.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
+                startActivityForResult(intent, REQ_SIGN_GOOGLE);
+            }
         });
 
     }/* oncreate */
@@ -284,6 +319,9 @@ public class LoginActivity extends AppCompatActivity {
            //handleSignInResult(task);
 
        }
+        if (resultCode == 1) {
+            finish();
+        }
    }
 
 

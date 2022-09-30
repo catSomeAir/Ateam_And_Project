@@ -42,7 +42,6 @@
             android:theme="@style/Theme.AppCompat.Transparent.NoActionBar" />
         <activity
             android:name=".main.banner.BannerActivity"
-=======
             android:name=".postList.MyPostDetailActivity"
             android:exported="true" />
         <activity
@@ -56,7 +55,12 @@
             android:exported="true" />
         <activity
             android:name=".event.EventDetailActivity"
->>>>>>> 144ad70411e2a3cdcc02553e902dfa9031416d22
+=======
+            android:name=".main.market.Market_BuyDialog_Activity"
+            android:exported="true" />
+        <activity
+            android:name=".main.market.Market_Grid_Activity"
+>>>>>>> fa2b8dc19ca5f312b47fe6e153bf323be7dabe4c
             android:exported="true" />
         <activity
             android:name=".category.CategorySearchActivity"
@@ -153,12 +157,6 @@
             android:name=".SplashActivity"
             android:exported="true" />
         <activity
-<<<<<<< HEAD
-            android:name=".member.LoginActivity"
-            android:exported="true" />
-        <activity
-=======
->>>>>>> 144ad70411e2a3cdcc02553e902dfa9031416d22
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

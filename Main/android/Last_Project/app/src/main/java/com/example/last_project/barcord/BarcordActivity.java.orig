@@ -8,8 +8,10 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.last_project.R;
+
 import com.example.last_project.conn.CommonConn;
 import com.example.last_project.search.SearchActivity;
+
 import com.journeyapps.barcodescanner.ScanContract;
 import com.journeyapps.barcodescanner.ScanOptions;
 
@@ -34,14 +36,10 @@ public class BarcordActivity extends AppCompatActivity {
                         @Override
                         public void onResult(boolean isResult, String data) {
                             Intent intent = new Intent(BarcordActivity.this, SearchActivity.class);
-<<<<<<< HEAD
+
                             intent.putExtra("barcord_search_name", data );
                             startActivity(intent);
                             finish();
-=======
-                            intent.putExtra("barcord_search_name", result.getContents() );
-                            startActivity(intent);
->>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0
                         }
                     });
                 }

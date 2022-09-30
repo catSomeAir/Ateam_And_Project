@@ -16,7 +16,6 @@ public class CommonConn {
     private ConnCallback callback;
     ProgressDialog dialog;
     Context context;
-
     public CommonConn(Context context, String url) {
         this.context = context;
         this.url = url;
@@ -46,7 +45,6 @@ public class CommonConn {
     //실행처리 메소드 가장중요함!!!!!!!!!!!!!!!!!
     public void executeConn(ConnCallback callback){
         this.callback = callback;
-
         ApiInterface apiInterface = ApiClient.getApiclient().create(ApiInterface.class);
 
         //Call 은 retrofit2를 import 한다!!!
