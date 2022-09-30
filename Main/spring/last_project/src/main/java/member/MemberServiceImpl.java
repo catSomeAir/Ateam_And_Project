@@ -14,6 +14,14 @@ public class MemberServiceImpl implements MemberService {
 		return dao.login(map);
 	}
 
+	@Override
+	public int join(MemberVO joinVo) {
+		return dao.join(joinVo);
+	}
 
+	@Override
+	public int email_check(String email) {
+		return dao.email_check(email);
+	}
 
 }

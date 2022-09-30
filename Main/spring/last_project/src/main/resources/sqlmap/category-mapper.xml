@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="category">
-
-<!-- 
-<select id="email_check" resultType="Integer">
-	select count(*)
-	from userinfo
-	where email = #{email}
-</select> -->
 <select id="l_list" resultType="category.CategoryVO">
   <!-- SELECT    l.l_name
   FROM      (SELECT    DISTINCT l_code
