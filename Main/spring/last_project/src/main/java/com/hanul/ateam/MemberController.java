@@ -1,7 +1,6 @@
 package com.hanul.ateam;
 
 import java.util.HashMap;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,8 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.google.gson.Gson;
 
-import category.CategoryServiceImpl;
-import category.CategoryVO;
 import member.MemberDAO;
 import member.MemberServiceImpl;
 import member.MemberVO;
@@ -54,25 +51,27 @@ public class MemberController {
 	  @RequestMapping(value="/socialinfo.me", produces ="text/html;charset=utf-8") 
 	  public String g_list_save(String email,String social) {
 		  int check = dao.email_check(email);
-		  int result = 0;
+		  HashMap<String, String> map = new HashMap<String, String>();
 		  if(check !=1 ) {
 			  System.out.println("*");
 			  System.out.println(email);
 			  System.out.println(social);
-			  HashMap<String, String> map = new HashMap<String, String>();
 				map.put("email", email);
 				map.put("social", social);
-				
-				/*
-				 * EMAIL PW N"AME NICKNAME PHONE JOIN_DATE AMDIN SOCIAL_CODE FILENAME FILEPATH
-				 * POINT
-				 */
-				result = dao.g_list_save(map);
+				dao.g_list_save(map);
 		  }
 		  
-		 
-		  
-		return result+"";
+		  map.put("email", email);
+		  map.put("pw", null);
+		  MemberVO vo = service.login(map);
+		return new Gson().toJson(vo);
+	  }
+	  
+	  //내 정보 수정
+	  @RequestMapping(value="/update.me",produces ="text/html;charset=utf-8")
+	  public void updateUserInfo(String vo) {
+		  MemberVO updatevo = new Gson().fromJson(vo, MemberVO.class);
+		  dao.updateUserInfo(updatevo);
 	  }
 }
 

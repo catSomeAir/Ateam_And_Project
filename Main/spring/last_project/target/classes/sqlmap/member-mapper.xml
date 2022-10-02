@@ -28,5 +28,11 @@
 	insert into userinfo ( email, pw, name, nickname, phone )
 		values( #{email}, #{pw, jdbcType=VARCHAR}, #{name}, #{nickname}, #{phone} )
 	</insert>
+	
+	<update id="update">
+	update userinfo
+	set email=#{email},name=#{name},nickname=#{nickname},pw=#{pw},phone=#{phone}
+	where email=#{email}
+	</update>
 		
 </mapper>

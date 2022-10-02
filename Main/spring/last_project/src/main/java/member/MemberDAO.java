@@ -37,4 +37,8 @@ public class MemberDAO implements MemberService {
 		return test;
 	
 	}
+	
+	public int updateUserInfo(MemberVO updatevo) {
+		return sql.update("member.update",updatevo);
+	}
 }
