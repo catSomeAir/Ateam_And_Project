@@ -25,6 +25,7 @@
             app:cardCornerRadius="20dp">
 
             <ImageView
+                android:id="@+id/imgv_reply_profile"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
                 android:src="@drawable/category_profile" />
@@ -43,6 +44,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/tv_reply_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="닉네임"
@@ -50,6 +52,7 @@
                     android:textSize="13dp"
                     android:textStyle="bold" />
                 <TextView
+                    android:id="@+id/tv_reply_writedate"
                     android:layout_marginHorizontal="6dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -67,6 +70,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/tv_reply_content"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="내용을 입력하는 공간"

@@ -63,13 +63,13 @@ public class SearchActivity extends AppCompatActivity {
 
         ArrayList<String> list = new ArrayList<>();
         //연관검색어
-        list.add("# 연관검색");
-        list.add("# 검색어");
-        list.add("# 검색");
-        list.add("# 어쩌고");
-        list.add("# 저쩌고");
+        list.add("# TV");
+        list.add("# 냉장고");
+        list.add("# 세탁기");
+        list.add("# BESPOKE");
+        list.add("# 스탠드");
 
-        SearchAdapter adapter = new SearchAdapter(getLayoutInflater(), list);
+        SearchAdapter adapter = new SearchAdapter(getLayoutInflater(),  SearchActivity.this , list);
         RecyclerView.LayoutManager manager = new LinearLayoutManager(SearchActivity.this, LinearLayoutManager.HORIZONTAL, false);
         recv_search_relate.setAdapter(adapter);
         recv_search_relate.setLayoutManager(manager);

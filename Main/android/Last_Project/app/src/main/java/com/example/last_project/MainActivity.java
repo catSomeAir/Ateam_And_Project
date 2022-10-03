@@ -25,6 +25,8 @@ import com.example.last_project.main.manysearch.ManySearchAdapter;
 import com.example.last_project.main.market.MarketActivity;
 import com.example.last_project.main.tab.Main_Tab_HomeFragment;
 import com.example.last_project.main.tab.Main_Tab_RecentFragment;
+import com.example.last_project.mypage.MypageActivity;
+import com.example.last_project.search.NotFoundAlertActivity;
 import com.example.last_project.search.SearchActivity;
 import com.example.last_project.search.category_search.CategorySearchVO;
 import com.google.android.material.tabs.TabLayout;
@@ -129,6 +131,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onButtonClickAnimationStart(@NonNull CircleMenuView view, int index) {
                 Log.d("D", "onButtonClickAnimationStart: ");
+
+            }
+
+            @Override
+            public void onButtonClickAnimationEnd(@NonNull CircleMenuView view, int index) {
                 if(index==0){
                     Intent intent = new Intent(MainActivity.this, BarcordActivity.class);
                     startActivity(intent);
@@ -142,14 +149,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 }else if(index ==4){
                     if(CommonVal.userInfo != null){
-                        Intent intent = new Intent(MainActivity.this, CategoryActivity.class);
+                        Intent intent = new Intent(MainActivity.this, MypageActivity.class);
+                        startActivity(intent);
 
+                    }else{
+                        Intent intent = new Intent(MainActivity.this, NotFoundAlertActivity.class);
+                        intent.putExtra("intent_type", "write");
+                        startActivity(intent);
                     }
                 }
-            }
-
-            @Override
-            public void onButtonClickAnimationEnd(@NonNull CircleMenuView view, int index) {
                 cdv_plus.setVisibility(View.VISIBLE);
                 menuView.setVisibility(View.GONE);
             }

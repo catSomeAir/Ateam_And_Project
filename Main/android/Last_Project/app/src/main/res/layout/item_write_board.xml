@@ -120,4 +120,8 @@
         android:layout_width="match_parent"
         android:layout_height="0.9dp"
         android:background="#e9e9e9" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recv_coment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </LinearLayout>

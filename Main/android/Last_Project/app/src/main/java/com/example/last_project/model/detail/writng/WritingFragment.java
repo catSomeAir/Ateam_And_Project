@@ -12,11 +12,18 @@ import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.last_project.R;
 import com.example.last_project.common.CommonVal;
+import com.example.last_project.conn.CommonConn;
 import com.example.last_project.search.NotFoundAlertActivity;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.util.ArrayList;
 
 public class WritingFragment extends Fragment implements View.OnClickListener {
 
@@ -25,7 +32,8 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
     String model_code;
     ImageView imgv_profile;
     CardView edt_writing;
-
+    RecyclerView recv_write;
+    ArrayList<BoardVO> list;
     public WritingFragment(String model_code) {
         this.model_code = model_code;
     }
@@ -68,10 +76,33 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
                 } else if (CommonVal.userInfo != null) {  //로그인 된 상태에서 입력할 수 있는 엑티비티로 이동
                     Intent intent = new Intent(getContext(), WriteSpaceActivity.class);
                     intent.putExtra("model_code", model_code);
+                    intent.putExtra("page", "WritingFragment_board");
                     startActivity(intent);
                 }
             }
         });
+
+        //쓴글 띄우기
+        recv_write = v.findViewById(R.id.recv_write);
+
+        // 해당모델의 글 조회
+        CommonConn conn = new CommonConn(getContext(), "board_list_select");
+        conn.addParams("model_code", model_code);
+        conn.executeConn(new CommonConn.ConnCallback() {
+            @Override
+            public void onResult(boolean isResult, String data) {
+                if(isResult){
+                    list = new Gson().fromJson(data, new TypeToken<ArrayList<BoardVO>>(){}.getType());
+                    WriteAdapter adapter = new WriteAdapter(getLayoutInflater(), getContext(), list);
+                    RecyclerView.LayoutManager manager = new LinearLayoutManager(getContext(),RecyclerView.VERTICAL,false);
+                    recv_write.setLayoutManager(manager);
+                    recv_write.setAdapter(adapter);
+                }
+            }
+        });
+
+
+
 
         return v;
     }
@@ -100,4 +131,6 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
             }
         }
     }
+
+
 }

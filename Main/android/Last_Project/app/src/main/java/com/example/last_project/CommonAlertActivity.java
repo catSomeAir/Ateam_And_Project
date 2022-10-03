@@ -47,7 +47,7 @@ public class CommonAlertActivity extends AppCompatActivity {
         ln_yes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(page.equals("WriteSpaceActivity_success")){
+                if(page.equals("WriteSpaceActivity_success")||page.equals("WriteSpaceActivity_comment")){
                     setResult(1);//종료해라
                 }
                 finish();
@@ -82,10 +82,11 @@ public class CommonAlertActivity extends AppCompatActivity {
             ln_no.setVisibility(View.GONE);
             tv_yes.setText("확인");
         }
-        if(page.equals("WriteSpaceActivity_success")){
+        //글쓰기 댓글쓰기
+        if(page.equals("WriteSpaceActivity_success")||page.equals("WriteSpaceActivity_comment")){
             tv_target.setText("등록되었습니다");
             tv_explain1.setText("을 입력해주세요");
-            tv_explain1.setVisibility(View.INVISIBLE);
+            tv_explain1.setVisibility(View.GONE);
 
             tv_explain2.setVisibility(View.INVISIBLE);
 

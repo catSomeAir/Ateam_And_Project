@@ -28,14 +28,21 @@ public class WriteSpaceActivity extends AppCompatActivity {
     EditText edt_writing;
     RadioGroup radiogroup_writting;
     RadioButton radio_all, radio_opinion, radio_qna;
-    LinearLayout ln_write_commit; //등록버튼
+    LinearLayout ln_write_commit, ln_write_radio; //등록버튼
     View space_background;
     ImageView imgv_profile;
     String model_code, radio_type;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_write_space);
+
+        ln_write_radio = findViewById(R.id.ln_write_radio);
+        //글인지 댓글인지 판단
+        String page = getIntent().getStringExtra("page");
+        String board_id = getIntent().getStringExtra("board_id");
+
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         edt_writing = findViewById(R.id.edt_writing);
 
@@ -54,10 +61,15 @@ public class WriteSpaceActivity extends AppCompatActivity {
 
         imgv_profile = findViewById(R.id.imgv_profile);
         //프로필 이미지 등록
-        if(CommonVal.userInfo.getFilepath() != null){
-            Glide.with(WriteSpaceActivity.this).load(CommonVal.userInfo.getFilepath()).into(imgv_profile);
+        try {
+            if (CommonVal.userInfo.getFilepath() != null) {
+                Glide.with(WriteSpaceActivity.this).load(CommonVal.userInfo.getFilepath()).into(imgv_profile);
 //            Glide.with(getContext()).load(model_info.getFilepath().replace("localhost","192.168.0.33")).into(imgv_manual_photo);
+            }
+        } catch (Exception e) {
+
         }
+
 
         ln_write_commit = findViewById(R.id.ln_write_commit);
 
@@ -73,9 +85,9 @@ public class WriteSpaceActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(edt_writing.getText().length() == 0){
+                if (edt_writing.getText().length() == 0) {
                     ln_write_commit.setVisibility(View.GONE);
-                }else{
+                } else {
                     ln_write_commit.setVisibility(View.VISIBLE);
                 }
             }
@@ -104,47 +116,86 @@ public class WriteSpaceActivity extends AppCompatActivity {
             }
         });
 
+        if (page.equals("WriteAdapter_reply")) {
+            edt_writing.setHint("내용을 입력해주세요");
+            ln_write_radio.setVisibility(View.GONE);
+        }
         //글 등록
         ln_write_commit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(radiogroup_writting.getCheckedRadioButtonId() == R.id.radio_all){
+
+                //댓글쓰는상황
+                if (board_id != null) {
+
+
+                    if (page.equals("WriteAdapter_reply")) {
+
+                        ReplyVO vo = new ReplyVO();
+                        vo.setBoard_id(board_id);
+                        vo.setEmail(CommonVal.userInfo.getEmail());
+                        vo.setContent(edt_writing.getText().toString());
+
+
+                        CommonConn conn = new CommonConn(WriteSpaceActivity.this, "board_coment_insert");
+                        conn.addParams("vo", new Gson().toJson(vo));
+                        conn.executeConn(new CommonConn.ConnCallback() {
+                            @Override
+                            public void onResult(boolean isResult, String data) {
+                                if (isResult) {
+                                    Log.d("빵구", "onResult: " + data);
+                                    if (data.equals("1")) {
+                                        Intent intent = new Intent(WriteSpaceActivity.this, CommonAlertActivity.class);
+                                        intent.putExtra("page", "WriteSpaceActivity_comment");
+                                        startActivityForResult(intent, 0);
+                                    }
+                                }
+                            }
+                        });
+                    }
+                        return;
+                }
+                if (radiogroup_writting.getCheckedRadioButtonId() == R.id.radio_all) {
                     Intent intent = new Intent(WriteSpaceActivity.this, CommonAlertActivity.class);
                     intent.putExtra("page", "WriteSpaceActivity");
                     startActivity(intent);
                     return;
                 }
-                if(edt_writing.getText().toString().length() == 0){
+                if (edt_writing.getText().toString().length() == 0) {
                     Intent intent = new Intent(WriteSpaceActivity.this, CommonAlertActivity.class);
                     intent.putExtra("page", "WriteSpaceActivity_empty");
                     startActivity(intent);
                     return;
                 }
-                BoardVO vo = new BoardVO();
-                vo.setEmail(CommonVal.userInfo.getEmail());
-                vo.setContent(edt_writing.getText().toString());
-                if(radiogroup_writting.getCheckedRadioButtonId()==R.id.radio_opinion){
-                    vo.setCmt_code("o");
+                //글쓰는 상황
+                if (page.equals("WritingFragment_board")) {
+                    BoardVO vo = new BoardVO();
+                    vo.setEmail(CommonVal.userInfo.getEmail());
+                    vo.setContent(edt_writing.getText().toString());
+                    if (radiogroup_writting.getCheckedRadioButtonId() == R.id.radio_opinion) {
+                        vo.setCmt_code("o");
 
-                }else if(radiogroup_writting.getCheckedRadioButtonId()==R.id.radio_qna){
-                    vo.setCmt_code("q");
-                }
-                vo.setModel_code(model_code);
-                CommonConn conn = new CommonConn(WriteSpaceActivity.this, "board_list");
-                conn.addParams("vo", new Gson().toJson(vo));
-                conn.executeConn(new CommonConn.ConnCallback() {
-                    @Override
-                    public void onResult(boolean isResult, String data) {
-                        if(isResult){
-                            Log.d("빵구", "onResult: "+data);
-                            if(data.equals("1")){
-                                Intent intent = new Intent(WriteSpaceActivity.this, CommonAlertActivity.class);
-                                intent.putExtra("page", "WriteSpaceActivity_success");
-                                startActivity(intent);
+                    } else if (radiogroup_writting.getCheckedRadioButtonId() == R.id.radio_qna) {
+                        vo.setCmt_code("q");
+                    }
+                    vo.setModel_code(model_code);
+                    CommonConn conn = new CommonConn(WriteSpaceActivity.this, "board_list");
+                    conn.addParams("vo", new Gson().toJson(vo));
+                    conn.executeConn(new CommonConn.ConnCallback() {
+                        @Override
+                        public void onResult(boolean isResult, String data) {
+                            if (isResult) {
+                                Log.d("빵구", "onResult: " + data);
+                                if (data.equals("1")) {
+                                    Intent intent = new Intent(WriteSpaceActivity.this, CommonAlertActivity.class);
+                                    intent.putExtra("page", "WriteSpaceActivity_success");
+                                    startActivityForResult(intent, 0);
+                                }
                             }
                         }
-                    }
-                });
+                    });
+                    return;
+                }
 
 
             }
@@ -154,7 +205,7 @@ public class WriteSpaceActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(resultCode==1){  //해당엑티비티종료
+        if (resultCode == 1) {  //해당엑티비티종료
             finish();
 
         }
