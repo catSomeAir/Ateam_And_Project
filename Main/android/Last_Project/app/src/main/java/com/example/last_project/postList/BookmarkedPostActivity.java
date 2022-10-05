@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -21,6 +22,7 @@ import java.util.ArrayList;
 
 public class BookmarkedPostActivity extends AppCompatActivity implements View.OnClickListener {
     RecyclerView bookmarked_post_recv;
+    ImageView imgv_back;
     Button btn_edt_list;
 
     @Override
@@ -29,6 +31,7 @@ public class BookmarkedPostActivity extends AppCompatActivity implements View.On
         setContentView(R.layout.activity_bookmarked_post);
         bookmarked_post_recv =findViewById(R.id.bookmarked_post_recv);
         btn_edt_list =findViewById(R.id.btn_edt_list);
+        imgv_back = findViewById(R.id.imgv_back);
 
          CommonConn conn = new CommonConn(BookmarkedPostActivity.this,"bookmarkedpost");
          conn.addParams("email", CommonVal.userInfo.getEmail());
@@ -46,6 +49,12 @@ public class BookmarkedPostActivity extends AppCompatActivity implements View.On
 
 
         btn_edt_list.setOnClickListener(this);
+        imgv_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
     }
 

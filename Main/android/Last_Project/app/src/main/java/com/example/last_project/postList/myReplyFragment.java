@@ -31,7 +31,7 @@ public class myReplyFragment extends Fragment {
 
         View v= inflater.inflate(R.layout.fragment_my_reply, container, false);
         myreply_recv= v.findViewById(R.id.myreply_recv);
-        ArrayList<MyReplyVO> list = new ArrayList<MyReplyVO>();
+
         CommonConn conn = new CommonConn(getContext(),"myreplylist");
         conn.addParams("email", CommonVal.userInfo.getEmail());
         conn.executeConn(new CommonConn.ConnCallback() {
@@ -39,7 +39,7 @@ public class myReplyFragment extends Fragment {
             public void onResult(boolean isResult, String data) {
                 Log.d("result", "onResult: "+isResult);
                 ArrayList<MyReplyVO> list = new Gson().fromJson(data, new TypeToken<ArrayList<MyReplyVO>>(){}.getType());
-                MyReplyAdapter adapter = new MyReplyAdapter(getLayoutInflater(), list,getContext(),myReplyFragment.this);
+                MyReplyAdapter adapter = new MyReplyAdapter(getLayoutInflater(), list,myReplyFragment.this,getContext());
                 RecyclerView.LayoutManager manager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
                 myreply_recv.setAdapter(adapter);
                 myreply_recv.setLayoutManager(manager);

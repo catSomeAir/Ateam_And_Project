@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.widget.NestedScrollView;
 
@@ -27,6 +28,7 @@ import com.example.last_project.mypage.MypageActivity;
 import com.example.last_project.notice.NoticeActivity;
 import com.example.last_project.point.PointActivity;
 import com.example.last_project.postList.postListActivity;
+import com.example.last_project.search.SearchActivity;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -40,7 +42,7 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
     Button btn_category_login, btn_category_logout; //로그인, 로그아웃버튼
     //로그인 시 프로필 정보
     ImageView imgv_category_back, imgv_category_profile;    //프로필이미지
-    TextView tv_category_nickname, tv_category_count, tv_category_comment_count;    //닉네임, 쓴글 수 , 쓴 댓글수
+    TextView tv_category_nickname, tv_category_count, tv_category_comment_count, catg_tv_point;    //닉네임, 쓴글 수 , 쓴 댓글수
 
     //My, 공지사항, 이벤트,포인트 화면연결 위해 추가
     LinearLayout ll_mypage, ll_notice, ll_event, ll_point, ll_postlist;
@@ -112,13 +114,20 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
         tv_category_count = findViewById(R.id.tv_category_count);
         tv_category_comment_count = findViewById(R.id.tv_category_comment_count);
 
+        //포인트
+        catg_tv_point = findViewById(R.id.catg_tv_point);
+
+
         if (CommonVal.userInfo != null) {
             MemberVO vo = CommonVal.userInfo;
-            if (vo.getProfile_img() != null) {
+            if (vo.getFilepath() != null) {
                 //피카소 글라이드 비교해봐야할듯
 //            Picasso.get().load(CommonVal.userInfo.getProfile_img()).into(imgv_category_profile);
-                Glide.with(CategoryActivity.this).load(vo.getProfile_img()).into(imgv_category_profile);
+                Glide.with(CategoryActivity.this).load(vo.getFilepath()).into(imgv_category_profile);
             }
+            //아인---------------------------------------------------------------------------------------------------
+            catg_tv_point.setText(vo.getPoint());//로그인 후 페이지 회원이 가진 포인트 뿌리기
+            //---▲---------------------------------------------------------------------------------------------------
             tv_category_nickname.setText(vo.getNickname());
             CommonConn conn = new CommonConn(CategoryActivity.this, "count.ct");
             conn.addParams("email", vo.getEmail());
@@ -229,22 +238,31 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
                                 }
                             }, 500); //딜레이 타임 조절
                         }
-                    }, 50); //딜레이 타임 조절
+                    }, 70); //딜레이 타임 조절
                 }
             }
         }
 
 
-    //구글 로그인 정보 받아오기 주석처리함
-     /*   Intent intent = getIntent();
-        String nickName = intent.getStringExtra("nickName");
-        String photoUrl = intent.getStringExtra("photoUrl");
-        tv_category_nickname.setText(nickName);
-        Glide.with(this).load(photoUrl).into(imgv_category_profile); //프로필 url을 이미지 뷰에 세팅*/
+    }
+//        //구글 로그인 정보 받아오기
+//        Intent intent = getIntent();
+//        String nickName = intent.getStringExtra("nickName");
+//        String photoUrl = intent.getStringExtra("photoUrl");
+//        tv_category_nickname.setText(nickName);
+//        Glide.with(this).load(photoUrl).into(imgv_category_profile); //프로필 url을 이미지 뷰에 세팅
 
 
-    }//oncreate
-
+//oncreate
+    //아인 setResult 코드 사용위해 추가 --------------------------------------------------------------------------
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode == 100){
+            finish();
+        }
+    }
+    //------▲---------------------------------------------------------------------------------------------------
 
     //뒤로가기 누르면 애니메이션 효과
     @Override
@@ -279,14 +297,14 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
             onBackPressed();
         }
 
-        if(v.getId() == R.id.ln_m_list1_1) {
-            Intent intent = new Intent(CategoryActivity.this, CategorySearchActivity.class);
+        //중분류 클릭시 해당 제품정보 보이도록 하기
+        if (v.getId() == R.id.ln_m_list1_1) {
+            Intent intent = new Intent(CategoryActivity.this, SearchActivity.class);
             intent.putExtra("m_category", "가전");
             startActivity(intent);
             finish();
-        }else if(v.getId() == R.id.ln_m_list1_2) {
-            Intent intent = new Intent(CategoryActivity.this, CategorySearchActivity.class);
-            intent.putExtra("l_category", "가전/TV");
+        } else if (v.getId() == R.id.ln_m_list1_2) {
+            Intent intent = new Intent(CategoryActivity.this, SearchActivity.class);
             intent.putExtra("m_category", "TV");
             startActivity(intent);
             finish();

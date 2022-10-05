@@ -1,26 +1,32 @@
 package com.example.last_project.postList;
 
 public class PostDTO {
-    private String title,date;
+    private String name,model_code,brand_name;
 
-    public PostDTO(String title, String date) {
-        this.title = title;
-        this.date = date;
+    public PostDTO(String 위니아_클라쎄_양문형_냉장고, String ekr55DERWE, String 위니아) {
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getDate() {
-        return date;
+    public String getModel_code() {
+        return model_code;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setModel_code(String model_code) {
+        this.model_code = model_code;
+    }
+
+    public String getBrand_name() {
+        return brand_name;
+    }
+
+    public void setBrand_name(String brand_name) {
+        this.brand_name = brand_name;
     }
 }

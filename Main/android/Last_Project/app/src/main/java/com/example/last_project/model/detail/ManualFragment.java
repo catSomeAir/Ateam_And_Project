@@ -17,8 +17,10 @@ import android.widget.TextView;
 import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
 import com.example.last_project.R;
 import com.example.last_project.WebviewActivity;
+import com.example.last_project.search.category_search.CategorySearchVO;
 import com.github.barteksc.pdfviewer.PDFView;
 import com.github.barteksc.pdfviewer.listener.OnLoadCompleteListener;
 import com.github.barteksc.pdfviewer.listener.OnPageChangeListener;
@@ -36,8 +38,14 @@ public class ManualFragment extends Fragment implements OnPageChangeListener, On
     String SAMPLE_FILE = "test.pdf";
     Integer pageNumber = 0;
     String  pdfFileName;
+
+
     LinearLayout ln_model_detail_writing, ln_model_detail_as;
     ImageView imgv_manual_zzim, imgv_manual_link, imgv_manual_download; //* 다운로드 버튼 구현예정
+
+    //제품정보
+    ImageView imgv_manual_photo;
+    TextView tv_manual_brand,tv_manual_model_name, tv_manual_model_code, tv_manual_catg;
 
 
     ImageView imgv_manual_help; //따봉버튼
@@ -50,8 +58,14 @@ public class ManualFragment extends Fragment implements OnPageChangeListener, On
     boolean zzim, help_chk;
 
     NestedScrollView scrollView;
-    public ManualFragment(Context context) {
+
+    //DB에서넘어온 모델정보
+    CategorySearchVO model_info;
+    public ManualFragment() {
+    }
+    public ManualFragment(Context context, CategorySearchVO model_info) {
         this.context = context;
+        this.model_info = model_info;
     }
 
     @Override
@@ -126,14 +140,27 @@ public class ManualFragment extends Fragment implements OnPageChangeListener, On
             }
         });
 
+        //받아온 제품정보 넣어주기
+        imgv_manual_photo = v.findViewById(R.id.imgv_manual_photo);
+        tv_manual_brand = v.findViewById(R.id.tv_manual_brand);
+        tv_manual_model_name = v.findViewById(R.id.tv_manual_model_name);
+        tv_manual_model_code = v.findViewById(R.id.tv_manual_model_code);
+        tv_manual_catg = v.findViewById(R.id.tv_manual_catg);
+
+        Glide.with(getContext()).load(model_info.getFilepath().replace("localhost","192.168.0.33")).into(imgv_manual_photo);
+        tv_manual_brand.setText(model_info.getBrand_name());
+        tv_manual_model_name.setText(model_info.getModel_name()+" ("+model_info.getModel_code()+")");
+        tv_manual_model_code.setText(model_info.getModel_code());
+        tv_manual_catg.setText(model_info.getCategory_name());
+
         //링크 해당 제품으로 검색하기
         imgv_manual_link = v.findViewById(R.id.imgv_manual_link);
-        tv_manual_name = v.findViewById(R.id.tv_manual_name);
+        String search_keyword = model_info.getBrand_name()+model_info.getModel_name();
         imgv_manual_link.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, WebviewActivity.class);
-                intent.putExtra("url", "https://www.google.com/search?q="+tv_manual_name.getText().toString()+"&oq="+tv_manual_name.getText().toString());
+                intent.putExtra("url", "https://www.google.com/search?q="+search_keyword+"&oq="+search_keyword);
                 startActivity(intent);
             }
         });
@@ -161,22 +188,22 @@ public class ManualFragment extends Fragment implements OnPageChangeListener, On
             scrollView.requestDisallowInterceptTouchEvent(true);
         }
 
-        pdfView.setOnTouchListener(new View.OnTouchListener() {
-
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-
-                if(MotionEvent.ACTION_DOWN == event.getAction()){
-                    Log.d("터치", "onTouch: 다운 ");
-                    scrollView.requestDisallowInterceptTouchEvent(true);
-                }else{
-                    Log.d("터치", "onTouch: 그외 ");
+//        pdfView.setOnTouchListener(new View.OnTouchListener() {
+//
+//            @Override
+//            public boolean onTouch(View v, MotionEvent event) {
+//
+//                if(MotionEvent.ACTION_DOWN == event.getAction()){
+//                    Log.d("터치", "onTouch: 다운 ");
 //                    scrollView.requestDisallowInterceptTouchEvent(true);
-
-                }
-                return true;
-            }
-        });
+//                }else{
+//                    Log.d("터치", "onTouch: 그외 ");
+////                    scrollView.requestDisallowInterceptTouchEvent(true);
+//
+//                }
+//                return true;
+//            }
+//        });
         detector = new GestureDetector(getContext(), new GestureDetector.OnGestureListener() {
             @Override
             public boolean onDown(MotionEvent e) {

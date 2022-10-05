@@ -61,31 +61,29 @@ public class Login_in_Activity extends AppCompatActivity {
 
 
     }
-                    public void login(){
-                        CommonConn conn = new CommonConn(Login_in_Activity.this , "login.me");
-                        conn.addParams("email", login_edt_id.getText().toString());
-                        conn.addParams("pw", login_edt_pw.getText().toString());
-                        //conn.addParams("social",social);
-                        conn.executeConn(new CommonConn.ConnCallback() {
-                            @Override
-                            public void onResult(boolean isResult, String data) {
-                                if(isResult){
+    public void login(){
+        CommonConn conn = new CommonConn(Login_in_Activity.this , "login.me");
+        conn.addParams("email", login_edt_id.getText().toString());
+        conn.addParams("pw", login_edt_pw.getText().toString());
+        conn.executeConn(new CommonConn.ConnCallback() {
+            @Override
+            public void onResult(boolean isResult, String data) {
+                if(isResult){
 
-                                    if(data == null){
-                                        Toast.makeText(Login_in_Activity.this, "회원정보가 일치하지 않습니다.", Toast.LENGTH_SHORT).show();
-                                    }else{
-                                        Toast.makeText(Login_in_Activity.this, "로그인 성공", Toast.LENGTH_SHORT).show();
-                                        CommonVal.userInfo = new Gson().fromJson(data, MemberVO.class);
-                                        if(chkbox_login_in.isChecked()){
-                                            saveLoginInfo();
-                                        }
-                                        setResult(1);   //종료하면 LoginActivity 로 가는데 1을 들고가면 여기서 로그인해서 나간거
-                                        finish();
-//                            {
-//                            }.getType());
-                                    }
-                                }else {
-                                    Toast.makeText(Login_in_Activity.this ,"로그인실패", Toast.LENGTH_SHORT).show();
+                    if(data == null){
+                        Toast.makeText(Login_in_Activity.this, "회원정보가 일치하지 않습니다.", Toast.LENGTH_SHORT).show();
+                    }else{
+                        Toast.makeText(Login_in_Activity.this, "로그인 성공", Toast.LENGTH_SHORT).show();
+                        CommonVal.userInfo = new Gson().fromJson(data, MemberVO.class);
+                        if(chkbox_login_in.isChecked()){
+                            saveLoginInfo();
+                        }
+                        setResult(1);   //종료하면 LoginActivity 로 가는데 1을 들고가면 여기서 로그인해서 나간거
+                        finish();
+
+                    }
+                }else {
+                    Toast.makeText(Login_in_Activity.this ,"로그인실패", Toast.LENGTH_SHORT).show();
                 }
             }
         });

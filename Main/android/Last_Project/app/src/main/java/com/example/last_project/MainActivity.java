@@ -11,17 +11,28 @@ import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.last_project.barcord.BarcordActivity;
 import com.example.last_project.category.CategoryActivity;
+import com.example.last_project.common.CommonMethod;
+import com.example.last_project.common.CommonVal;
+import com.example.last_project.conn.CommonConn;
+import com.example.last_project.main.banner.BannerActivity;
 import com.example.last_project.main.manysearch.ManySearchAdapter;
 import com.example.last_project.main.market.MarketActivity;
 import com.example.last_project.main.tab.Main_Tab_HomeFragment;
+import com.example.last_project.main.tab.Main_Tab_RecentFragment;
 import com.example.last_project.search.SearchActivity;
+import com.example.last_project.search.category_search.CategorySearchVO;
 import com.google.android.material.tabs.TabLayout;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.ramotion.circlemenu.CircleMenuView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     ImageView imgv_main_category;
@@ -34,6 +45,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     CardView cdv_plus;
 
+    ImageView imgv_middle_banner;
+
+    NestedScrollView scrollView;
     //마켓
     LinearLayout ln_main_market1, ln_main_market2;
     @Override
@@ -59,6 +73,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ln_ctg_leisure = findViewById(R.id.ln_ctg_leisure);
         ln_ctg_leisure.setOnClickListener(this);
 
+        scrollView = findViewById(R.id.scrollView);
+
+        //최근 본 list 담겨있는거 사용
+        CommonVal.recent_list = CommonMethod.getStringArrayPref(MainActivity.this, "recent_list");
 
         //하단 circle menu나오도록하는 +버튼
         cdv_plus = findViewById(R.id.cdv_plus);
@@ -114,6 +132,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(index==0){
                     Intent intent = new Intent(MainActivity.this, BarcordActivity.class);
                     startActivity(intent);
+                }else if(index ==1){
+
+                }else if(index ==2){
+
+                }else if(index ==3){
+                    Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+                    startActivity(intent);
+
+                }else if(index ==4){
+                    if(CommonVal.userInfo != null){
+                        Intent intent = new Intent(MainActivity.this, CategoryActivity.class);
+
+                    }
                 }
             }
 
@@ -154,7 +185,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     intent.putExtra("url", "https://m.map.kakao.com/actions/searchView?q=%EC%82%BC%EC%84%B1%EC%84%9C%EB%B9%84%EC%8A%A4%EC%84%BC%ED%84%B0&wxEnc=LVSOTP&wyEnc=QNLTTMN&lvl=4");//placeSearch
                     startActivity(intent);
                 }else{
-
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container_main, new Main_Tab_RecentFragment()).commit();
                 }
             }
 
@@ -191,12 +222,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-        //많이 검색한목록
+        //많이 검색한목록 : DB에서 조회
+
         recv_main_manysearch = findViewById(R.id.recv_main_manysearch);
-        ManySearchAdapter adapter = new ManySearchAdapter(getLayoutInflater());
-        RecyclerView.LayoutManager manager = new LinearLayoutManager(MainActivity.this, RecyclerView.HORIZONTAL , false);
-        recv_main_manysearch.setLayoutManager(manager);
-        recv_main_manysearch.setAdapter(adapter);
+
+
+        CommonConn conn = new CommonConn(MainActivity.this, "main_many_list");
+        conn.executeConn(new CommonConn.ConnCallback() {
+            @Override
+            public void onResult(boolean isResult, String data) {
+                if(isResult){
+                    ArrayList<CategorySearchVO> list = new Gson().fromJson(data,new TypeToken<ArrayList<CategorySearchVO>>() {}.getType());
+                    ManySearchAdapter adapter = new ManySearchAdapter(getLayoutInflater(), list, MainActivity.this);
+                    RecyclerView.LayoutManager manager = new LinearLayoutManager(MainActivity.this, RecyclerView.HORIZONTAL , false);
+                    recv_main_manysearch.setLayoutManager(manager);
+                    recv_main_manysearch.setAdapter(adapter);
+                }
+            }
+        });
+
+
 
 
 
@@ -216,6 +261,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, MarketActivity.class);
                 intent.putExtra("item_num",2);
+                startActivity(intent);
+            }
+        });
+
+        imgv_middle_banner = findViewById(R.id.imgv_middle_banner);
+        imgv_middle_banner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, BannerActivity.class);
                 startActivity(intent);
             }
         });
@@ -247,6 +301,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             intent.putExtra("category", 8);
         }
         startActivity(intent);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        tabs.getTabAt(0).select();
+        scrollView.smoothScrollTo(0,0);
+        recv_main_manysearch.scrollToPosition(0 );
+
     }
 }
 

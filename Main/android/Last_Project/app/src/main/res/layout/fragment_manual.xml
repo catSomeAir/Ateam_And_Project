@@ -28,31 +28,14 @@
 
 
                 <TextView
-                    android:id="@+id/tv_search_result_l_catg"
+                    android:id="@+id/tv_manual_catg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="대분류 > "
+                    android:text="대분류 > 중분류 > 소분류"
                     android:textColor="#4D4d4D"
                     android:textSize="16dp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/tv_search_result_m_catg"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="중분류 > "
-                    android:textColor="#4D4d4D"
-                    android:textSize="16dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tv_search_result_s_catg"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="소분류"
-                    android:textColor="#4D4d4D"
-                    android:textSize="16dp"
-                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -65,10 +48,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:paddingHorizontal="90dp">
+
+                android:paddingHorizontal="70dp">
 
                 <ImageView
-
+                    android:layout_marginVertical="14dp"
+                    android:id="@+id/imgv_manual_photo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
@@ -92,17 +77,32 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
+                    android:orientation="vertical">
                     <TextView
-                        android:id="@+id/tv_manual_name"
+                        android:id="@+id/tv_manual_brand"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="삼성 비스포크 4도어 냉장고 605L RF61R91C324"
-                        android:textColor="#151515"
+                        android:text="삼성 "
+                        android:textColor="#020E20"
                         android:textSize="19dp"
                         android:textStyle="bold" />
-
+                    <TextView
+                        android:id="@+id/tv_manual_model_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="비스포크 4도어 냉장고"
+                        android:textColor="#1E1E1E"
+                        android:textSize="19dp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:visibility="gone"
+                        android:id="@+id/tv_manual_model_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="605L RF61R91C324"
+                        android:textColor="#3C3C3C"
+                        android:textSize="19dp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 

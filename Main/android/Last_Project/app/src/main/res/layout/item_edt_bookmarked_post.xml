@@ -2,7 +2,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
@@ -31,10 +31,9 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-
-                    android:id="@+id/imgv_search_result"
-                    android:layout_width="84dp"
-                    android:layout_height="84dp"
+                    android:id="@+id/imgv_modelimg"
+                    android:layout_width="74dp"
+                    android:layout_height="74dp"
                     android:adjustViewBounds="true"
                     android:src="@drawable/temp_model_img" />
             </LinearLayout>
@@ -42,7 +41,7 @@
 
         <LinearLayout
             android:padding="10dp"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
@@ -81,7 +80,7 @@
                     android:text="모델명 : " />
 
                 <TextView
-                    android:id="@+id/tv_search_result_model_code"
+                    android:id="@+id/tv_model_code"
                     android:textSize="13dp"
                     android:textColor="#4D4d4D"
                     android:textStyle="bold"
@@ -103,7 +102,7 @@
                     android:text="브랜드 : " />
 
                 <TextView
-                    android:id="@+id/tv_search_result_brand"
+                    android:id="@+id/tv_brand"
                     android:textSize="13dp"
                     android:textColor="#4D4d4D"
                     android:layout_width="wrap_content"

@@ -38,6 +38,8 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
+
+    //상윤----------------------------------------
     // Spring연동 라이브러리
     // https://mvnrepository.com/artifact/com.google.code.gson/gson
     implementation group: 'com.google.code.gson', name: 'gson', version: '2.8.5'
@@ -92,15 +94,16 @@ dependencies {
     //바코드
     implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
 
-    //상윤----------------------------------------
-
     //---------------------------------------------
+
     //가인
     //----구글
     implementation 'com.google.android.gms:play-services-auth:20.3.0'
     //네이버로그인 관련
     implementation("com.navercorp.nid:oauth:5.1.1") // kts
     //---------------------------------------------
+
+
     //아인
 
     //---------------------------------------------

@@ -24,6 +24,8 @@ import com.example.last_project.conn.CommonConn;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+
+
 import java.util.ArrayList;
 
 public class SearchActivity extends AppCompatActivity {
@@ -45,8 +47,6 @@ public class SearchActivity extends AppCompatActivity {
         imgv_cancel = findViewById(R.id.imgv_cancel);
 
         //* 임시로 바코드 검색 데이터 넘어오는곳 : 추후 수정
-
-
         imgv_search_category = findViewById(R.id.imgv_search_category);
         imgv_search_category.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -186,6 +186,16 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
+
+        //카테고리 중분류 선택해서 들어옴
+        String m_category = getIntent().getStringExtra("m_category");
+        if(m_category !=null){
+            getSupportFragmentManager().beginTransaction().replace(R.id.container_search, new SearchResultFragment(m_category)).commit();
+            recv_search_relate.setVisibility(View.GONE);
+        }
+
+
+
         //* 임시로 바코드 검색 데이터 넘어오는곳 : 추후 수정
         String barcord_search_name = getIntent().getStringExtra("barcord_search_name");
         if (barcord_search_name != null) {
@@ -203,17 +213,17 @@ public class SearchActivity extends AppCompatActivity {
         }
 
 
-        //취소 글씨선택, x 아이콘으로 Edittext 텍스트 지우기
-        CommonMethod.edittext_change(edt_search, tv_cancel, imgv_cancel, SearchActivity.this);
-        tv_cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                edt_search.setText("");
-                edt_search.clearFocus();
-                InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-                imm.hideSoftInputFromWindow(edt_search.getWindowToken(), 0);
-            }
-        });
+//        //취소 글씨선택, x 아이콘으로 Edittext 텍스트 지우기
+//        CommonMethod.edittext_change(edt_search, tv_cancel, imgv_cancel, SearchActivity.this);
+//        tv_cancel.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                edt_search.setText("");
+//                edt_search.clearFocus();
+//                InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+//                imm.hideSoftInputFromWindow(edt_search.getWindowToken(), 0);
+//            }
+//        });
 
 
     }

@@ -2,7 +2,6 @@ package com.example.last_project.postList;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.FrameLayout;
 
 import androidx.appcompat.app.AppCompatActivity;

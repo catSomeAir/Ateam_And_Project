@@ -12,11 +12,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.last_project.R;
+import com.example.last_project.common.CommonVal;
 import com.example.last_project.conn.CommonConn;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -25,6 +27,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
+import com.google.gson.Gson;
 import com.kakao.sdk.auth.model.OAuthToken;
 import com.kakao.sdk.common.KakaoSdk;
 import com.kakao.sdk.user.UserApiClient;
@@ -62,6 +65,7 @@ public class LoginActivity extends AppCompatActivity {
 //                WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_login);
+
         //일반로그인 ------------------------------------------------------------------------
         ln_login = findViewById(R.id.ln_login);
         ln_login.setOnClickListener(new View.OnClickListener() {
@@ -77,6 +81,7 @@ public class LoginActivity extends AppCompatActivity {
         //소셜로그인---------------------------------------------------------------------------
 
         //네이버---------------------------------------------------------------------------
+
         login_btn_naver = findViewById(R.id.login_btn_naver);
         NaverIdLoginSDK.INSTANCE.initialize(this, getString(R.string.naver_client_id), getString(R.string.naver_client_secret), getString(R.string.app_name));
 //        login_btn_naver.setImageResource(R.drawable.naver);
@@ -90,14 +95,14 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onFailure(int i, @NonNull String s) {
                 Log.d("네이버", "onFailure: " + s);
-
             }
 
             @Override
             public void onError(int i, @NonNull String s) {
-                Log.d("네이버", "onError: " + s);
+
             }
         });
+
 
 
         //-------------------------------------------------------------------------------------
@@ -128,30 +133,44 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 };
 
+
                 // 카카오톡 앱 설치 여부를 판단. 깔려있으면 카톡 앱으로 인증.
                 if (UserApiClient.getInstance().isKakaoTalkLoginAvailable(LoginActivity.this)) {
                     UserApiClient.getInstance().loginWithKakaoTalk(LoginActivity.this, callback);
                 } else {
                     UserApiClient.getInstance().loginWithKakaoAccount(LoginActivity.this, callback);
                 }
+
+                /*    // 카카오톡이 설치되어 있으면 카카오톡으로 로그인, 아니면 카카오계정으로 로그인
+                if (UserApiClient.instance.isKakaoTalkLoginAvailable(context)) {
+
+                } else {
+                    UserApiClient.instance.loginWithKakaoAccount(context, callback = callback)
+                }*/
             }
         });
 
         getHashKey();
 
         // google
+//        GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+//                .requestIdToken(getString(R.string.default_web_client_id))
+//                .requestEmail()
+//                .build();
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
-        // Build a GoogleSignInClient with the options specified by gso.
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
         SignInButton signInButton = findViewById(R.id.btn_google);
         signInButton.setSize(SignInButton.SIZE_STANDARD);
 
-
-        findViewById(R.id.btn_google).setOnClickListener(v->{
-            Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-            startActivityForResult(signInIntent, RC_SIGN_IN);
+        btn_google = findViewById(R.id.btn_google);
+        btn_google.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+                startActivityForResult(signInIntent, RC_SIGN_IN);
+            }
         });
 
     }/* oncreate */
@@ -160,7 +179,7 @@ public class LoginActivity extends AppCompatActivity {
 
     //setOAuthLoginCallback 을 이용을 해서 success가 되었을때 (token이있을때) 정보를 받아올수있는 객체를
     //사용해서 정보를 얻어오면된다.
-    public void naver_profile(){
+    public void naver_profile() {
         //NidOAuthLogin().callProfileApi(nidProfileCallback) Kotiln
         NidOAuthLogin authLogin = new NidOAuthLogin();
         authLogin.callProfileApi(new NidProfileCallback<NidProfileResponse>() {
@@ -170,17 +189,23 @@ public class LoginActivity extends AppCompatActivity {
                 Log.d("프로필", "onSuccess: " + res.getProfile().getEmail());
                 Log.d("프로필", "onSuccess: " + res.getProfile().getMobile());
                 Log.d("프로필", "onSuccess: " + res.getProfile().getName());
-                CommonConn conn = new CommonConn(LoginActivity.this,"socialinfo.me");
-                conn.addParams("email",res.getProfile().getEmail());
-                conn.addParams("social","N");
+                CommonConn conn = new CommonConn(LoginActivity.this, "socialinfo.me");
+                conn.addParams("email", res.getProfile().getEmail());
+                conn.addParams("social", "N");
+                conn.addParams("name", res.getProfile().getName());
                 conn.executeConn(new CommonConn.ConnCallback() {
                     @Override
                     public void onResult(boolean isResult, String data) {
-                        Log.d("Result", "onResult: "+ isResult);
+                        Log.d("Result", "onResult: " + isResult);
+                        MemberVO vo = new Gson().fromJson(data, MemberVO.class);
+                        CommonVal.userInfo = vo;
+                        Toast.makeText(LoginActivity.this, "로그인 성공", Toast.LENGTH_SHORT).show();
+                        finish();
                     }
                 });
 
             }
+
             @Override
             public void onFailure(int i, String s) {
                 Log.d("프로필", "onFailure: " + s);
@@ -188,10 +213,9 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onError(int i, @NonNull String s) {
-                Log.d("프로필", "onError: "  + s);
+                Log.d("프로필", "onError: " + s);
             }
         });
-        finish();
     }
 
     /*카카오로그인*/
@@ -199,9 +223,6 @@ public class LoginActivity extends AppCompatActivity {
         UserApiClient.getInstance().me((user, throwable) -> {
             if (throwable != null) {
                 //오류가 났을때 어떤 오류인지 코드로 줌 KOE + 숫자 ( 단무지가 있음 )
-                /*Intent kakaofailintent = new Intent(getApplicationContext(), JoinActivity.class);
-                kakaofailintent.putExtra("present_email",user.getKakaoAccount().getEmail());
-                startActivity(kakaofailintent);*/
             } else {
                 Log.d("카카오", "kakao_profile: " + user.getKakaoAccount().getProfile().getNickname());
                 Log.d("카카오", "kakao_profile: " + user.getKakaoAccount().getProfile().getThumbnailImageUrl());
@@ -210,15 +231,20 @@ public class LoginActivity extends AppCompatActivity {
                 CommonConn conn = new CommonConn(LoginActivity.this,"socialinfo.me");
                 conn.addParams("email",user.getKakaoAccount().getEmail());
                 conn.addParams("social","K");
+                conn.addParams("name",user.getKakaoAccount().getName());
                 conn.executeConn(new CommonConn.ConnCallback() {
                     @Override
                     public void onResult(boolean isResult, String data) {
                         Log.d("Result", "onResult: "+ isResult);
+                        MemberVO vo = new Gson().fromJson(data, MemberVO.class);
+                        CommonVal.userInfo = vo;
+                        Toast.makeText(LoginActivity.this, "로그인 성공", Toast.LENGTH_SHORT).show();
+
                     }
                 });
 
             }
-            //카카오로그인 성공시 메인 액티비티로
+
             finish();
             return null;
         });
@@ -246,46 +272,53 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-   /* 구글 로그인*/
-   @Override
-   public void onActivityResult(int requestCode, int resultCode, Intent data) {
-       super.onActivityResult(requestCode, resultCode, data);
 
-       // Result returned from launching the Intent from GoogleSignInClient.getSignInIntent(...);
-       if (requestCode == RC_SIGN_IN) {
-           // The Task returned from this call is always completed, no need to attach
-           // a listener.
-           Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-           try {
-               task.getResult(ApiException.class);
-               GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
-               if (acct != null) {
-                   String personName = acct.getDisplayName();
-                   String personGivenName = acct.getGivenName();
-                   String personFamilyName = acct.getFamilyName();
-                   String personEmail = acct.getEmail();
-                   String personId = acct.getId();
-                   Uri personPhoto = acct.getPhotoUrl();
-                   /*구글 로그인 정보 DB에 저장*/
-                   CommonConn conn = new CommonConn(LoginActivity.this,"socialinfo.me");
-                   conn.addParams("email",acct.getEmail());
-                   conn.addParams("social","G");
-                   conn.executeConn(new CommonConn.ConnCallback() {
-                       @Override
-                       public void onResult(boolean isResult, String data) {
-                           Log.d("Result", "onResult: "+ isResult);
-                       }
-                   });
-                   finish();
-               }
-           } catch (ApiException e) {
-               e.printStackTrace();
-           }
-           //handleSignInResult(task);
+    /* 구글 로그인*/
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == 1) {
+            finish();
+        }
+        // Result returned from launching the Intent from GoogleSignInClient.getSignInIntent(...);
+        if (requestCode == RC_SIGN_IN) {
+            // The Task returned from this call is always completed, no need to attach
+            // a listener.
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            try {
+                task.getResult(ApiException.class);
+                GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
+                if (acct != null) {
+                    String personName = acct.getDisplayName();
+                    String personGivenName = acct.getGivenName();
+                    String personFamilyName = acct.getFamilyName();
+                    String personEmail = acct.getEmail();
+                    String personId = acct.getId();
+                    Uri personPhoto = acct.getPhotoUrl();
+                    /*구글 로그인 정보 DB에 저장*/
+                    //할 필요 없음
+                    MemberVO vo = new MemberVO();
+                    CommonConn conn = new CommonConn(LoginActivity.this,"socialinfo.me");
+                    vo.setEmail(personEmail);
+                    vo.setName(personName);
+                    conn.executeConn(new CommonConn.ConnCallback() {
+                        @Override
+                        public void onResult(boolean isResult, String data) {
+                            Log.d("Result", "onResult: "+ isResult);
+                            if(isResult){
+                                MemberVO vo = new Gson().fromJson(data, MemberVO.class);
+                                CommonVal.userInfo = vo;
+                                Toast.makeText(LoginActivity.this, "로그인 성공", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+                    finish();
+                }
+            } catch (ApiException e) {
+                e.printStackTrace();
+            }
 
-       }
-   }
-
+        }
+    }
 
 }
-

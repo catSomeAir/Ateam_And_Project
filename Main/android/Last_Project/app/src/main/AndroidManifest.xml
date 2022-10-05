@@ -25,20 +25,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Last_Project"
         android:usesCleartextTraffic="true">
+
+
         <activity
-            android:name=".postList.MyPostDetailActivity"
+            android:name=".CommonAlertActivity"
+            android:theme="@style/Theme.AppCompat.Transparent.NoActionBar"
             android:exported="true" />
         <activity
-            android:name=".postList.DownloadedManualActivity"
-            android:exported="true" />
+            android:name=".model.detail.writng.WriteSpaceActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Transparent.NoActionBar"
+            android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".member.LoginActivity"
-            android:exported="true" />
+            android:name=".request.RequestEmptyActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Transparent.NoActionBar" />
         <activity
-            android:name=".postList.EdtBookmarkedPostActivity"
-            android:exported="true" />
-        <activity
-            android:name=".event.EventDetailActivity"
+            android:name=".main.banner.BannerActivity"
             android:exported="true" />
         <activity
             android:name=".category.CategorySearchActivity"
@@ -58,6 +62,8 @@
                     android:scheme="kakao6a8daeb1b5866edc7517304827ad84ae" />
             </intent-filter>
         </activity>
+        <activity android:name=".postList.DownloadedManualActivity"
+            android:exported="true"/>
         <activity
             android:name=".main.market.MarketActivity"
             android:exported="true" />
@@ -72,6 +78,9 @@
             android:exported="true" />
         <activity
             android:name=".notice.NoticeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".main.market.Market_Grid_Activity"
             android:exported="true" />
         <activity
             android:name=".postList.RequestedPostActivity"
@@ -100,11 +109,18 @@
         <activity
             android:name=".request.RequestResultActivity"
             android:exported="true" />
+        <activity android:name=".postList.EdtBookmarkedPostActivity"
+            android:exported="true"/>
 
+        <!--추가해주어야함-->
         <meta-data
             android:name="com.kakao.sdk.AppKey"
             android:value="693dd02df8fe8f8ace3aaaefb130bc94" />
 
+        <activity
+            android:name=".search.NotFoundAlertActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Transparent.NoActionBar" />
         <activity
             android:name=".request.RequestCancelActivity"
             android:exported="true"
@@ -129,6 +145,9 @@
             android:exported="true" />
         <activity
             android:name=".SplashActivity"
+            android:exported="true" />
+        <activity
+            android:name=".member.LoginActivity"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

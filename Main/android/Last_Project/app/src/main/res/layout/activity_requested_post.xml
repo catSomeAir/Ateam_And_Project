@@ -22,7 +22,7 @@
             android:layout_weight="1">
 
             <ImageView
-                android:id="@+id/imgv_category_back"
+                android:id="@+id/imgv_back"
                 android:layout_width="34dp"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
@@ -55,7 +55,6 @@
         android:layout_height="2dp"
         android:background="#EEEEEE"/>
     <LinearLayout
-        android:paddingHorizontal="10dp"
         android:paddingVertical="13dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -63,24 +62,26 @@
         android:background="#EEEEEE">
         <TextView
             android:layout_width="0dp"
-            android:layout_weight="7"
-            android:layout_gravity="center"
-            android:text="                          요청 제품"
+            android:layout_weight="6"
+            android:text="요청 제품"
             android:textSize="15dp"
             android:textColor="@color/black"
+            android:layout_marginLeft="98dp"
+            android:layout_marginRight="18dp"
             android:layout_height="wrap_content"/>
 
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="35dp"
             android:background="@color/black" />
 
         <TextView
-            android:text="            상태"
-            android:layout_marginLeft="5dp"
+            android:text="상태"
             android:textColor="@color/black"
+            android:layout_marginLeft="60dp"
             android:layout_width="0dp"
-            android:layout_weight="3"
+            android:layout_weight="4"
             android:layout_height="wrap_content"/>
     </LinearLayout>
 

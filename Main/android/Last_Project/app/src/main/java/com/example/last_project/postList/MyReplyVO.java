@@ -1,10 +1,8 @@
 package com.example.last_project.postList;
 
-import java.sql.Date;
-
 public class MyReplyVO {
  private String content;
- private Date writedate;
+ private String writedate;
  private int help_cnt;
  
 	public String getContent() {
@@ -13,12 +11,15 @@ public class MyReplyVO {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public Date getWritedate() {
+
+	public String getWritedate() {
 		return writedate;
 	}
-	public void setWritedate(Date writedate) {
+
+	public void setWritedate(String writedate) {
 		this.writedate = writedate;
 	}
+
 	public int getHelp_cnt() {
 		return help_cnt;
 	}

@@ -4,7 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".main.market.Main_MarketBuy_Fragment">
+    tools:context=".main.market.Main_MarketBuy_Fragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
 
 
     <TextView
@@ -67,7 +69,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="4dp"
-                android:text="9,000원"
+                android:text="900 P"
                 android:textColor="#000"
                 android:textSize="12dp"
                 android:textStyle="bold" />
@@ -93,19 +95,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="4dp"
-                    android:text="8,100"
+                    android:text="810 P"
                     android:textColor="#000"
                     android:textSize="12dp"
                     android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/market_tv_menu_won"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="4dp"
-                    android:text="원"
-                    android:textColor="#000"
-                    android:textSize="12dp" />
 
             </LinearLayout><!--할인 가격 묶음-->
         </LinearLayout>
@@ -143,29 +136,30 @@
                 android:layout_height="match_parent"
                 android:layout_weight="9" />
 
-            <TextView
+            <!--<TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="-"
                 android:textSize="28dp"
                 android:textStyle="bold" />
-
+-->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textAlignment="textEnd"
                 android:layout_marginHorizontal="10dp"
-                android:text="1"
+                android:text="1 개"
                 android:textColor="#555555"
                 android:textSize="15dp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="+"
-                android:textSize="28dp"
+            <!--    <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+"
+                    android:textSize="28dp"
 
-                />
+                    />-->
 
             <Space
                 android:layout_width="0dp"
@@ -192,7 +186,8 @@
                 android:text="사용 가능 포인트"
                 android:textColor="#555555"
                 android:textSize="15dp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                />
 
             <Space
                 android:layout_width="0dp"
@@ -201,13 +196,21 @@
 
 
             <TextView
+                android:id="@+id/market_tv_point1_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="75,230 P"
+                android:text=""
                 android:textColor="#555555"
                 android:textSize="15dp"
                 android:textStyle="bold" />
+            <TextView
 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="P"
+                android:textColor="#555555"
+                android:textSize="15dp"
+                android:textStyle="bold" />
 
             <Space
                 android:layout_width="0dp"
@@ -243,13 +246,21 @@
 
 
             <TextView
+                android:id="@+id/market_tv_point2_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="810 P"
+                android:text="810 "
                 android:textColor="#555555"
                 android:textSize="15dp"
                 android:textStyle="bold" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="P"
+                android:textColor="#555555"
+                android:textSize="15dp"
+                android:textStyle="bold" />
 
             <Space
                 android:layout_width="0dp"
@@ -262,41 +273,6 @@
         android:layout_height="2dp"
         android:layout_marginHorizontal="5dp"
         android:background="@drawable/shape_market_btn_gray" />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:orientation="vertical"
-        android:background="@drawable/shape_market_background"
-        >
-
-        <TextView
-            android:id="@+id/market_tv_point1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text=" 75,230 P"
-            android:textAlignment="textEnd"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/market_tv_point2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="- 810 P"
-            android:textAlignment="textEnd"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/market_tv_point3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="= 74,420 P"
-            android:textAlignment="textEnd"
-            android:textStyle="bold" />
 
 
-    </LinearLayout>
 </LinearLayout>

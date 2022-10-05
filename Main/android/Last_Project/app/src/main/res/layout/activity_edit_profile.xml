@@ -21,7 +21,7 @@
             android:layout_weight="1">
 
             <ImageView
-                android:id="@+id/imgv_category_back"
+                android:id="@+id/imgv_back"
                 android:layout_width="34dp"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
@@ -70,6 +70,7 @@
         android:paddingTop="40dp"
         android:orientation="vertical">
     <EditText
+        android:id="@+id/edt_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:singleLine="true"
@@ -79,6 +80,7 @@
         android:layout_marginBottom="35dp"
         android:background="@drawable/edittext_rounded_corner_rectangle"/>
         <EditText
+            android:id="@+id/edt_nickname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="18dp"
@@ -88,6 +90,7 @@
             android:layout_marginBottom="35dp"
             android:background="@drawable/edittext_rounded_corner_rectangle"/>
         <EditText
+            android:id="@+id/edt_pw"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="18dp"
@@ -96,7 +99,8 @@
             android:padding="10dp"
             android:layout_marginBottom="35dp"
             android:background="@drawable/edittext_rounded_corner_rectangle"/>
-        <EditText
+<!--        <EditText
+            android:id="@+id/edt_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="18dp"
@@ -104,8 +108,9 @@
             android:singleLine="true"
             android:padding="10dp"
             android:layout_marginBottom="35dp"
-            android:background="@drawable/edittext_rounded_corner_rectangle"/>
+            android:background="@drawable/edittext_rounded_corner_rectangle"/>-->
         <EditText
+            android:id="@+id/edt_phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="18dp"
@@ -116,6 +121,7 @@
             android:background="@drawable/edittext_rounded_corner_rectangle"/>
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_save"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="5dp"

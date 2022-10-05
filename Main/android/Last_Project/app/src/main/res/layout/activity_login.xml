@@ -16,12 +16,14 @@
         android:layout_height="match_parent"
         android:layout_marginHorizontal="30dp"
         android:orientation="vertical"
-        android:padding="18dp">
+        android:padding="18dp"
+        android:gravity="center"
+        >
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="5" />
+            android:layout_weight="9" />
 
         <ImageView
             android:layout_width="80dp"
@@ -46,49 +48,49 @@
         <Space
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="4" />
+            android:layout_weight="7" />
 
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_gravity="center_horizontal"
             android:elevation="50dp"
             android:layout_height="wrap_content">
-        <LinearLayout
-            android:id="@+id/ln_login"
-            android:gravity="center_vertical"
-            android:layout_width="232dp"
-            android:layout_height="50dp"
-            android:background="@drawable/shape_login"
-            android:orientation="horizontal"
-            >
-            <ImageView
-                android:layout_marginHorizontal="8dp"
-                android:layout_width="33dp"
-                android:layout_height="33dp"
-                android:src="@drawable/logo_light_navy"/>
-            <View
-                android:layout_marginVertical="1dp"
-                android:layout_width="0.9dp"
-                android:layout_height="match_parent"
-                android:background="#2C3142"/>
-            <TextView
-                android:layout_marginLeft="18dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="나의 설명서 ID로 로그인"
-                android:textColor="#fff"
-                android:textStyle="bold"/>
+            <LinearLayout
+                android:id="@+id/ln_login"
+                android:gravity="center_vertical"
+                android:layout_width="232dp"
+                android:layout_height="50dp"
+                android:background="@drawable/shape_login"
+                android:orientation="horizontal"
+                >
+                <ImageView
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_width="33dp"
+                    android:layout_height="33dp"
+                    android:src="@drawable/logo_light_navy"/>
+                <View
+                    android:layout_marginVertical="1dp"
+                    android:layout_width="0.9dp"
+                    android:layout_height="match_parent"
+                    android:background="#2C3142"/>
+                <TextView
+                    android:layout_marginLeft="18dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="나의 설명서 ID로 로그인"
+                    android:textColor="#fff"
+                    android:textStyle="bold"/>
 
-        </LinearLayout>
+            </LinearLayout><!--일반로그인-->
         </FrameLayout>
-    <!--    <Button
-            android:id="@+id/btn_login_local"
-            android:layout_width="232dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center_horizontal"
-            android:backgroundTint="#D2002C47"
-            android:elevation="50dp"
-            />-->
+        <!--    <Button
+                android:id="@+id/btn_login_local"
+                android:layout_width="232dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:backgroundTint="#D2002C47"
+                android:elevation="50dp"
+                />-->
         <!--  <TextView
               android:layout_gravity="center_horizontal"
               android:layout_width="wrap_content"
@@ -99,7 +101,7 @@
         <Space
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.3" />
+            android:layout_weight="1.8" />
 
         <!--<FrameLayout
             android:layout_width="match_parent"
@@ -154,6 +156,8 @@
             android:orientation="horizontal"
             android:gravity="center_vertical"
             android:background="@color/o0"
+            android:layout_marginVertical="16dp"
+            android:layout_marginHorizontal="10dp"
             >
             <View
                 android:layout_width="0dp"
@@ -165,7 +169,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="소셜로 시작하기"
+                android:text="  소셜로 시작하기  "
                 android:textColor="@color/white"
                 android:textSize="12dp"
                 />
@@ -176,50 +180,69 @@
                 android:textAlignment="center"
                 android:background="@color/white"
                 />
-        </LinearLayout>
+        </LinearLayout><!--소셜로그인 막대-->
         <LinearLayout
+            android:layout_marginBottom="4dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <com.navercorp.nid.oauth.view.NidOAuthLoginButton
                 android:id="@+id/login_btn_naver"
-
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_marginVertical="8dp"
                 android:src="@drawable/naver_btn_logo"
                 />
 
-        </LinearLayout>
+        </LinearLayout><!--네이버 로그인-->
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:id="@+id/btn_kakao"
+            android:gravity="center_vertical"
+            android:layout_width="232dp"
+            android:layout_height="50dp"
+            android:background="@drawable/shape_login_kakao"
+            android:orientation="horizontal"
 
+            >
             <ImageView
-                android:id="@+id/btn_kakao"
-                android:layout_width="match_parent"
+                android:layout_marginHorizontal="8dp"
+                android:layout_width="33dp"
+                android:layout_height="33dp"
+                android:src="@drawable/kakao"
+                android:padding="5dp"
+                />
+            <View
+                android:layout_marginVertical="1dp"
+                android:layout_width="0.9dp"
+                android:layout_height="match_parent"
+                android:background="#2C3142"/>
+            <TextView
+                android:layout_marginLeft="18dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:adjustViewBounds="true"
-                android:src="@drawable/kakao_login_large_wide" />
+                android:text="카카오 아이디로 로그인"
+                android:textColor="#190A0A"
+                android:textStyle="bold"/>
+
+        </LinearLayout><!--카카오로그인-->
 
 
-        </LinearLayout>
-
-        <!--구글 로그인 이미지 G마크는 앱 실행시키면 나옴-->
+        <!--구글 로그인 이미지 일단 넣어놈-->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <!--구글 로그인 이미지 G마크 는 여기에서는 안보이나앱 실행시키면 나옴-->
+            android:orientation="horizontal"
+            android:layout_margin="6dp"
+            android:background="@drawable/shape_login_google"
+            android:visibility="visible"
+            >
             <com.google.android.gms.common.SignInButton
                 android:id="@+id/btn_google"
-                android:layout_marginLeft="40dp"
                 android:layout_width="232dp"
-                android:layout_height="50dp"/>
-            <!--구글 로그인 이미지 G마크 는 앱 실행시키면 나옴-->
+                android:layout_height="50dp"
+                android:visibility="visible"
+                />
             <!--<ImageView
                 android:id="@+id/btn_google"
                 android:layout_width="232dp"
@@ -228,31 +251,59 @@
                 android:adjustViewBounds="true"
                 android:src="@drawable/googleloginbtn"
                 android:layout_marginVertical="8dp"/>-->
-        </LinearLayout>
-
-        <!--<LinearLayout
-            android:layout_gravity="center_horizontal"
-            android:layout_marginVertical="4dp"
-            android:id="@+id/ln_login_guest"
-            android:gravity="center"
+        </LinearLayout><!--구글로그인-->
+        <LinearLayout
+            android:id="@+id/ln_login_google"
+            android:gravity="center_vertical"
             android:layout_width="232dp"
-            android:layout_height="48dp"
-            android:background="@drawable/shape_guest_login"
-            android:orientation="horizontal">
-
+            android:layout_height="50dp"
+            android:background="@drawable/shape_login_google"
+            android:orientation="horizontal"
+            >
+            <ImageView
+                android:layout_marginHorizontal="8dp"
+                android:layout_width="33dp"
+                android:layout_height="33dp"
+                android:src="@drawable/google"
+                android:padding="5dp"
+                />
+            <View
+                android:layout_marginVertical="1dp"
+                android:layout_width="0.9dp"
+                android:layout_height="match_parent"
+                android:background="#2C3142"/>
             <TextView
+                android:layout_marginLeft="18dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="GUEST로 로그인"
-                android:textColor="#fff"
+                android:text="구글 아이디로 로그인"
+                android:textColor="#000"
                 android:textStyle="bold"/>
 
-        </LinearLayout>-->
+        </LinearLayout><!--구글로그인-->
+        <!-- <LinearLayout
+             android:layout_gravity="center_horizontal"
+             android:layout_marginVertical="4dp"
+             android:id="@+id/ln_login_guest"
+             android:gravity="center"
+             android:layout_width="232dp"
+             android:layout_height="48dp"
+             android:background="@drawable/shape_guest_login"
+             android:orientation="horizontal">
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="GUEST로 로그인"
+                 android:textColor="#fff"
+                 android:textStyle="bold"/>
+
+         android:layout_margin="2dp"-->
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="9" />
+            android:layout_weight="4" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -261,11 +312,12 @@
             android:textSize="14dp"
             android:textStyle="bold"
             android:gravity="center"
+            android:id="@+id/login_btn_join"
             />
         <Space
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_weight="4" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -299,9 +351,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-                android:src="@drawable/btn_kakao"/>
-
-        </LinearLayout>-->
+                android:src="@drawable/btn_kakao"/>-->
 
     </LinearLayout>
 
