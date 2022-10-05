@@ -68,30 +68,12 @@ public class MarketActivity extends AppCompatActivity {
         market_tv_menu_name = findViewById(R.id.market_tv_menu_name);
         market_tv_point2_1 = findViewById(R.id.market_tv_point2_1);
 
-        if(CommonVal.userInfo == null){
-
-            /*market_btn.setText("로그인 후 이용가능합니다");
-            market_btn.setEnabled(false);//버튼 색깔 회색으로 바꿀 예정
-            market_btn.setBackgroundColor(Color.GRAY);//버튼 색깔 회색*/
-
-        }
-
-        //Fragment fragment = getFragmentManager().findFragmentById(R.id.market_container);
-//        if()
         market_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 GiftVO vo = new GiftVO();
-                if(CommonVal.userInfo == null){
 
-                    /*market_btn.setText("로그인 후 이용가능합니다");
-                    market_btn.setEnabled(false);//버튼 색깔 회색으로 바꿀 예정
-                    market_btn.setBackgroundColor(Color.GRAY);//버튼 색깔 회색*/
-
-                }
-
-
-                if (cnt == 0) {
+                if (CommonVal.userInfo == null) {
                     showMarket_loginDialog();
                     getSupportFragmentManager().beginTransaction().replace(R.id.market_container, new Main_MarketBuy_Fragment()).commit(); //결제화면 연결
                     cnt++;
@@ -112,12 +94,7 @@ public class MarketActivity extends AppCompatActivity {
 
                         }
                     });
-
-
                 }
-
-                //                showMarketDialog();
-
             }
 
         });
@@ -157,16 +134,4 @@ public class MarketActivity extends AppCompatActivity {
         });
     }
 }
-//                AlertDialog.Builder builder = new AlertDialog.Builder(MarketActivity.this);
-//                builder.setTitle("로그인 후 이용 가능합니다");
-//                builder.setMessage("로그인 화면으로 이동합니다.");
-//                builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialog, int which) {
-//                        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-//                        startActivity(intent);
-//                    }
-//                });
-//                builder.setCancelable(false);
-//                AlertDialog dialog = builder.create();
-//                dialog.show();
+

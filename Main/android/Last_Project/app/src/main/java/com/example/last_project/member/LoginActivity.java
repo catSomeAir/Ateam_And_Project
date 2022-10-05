@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -20,6 +21,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.last_project.R;
 import com.example.last_project.common.CommonVal;
 import com.example.last_project.conn.CommonConn;
+import com.example.last_project.member.join.JoinActivity;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -49,7 +51,7 @@ public class LoginActivity extends AppCompatActivity {
     Button btn_login_local; //db접속 로그인 버튼
     //    EditText login_edt_id;
     LinearLayout ln_login, ln_login_guest, ln_login_google;
-
+    TextView login_btn_join;
     //구글 로그인을 위한 전역변수
 //    private SignInButton btn_google; //구글 로그인 버튼
     private final int RC_SIGN_IN = 1000;
@@ -65,6 +67,17 @@ public class LoginActivity extends AppCompatActivity {
 //                WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_login);
+
+        //회원가입버튼
+        login_btn_join = findViewById(R.id.login_btn_join);
+        login_btn_join.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Intent intent = new Intent(LoginActivity.this, JoinActivity.class);
+                startActivityForResult(new Intent(LoginActivity.this, JoinActivity.class),100);
+
+            }
+        });
 
         //일반로그인 ------------------------------------------------------------------------
         ln_login = findViewById(R.id.ln_login);

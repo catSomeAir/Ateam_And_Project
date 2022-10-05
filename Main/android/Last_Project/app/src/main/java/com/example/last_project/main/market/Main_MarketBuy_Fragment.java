@@ -1,6 +1,7 @@
 package com.example.last_project.main.market;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +14,7 @@ import com.example.last_project.common.CommonVal;
 
 public class Main_MarketBuy_Fragment extends Fragment {
     TextView market_tv_point1_1, market_tv_point2_1, market_tv_menu_price1;
-
+//    Dialog market_null_dialog;
 
 
 
@@ -29,18 +30,32 @@ public class Main_MarketBuy_Fragment extends Fragment {
         market_tv_point2_1 = v.findViewById(R.id.market_tv_point2_1);
         market_tv_menu_price1 = v.findViewById(R.id.market_tv_menu_price1);
 
+
 //        market_tv_menu_price1.setPaintFlags(market_tv_menu_price1.pai //취소선 넣다가 보류
 
 //        market_tv_point1_1.setText(userpoint);
-        if(CommonVal.userInfo == null) {
-            market_tv_point1_1.setText("");
-        }else {
+        if(CommonVal.userInfo != null) {
+            Log.d("포인트", "onCreateView: "+CommonVal.userInfo.getPoint());
             market_tv_point1_1.setText(CommonVal.userInfo.getPoint());
+        }else {
+            market_tv_point1_1.setText("0");
 
         }
+
 
         return v;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        if(CommonVal.userInfo != null) {
+            Log.d("포인트", "onCreateView: "+CommonVal.userInfo.getPoint());
+            market_tv_point1_1.setText(CommonVal.userInfo.getPoint());
+        }else {
+            market_tv_point1_1.setText("0");
 
+        }
+
+    }
 }

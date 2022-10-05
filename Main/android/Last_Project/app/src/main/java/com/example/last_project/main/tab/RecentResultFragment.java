@@ -40,7 +40,7 @@ public class RecentResultFragment extends Fragment {
         }else if(result_type==2){
             CommonConn conn = new CommonConn(getContext(), "recent_list");
             conn.addParams("data", new Gson().toJson(CommonMethod.getStringArrayPref(getContext(),"recent_list")));
-            conn.executeConn(new CommonConn.ConnCallback() {
+            conn.executeConn_no_dialog(new CommonConn.ConnCallback() {
                 @Override
                 public void onResult(boolean isResult, String data) {
                     ArrayList<CategorySearchVO> list = new Gson().fromJson(data,
@@ -53,6 +53,13 @@ public class RecentResultFragment extends Fragment {
                     recv_main_recent.setAdapter(adapter);
                 }
             });
+
+
+
+
+
+
+
 
 
         }

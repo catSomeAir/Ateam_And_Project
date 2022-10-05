@@ -101,7 +101,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginHorizontal="4dp"
+        android:layout_marginHorizontal="8dp"
         android:background="#dcdbd9" />
     <!--android:layout_marginVertical="6dp"-->
     <RelativeLayout
@@ -155,8 +155,26 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="7dp"
-                    android:layout_marginBottom="2dp"
                     android:background="#e9e9e9" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="170dp"
+                    android:background="@drawable/shape_navy_radius_right"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="6dp"
+                        android:layout_marginLeft="14dp"
+                        android:text="카테고리별 검색"
+                        android:textColor="#d9d9d9"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -165,24 +183,6 @@
                     android:orientation="vertical"
                     android:paddingBottom="16dp">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="170dp"
-                        android:background="@drawable/shape_navy_radius_right"
-                        android:orientation="vertical">
-
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginVertical="6dp"
-                            android:layout_marginLeft="14dp"
-                            android:text="카테고리별 검색"
-                            android:textColor="#d9d9d9"
-                            android:textSize="16dp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -209,6 +209,7 @@
                                 android:gravity="center_horizontal">
 
                                 <ImageView
+                                    android:padding="2dp"
                                     android:layout_width="44dp"
                                     android:layout_height="44dp"
                                     android:src="@drawable/tv_1" />
@@ -288,6 +289,7 @@
                                 android:gravity="center_horizontal">
 
                                 <ImageView
+                                    android:padding="3dp"
                                     android:layout_width="44dp"
                                     android:layout_height="47dp"
                                     android:src="@drawable/phone" />
@@ -417,7 +419,7 @@
                                 <ImageView
                                     android:layout_width="44dp"
                                     android:layout_height="44dp"
-                                    android:src="@drawable/temp2" />
+                                    android:src="@drawable/computer" />
                             </LinearLayout>
 
                             <LinearLayout
@@ -455,7 +457,7 @@
                                 <ImageView
                                     android:layout_width="44dp"
                                     android:layout_height="47dp"
-                                    android:src="@drawable/temp3" />
+                                    android:src="@drawable/samu" />
                             </LinearLayout>
 
                             <LinearLayout
@@ -493,7 +495,7 @@
                                 <ImageView
                                     android:layout_width="44dp"
                                     android:layout_height="44dp"
-                                    android:src="@drawable/temp5" />
+                                    android:src="@drawable/habit" />
                             </LinearLayout>
 
                             <LinearLayout
@@ -523,7 +525,6 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="10dp"
-                    android:layout_marginBottom="2dp"
                     android:background="#e9e9e9" />
 
                 <ImageView
@@ -536,13 +537,11 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="10dp"
-                    android:layout_marginBottom="2dp"
                     android:background="#e9e9e9" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="7dp"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -655,19 +654,23 @@
                             android:layout_marginVertical="8dp"
                             android:gravity="center"
                             android:orientation="horizontal">
-
+                            <Space
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content" />
                             <LinearLayout
                                 android:id="@+id/ln_main_market1"
-                                android:layout_width="wrap_content"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:gravity="center_horizontal"
                                 android:orientation="vertical"
                                 android:padding="10dp">
 
                                 <ImageView
+                                    android:layout_gravity="center_horizontal"
                                     android:id="@+id/market_imgv_item"
-                                    android:layout_width="160dp"
-                                    android:layout_height="140dp"
+                                    android:layout_width="120dp"
+                                    android:layout_height="120dp"
                                     android:layout_marginBottom="8dp"
                                     android:src="@drawable/market_gifticon2" />
 
@@ -744,12 +747,13 @@
                             </LinearLayout>
 
                             <Space
-                                android:layout_width="8dp"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
                                 android:layout_height="wrap_content" />
 
                             <LinearLayout
                                 android:id="@+id/ln_main_market2"
-                                android:layout_width="wrap_content"
+                                android:layout_width="180dp"
                                 android:layout_height="wrap_content"
                                 android:gravity="center_horizontal"
                                 android:orientation="vertical"
@@ -757,8 +761,9 @@
 
                                 <ImageView
                                     android:id="@+id/market_imgv_item2"
-                                    android:layout_width="160dp"
-                                    android:layout_height="140dp"
+                                    android:layout_width="120dp"
+                                    android:layout_height="120dp"
+                                    android:layout_gravity="center_horizontal"
                                     android:layout_marginBottom="8dp"
                                     android:src="@drawable/br__gifticon" />
 
@@ -833,6 +838,10 @@
                                     </LinearLayout><!--할인 가격 묶음-->
                                 </LinearLayout><!--상품 내역-->
                             </LinearLayout>
+                            <Space
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>

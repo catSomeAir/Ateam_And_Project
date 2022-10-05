@@ -10,7 +10,6 @@ import android.widget.EditText;
 import androidx.fragment.app.Fragment;
 
 import com.example.last_project.R;
-import com.example.last_project.conn.CommonConn;
 import com.example.last_project.member.MemberVO;
 
 public class Join_main_Fragment extends Fragment {
