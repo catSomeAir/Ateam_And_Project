@@ -53,7 +53,7 @@
                     android:text="제품명 : " />
 
                 <TextView
-                    android:id="@+id/tv_bookmarked_name"
+                    android:id="@+id/tv_name"
                     android:textSize="13dp"
                     android:textStyle="bold"
                     android:textColor="#4D4d4D"
@@ -75,7 +75,7 @@
                     android:text="모델명 : " />
 
                 <TextView
-                    android:id="@+id/tv_bookmarked_model_code"
+                    android:id="@+id/tv_model_code"
                     android:textSize="13dp"
                     android:textColor="#4D4d4D"
                     android:textStyle="bold"
@@ -97,7 +97,7 @@
                     android:text="브랜드 : " />
 
                 <TextView
-                    android:id="@+id/tv_bookmarked_brand_name"
+                    android:id="@+id/tv_brand_name"
                     android:textSize="13dp"
                     android:textColor="#4D4d4D"
                     android:layout_width="wrap_content"

@@ -54,7 +54,7 @@ public class BookmarkedPostAdapter extends RecyclerView.Adapter<BookmarkedPostAd
             tv_bookmarked_brand_name =itemView.findViewById(R.id.tv_bookmarked_brand_name);
         }
         public void bind(@NonNull ViewHolder h,int i){
-            //Glide.with(context).load(list.get(i).getFilepath().replace("localhost","121.147.215.12:3302")).into(h.imgv_bookmarkedpost);
+           // Glide.with(context).load(list.get(i).getFilepath().replace("localhost","121.147.215.12:3302")).into(h.imgv_bookmarkedpost);
             h.tv_bookmarked_name.setText(list.get(i).getModel_name()+"");
             h.tv_bookmarked_model_code.setText(list.get(i).getModel_code()+"");
             h.tv_bookmarked_brand_name.setText(list.get(i).getBrand_name()+"");

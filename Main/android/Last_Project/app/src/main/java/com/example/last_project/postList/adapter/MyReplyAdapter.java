@@ -21,7 +21,7 @@ public class MyReplyAdapter extends RecyclerView.Adapter<MyReplyAdapter.ViewHold
     Context context;
     myReplyFragment fragment;
 
-    public MyReplyAdapter(LayoutInflater inflater, ArrayList<MyReplyVO> list, Context context, myReplyFragment fragment) {
+    public MyReplyAdapter(LayoutInflater inflater, ArrayList<MyReplyVO> list, myReplyFragment fragment,Context context) {
         this.inflater = inflater;
         this.list = list;
         this.context = context;
@@ -47,16 +47,17 @@ public class MyReplyAdapter extends RecyclerView.Adapter<MyReplyAdapter.ViewHold
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView title,date;
+        TextView reply,writedate;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            title =itemView.findViewById(R.id.reply);
-            date =itemView.findViewById(R.id.date);
+            writedate =itemView.findViewById(R.id.writedate);
+            reply= itemView.findViewById(R.id.reply);
         }
         public void bind(@NonNull ViewHolder h, int i) {
+           h.reply.setText(list.get(i).getContent()+"");
+           h.writedate.setText(list.get(i).getWritedate()+"");
 
-            //h.date.setText(list.get(i).getDate()+"");
         }
     }
 }

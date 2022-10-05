@@ -132,6 +132,12 @@
             android:layout_height="wrap_content"
             android:id="@+id/container_write"/>
 
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recv_write"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
         <!-- item 으로 빼서 RecyclerView 로 만들 예정-->
        <!-- <LinearLayout
             android:layout_width="match_parent"

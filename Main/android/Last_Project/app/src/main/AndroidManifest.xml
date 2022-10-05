@@ -62,6 +62,8 @@
                     android:scheme="kakao6a8daeb1b5866edc7517304827ad84ae" />
             </intent-filter>
         </activity>
+        <activity android:name=".postList.DownloadedManualActivity"
+            android:exported="true"/>
         <activity
             android:name=".main.market.MarketActivity"
             android:exported="true" />
@@ -107,6 +109,8 @@
         <activity
             android:name=".request.RequestResultActivity"
             android:exported="true" />
+        <activity android:name=".postList.EdtBookmarkedPostActivity"
+            android:exported="true"/>
 
         <!--추가해주어야함-->
         <meta-data

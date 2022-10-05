@@ -66,7 +66,6 @@ public class LoginActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_login);
 
-
         //일반로그인 ------------------------------------------------------------------------
         ln_login = findViewById(R.id.ln_login);
         ln_login.setOnClickListener(new View.OnClickListener() {
@@ -191,7 +190,7 @@ public class LoginActivity extends AppCompatActivity {
 
     //setOAuthLoginCallback 을 이용을 해서 success가 되었을때 (token이있을때) 정보를 받아올수있는 객체를
     //사용해서 정보를 얻어오면된다.
-    public void naver_profile(){
+    public void naver_profile() {
         //NidOAuthLogin().callProfileApi(nidProfileCallback) Kotiln
         NidOAuthLogin authLogin = new NidOAuthLogin();
         authLogin.callProfileApi(new NidProfileCallback<NidProfileResponse>() {
@@ -224,6 +223,7 @@ public class LoginActivity extends AppCompatActivity {
                 });
 
             }
+
             @Override
             public void onFailure(int i, String s) {
                 Log.d("프로필", "onFailure: " + s);
@@ -231,10 +231,9 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onError(int i, @NonNull String s) {
-                Log.d("프로필", "onError: "  + s);
+                Log.d("프로필", "onError: " + s);
             }
         });
-
     }
 
     /*카카오로그인*/
@@ -247,11 +246,24 @@ public class LoginActivity extends AppCompatActivity {
                 Log.d("카카오", "kakao_profile: " + user.getKakaoAccount().getProfile().getThumbnailImageUrl());
                 Log.d("카카오", "kakao_profile: " + user.getKakaoAccount().getEmail());
                 Log.d("카카오", "kakao_profile: " + user.getKakaoAccount().getName());
+                CommonConn conn = new CommonConn(LoginActivity.this,"socialinfo.me");
+                conn.addParams("email",user.getKakaoAccount().getEmail());
+                conn.addParams("social","K");
+                conn.addParams("name",user.getKakaoAccount().getName());
+                conn.executeConn(new CommonConn.ConnCallback() {
+                    @Override
+                    public void onResult(boolean isResult, String data) {
+                        Log.d("Result", "onResult: "+ isResult);
+                        MemberVO vo = new Gson().fromJson(data, MemberVO.class);
+                        CommonVal.userInfo = vo;
+                        Toast.makeText(LoginActivity.this, "로그인 성공", Toast.LENGTH_SHORT).show();
 
+                    }
+                });
 
             }
 
-
+            finish();
             return null;
         });
     }

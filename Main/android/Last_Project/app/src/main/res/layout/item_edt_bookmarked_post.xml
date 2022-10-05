@@ -11,7 +11,12 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:paddingLeft="5dp">
-
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_marginTop="24dp"
+            android:id="@+id/check1"/>
 
         <androidx.cardview.widget.CardView
             android:layout_gravity="center_vertical"
@@ -26,9 +31,9 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/imgv_bookmarkedpost"
-                    android:layout_width="84dp"
-                    android:layout_height="84dp"
+                    android:id="@+id/imgv_modelimg"
+                    android:layout_width="74dp"
+                    android:layout_height="74dp"
                     android:adjustViewBounds="true"
                     android:src="@drawable/temp_model_img" />
             </LinearLayout>
@@ -36,7 +41,7 @@
 
         <LinearLayout
             android:padding="10dp"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
@@ -75,7 +80,7 @@
                     android:text="모델명 : " />
 
                 <TextView
-                    android:id="@+id/tv_bookmarked_model_code"
+                    android:id="@+id/tv_model_code"
                     android:textSize="13dp"
                     android:textColor="#4D4d4D"
                     android:textStyle="bold"
@@ -97,7 +102,7 @@
                     android:text="브랜드 : " />
 
                 <TextView
-                    android:id="@+id/tv_bookmarked_brand_name"
+                    android:id="@+id/tv_brand"
                     android:textSize="13dp"
                     android:textColor="#4D4d4D"
                     android:layout_width="wrap_content"
@@ -111,6 +116,12 @@
 
         </LinearLayout>
 
+        <ImageView
+            android:layout_width="19dp"
+            android:layout_height="19dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="7dp"
+            android:src="@drawable/hamburger"/>
 
     </LinearLayout>
 

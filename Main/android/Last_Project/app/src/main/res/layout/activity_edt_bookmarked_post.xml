@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1">
             <ImageView
-                android:id="@+id/imgv_category_back"
+                android:id="@+id/imgv_back"
                 android:layout_width="34dp"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
@@ -29,7 +29,7 @@
             android:gravity="center"
             android:textSize="17dp"
             android:textColor="@color/white"
-            android:text="즐겨찾기한 설명서" />
+            android:text="찜한 설명서" />
         <Space
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -70,4 +70,9 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_edt_bookmarked_post"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </LinearLayout>
