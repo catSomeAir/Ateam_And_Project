@@ -123,7 +123,7 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
             if (vo.getFilepath() != null) {
                 //피카소 글라이드 비교해봐야할듯
 //            Picasso.get().load(CommonVal.userInfo.getProfile_img()).into(imgv_category_profile);
-                Glide.with(CategoryActivity.this).load(vo.getFilepath()).into(imgv_category_profile);
+                Glide.with(CategoryActivity.this).load(vo.getFilepath().replace("192.168.0.33","121.147.215.12:3302")).into(imgv_category_profile);
             }
             //아인---------------------------------------------------------------------------------------------------
             catg_tv_point.setText(CommonVal.userInfo.getPoint());//로그인 후 페이지 회원이 가진 포인트 뿌리기

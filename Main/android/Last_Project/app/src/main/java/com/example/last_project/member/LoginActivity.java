@@ -2,6 +2,7 @@ package com.example.last_project.member;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
@@ -230,6 +231,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onResult(boolean isResult, String data) {
                         MemberVO vo =  new Gson().fromJson(data, MemberVO.class);
                         CommonVal.userInfo = vo;
+                        saveLoginInfo();
                         Toast.makeText(LoginActivity.this, "로그인 성공", Toast.LENGTH_SHORT).show();
                         finish();
                     }
@@ -269,6 +271,7 @@ public class LoginActivity extends AppCompatActivity {
                         Log.d("Result", "onResult: "+ isResult);
                         MemberVO vo = new Gson().fromJson(data, MemberVO.class);
                         CommonVal.userInfo = vo;
+                        saveLoginInfo();
                         Toast.makeText(LoginActivity.this, "로그인 성공", Toast.LENGTH_SHORT).show();
 
                     }
@@ -342,6 +345,7 @@ public class LoginActivity extends AppCompatActivity {
                             Log.d("Result", "onResult: "+ isResult);
                             MemberVO vo =  new Gson().fromJson(data, MemberVO.class);
                             CommonVal.userInfo = vo;
+                            saveLoginInfo();
                             Toast.makeText(LoginActivity.this, "로그인 성공", Toast.LENGTH_SHORT).show();
                         }
                     });
@@ -352,6 +356,15 @@ public class LoginActivity extends AppCompatActivity {
             }
 
         }
+    }
+    //자동로그인 메소드
+    public void saveLoginInfo() {
+        SharedPreferences preferences = getSharedPreferences("login", MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();   // Editer 객체를 리턴하는 메소드
+        editor.putString("email", CommonVal.userInfo.getEmail());
+        editor.putString("pw", CommonVal.userInfo.getPw());
+        editor.putString("social_code", CommonVal.userInfo.getSocial_code());
+        editor.apply();
     }
 
 }

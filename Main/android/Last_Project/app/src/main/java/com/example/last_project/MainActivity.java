@@ -1,7 +1,9 @@
 package com.example.last_project;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -10,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.core.widget.NestedScrollView;
@@ -27,10 +30,17 @@ import com.example.last_project.main.market.MarketActivity;
 import com.example.last_project.main.tab.Main_Tab_HomeFragment;
 import com.example.last_project.main.tab.Main_Tab_MyManaulFragment;
 import com.example.last_project.main.tab.Main_Tab_RecentFragment;
+import com.example.last_project.member.MemberVO;
 import com.example.last_project.mypage.MypageActivity;
 import com.example.last_project.search.NotFoundAlertActivity;
 import com.example.last_project.search.SearchActivity;
 import com.example.last_project.search.category_search.CategorySearchVO;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.tabs.TabLayout;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -52,14 +62,49 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     CardView cdv_plus;
 
     ImageView imgv_middle_banner;
-
+    GoogleSignInClient mGoogleSignInClient;
     NestedScrollView scrollView;
+    private final int RC_SIGN_IN = 1000;
     //마켓
     LinearLayout ln_main_market1, ln_main_market2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //자동로그인확인
+
+        //소셜
+        //구글
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+
+        SharedPreferences preferences = getSharedPreferences("login", MODE_PRIVATE);
+        String email = preferences.getString("email", null);
+        String pw = preferences.getString("pw", null);
+        String social_code = preferences.getString("social_code", null);
+        if(social_code != null){
+            if(!social_code.equals("0")){
+                if(social_code.equals("G")){
+                    Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+                    startActivityForResult(signInIntent, RC_SIGN_IN);
+                }else if (social_code.equals("N")){
+
+                }else if (social_code.equals("K")){
+
+                }
+
+
+            }
+        }
+
+//        SharedPreferences.Editor editor = preferences.edit();   // Editer 객체를 리턴하는 메소드
+//        editor.putString("email", CommonVal.userInfo.getEmail());
+//        editor.putString("pw", CommonVal.userInfo.getPw());
+//        editor.apply();
+
 
         //카테고리 클릭 -> 이벤트는 OnClickListener에
         ln_ctg_gajeon = findViewById(R.id.ln_ctg_gajeon);
@@ -329,6 +374,60 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         scrollView.smoothScrollTo(0,0);
         recv_main_manysearch.scrollToPosition(0 );
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == RC_SIGN_IN) {
+            // The Task returned from this call is always completed, no need to attach
+            // a listener.
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            try {
+                task.getResult(ApiException.class);
+                GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
+                if (acct != null) {
+                    String personName = acct.getDisplayName();
+                    String personGivenName = acct.getGivenName();
+                    String personFamilyName = acct.getFamilyName();
+                    String personEmail = acct.getEmail();
+                    String personId = acct.getId();
+                    Uri personPhoto = acct.getPhotoUrl();
+                    /*구글 로그인 정보 DB에 저장*/
+                    CommonConn conn = new CommonConn(MainActivity.this,"socialinfo.me");
+
+                    MemberVO vo = new MemberVO();
+                    vo.setSocial_code("G");
+                    vo.setEmail(personEmail);
+                    vo.setName(personName);
+                    vo.setFilepath(personPhoto.toString());
+
+                    conn.addParams("vo", new Gson().toJson(vo));
+                    conn.executeConn_no_dialog(new CommonConn.ConnCallback() {
+                        @Override
+                        public void onResult(boolean isResult, String data) {
+                            Log.d("Result", "onResult: "+ isResult);
+                            MemberVO vo =  new Gson().fromJson(data, MemberVO.class);
+                            CommonVal.userInfo = vo;
+                            saveLoginInfo();
+
+                        }
+                    });
+                }
+            } catch (ApiException e) {
+                e.printStackTrace();
+            }
+
+        }
+    }
+    //자동로그인 메소드
+    public void saveLoginInfo() {
+        SharedPreferences preferences = getSharedPreferences("login", MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();   // Editer 객체를 리턴하는 메소드
+        editor.putString("email", CommonVal.userInfo.getEmail());
+        editor.putString("pw", CommonVal.userInfo.getPw());
+        editor.putString("social_code", CommonVal.userInfo.getSocial_code());
+        editor.apply();
     }
 }
 

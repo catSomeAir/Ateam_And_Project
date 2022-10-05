@@ -13,13 +13,17 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
+import com.example.last_project.CommonAlertActivity;
 import com.example.last_project.R;
 import com.example.last_project.WebviewActivity;
+import com.example.last_project.common.CommonVal;
+import com.example.last_project.conn.CommonConn;
 import com.example.last_project.search.category_search.CategorySearchVO;
 import com.github.barteksc.pdfviewer.PDFView;
 import com.github.barteksc.pdfviewer.listener.OnLoadCompleteListener;
@@ -37,7 +41,7 @@ public class ManualFragment extends Fragment implements OnPageChangeListener, On
     PDFView pdfView;
     String SAMPLE_FILE = "test.pdf";
     Integer pageNumber = 0;
-    String  pdfFileName;
+    String pdfFileName;
 
 
     LinearLayout ln_model_detail_writing, ln_model_detail_as;
@@ -45,7 +49,7 @@ public class ManualFragment extends Fragment implements OnPageChangeListener, On
 
     //제품정보
     ImageView imgv_manual_photo;
-    TextView tv_manual_brand,tv_manual_model_name, tv_manual_model_code, tv_manual_catg;
+    TextView tv_manual_brand, tv_manual_model_name, tv_manual_model_code, tv_manual_catg;
 
 
     ImageView imgv_manual_help; //따봉버튼
@@ -55,14 +59,19 @@ public class ManualFragment extends Fragment implements OnPageChangeListener, On
 
 
     TextView tv_manual_name;
-    boolean zzim, help_chk;
-
+    boolean  help_chk;
+    boolean  zzim = true;
     NestedScrollView scrollView;
 
     //DB에서넘어온 모델정보
     CategorySearchVO model_info;
+
+    //디비에서 조회한 찜하기 상태
+    String help = "";
+
     public ManualFragment() {
     }
+
     public ManualFragment(Context context, CategorySearchVO model_info) {
         this.context = context;
         this.model_info = model_info;
@@ -85,25 +94,25 @@ public class ManualFragment extends Fragment implements OnPageChangeListener, On
         ln_manual_help.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(help_chk){   //선택된 상황에서 클릭
+                if (help_chk) {   //선택된 상황에서 클릭
                     imgv_manual_help.setImageResource(R.drawable.icon_thumbs);
                     tv_manual_help.setText("도움이\n되었나요?");
                     tv_manual_help.setTextColor(Color.parseColor("#4D4d4D"));
                     ln_manual_help.setBackgroundResource(R.drawable.shape_navy_border8);
-                    tv_manual_help_cnt.setText(Integer.parseInt(tv_manual_help_cnt.getText().toString()) - 1+"");
+                    tv_manual_help_cnt.setText(Integer.parseInt(tv_manual_help_cnt.getText().toString()) - 1 + "");
                     help_chk = false;
-                }else{ //선택안했을 시 클릭
+                } else { //선택안했을 시 클릭
                     imgv_manual_help.setImageResource(R.drawable.icon_thumbs_fill_white);
                     tv_manual_help.setText("도움이\n되었어요!");
                     tv_manual_help.setTextColor(Color.parseColor("#e9e9e9"));
                     ln_manual_help.setBackgroundResource(R.drawable.shape_navy_fill);
-                    tv_manual_help_cnt.setText(Integer.parseInt(tv_manual_help_cnt.getText().toString()) + 1+"");
+                    tv_manual_help_cnt.setText(Integer.parseInt(tv_manual_help_cnt.getText().toString()) + 1 + "");
                     help_chk = true;
                 }
             }
         });
 
-        pdfView= (PDFView)v.findViewById(R.id.pdfView);
+        pdfView = (PDFView) v.findViewById(R.id.pdfView);
         displayFromAsset(SAMPLE_FILE);
 
         //상품의견, AS센터 -> 탭선택되도록하기
@@ -111,8 +120,8 @@ public class ManualFragment extends Fragment implements OnPageChangeListener, On
         ln_model_detail_writing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               TabLayout tabs = (TabLayout) getActivity().findViewById(R.id.tabs);
-               tabs.selectTab(tabs.getTabAt(1));
+                TabLayout tabs = (TabLayout) getActivity().findViewById(R.id.tabs);
+                tabs.selectTab(tabs.getTabAt(1));
             }
         });
         ln_model_detail_as = v.findViewById(R.id.ln_model_detail_as);
@@ -124,17 +133,57 @@ public class ManualFragment extends Fragment implements OnPageChangeListener, On
             }
         });
 
+        //디비에서 내이메일이랑, 메뉴얼코드 조회해서 n인지 y인지 판단.
+        if (CommonVal.userInfo != null) {
+            CommonConn conn = new CommonConn(getContext(), "my_manual_select");
+            conn.addParams("email", CommonVal.userInfo.getEmail());
+            conn.addParams("model_code", model_info.getModel_code());
+            conn.executeConn_no_dialog(new CommonConn.ConnCallback() {
+                @Override
+                public void onResult(boolean isResult, String data) {
+                    if(data.equals("1")){
+                        imgv_manual_zzim.setImageResource(R.drawable.icon_heart_fill);
+                        zzim = true;
+                    }else{
+                        imgv_manual_zzim.setImageResource(R.drawable.icon_heart);
+                        zzim = false;
+                    }
+
+                }
+            });
+
+        }
+
+
         //찜하기 하트 선택 : DB정보에 넣어야할 예정임
         imgv_manual_zzim = v.findViewById(R.id.imgv_manual_zzim);
         imgv_manual_zzim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(zzim){
+                if (zzim) {
                     imgv_manual_zzim.setImageResource(R.drawable.icon_heart);
                     zzim = false;
-                }else{//찜이 안되어있을 때 찜하기 누르면
+                    if (CommonVal.userInfo != null) {
+                        my_manual_delete();
+                        Toast.makeText(getContext(), "나의 설명서 목록에서 삭제 되었습니다", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Intent intent = new Intent(getContext(), CommonAlertActivity.class);
+                        intent.putExtra("page", "manual_zzim");
+                        startActivity(intent);
+                    }
+
+                } else {//찜이 안되어있을 때 찜하기 누르면
                     imgv_manual_zzim.setImageResource(R.drawable.icon_heart_fill);
                     zzim = true;
+                    if (CommonVal.userInfo != null) {
+                        my_manual_insert();
+                        Toast.makeText(getContext(), "나의 설명서에 추가되었습니다", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Intent intent = new Intent(getContext(), CommonAlertActivity.class);
+                        intent.putExtra("page", "manual_zzim");
+                        startActivity(intent);
+                    }
+
                     //* DB에 찜하기 선택되도록 해야함
                 }
             }
@@ -147,25 +196,26 @@ public class ManualFragment extends Fragment implements OnPageChangeListener, On
         tv_manual_model_code = v.findViewById(R.id.tv_manual_model_code);
         tv_manual_catg = v.findViewById(R.id.tv_manual_catg);
 
-        Glide.with(getContext()).load(model_info.getFilepath().replace("localhost","121.147.215.12:3302")).into(imgv_manual_photo);
+        Glide.with(getContext()).load(model_info.getFilepath().replace("localhost", "121.147.215.12:3302")).into(imgv_manual_photo);
         tv_manual_brand.setText(model_info.getBrand_name());
-        tv_manual_model_name.setText(model_info.getModel_name()+" ("+model_info.getModel_code()+")");
+        tv_manual_model_name.setText(model_info.getModel_name() + " (" + model_info.getModel_code() + ")");
         tv_manual_model_code.setText(model_info.getModel_code());
         tv_manual_catg.setText(model_info.getCategory_name());
 
         //링크 해당 제품으로 검색하기
         imgv_manual_link = v.findViewById(R.id.imgv_manual_link);
-        String search_keyword = model_info.getBrand_name()+model_info.getModel_name();
+        String search_keyword = model_info.getBrand_name() + model_info.getModel_name();
         imgv_manual_link.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, WebviewActivity.class);
-                intent.putExtra("url", "https://www.google.com/search?q="+search_keyword+"&oq="+search_keyword);
+                intent.putExtra("url", "https://www.google.com/search?q=" + search_keyword + "&oq=" + search_keyword);
                 startActivity(intent);
             }
         });
         return v;
     }
+
     private void displayFromAsset(String assetFileName) {
         pdfFileName = assetFileName;
 
@@ -183,7 +233,7 @@ public class ManualFragment extends Fragment implements OnPageChangeListener, On
                 .scrollHandle(new DefaultScrollHandle(getContext()))
                 .load();
 
-        if(pdfView.isSwipeEnabled()){
+        if (pdfView.isSwipeEnabled()) {
             pdfView.setSwipeEnabled(true);
             scrollView.requestDisallowInterceptTouchEvent(true);
         }
@@ -261,4 +311,66 @@ public class ManualFragment extends Fragment implements OnPageChangeListener, On
             }
         }
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (CommonVal.userInfo != null) {
+            CommonConn conn = new CommonConn(getContext(), "my_manual_select");
+            conn.addParams("email", CommonVal.userInfo.getEmail());
+            conn.addParams("model_code", model_info.getModel_code());
+            conn.executeConn_no_dialog(new CommonConn.ConnCallback() {
+                @Override
+                public void onResult(boolean isResult, String data) {
+                    help = data;
+
+                }
+            });
+
+            if (help.equals("n")) {
+                imgv_manual_zzim.setImageResource(R.drawable.icon_heart);
+            } else if (help.equals("y")) {
+                imgv_manual_zzim.setImageResource(R.drawable.icon_heart_fill);
+            }
+
+        }
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+
+    }
+
+    public void my_manual_insert(){
+        if (CommonVal.userInfo != null) {
+            CommonConn conn = new CommonConn(getContext(), "my_manual_insert");
+            conn.addParams("email", CommonVal.userInfo.getEmail());
+            conn.addParams("model_code", model_info.getModel_code());
+            conn.executeConn_no_dialog(new CommonConn.ConnCallback() {
+
+                @Override
+                public void onResult(boolean isResult, String data) {
+
+                }
+            });
+        }
+    }
+
+    public void my_manual_delete(){
+        if (CommonVal.userInfo != null) {
+            CommonConn conn = new CommonConn(getContext(), "my_manual_delete");
+            conn.addParams("email", CommonVal.userInfo.getEmail());
+            conn.addParams("model_code", model_info.getModel_code());
+            conn.executeConn_no_dialog(new CommonConn.ConnCallback() {
+
+                @Override
+                public void onResult(boolean isResult, String data) {
+
+                }
+            });
+        }
+    }
+
+
 }
