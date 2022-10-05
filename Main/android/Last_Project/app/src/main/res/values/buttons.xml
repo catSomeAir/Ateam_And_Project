@@ -16,11 +16,11 @@
     <!-- 아이콘 색-->
     <array name="colors">
 
-        <item>#E91E63</item>
-        <item>#F44336</item>
-        <item>#FFC107</item>
-        <item>#4CAF50</item>
-        <item>#3F51B5</item>
+        <item>#060F3E</item>
+        <item>#111E60</item>
+        <item>#1E2D7A</item>
+        <item>#2F4095</item>
+        <item>#5467D1</item>
 
 
     </array>

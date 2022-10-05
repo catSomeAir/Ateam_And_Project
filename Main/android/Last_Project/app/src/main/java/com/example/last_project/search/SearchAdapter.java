@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.last_project.R;
+import com.example.last_project.common.CommonMethod;
 
 import java.util.ArrayList;
 
@@ -60,7 +61,9 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
             h.ln_search_relate.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    context. getSupportFragmentManager().beginTransaction().replace(R.id.container_search, new SearchResultFragment(list.get(i).replace("# ",""))).commit();
+                    context.findViewById(R.id.recv_search_relate).setVisibility(View.GONE);
+                    String replace = list.get(i).replace("# ","");
+                    context.getSupportFragmentManager().beginTransaction().replace(R.id.container_search, new SearchResultFragment(replace, CommonMethod.text_div(replace))).commit();
                 }
             });
         }

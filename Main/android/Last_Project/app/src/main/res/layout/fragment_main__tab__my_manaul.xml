@@ -3,12 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="230dp"
+    android:gravity="center_vertical"
     tools:context=".main.tab.Main_Tab_MyManaulFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recv_main_mymanual"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+<FrameLayout
+    android:layout_gravity="center_vertical"
+    android:orientation="horizontal"
+    android:id="@+id/container_main_mymanual"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    />
 
 
 </LinearLayout>

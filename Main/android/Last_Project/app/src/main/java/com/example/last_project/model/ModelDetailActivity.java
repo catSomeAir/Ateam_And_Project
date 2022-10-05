@@ -68,7 +68,7 @@ public class ModelDetailActivity extends AppCompatActivity  {
                 }else if(tab.getPosition()==1){
                     getSupportFragmentManager().beginTransaction().replace(R.id.container_model_detail, new WritingFragment(model_info.getModel_code())).commit();
                 }else if(tab.getPosition()==2){
-                    getSupportFragmentManager().beginTransaction().replace(R.id.container_model_detail, new AfterServiceFragment()).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container_model_detail, new AfterServiceFragment(model_info)).commit();
 
                     //* 수정해야함
 //                        getSupportFragmentManager().beginTransaction().replace(R.id.container_model_detail, new UnrelatedASFragment()).commit();//* 임시로 AS센터 없는 경우 확인하기 위해 만들어둠
@@ -101,7 +101,7 @@ public class ModelDetailActivity extends AppCompatActivity  {
         }else if(tabs.getSelectedTabPosition()==1){
             getSupportFragmentManager().beginTransaction().replace(R.id.container_model_detail, new WritingFragment(model_info.getModel_code())).commit();
         }else if(tabs.getSelectedTabPosition()==2){
-            getSupportFragmentManager().beginTransaction().replace(R.id.container_model_detail, new AfterServiceFragment()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.container_model_detail, new AfterServiceFragment(model_info)).commit();
 
             //* 수정해야함
 //                        getSupportFragmentManager().beginTransaction().replace(R.id.container_model_detail, new UnrelatedASFragment()).commit();//* 임시로 AS센터 없는 경우 확인하기 위해 만들어둠

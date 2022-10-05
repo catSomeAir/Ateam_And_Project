@@ -923,9 +923,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:visibility="gone"
-                app:button_colors="@array/colors"
                 app:button_icons="@array/icons"
+                app:button_colors="@array/colors"
                 app:icon_color="#e1e1e1" />
+
+<com.hitomi.cmlibrary.CircleMenu
+    android:id="@+id/circle_menu1"
+
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
 
             <Space
                 android:layout_width="0dp"

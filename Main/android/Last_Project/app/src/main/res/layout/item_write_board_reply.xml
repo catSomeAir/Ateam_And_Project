@@ -42,7 +42,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-
+                <ImageView
+                    android:id="@+id/imgv_write_google"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@drawable/google"
+                    android:visibility="gone"
+                    android:layout_marginHorizontal="4dp"/>
+                <ImageView
+                    android:id="@+id/imgv_write_kakao"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@drawable/kakao"
+                    android:visibility="gone"
+                    android:layout_marginHorizontal="4dp"/>
+                <ImageView
+                    android:id="@+id/imgv_write_naver"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@drawable/naver"
+                    android:visibility="gone"
+                    android:layout_marginHorizontal="4dp"/>
                 <TextView
                     android:id="@+id/tv_reply_name"
                     android:layout_width="wrap_content"
@@ -78,7 +98,51 @@
                     android:textSize="12dp" />
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
+
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:id="@+id/ln_reply_modify"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_reply_update"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" 수정 "
+                        android:textColor="#a9a9a9"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" | "
+                        android:textColor="#a9a9a9"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:id="@+id/tv_reply_delete"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" 삭제 "
+                        android:textColor="#a9a9a9"
+                        android:textSize="12dp" />
+                </LinearLayout>
+
+
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -96,6 +160,10 @@
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.9dp"
+        android:background="#e9e9e9" />
     <Space
         android:layout_width="match_parent"
         android:layout_height="0.9dp"

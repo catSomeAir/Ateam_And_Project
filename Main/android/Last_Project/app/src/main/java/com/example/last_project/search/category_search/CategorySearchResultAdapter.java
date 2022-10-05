@@ -70,7 +70,7 @@ public class CategorySearchResultAdapter extends RecyclerView.Adapter<CategorySe
 //            InputMethodManager imm = (InputMethodManager) context.getSystemService(INPUT_METHOD_SERVICE);
 //            imm.hideSoftInputFromWindow( searchResultFragment.getActivity().findViewById(R.id.edt_search).getWindowToken(), 0);
 
-            Glide.with(context).load(list.get(i).getFilepath().replace("localhost","192.168.0.33")).into(h.imgv_search_result);
+            Glide.with(context).load(list.get(i).getFilepath().replace("localhost","121.147.215.12:3302")).into(h.imgv_search_result);
             h.tv_search_result_model_name.setText(list.get(i).getModel_name());
             h.tv_search_result_model_code.setText(list.get(i).getModel_code());
             h.tv_search_result_brand.setText(list.get(i).getBrand_name());

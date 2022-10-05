@@ -2,7 +2,6 @@ package com.example.last_project.model.detail.writng;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.last_project.CommonAlertActivity;
 import com.example.last_project.R;
 import com.example.last_project.common.CommonVal;
 import com.example.last_project.conn.CommonConn;
@@ -54,9 +54,9 @@ public class WriteAdapter extends RecyclerView.Adapter<WriteAdapter.ViewHolder>{
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         RecyclerView recv_coment;
-        ImageView imgv_board_profile_img;
-        TextView tv_board_nickname, tv_board_type, tv_board_content, tv_board_coment, tv_board_writedate;
-        LinearLayout ln_board_type;
+        ImageView imgv_board_profile_img, imgv_write_google, imgv_write_kakao, imgv_write_naver;
+        TextView tv_board_nickname, tv_board_type, tv_board_content, tv_board_coment, tv_board_writedate, tv_board_update, tv_board_delete;
+        LinearLayout ln_board_type, ln_board_modify;
         public ViewHolder(@NonNull View v) {
             super(v);
             tv_board_writedate = v.findViewById(R.id.tv_board_writedate);
@@ -67,17 +67,39 @@ public class WriteAdapter extends RecyclerView.Adapter<WriteAdapter.ViewHolder>{
             tv_board_content = v.findViewById(R.id.tv_board_content);
             tv_board_coment = v.findViewById(R.id.tv_board_coment);
             ln_board_type = v.findViewById(R.id.ln_board_type);
+            ln_board_modify = v.findViewById(R.id.ln_board_modify);
+            tv_board_update = v.findViewById(R.id.tv_board_update);
+            tv_board_delete = v.findViewById(R.id.tv_board_delete);
+
+            //소셜로그인일 경우
+            imgv_write_google = v.findViewById(R.id.imgv_write_google);
+            imgv_write_kakao = v.findViewById(R.id.imgv_write_kakao);
+            imgv_write_naver = v.findViewById(R.id.imgv_write_naver);
 
         }
         public void bind(@NonNull ViewHolder h, int i){
             //글쓴이 이미지
-            Glide.with(context).load(list.get(i).getFilepath().replace("localhost","192.168.0.33")).into(h.imgv_board_profile_img);
+            Glide.with(context).load(list.get(i).getFilepath().replace("localhost","121.147.215.12:3302")).into(h.imgv_board_profile_img);
             //닉네임 -> 그냥 이메일로대체
             h.tv_board_nickname.setText(list.get(i).getEmail());
+            // 자기가 쓴 글 수정 삭제 처리
+            if(CommonVal.userInfo != null) {
+                if (list.get(i).getEmail().equals(CommonVal.userInfo.getEmail())) {
+                    h.ln_board_modify.setVisibility(View.VISIBLE);
+                }
+            }
+
+            if(list.get(i).getSocial_code().equals("G")){
+                h.imgv_write_google.setVisibility(View.VISIBLE);
+            }else if(list.get(i).getSocial_code().equals("N")){
+                h.imgv_write_naver.setVisibility(View.VISIBLE);
+            }else if(list.get(i).getSocial_code().equals("K")){
+                h.imgv_write_kakao.setVisibility(View.VISIBLE);
+            }
+
             if(list.get(i).getCmt_code().equals("o")){
-                h.ln_board_type.setBackgroundResource(R.drawable.shape_green_border8);
+                h.ln_board_type.setBackgroundResource(R.drawable.shape_fill_green_border8);
                 h.tv_board_type.setText("의견");
-                h.tv_board_type.setTextColor(Color.parseColor("#294A2A"));
             }
             h.tv_board_writedate.setText(list.get(i).getWritedate());
             h.tv_board_content.setText(list.get(i).getContent());
@@ -101,7 +123,7 @@ public class WriteAdapter extends RecyclerView.Adapter<WriteAdapter.ViewHolder>{
             //댓글 정보
             CommonConn conn = new CommonConn(context, "board_coment_list");
             conn.addParams("board_id", list.get(i).getBoard_id());
-            conn.executeConn(new CommonConn.ConnCallback() {
+            conn.executeConn_no_dialog(new CommonConn.ConnCallback() {
                 @Override
                 public void onResult(boolean isResult, String data) {
                     if(isResult){
@@ -112,6 +134,27 @@ public class WriteAdapter extends RecyclerView.Adapter<WriteAdapter.ViewHolder>{
                         h.recv_coment.setLayoutManager(manager);
                         h.recv_coment.setAdapter(adapter);
                     }
+                }
+            });
+
+            h.tv_board_update.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context, WriteSpaceActivity.class);
+                    intent.putExtra("page", "WriteAdapter_update");
+                    intent.putExtra("content", list.get(i).getContent());
+                    intent.putExtra("board_id", list.get(i).getBoard_id());
+                    context.startActivity(intent);
+                }
+            });
+
+            h.tv_board_delete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context, CommonAlertActivity.class);
+                    intent.putExtra("page", "WriteAdapter_delete");
+                    intent.putExtra("board_id", list.get(i).getBoard_id());
+                    context.startActivity(intent);
                 }
             });
         }

@@ -90,7 +90,7 @@ dependencies {
 
     //Circle-menu : 메인 하단 원형 네비
     implementation 'com.ramotion.circlemenu:circle-menu:0.3.2'
-
+    implementation 'com.github.Hitomis:CircleMenu:v1.1.0'
     //바코드
     implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
 

@@ -126,9 +126,10 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
                 Glide.with(CategoryActivity.this).load(vo.getFilepath()).into(imgv_category_profile);
             }
             //아인---------------------------------------------------------------------------------------------------
-            catg_tv_point.setText(vo.getPoint());//로그인 후 페이지 회원이 가진 포인트 뿌리기
+            catg_tv_point.setText(CommonVal.userInfo.getPoint());//로그인 후 페이지 회원이 가진 포인트 뿌리기
             //---▲---------------------------------------------------------------------------------------------------
-            tv_category_nickname.setText(vo.getNickname());
+            //* 임시
+            tv_category_nickname.setText(vo.getNickname()!=null?vo.getNickname():vo.getName());
             CommonConn conn = new CommonConn(CategoryActivity.this, "count.ct");
             conn.addParams("email", vo.getEmail());
             conn.executeConn(new CommonConn.ConnCallback() {

@@ -63,8 +63,8 @@ public class SearchActivity extends AppCompatActivity {
 
         ArrayList<String> list = new ArrayList<>();
         //연관검색어
-        list.add("# TV");
         list.add("# 냉장고");
+        list.add("# TV");
         list.add("# 세탁기");
         list.add("# BESPOKE");
         list.add("# 스탠드");
@@ -183,6 +183,8 @@ public class SearchActivity extends AppCompatActivity {
                 edt_search.clearFocus();
                 InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(edt_search.getWindowToken(), 0);
+                recv_search_relate.setVisibility(View.GONE);
+
             }
         });
 
@@ -202,8 +204,8 @@ public class SearchActivity extends AppCompatActivity {
             if (barcord_search_name == "") {
                 barcord_search_name = "해당하는 제품정보";
             }
-             String[] barcord_div_name = barcord_search_name.split("");
-            getSupportFragmentManager().beginTransaction().replace(R.id.container_search, new SearchResultFragment(barcord_search_name, barcord_div_name)).commit();
+
+            getSupportFragmentManager().beginTransaction().replace(R.id.container_search, new SearchResultFragment(barcord_search_name, CommonMethod.text_div(barcord_search_name))).commit();
             recv_search_relate.setVisibility(View.GONE);
             search = false;
 //            Bundle bundle = new Bundle();

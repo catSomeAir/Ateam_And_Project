@@ -11,6 +11,15 @@ public class BoardVO implements Serializable {
     private String help_cnt;
     private String model_code;
     private String cmt_code;
+    private String social_code;
+
+    public String getSocial_code() {
+        return social_code;
+    }
+
+    public void setSocial_code(String social_code) {
+        this.social_code = social_code;
+    }
 
     public String getFilepath() {
         return filepath;

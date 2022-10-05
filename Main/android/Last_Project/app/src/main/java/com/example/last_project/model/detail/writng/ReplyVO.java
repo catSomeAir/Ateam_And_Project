@@ -3,7 +3,15 @@ package com.example.last_project.model.detail.writng;
 import java.io.Serializable;
 
 public class ReplyVO implements Serializable {
-    String rep_no, board_id, email, content, writedate, help_cnt, filepath;
+    String rep_no, board_id, email, content, writedate, help_cnt, filepath, social_code;
+
+    public String getSocial_code() {
+        return social_code;
+    }
+
+    public void setSocial_code(String social_code) {
+        this.social_code = social_code;
+    }
 
     public String getFilepath() {
         return filepath;

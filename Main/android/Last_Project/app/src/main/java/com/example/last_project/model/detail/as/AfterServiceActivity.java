@@ -342,4 +342,5 @@ public class AfterServiceActivity extends AppCompatActivity  implements MapView.
                 || locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
     }
 
+
 }

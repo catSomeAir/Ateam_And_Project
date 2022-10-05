@@ -67,7 +67,7 @@ public class ManySearchAdapter extends RecyclerView.Adapter<ManySearchAdapter.Vi
             h.tv_main_manysearch_model_code.setText(list.get(i).getModel_code());
             h.tv_main_manysearch_brand.setText(list.get(i).getBrand_name());
             h.tv_main_manysearch_model_name.setText(list.get(i).getModel_name());
-            Glide.with(context).load(list.get(i).getFilepath().replace("localhost","192.168.0.33")).into(h.imgv_main_manysearch);
+            Glide.with(context).load(list.get(i).getFilepath().replace("localhost","121.147.215.12:3302")).into(h.imgv_main_manysearch);
             h.tv_manysearch_rank.setText(i+1+"");
 
             h.ln_manysearch.setOnClickListener(new View.OnClickListener() {

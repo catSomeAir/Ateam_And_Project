@@ -147,7 +147,7 @@ public class ManualFragment extends Fragment implements OnPageChangeListener, On
         tv_manual_model_code = v.findViewById(R.id.tv_manual_model_code);
         tv_manual_catg = v.findViewById(R.id.tv_manual_catg);
 
-        Glide.with(getContext()).load(model_info.getFilepath().replace("localhost","192.168.0.33")).into(imgv_manual_photo);
+        Glide.with(getContext()).load(model_info.getFilepath().replace("localhost","121.147.215.12:3302")).into(imgv_manual_photo);
         tv_manual_brand.setText(model_info.getBrand_name());
         tv_manual_model_name.setText(model_info.getModel_name()+" ("+model_info.getModel_code()+")");
         tv_manual_model_code.setText(model_info.getModel_code());

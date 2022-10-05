@@ -1,6 +1,7 @@
 package com.example.last_project;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -24,6 +25,7 @@ import com.example.last_project.main.banner.BannerActivity;
 import com.example.last_project.main.manysearch.ManySearchAdapter;
 import com.example.last_project.main.market.MarketActivity;
 import com.example.last_project.main.tab.Main_Tab_HomeFragment;
+import com.example.last_project.main.tab.Main_Tab_MyManaulFragment;
 import com.example.last_project.main.tab.Main_Tab_RecentFragment;
 import com.example.last_project.mypage.MypageActivity;
 import com.example.last_project.search.NotFoundAlertActivity;
@@ -32,6 +34,7 @@ import com.example.last_project.search.category_search.CategorySearchVO;
 import com.google.android.material.tabs.TabLayout;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.hitomi.cmlibrary.CircleMenu;
 import com.ramotion.circlemenu.CircleMenuView;
 
 import java.util.ArrayList;
@@ -42,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     LinearLayout ln_main_search;
     RecyclerView recv_main_manysearch;
     CircleMenuView menuView;
+    CircleMenu menuView1;
     //카테고리 클릭
     LinearLayout ln_ctg_gajeon, ln_ctg_computer, ln_ctg_mobile, ln_ctg_car, ln_ctg_gagu, ln_ctg_adong, ln_ctg_samu, ln_ctg_leisure;
 
@@ -104,6 +108,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
         //하단 circle menu
+
+        //테스트
+        menuView1 = findViewById(R.id.circle_menu1);
+        menuView1.setMainMenu(Color.parseColor("#123456") ,R.drawable.barcord, R.drawable.barcord)
+                    .addSubMenu(Color.parseColor("#123456") ,R.drawable.mail)
+                    .addSubMenu(Color.parseColor("#123456") ,R.drawable.mail)
+                    .addSubMenu(Color.parseColor("#123456") ,R.drawable.mail);
+
+
         menuView = findViewById(R.id.circle_menu);
         menuView.setEventListener(new CircleMenuView.EventListener(){
             @Override
@@ -189,9 +202,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(tab.getPosition()==0){
                     getSupportFragmentManager().beginTransaction().replace(R.id.container_main, new Main_Tab_HomeFragment()).commit();
                 }else if(tab.getPosition()==1){
-                    Intent intent = new Intent(MainActivity.this, WebviewActivity.class);
-                    intent.putExtra("url", "https://m.map.kakao.com/actions/searchView?q=%EC%82%BC%EC%84%B1%EC%84%9C%EB%B9%84%EC%8A%A4%EC%84%BC%ED%84%B0&wxEnc=LVSOTP&wyEnc=QNLTTMN&lvl=4");//placeSearch
-                    startActivity(intent);
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container_main, new Main_Tab_MyManaulFragment()).commit();
+
                 }else{
                     getSupportFragmentManager().beginTransaction().replace(R.id.container_main, new Main_Tab_RecentFragment()).commit();
                 }

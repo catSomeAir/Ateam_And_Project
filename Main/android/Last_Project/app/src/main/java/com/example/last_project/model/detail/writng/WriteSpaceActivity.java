@@ -42,7 +42,7 @@ public class WriteSpaceActivity extends AppCompatActivity {
         //글인지 댓글인지 판단
         String page = getIntent().getStringExtra("page");
         String board_id = getIntent().getStringExtra("board_id");
-
+        String content = getIntent().getStringExtra("content");
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         edt_writing = findViewById(R.id.edt_writing);
 
@@ -116,14 +116,21 @@ public class WriteSpaceActivity extends AppCompatActivity {
             }
         });
 
-        if (page.equals("WriteAdapter_reply")) {
+        //
+        if (page.equals("WriteAdapter_reply") || page.equals("WriteComentAdapter_update")) {
             edt_writing.setHint("내용을 입력해주세요");
             ln_write_radio.setVisibility(View.GONE);
+        }
+        //수정 시 원래있던 글 editText에 자동입력
+        if (page.equals("WriteAdapter_update")|| page.equals("WriteComentAdapter_update")) {
+            edt_writing.setText(content);
+            edt_writing.setSelection(edt_writing.length());     //커서를 마지막 글씨에 위치
         }
         //글 등록
         ln_write_commit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
 
                 //댓글쓰는상황
                 if (board_id != null) {
@@ -143,7 +150,6 @@ public class WriteSpaceActivity extends AppCompatActivity {
                             @Override
                             public void onResult(boolean isResult, String data) {
                                 if (isResult) {
-                                    Log.d("빵구", "onResult: " + data);
                                     if (data.equals("1")) {
                                         Intent intent = new Intent(WriteSpaceActivity.this, CommonAlertActivity.class);
                                         intent.putExtra("page", "WriteSpaceActivity_comment");
@@ -152,9 +158,32 @@ public class WriteSpaceActivity extends AppCompatActivity {
                                 }
                             }
                         });
-                    }
                         return;
+                    }
                 }
+
+                //댓글수정
+                if(page.equals("WriteComentAdapter_update")){
+                    String rep_no = getIntent().getStringExtra("rep_no");
+                    CommonConn conn = new CommonConn(WriteSpaceActivity.this, "board_coment_update");
+                    ReplyVO vo = new ReplyVO();
+                    vo.setEmail(CommonVal.userInfo.getEmail());
+                    vo.setContent(edt_writing.getText().toString());
+                    vo.setRep_no(rep_no);
+                    conn.addParams("vo", new Gson().toJson(vo));
+                    conn.executeConn(new CommonConn.ConnCallback() {
+                        @Override
+                        public void onResult(boolean isResult, String data) {
+                            if (data.equals("1")) {
+                                Intent intent = new Intent(WriteSpaceActivity.this, CommonAlertActivity.class);
+                                intent.putExtra("page", "WriteSpaceActivity_comment_update");
+                                startActivityForResult(intent, 0);
+                            }
+                        }
+                    });
+                    return;
+                }
+
                 if (radiogroup_writting.getCheckedRadioButtonId() == R.id.radio_all) {
                     Intent intent = new Intent(WriteSpaceActivity.this, CommonAlertActivity.class);
                     intent.putExtra("page", "WriteSpaceActivity");
@@ -165,6 +194,38 @@ public class WriteSpaceActivity extends AppCompatActivity {
                     Intent intent = new Intent(WriteSpaceActivity.this, CommonAlertActivity.class);
                     intent.putExtra("page", "WriteSpaceActivity_empty");
                     startActivity(intent);
+                    return;
+                }
+                if (page.equals("WriteAdapter_update")) {
+                    BoardVO vo = new BoardVO();
+                    vo.setBoard_id(board_id);
+                    vo.setEmail(CommonVal.userInfo.getEmail());
+                    vo.setContent(edt_writing.getText().toString());
+                    if (radiogroup_writting.getCheckedRadioButtonId() == R.id.radio_opinion) {
+                        vo.setCmt_code("o");
+
+                    } else if (radiogroup_writting.getCheckedRadioButtonId() == R.id.radio_qna) {
+                        vo.setCmt_code("q");
+                    }
+                    vo.setModel_code(model_code);
+                    CommonConn conn = new CommonConn(WriteSpaceActivity.this, "board_update");
+                    conn.addParams("vo", new Gson().toJson(vo));
+                    conn.executeConn(new CommonConn.ConnCallback() {
+                        @Override
+                        public void onResult(boolean isResult, String data) {
+                            if (isResult) {
+                                if (data != null) {
+
+                                    if (data.equals("1")) {
+                                        Intent intent = new Intent(WriteSpaceActivity.this, CommonAlertActivity.class);
+                                        intent.putExtra("page", "WriteSpaceActivity_success");
+                                        startActivityForResult(intent, 0);
+                                    }
+                                }
+
+                            }
+                        }
+                    });
                     return;
                 }
                 //글쓰는 상황
@@ -179,7 +240,7 @@ public class WriteSpaceActivity extends AppCompatActivity {
                         vo.setCmt_code("q");
                     }
                     vo.setModel_code(model_code);
-                    CommonConn conn = new CommonConn(WriteSpaceActivity.this, "board_list");
+                    CommonConn conn = new CommonConn(WriteSpaceActivity.this, "board_insert");
                     conn.addParams("vo", new Gson().toJson(vo));
                     conn.executeConn(new CommonConn.ConnCallback() {
                         @Override

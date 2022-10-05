@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.last_project.conn.CommonConn;
+
 public class CommonAlertActivity extends AppCompatActivity {
     LinearLayout ln_no, ln_yes;
     TextView tv_target, tv_explain1, tv_explain2, tv_yes;
@@ -47,8 +49,19 @@ public class CommonAlertActivity extends AppCompatActivity {
         ln_yes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(page.equals("WriteSpaceActivity_success")||page.equals("WriteSpaceActivity_comment")){
+                if(page.equals("WriteSpaceActivity_success")||page.equals("WriteSpaceActivity_comment") || page.equals("WriteSpaceActivity_comment_update")){
                     setResult(1);//종료해라
+                }
+                if(page.equals("WriteAdapter_delete")){
+
+                    CommonConn conn = new CommonConn(CommonAlertActivity.this, "board_delete");
+                    conn.addParams("board_id", getIntent().getStringExtra("board_id"));
+                    conn.executeConn(new CommonConn.ConnCallback() {
+                        @Override
+                        public void onResult(boolean isResult, String data) {
+
+                        }
+                    });
                 }
                 finish();
                 overridePendingTransition(0, 0);
@@ -63,6 +76,13 @@ public class CommonAlertActivity extends AppCompatActivity {
             }
         });
 
+        //글 삭제처리
+        if(page.equals("WriteAdapter_delete")){
+            tv_target.setVisibility(View.GONE);
+            tv_explain1.setText("해당 글을 삭제하시겠습니까?");
+            tv_explain2.setText("(한번 삭제된 글은 복구되지 않습니다)");
+
+        }
        
 
         if(page.equals("WriteSpaceActivity")){
@@ -83,7 +103,7 @@ public class CommonAlertActivity extends AppCompatActivity {
             tv_yes.setText("확인");
         }
         //글쓰기 댓글쓰기
-        if(page.equals("WriteSpaceActivity_success")||page.equals("WriteSpaceActivity_comment")){
+        if(page.equals("WriteSpaceActivity_success")||page.equals("WriteSpaceActivity_comment") || page.equals("WriteSpaceActivity_comment_update")){
             tv_target.setText("등록되었습니다");
             tv_explain1.setText("을 입력해주세요");
             tv_explain1.setVisibility(View.GONE);

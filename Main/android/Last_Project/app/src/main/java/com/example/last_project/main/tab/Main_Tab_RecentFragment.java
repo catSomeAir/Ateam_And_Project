@@ -17,6 +17,7 @@ public class Main_Tab_RecentFragment extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_main__tab__recent, container, false);
 
+
         if( CommonVal.recent_list == null || CommonVal.recent_list.size() ==0 ){
             getChildFragmentManager().beginTransaction().replace(R.id.container_main_recent, new NotRecentFragment()).commit();
         }else {

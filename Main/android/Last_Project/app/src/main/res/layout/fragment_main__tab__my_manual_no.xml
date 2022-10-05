@@ -5,23 +5,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".main.tab.NotRecentFragment">
+    tools:context=".main.tab.Main_Tab_MyManualNoFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tv_explain1"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="최근 조회하신 항목이 없습니다"
-            android:textColor="#123"
-            android:textSize="18dp"
-            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tv_explain2"
@@ -30,7 +20,7 @@
             android:gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="조회 후 이용해주세요"
+            android:text="로그인 후 이용해주세요"
             android:textColor="#123"
             android:textSize="16dp"
             android:textStyle="bold" />
@@ -44,7 +34,8 @@
             android:textColor="#5C5C5C"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Not Found List" />
+            android:text="Please Sign in" />
     </LinearLayout>
+
 
 </LinearLayout>

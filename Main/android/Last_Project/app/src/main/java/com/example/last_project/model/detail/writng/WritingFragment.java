@@ -12,8 +12,6 @@ import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.last_project.R;
@@ -32,9 +30,10 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
     String model_code;
     ImageView imgv_profile;
     CardView edt_writing;
-    RecyclerView recv_write;
     ArrayList<BoardVO> list;
+
     public WritingFragment(String model_code) {
+
         this.model_code = model_code;
     }
 
@@ -82,24 +81,49 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
             }
         });
 
-        //쓴글 띄우기
-        recv_write = v.findViewById(R.id.recv_write);
+
 
         // 해당모델의 글 조회
         CommonConn conn = new CommonConn(getContext(), "board_list_select");
         conn.addParams("model_code", model_code);
+        conn.addParams("cmt_code", "a");
         conn.executeConn(new CommonConn.ConnCallback() {
             @Override
             public void onResult(boolean isResult, String data) {
                 if(isResult){
                     list = new Gson().fromJson(data, new TypeToken<ArrayList<BoardVO>>(){}.getType());
-                    WriteAdapter adapter = new WriteAdapter(getLayoutInflater(), getContext(), list);
-                    RecyclerView.LayoutManager manager = new LinearLayoutManager(getContext(),RecyclerView.VERTICAL,false);
-                    recv_write.setLayoutManager(manager);
-                    recv_write.setAdapter(adapter);
+                    if(list != null){
+                        getChildFragmentManager().beginTransaction().replace(R.id.container_write, new ExistWriteListFragment(model_code, list)).commit();
+                        if(list.size()==0){
+                            getChildFragmentManager().beginTransaction().replace(R.id.container_write, new NoWriteListFragment()).commit();
+                        }
+                    }else{
+                        getChildFragmentManager().beginTransaction().replace(R.id.container_write, new NoWriteListFragment()).commit();
+                    }
                 }
             }
         });
+//        CommonConn conn = new CommonConn(getContext(), "board_list_select");
+//        conn.addParams("model_code", model_code);
+//        conn.addParams("cmt_code", "a");
+//        conn.executeConn(new CommonConn.ConnCallback() {
+//            @Override
+//            public void onResult(boolean isResult, String data) {
+//                if(isResult){
+//                    list = new Gson().fromJson(data, new TypeToken<ArrayList<BoardVO>>(){}.getType());
+//                    NoWriteListFragment fragment = new NoWriteListFragment();
+//                    if(list.size() != 0){
+//                        WriteAdapter adapter = new WriteAdapter(getLayoutInflater(), getContext(), list);
+//                        RecyclerView.LayoutManager manager = new LinearLayoutManager(getContext(),RecyclerView.VERTICAL,false);
+//                        recv_write.setLayoutManager(manager);
+//                        recv_write.setAdapter(adapter);
+//                        getChildFragmentManager().beginTransaction().remove(fragment);
+//                    }else{
+//                        getChildFragmentManager().beginTransaction().replace(R.id.container_no_write_list, fragment).commit();
+//                    }
+//                }
+//            }
+//        });
 
 
 
@@ -122,12 +146,73 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
             if (v.getId() == R.id.ln_writing_all) {
                 ln_writing_all.setBackgroundResource(R.drawable.shape_navy_radius);
                 tv_writing_all.setTextColor(Color.parseColor("#d9d9d9"));
+                CommonConn conn = new CommonConn(getContext(), "board_list_select");
+                conn.addParams("model_code", model_code);
+                conn.addParams("cmt_code", "a");
+                conn.executeConn(new CommonConn.ConnCallback() {
+                    @Override
+                    public void onResult(boolean isResult, String data) {
+                        if(isResult){
+                            list = new Gson().fromJson(data, new TypeToken<ArrayList<BoardVO>>(){}.getType());
+                            if(list != null){
+                                getChildFragmentManager().beginTransaction().replace(R.id.container_write, new ExistWriteListFragment(model_code, list)).commit();
+                                if(list.size()==0){
+                                    getChildFragmentManager().beginTransaction().replace(R.id.container_write, new NoWriteListFragment()).commit();
+                                }
+                            }else{
+                                getChildFragmentManager().beginTransaction().replace(R.id.container_write, new NoWriteListFragment()).commit();
+                            }
+                        }
+                    }
+                });
+
+
             } else if (v.getId() == R.id.ln_writing_opinion) {
                 ln_writing_opinion.setBackgroundResource(R.drawable.shape_navy_radius);
                 tv_writing_opinion.setTextColor(Color.parseColor("#d9d9d9"));
+                CommonConn conn = new CommonConn(getContext(), "board_list_select");
+                conn.addParams("model_code", model_code);
+                conn.addParams("cmt_code", "o");
+                conn.executeConn(new CommonConn.ConnCallback() {
+                    @Override
+                    public void onResult(boolean isResult, String data) {
+                        if(isResult){
+                            list = new Gson().fromJson(data, new TypeToken<ArrayList<BoardVO>>(){}.getType());
+                            if(list != null){
+                                getChildFragmentManager().beginTransaction().replace(R.id.container_write, new ExistWriteListFragment(model_code, list)).commit();
+                                if(list.size()==0){
+                                    getChildFragmentManager().beginTransaction().replace(R.id.container_write, new NoWriteListFragment()).commit();
+                                }
+                            }else{
+                                getChildFragmentManager().beginTransaction().replace(R.id.container_write, new NoWriteListFragment()).commit();
+                            }
+                        }
+                    }
+                });
+
             } else if (v.getId() == R.id.ln_writing_qna) {
                 ln_writing_qna.setBackgroundResource(R.drawable.shape_navy_radius);
                 tv_writing_qna.setTextColor(Color.parseColor("#d9d9d9"));
+                CommonConn conn = new CommonConn(getContext(), "board_list_select");
+                conn.addParams("model_code", model_code);
+                conn.addParams("cmt_code", "q");
+                conn.executeConn(new CommonConn.ConnCallback() {
+                    @Override
+                    public void onResult(boolean isResult, String data) {
+                        if(isResult){
+                            list = new Gson().fromJson(data, new TypeToken<ArrayList<BoardVO>>(){}.getType());
+                            if(list != null){
+                                getChildFragmentManager().beginTransaction().replace(R.id.container_write, new ExistWriteListFragment(model_code, list)).commit();
+                                if(list.size()==0){
+                                    getChildFragmentManager().beginTransaction().replace(R.id.container_write, new NoWriteListFragment()).commit();
+                                }
+                            }else{
+                                getChildFragmentManager().beginTransaction().replace(R.id.container_write, new NoWriteListFragment()).commit();
+                            }
+                        }
+                    }
+                });
+
             }
         }
     }
