@@ -42,7 +42,13 @@
             android:layout_height="wrap_content"
             android:layout_weight="1" />
     </LinearLayout>
-
+    <!-- 로딩바 : 추후수정 -->
+    <ProgressBar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/Loading"
+        android:layout_width="30dip"
+        android:layout_height="30dip"
+        android:visibility="gone"/>
     <!-- 나중에 탭선택으로 수정하던지 하자 : 수정완-->
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabs"

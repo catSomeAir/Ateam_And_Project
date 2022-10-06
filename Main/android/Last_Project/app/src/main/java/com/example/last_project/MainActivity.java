@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     GoogleSignInClient mGoogleSignInClient;
     NestedScrollView scrollView;
     private final int RC_SIGN_IN = 1000;
+
     //마켓
     LinearLayout ln_main_market1, ln_main_market2;
     @Override

@@ -82,6 +82,42 @@ public class ManualFragment extends Fragment implements OnPageChangeListener, On
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_manual, container, false);
 
+        //다운로드 버튼
+//        imgv_manual_download = v.findViewById(R.id.imgv_manual_download);
+//        imgv_manual_download.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if(CommonVal.userInfo != null){
+//                    //있는지 확인, 없으면 다운로드 있으면 있다고 말해주기
+//                    CommonConn conn = new CommonConn(getContext(), "download_manual_check");
+//                    conn.addParams("email", CommonVal.userInfo.getEmail());
+//                    conn.addParams("model_code", model_info.getModel_code());
+//                    conn.executeConn(new CommonConn.ConnCallback() {
+//                        @Override
+//                        public void onResult(boolean isResult, String data) {
+//                            if(isResult){
+//                                if(data.equals("1")) {//다운로드한적 있으면
+//                                    Intent intent = new Intent(getContext(), CommonAlertActivity.class);
+//                                    intent.putExtra("page", "ManualFragment_download_exist");
+//                                    startActivity(intent);
+//                                }else{//다운로드한적 없으면
+//                                    Intent intent = new Intent(getContext(), CommonAlertActivity.class);
+//                                    intent.putExtra("page", "ManualFragment_download_not_exist");
+//                                    startActivity(intent);
+//                                }
+//
+//                            }
+//                        }
+//                    });
+//                }else{
+//                    Intent intent = new Intent(getContext(), NotFoundAlertActivity.class);   //이름은 다른데 같은기능이라 그냥씀 로그인여부물어봄
+//                    intent.putExtra("intent_type", "write"); //글쓰기에서 띄운 alert
+//                    startActivity(intent);
+//                }
+//
+//            }
+//        });
+
         //전체 스크롤뷰
         scrollView = v.findViewById(R.id.scrollView);
 

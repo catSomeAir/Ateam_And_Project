@@ -3,7 +3,6 @@ package com.example.last_project.mypage;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -35,6 +34,8 @@ public class MypageActivity extends AppCompatActivity {
     TextView market_buy_qty,tv_nickname,tv_post_count,tv_reply_count;
     //뒤로가기버튼
     ImageView imgv_back, imgv_category_profile;
+
+
     private ArrayList<String> array_list;
 
     //    GridView grid_view;
@@ -58,6 +59,8 @@ public class MypageActivity extends AppCompatActivity {
         /*이거 누르면 pointactivity로 이동*/
         point = findViewById(R.id.ll_point);
         /*이거 누르면 아인언니가 만드신 구매내역보여주는 화면으로 이동*/
+
+        //다운로드한 파일뜨도록하는거
         downloaded_manual = findViewById(R.id.ll_downloaded_manual);
 
         imgv_category_profile = findViewById(R.id.imgv_category_profile);
@@ -180,6 +183,8 @@ public class MypageActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
+
+
             downloaded_manual.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

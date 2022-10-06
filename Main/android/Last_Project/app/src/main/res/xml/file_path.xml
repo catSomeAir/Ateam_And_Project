@@ -7,4 +7,9 @@
     name="storage/emulated/0/Pictures"
     path="." />
 <root-path name="root" part="."/>
+
 </paths>
+<!--<external-path
+    name="external_files"
+    path="." />-->
+

@@ -50,6 +50,9 @@ public class CommonAlertActivity extends AppCompatActivity {
         ln_yes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(page.equals("ManualFragment_download_not_exist")){
+                    setResult(2000);// ModelDetailactivity에서 다운로드 진행되도록함
+                }
                 if(page.equals("manual_zzim")){
                     Intent intent = new Intent(CommonAlertActivity.this, LoginActivity.class);
                     startActivity(intent);
@@ -83,6 +86,17 @@ public class CommonAlertActivity extends AppCompatActivity {
 
         if (page != null) {
 
+
+            //메뉴얼 다운로드 유무
+            if(page.equals("ManualFragment_download_exist")){
+
+                return;
+            }else if(page.equals("ManualFragment_download_not_exist")){
+                tv_target.setVisibility(View.GONE);
+                tv_explain1.setVisibility(View.GONE);
+                tv_explain2.setText("해당 제품설명서를 다운로드 하시겠습니까?");
+                return;
+            }
 
             //글 삭제처리
             if (page.equals("WriteAdapter_delete")) {
