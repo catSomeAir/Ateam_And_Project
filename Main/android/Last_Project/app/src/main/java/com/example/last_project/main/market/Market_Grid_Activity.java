@@ -44,21 +44,21 @@ public class Market_Grid_Activity extends AppCompatActivity {
 
         ArrayList<GridVO> grid_list = new ArrayList<>();
         grid_list.add(new GridVO(R.drawable.img_gifticon_br1, "배스킨라빈스"
-                , "더블주니어 아이스크림","4,700p"));
+                , "더블주니어 아이스크림","4,700"));
         grid_list.add(new GridVO(R.drawable.img_gifticon_sb1, "서브웨이"
-                , "에그마요(15cm) 쿠키세트","7,400p"));
+                , "에그마요(15cm) 쿠키세트","7,400"));
         grid_list.add(new GridVO(R.drawable.img_gifticon_tj1, "뚜레쥬르"
-                , "새우오믈렛토스트","4,000p"));
+                , "새우오믈렛토스트","4,000"));
         grid_list.add(new GridVO(R.drawable.img_gifticon_gc1, "공차"
-                , "얼그레이 밀크티L","4,200p"));
+                , "얼그레이 밀크티L","4,200"));
         grid_list.add(new GridVO(R.drawable.img_gifticon_mega1, "메가MGC커피"
-                , "유니콘매직에이드(블루)","3,500p"));
+                , "유니콘매직에이드(블루)","3,500"));
         grid_list.add(new GridVO(R.drawable.img_gifticon_mega2, "메가MGC커피"
-                , "자몽에이드","3,500p"));
+                , "자몽에이드","3,500"));
         grid_list.add(new GridVO(R.drawable.img_gifticon_mega3, "메가MGC커피"
-                , "(ICE)아메리카노","2,000p"));
+                , "(ICE)아메리카노","2,000"));
         grid_list.add(new GridVO(R.drawable.market_gifticon2, "스타벅스"
-                , "아이스 카페 아메리카노 T 2잔","9,000p"));
+                , "아이스 카페 아메리카노 T 2잔","9,000"));
 
         Market_Grid_Adapter adapter = new Market_Grid_Adapter(grid_list, getLayoutInflater());
         grid_view.setAdapter(adapter);

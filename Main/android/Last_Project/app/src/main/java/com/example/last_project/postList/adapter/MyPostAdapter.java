@@ -12,20 +12,20 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.last_project.R;
+import com.example.last_project.model.detail.writng.BoardVO;
 import com.example.last_project.postList.MyPostDetailActivity;
-import com.example.last_project.postList.MyPostVO;
 import com.example.last_project.postList.myPostFragment;
 
 import java.util.ArrayList;
 
 public class MyPostAdapter extends RecyclerView.Adapter<MyPostAdapter.ViewHolder>{
     LayoutInflater inflater;
-    ArrayList<MyPostVO> list;
+    ArrayList<BoardVO> list;
     Context context;
     myPostFragment fragment;
 
 
-    public MyPostAdapter(LayoutInflater inflater, ArrayList<MyPostVO> list, Context context, myPostFragment fragment) {
+    public MyPostAdapter(LayoutInflater inflater, ArrayList<BoardVO> list, Context context, myPostFragment fragment) {
         this.inflater = inflater;
         this.list = list;
         this.context = context;
@@ -36,9 +36,7 @@ public class MyPostAdapter extends RecyclerView.Adapter<MyPostAdapter.ViewHolder
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = inflater.inflate(R.layout.item__mypost__recv,parent,false);
-        ViewHolder vh = new ViewHolder(v);
-        return vh;
+        return  new ViewHolder(inflater.inflate(R.layout.item__mypost__recv,parent,false)) ;
     }
 
     @Override
@@ -64,9 +62,9 @@ public class MyPostAdapter extends RecyclerView.Adapter<MyPostAdapter.ViewHolder
         }
 
         public void bind(@NonNull ViewHolder h, int i){
-            h.title.setText(list.get(i).getTitle()+"");
+            h.title.setText(list.get(i).getContent());
             h.date.setText(list.get(i).getWritedate()+"");
-            h.req_or_opinion.setText(list.get(i).getCmt_code().equals("O")? "의견" :"질문");
+            h.req_or_opinion.setText(list.get(i).getCmt_code().equals("o")? "의견" :"질문");
 
             h.changeactivity.setOnClickListener(new View.OnClickListener() {
                 @Override

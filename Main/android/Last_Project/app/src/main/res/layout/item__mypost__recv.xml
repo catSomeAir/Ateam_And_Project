@@ -30,7 +30,7 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_marginRight="6dp"
+                    android:layout_marginRight="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/shape_navy_border8"
@@ -44,7 +44,7 @@
                         android:layout_marginVertical="3dp"
                         android:text="질문"
                         android:textColor="#020E20"
-                        android:textSize="8dp" />
+                        android:textSize="11dp" />
                 </LinearLayout>
 
                 <TextView
@@ -54,7 +54,7 @@
                     android:text="제목"
                     android:textStyle="bold"
                     android:textColor="#000"
-                    android:textSize="12dp" />
+                    android:textSize="14dp" />
             </LinearLayout>
 
 

@@ -42,7 +42,7 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
     Button btn_category_login, btn_category_logout; //로그인, 로그아웃버튼
     //로그인 시 프로필 정보
     ImageView imgv_category_back, imgv_category_profile;    //프로필이미지
-    TextView tv_category_nickname, tv_category_count, tv_category_comment_count, catg_tv_point;    //닉네임, 쓴글 수 , 쓴 댓글수
+    TextView tv_category_nickname, tv_category_count, tv_category_comment_count, catg_tv_point, tv_category_my_level;    //닉네임, 쓴글 수 , 쓴 댓글수
 
     //My, 공지사항, 이벤트,포인트 화면연결 위해 추가
     LinearLayout ll_mypage, ll_notice, ll_event, ll_point, ll_postlist;
@@ -56,6 +56,10 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
 
+        tv_category_my_level = findViewById(R.id.tv_category_my_level);
+        if(CommonVal.userInfo!=null){
+            tv_category_my_level.setText("lv."+CommonVal.userInfo.getMy_level());
+        }
 
         //중분류레이아웃
         ln_m_list1_1 = findViewById(R.id.ln_m_list1_1);

@@ -2,14 +2,17 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context=".main.tab.home.Home_BannerFragment2">
+    android:layout_height="match_parent"
+    tools:context=".main.tab.home.Home_BannerFragment4">
+
 
     <ImageView
-        android:adjustViewBounds="true"
         android:scaleType="fitXY"
+        android:adjustViewBounds="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/main_tab_home_new_banner2"/>
+        android:src="@drawable/main_tab_home_new_banner4"/>
+
+
 
 </FrameLayout>

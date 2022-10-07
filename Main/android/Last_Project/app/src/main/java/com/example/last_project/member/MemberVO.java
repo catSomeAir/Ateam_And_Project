@@ -10,6 +10,15 @@ public class MemberVO {
     private String amdin;
     private String social_code;
     private String filepath;
+    private String my_level;
+
+    public String getMy_level() {
+        return my_level;
+    }
+
+    public void setMy_level(String my_level) {
+        this.my_level = my_level;
+    }
 
     public String getPoint() {
         return point;

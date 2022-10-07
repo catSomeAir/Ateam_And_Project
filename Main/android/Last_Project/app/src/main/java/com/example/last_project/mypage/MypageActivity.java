@@ -31,7 +31,7 @@ import java.util.HashMap;
 public class MypageActivity extends AppCompatActivity {
     LinearLayout edit_profile, my_post, my_reply, requested_post, point, market_buy_list, bookmarked_post, downloaded_manual;
     TabLayout tabs;
-    TextView market_buy_qty,tv_nickname,tv_post_count,tv_reply_count;
+    TextView market_buy_qty,tv_nickname,tv_post_count,tv_reply_count, tv_my_level, tv_my_point;
     //뒤로가기버튼
     ImageView imgv_back, imgv_category_profile;
 
@@ -44,6 +44,11 @@ public class MypageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mypage);
 //        grid_view = findViewById(R.id.grid_view);
+
+
+        //내등급, 포인트
+        tv_my_level = findViewById(R.id.tv_my_level);
+        tv_my_point = findViewById(R.id.tv_my_point);
 
 
         tabs = findViewById(R.id.tabs);
@@ -76,6 +81,9 @@ public class MypageActivity extends AppCompatActivity {
                 Glide.with(MypageActivity.this).load(vo.getFilepath()).into(imgv_category_profile);
             }
 
+            //등급, 포인트 나오게
+            tv_my_level.setText("lv."+vo.getMy_level());
+            tv_my_point.setText(vo.getPoint());
             //닉네임 나오게
             tv_nickname.setText(vo.getNickname());
             CommonConn conn = new CommonConn(MypageActivity.this, "count.ct");

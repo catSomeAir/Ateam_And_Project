@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
+import android.os.StrictMode;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -68,7 +69,8 @@ public class ModelDetailActivity extends AppCompatActivity implements View.OnCli
         model_info = (CategorySearchVO) getIntent().getSerializableExtra("model_info");
 
         //제품설명서 다운로드
-
+        StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
+        StrictMode.setVmPolicy(builder.build());
         //설명서 정보 filename, filepath, 도움준 수 가져오기
         CommonConn conn = new CommonConn(ModelDetailActivity.this, "manual_info");
         conn.addParams("model_code", model_info.getModel_code());
@@ -118,7 +120,7 @@ public class ModelDetailActivity extends AppCompatActivity implements View.OnCli
                 if (tab.getPosition() == 0) {
                     getSupportFragmentManager().beginTransaction().replace(R.id.container_model_detail, new ManualFragment(ModelDetailActivity.this, model_info)).commit();
                 } else if (tab.getPosition() == 1) {
-                    getSupportFragmentManager().beginTransaction().replace(R.id.container_model_detail, new WritingFragment(model_info.getModel_code())).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container_model_detail, new WritingFragment(model_info)).commit();
                 } else if (tab.getPosition() == 2) {
                     getSupportFragmentManager().beginTransaction().replace(R.id.container_model_detail, new AfterServiceFragment(model_info)).commit();
 
@@ -149,7 +151,7 @@ public class ModelDetailActivity extends AppCompatActivity implements View.OnCli
         if (tabs.getSelectedTabPosition() == 0) {
             getSupportFragmentManager().beginTransaction().replace(R.id.container_model_detail, new ManualFragment(ModelDetailActivity.this, model_info)).commit();
         } else if (tabs.getSelectedTabPosition() == 1) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.container_model_detail, new WritingFragment(model_info.getModel_code())).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.container_model_detail, new WritingFragment(model_info)).commit();
         } else if (tabs.getSelectedTabPosition() == 2) {
             getSupportFragmentManager().beginTransaction().replace(R.id.container_model_detail, new AfterServiceFragment(model_info)).commit();
 

@@ -10,18 +10,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.last_project.R;
-import com.example.last_project.postList.MyReplyVO;
+import com.example.last_project.model.detail.writng.ReplyVO;
 import com.example.last_project.postList.myReplyFragment;
 
 import java.util.ArrayList;
 
 public class MyReplyAdapter extends RecyclerView.Adapter<MyReplyAdapter.ViewHolder>{
     LayoutInflater inflater;
-    ArrayList<MyReplyVO> list;
+    ArrayList<ReplyVO> list;
     Context context;
     myReplyFragment fragment;
 
-    public MyReplyAdapter(LayoutInflater inflater, ArrayList<MyReplyVO> list, myReplyFragment fragment,Context context) {
+    public MyReplyAdapter(LayoutInflater inflater, ArrayList<ReplyVO> list, myReplyFragment fragment,Context context) {
         this.inflater = inflater;
         this.list = list;
         this.context = context;

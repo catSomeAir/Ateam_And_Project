@@ -21,8 +21,10 @@ public class HomeFragmentAdapter extends FragmentStateAdapter {
             return new Home_BannerFragment1();
         } else if (index == 1) {
             return new Home_BannerFragment2();
-        }else {
+        } else if (index == 2) {
             return new Home_BannerFragment3();
+        }else {
+            return new Home_BannerFragment4();
         }
     }
 

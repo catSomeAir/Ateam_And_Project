@@ -11,21 +11,27 @@ import com.google.android.material.tabs.TabLayout;
 
 public class postListActivity extends AppCompatActivity {
     FrameLayout container;
+    String selected ="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_list);
         container = findViewById(R.id.container_post_list);
 
+
         Intent intent = getIntent();
-        String selected = intent.getStringExtra("1");
+        selected = intent.getStringExtra("1");
         TabLayout tabLayout = findViewById(R.id.tabs) ;
-        if(selected.equals("0")){
-            tabLayout.selectTab(tabLayout.getTabAt(0));
-        }else if(selected.equals("1")){
-            tabLayout.selectTab(tabLayout.getTabAt(1));
+        if(selected != null){
+            if(selected.equals("0")){
+                tabLayout.selectTab(tabLayout.getTabAt(0));
+            }else if(selected.equals("1")){
+                tabLayout.selectTab(tabLayout.getTabAt(1));
+            }
         }
 
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.container_post_list, new myPostFragment()).commit();
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
 
