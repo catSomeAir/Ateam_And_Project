@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".event.EventDetailActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".event.EventDetailActivity">
     <!--메인에서 이벤트 배너 누르면 나오는 상세 페이지-->
     <LinearLayout
 
@@ -48,10 +47,75 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/eventbannerdetail" />
+            android:orientation="vertical"
+            android:padding="4dp">
+
+            <LinearLayout
+                android:layout_marginTop="6dp"
+                android:padding="14dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="나의 설명서에 첫 제품등록 이벤트"
+                        android:textColor="#1C1C1C"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:layout_marginRight="6dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="( ~ 2023.12.31)"
+                        android:textColor="#676767"
+                        android:textSize="12dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="18dp"
+                    android:text="나의 설명서가 처음이라면\n제품등록하고 브랜드 기프티콘과 포인트 모두 받아가세요"
+                    android:textColor="#707070"
+                    android:lineSpacingExtra="3dp"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <View
+                android:layout_marginBottom="18dp"
+                android:layout_width="match_parent"
+                android:layout_height="1.4dp"
+                android:background="#E6E6E6" />
+            <ImageView
+                android:layout_marginHorizontal="6dp"
+                android:id="@+id/imgv_event_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/eventbannerdetail" />
+        </LinearLayout>
 
     </ScrollView>
 

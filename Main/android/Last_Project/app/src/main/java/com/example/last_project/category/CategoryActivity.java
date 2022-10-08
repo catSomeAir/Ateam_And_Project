@@ -164,6 +164,7 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MypageActivity.class);
                 startActivity(intent);
+                overridePendingTransition(0,0);
             }
         });
         //notice로 이동
@@ -172,6 +173,7 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), NoticeActivity.class);
                 startActivity(intent);
+                overridePendingTransition(0,0);
             }
         });
         //event로 이동
@@ -180,6 +182,7 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), EventActivity.class);
                 startActivity(intent);
+                overridePendingTransition(0,0);
             }
         });
         //point로 이동
@@ -188,6 +191,7 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), PointActivity.class);
                 startActivity(intent);
+                overridePendingTransition(0,0);
             }
         });
         //postlist로 이동

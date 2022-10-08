@@ -21,9 +21,9 @@
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_icon_logo_select_foreground"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_icon_logo_select_foreground"
         android:supportsRtl="true"
         android:theme="@style/Theme.Last_Project"
         android:usesCleartextTraffic="true">
@@ -45,6 +45,9 @@
             android:theme="@style/Theme.AppCompat.Transparent.NoActionBar" />
         <activity
             android:name=".main.banner.BannerActivity"
+            android:exported="true" />
+        <activity
+            android:name=".event.EventDetailActivity"
             android:exported="true" />
         <activity
             android:name=".category.CategorySearchActivity"
@@ -145,15 +148,16 @@
         <activity
             android:name=".category.CategoryActivity"
             android:exported="true" />
-        <activity
-            android:name=".SplashActivity"
-            android:exported="true" />
+
         <activity
             android:name=".member.LoginActivity"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"/>
+            <activity
+                android:name=".SplashActivity"
+                android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -6,6 +6,7 @@
     tools:context=".main.tab.home.Home_BannerFragment1">
 
     <ImageView
+        android:id="@+id/imgv_main_banner1"
         android:scaleType="fitXY"
         android:adjustViewBounds="true"
         android:layout_width="match_parent"

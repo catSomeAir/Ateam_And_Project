@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,42 +8,53 @@
     tools:context=".member.join.JoinActivity">
 
 
-
     <LinearLayout
+
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
+        android:layout_height="50dp"
+        android:background="#020E20"
+        android:gravity="center"
         android:orientation="horizontal"
-        android:padding="10dp">
+        android:paddingHorizontal="14dp">
 
-        <ImageView
-            android:id="@+id/join_imgv_back"
-            android:layout_width="0dp"
-            android:layout_height="30dp"
-            android:layout_weight="0.5"
-            android:src="@drawable/back_left_hai"
-
-            />
-
-        <TextView
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="9.5"
-            android:gravity="center"
-            android:text="회원 가입"
-            android:textColor="@color/market_font"
-            android:textSize="24dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/join_imgv_back"
+                android:layout_width="34dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/back_arrow_white" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="요청하기"
+            android:textColor="#e9e9e9e9"
+            android:textSize="18dp"
             android:textStyle="bold" />
 
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
     </LinearLayout>
+
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:scrollbars="none">
+
         <LinearLayout
-            android:layout_margin="10dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_margin="10dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -57,29 +67,26 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
                     android:layout_margin="10dp"
-                    >
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
                         android:text="나의 설명서를\n시작해볼까요?"
-                        android:textStyle="bold"
-                        android:textSize="32dp"
                         android:textColor="@color/market_font"
-                        android:layout_marginTop="60dp"
-                        />
+                        android:textSize="32dp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
                         android:text="이메일을 입력해주세요 :)"
-                        android:textStyle="bold"
-                        android:textSize="22dp"
                         android:textColor="@color/market_font"
-                        android:layout_marginTop="60dp"
-                        />
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
 
                     <EditText
                         android:id="@+id/join_edt_email"
@@ -87,99 +94,88 @@
                         android:layout_height="60dp"
                         android:hint="이메일 주소를 입력해주세요"
                         android:inputType="textEmailAddress"
-                        android:theme="@style/Edt_theme"
-                        />
+                        android:theme="@style/Edt_theme" />
+
                     <TextView
+                        android:id="@+id/join_tv_email_confirm"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=""
-                        android:textSize="14dp"
-                        android:id="@+id/join_tv_email_confirm"
-                        />
+                        android:textSize="14dp" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
                     android:layout_margin="10dp"
-                    >
+                    android:orientation="vertical">
 
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="비밀번호 입력"
-                        android:textStyle="bold"
-                        android:textSize="22dp"
                         android:textColor="@color/market_font"
-                        android:layout_marginTop="20dp"
-                        />
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
 
                     <EditText
                         android:id="@+id/join_edt_pw"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
-                        android:textSize="20dp"
                         android:hint="5자리 이상 입력해 주세요"
                         android:inputType="textPassword"
-                        android:theme="@style/Edt_theme"
-                        />
+                        android:textSize="20dp"
+                        android:theme="@style/Edt_theme" />
+
                     <TextView
+                        android:id="@+id/join_tv_pw_confirm"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=""
-                        android:textSize="14dp"
-                        android:id="@+id/join_tv_pw_confirm"
-                        />
+                        android:textSize="14dp" />
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="비밀번호 확인"
-                        android:textStyle="bold"
-                        android:textSize="22dp"
                         android:textColor="@color/market_font"
-                        android:layout_marginTop="20dp"
-                        />
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
 
                     <EditText
                         android:id="@+id/join_edt_pw_check"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
-                        android:textSize="20dp"
                         android:hint="다시 한번 입력해 주세요"
                         android:inputType="textPassword"
-                        android:theme="@style/Edt_theme"
-                        />
+                        android:textSize="20dp"
+                        android:theme="@style/Edt_theme" />
+
                     <TextView
+                        android:id="@+id/join_tv_pw_check_confirm"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=""
-                        android:textSize="14dp"
-                        android:id="@+id/join_tv_pw_check_confirm"
-                        />
+                        android:textSize="14dp" />
 
                 </LinearLayout>
-
 
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
                     android:layout_margin="10dp"
-                    >
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="이름을 알려주세요 :)"
-                        android:textStyle="bold"
-                        android:textSize="22dp"
                         android:textColor="@color/market_font"
-                        android:layout_marginVertical="20dp"
-                        />
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
 
                     <EditText
                         android:id="@+id/join_edt_name"
@@ -187,18 +183,19 @@
                         android:layout_height="54dp"
                         android:hint="이름을 입력해 주세요"
                         android:inputType="text"
-                        android:theme="@style/Edt_theme"
-                        />
+                        android:theme="@style/Edt_theme" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="닉네임을 적어 주세요"
-                        android:textStyle="bold"
-                        android:textSize="22dp"
                         android:textColor="@color/market_font"
-                        android:layout_marginVertical="20dp"
-                        />
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
 
                     <EditText
                         android:id="@+id/join_edt_nickname"
@@ -206,18 +203,18 @@
                         android:layout_height="54dp"
                         android:hint="2자리 이상 적어 주세요"
                         android:inputType="text"
-                        android:theme="@style/Edt_theme"
-                        />
+                        android:theme="@style/Edt_theme" />
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="연락처를 적어 주세요"
-                        android:textStyle="bold"
-                        android:textSize="22dp"
                         android:textColor="@color/market_font"
-                        android:layout_marginVertical="20dp"
-                        />
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
 
                     <EditText
                         android:id="@+id/join_edt_phone"
@@ -225,34 +222,35 @@
                         android:layout_height="54dp"
                         android:hint="정확히 입력해주세요"
                         android:inputType="phone"
-                        android:theme="@style/Edt_theme"
-                        />
+                        android:theme="@style/Edt_theme" />
                 </LinearLayout>
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:background="@drawable/market_dialog_bg"
-                >
-
-                <Button
-                    android:id="@+id/join_btn_signup"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:enabled="true"
-                    style="@style/Widget.AppCompat.Button.Borderless"
-                    android:text="가입하기"
-                    android:textSize="22dp"
-                    />
-                <!--android:textAllCaps="false" 대문자 자동 변환 막기-->
-
-            </LinearLayout>
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="80dp"/>
+                android:layout_height="80dp" />
+
         </LinearLayout><!--scrollView linear-->
     </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/market_dialog_bg">
+
+        <Button
+            android:id="@+id/join_btn_signup"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="true"
+            android:text="가입하기"
+            android:textSize="22dp" />
+        <!--android:textAllCaps="false" 대문자 자동 변환 막기-->
+
+    </LinearLayout>
+
+
 </LinearLayout>

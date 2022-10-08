@@ -1,6 +1,7 @@
 package com.example.last_project.member.join;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -19,6 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.last_project.R;
 import com.example.last_project.conn.CommonConn;
 import com.example.last_project.member.MemberVO;
+import com.example.last_project.request.RequestEmptyActivity;
 import com.google.gson.Gson;
 
 import java.util.regex.Matcher;
@@ -33,7 +35,9 @@ public class JoinActivity extends AppCompatActivity {
     Dialog join_dialog;
     String search_text = "";
     String search_div_text = "";
-    boolean bool;
+    boolean bool, bool_pw, bool_pw_chk, bool_email;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,9 +92,9 @@ public class JoinActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 if (bool == true) {
-                    CommonConn conn = new CommonConn(JoinActivity.this, "email_check.me"); //입력한 검색어와 최대한 비슷한 정보
+                    CommonConn conn = new CommonConn(JoinActivity.this, "email_check.me");
                     search_text = join_edt_email.getText().toString();
-                    conn.addParams("email",  join_edt_email.getText().toString());
+                    conn.addParams("email", join_edt_email.getText().toString());
                     conn.executeConn_no_dialog(new CommonConn.ConnCallback() {
                         @Override
                         public void onResult(boolean isResult, String data) {
@@ -99,10 +103,12 @@ public class JoinActivity extends AppCompatActivity {
                                 if (data.equals("0")) {
                                     join_tv_email_confirm.setText("사용가능한 이메일니다");
                                     join_tv_email_confirm.setTextColor(Color.parseColor("#FF102BB6"));
+                                    bool_email = true;
 
                                 } else {
                                     join_tv_email_confirm.setText("중복된 이메일입니다 다시 입력해주세요");
                                     join_tv_email_confirm.setTextColor(Color.parseColor("red"));
+                                    bool_email = false;
 
                                 }
 
@@ -130,12 +136,27 @@ public class JoinActivity extends AppCompatActivity {
                     join_tv_pw_confirm.setTextColor(Color.parseColor("red"));
 //                    Toast.makeText(JoinActivity.this,"비밀번호 형식을 지켜주세요.",Toast.LENGTH_SHORT).show();
 //                    dialog.dismiss();
+                    bool_pw = false;
                     return;
                 } else {
                     join_tv_pw_confirm.setText("사용가능한 비밀번호입니다");
                     join_tv_pw_confirm.setTextColor(Color.parseColor("#FF102BB6"));
+                    bool_pw = true;
+                }
+
+                if (join_edt_pw.getText().toString().equals(join_edt_pw_check.getText().toString())) {
+                    join_tv_pw_check_confirm.setText("비밀번호가 일치합니다");
+                    join_tv_pw_check_confirm.setTextColor(Color.parseColor("#FF102BB6"));
+                    join_btn_signup.setEnabled(true); // 버튼 비활성화 기능
+//                    getSupportFragmentManager().beginTransaction().replace(R.id.member_join_container, new Join_UserInfo_Fragment()).commit();
+                    bool_pw_chk= true;
+                } else {
+                    join_tv_pw_check_confirm.setText("비밀번호가 일치하지않습니다");
+                    join_tv_pw_check_confirm.setTextColor(Color.parseColor("red"));
+                    bool_pw_chk= false;
                 }
             }
+
 
             @Override
             public void afterTextChanged(Editable s) {
@@ -171,9 +192,11 @@ public class JoinActivity extends AppCompatActivity {
                     join_tv_pw_check_confirm.setTextColor(Color.parseColor("#FF102BB6"));
                     join_btn_signup.setEnabled(true); // 버튼 비활성화 기능
 //                    getSupportFragmentManager().beginTransaction().replace(R.id.member_join_container, new Join_UserInfo_Fragment()).commit();
+                    bool_pw_chk= true;
                 } else {
                     join_tv_pw_check_confirm.setText("비밀번호가 일치하지않습니다");
                     join_tv_pw_check_confirm.setTextColor(Color.parseColor("red"));
+                    bool_pw_chk= false;
                 }
             }
 
@@ -186,10 +209,12 @@ public class JoinActivity extends AppCompatActivity {
                     join_tv_pw_check_confirm.setText("비밀번호가 일치합니다.");
                     join_tv_pw_check_confirm.setTextColor(Color.parseColor("#FF102BB6"));
                     join_btn_signup.setEnabled(true); // 버튼 비활성화 기능
+                    bool_pw_chk= true;
 //                    getSupportFragmentManager().beginTransaction().replace(R.id.member_join_container, new Join_UserInfo_Fragment()).commit();
                 } else {
                     join_tv_pw_check_confirm.setText("비밀번호가 일치하지않습니다.");
                     join_tv_pw_check_confirm.setTextColor(Color.parseColor("red"));
+                    bool_pw_chk= false;
                 }
 
             }
@@ -197,29 +222,32 @@ public class JoinActivity extends AppCompatActivity {
         join_btn_signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MemberVO vo = new MemberVO();
-                vo.setEmail(join_edt_email.getText() + "");
-                vo.setPw(join_edt_pw.getText() + "");
-                vo.setName(join_edt_name.getText() + "");
-                vo.setNickname(join_edt_nickname.getText() + "");
-                vo.setPhone(join_edt_phone.getText() + "");
+                if(emptyEdittext()){
+                    MemberVO vo = new MemberVO();
+                    vo.setEmail(join_edt_email.getText() + "");
+                    vo.setPw(join_edt_pw.getText() + "");
+                    vo.setName(join_edt_name.getText() + "");
+                    vo.setNickname(join_edt_nickname.getText() + "");
+                    vo.setPhone(join_edt_phone.getText() + "");
 
 
-                CommonConn conn = new CommonConn(JoinActivity.this, "join.me");
-                conn.addParams("vo", new Gson().toJson(vo));
-                conn.executeConn(new CommonConn.ConnCallback() {
-                    @Override
-                    public void onResult(boolean isResult, String data) {
-                        if(data != null){
-                            if(data.equals("1")) {
+                    CommonConn conn = new CommonConn(JoinActivity.this, "join.me");
+                    conn.addParams("vo", new Gson().toJson(vo));
+                    conn.executeConn(new CommonConn.ConnCallback() {
+                        @Override
+                        public void onResult(boolean isResult, String data) {
+                            if (data != null) {
+                                if (data.equals("1")) {
 //                                Intent intent = new Intent(JoinActivity.this, MainActivity.class);
 //                                startActivity(intent);
-                                setResult(1);
-                                finish();
+                                    setResult(1);
+                                    finish();
+                                }
                             }
                         }
-                    }
-                });
+                    });
+                }
+
 
 
             }
@@ -237,6 +265,57 @@ public class JoinActivity extends AppCompatActivity {
                 showJoinDialog();
             }
         });
+    }
+
+    public boolean emptyEdittext() {
+        Intent intent = new Intent(JoinActivity.this, RequestEmptyActivity.class);
+        if (join_edt_email.getText().toString().length() == 0) {
+            intent.putExtra("text", "이메일이 입력되지 않았습니다");
+            startActivity(intent);
+            return false;
+        } else if (join_edt_pw.getText().toString().length() == 0) {
+            intent.putExtra("text", "비밀번호가 입력되지 않았습니다");
+            startActivity(intent);
+            return false;
+        } else if (join_edt_pw_check.getText().toString().length() == 0) {
+            intent.putExtra("text", "비밀번호가 확인되지 않았습니다");
+            startActivity(intent);
+            return false;
+        } else if (join_edt_name.getText().toString().length() == 0) {
+            intent.putExtra("text", "이름이 입력되지 않았습니다");
+            startActivity(intent);
+            return false;
+        } else if (join_edt_nickname.getText().toString().length() == 0) {
+            intent.putExtra("text", "닉네임이 입력되지 않았습니다");
+            startActivity(intent);
+            return false;
+        } else if (join_edt_phone.getText().toString().length() == 0) {
+            intent.putExtra("text", "연락처가 입력되지 않았습니다");
+            startActivity(intent);
+            return false;
+        } else if( !bool){
+            intent.putExtra("text", "올바르지 않은 이메일입니다");
+            startActivity(intent);
+            return false;
+        } else if( !bool_email){
+            intent.putExtra("text", "증복된 이메일입니다");
+            startActivity(intent);
+            return false;
+        } else if( !bool_pw){
+            intent.putExtra("text", "올바르지 않은 비밀번호형식입니다");
+            startActivity(intent);
+            return false;
+        } else if( !bool_pw_chk){
+            intent.putExtra("text", "비밀번호가 일치하지 않습니다");
+            startActivity(intent);
+            return false;
+        } else if( !bool_email){
+            intent.putExtra("text", "증복된 이메일입니다");
+            startActivity(intent);
+            return false;
+        }
+
+        return true;
     }
 
     public void showJoinDialog() {

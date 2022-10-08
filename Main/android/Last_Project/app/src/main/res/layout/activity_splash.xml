@@ -1,9 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#020E20"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
     tools:context=".SplashActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="30dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="18dp">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="9" />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/logo_navy" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="나의 설명서"
+                android:textColor="#d9d9d9"
+                android:textSize="26dp" />
+
+        </LinearLayout>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="12" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:text="세상 모든 설명서가 다 있는 \n나만의 설명서"
+            android:textColor="#d9d9d9"
+            android:textSize="12dp" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <pl.droidsonroids.gif.GifImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/loading_book_white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Loading . . ."
+
+                android:textColor="#d9d9d9" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginVertical="10dp"
+            android:gravity="center_horizontal"
+            android:text="ⓒ 2022 Hanul Ateam Production Inc."
+            android:textColor="#a9a9a9"
+            android:textSize="10dp" />
+
+        <!--<LinearLayout
+            android:padding="1dp"
+            android:layout_gravity="center"
+            android:layout_width="233dp"
+            android:background="@drawable/shape_kakao"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="30dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/btn_kakao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:src="@drawable/btn_kakao"/>-->
+
+    </LinearLayout>
+</LinearLayout>

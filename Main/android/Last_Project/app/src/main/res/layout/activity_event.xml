@@ -8,15 +8,60 @@
     tools:context=".event.EventActivity"
     android:orientation="vertical">
 
-    <ImageView
+   <!-- <ImageView
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:src="@drawable/eventheader"
-        android:adjustViewBounds="true"/>
+        android:adjustViewBounds="true"/>-->
+    <LinearLayout
 
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#020E20"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingHorizontal="14dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/imgv_event_back"
+                android:layout_width="34dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/back_arrow_white" />
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="이벤트"
+                android:textColor="#eeeeee"
+                android:textStyle="bold"
+                android:textSize="20dp"/>
+        </LinearLayout>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+    <LinearLayout
+        android:paddingHorizontal="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recv_event"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
-
+    </LinearLayout>
 </LinearLayout>
