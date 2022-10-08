@@ -33,7 +33,8 @@ public class NoticeActivity extends AppCompatActivity {
         imgv_notice_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBackPressed();
+                finish();
+                overridePendingTransition(0,0);
             }
         });
 

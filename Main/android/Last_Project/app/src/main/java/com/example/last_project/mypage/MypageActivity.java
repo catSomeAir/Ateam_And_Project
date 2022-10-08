@@ -134,7 +134,8 @@ public class MypageActivity extends AppCompatActivity {
                 public void onClick(View v) {
 //                Intent intent = new Intent(getApplicationContext(), CategoryActivity.class);
 //                startActivity(intent);
-                    onBackPressed(); //이게 뒤로가기누르는거랑 같은건데 이거는 아무것도없는상태에서 엑티비티 켜져있으면 뒤로가기버튼 = finish(); 같아요
+                    finish(); //이게 뒤로가기누르는거랑 같은건데 이거는 아무것도없는상태에서 엑티비티 켜져있으면 뒤로가기버튼 = finish(); 같아요
+                    overridePendingTransition(0,0);
                 }
             });
 

@@ -24,7 +24,8 @@ public class EventActivity extends AppCompatActivity {
         imgv_event_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBackPressed();
+                finish();
+                overridePendingTransition(0,0);
             }
         });
         //event_imgs = new Integer[5];
