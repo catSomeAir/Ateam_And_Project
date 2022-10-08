@@ -9,6 +9,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
+    <uses-permission-sdk-23 android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
@@ -102,7 +103,7 @@
             android:name=".mypage.MypageActivity"
             android:exported="true" />
         <activity
-            android:name=".barcord.BarcordActivity"
+            android:name=".barcode.BarcodeActivity"
             android:exported="true" />
         <activity
             android:name=".model.detail.as.AfterServiceActivity"

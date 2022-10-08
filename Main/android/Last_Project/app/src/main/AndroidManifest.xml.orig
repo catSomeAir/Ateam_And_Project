@@ -81,14 +81,14 @@
             android:name=".mypage.MypageActivity"
             android:exported="true" />
         <activity
-            android:name=".barcord.BarcordActivity"
+            android:name=".barcode.BarcodeActivity"
             android:exported="true" />
 =======
             android:name=".MainActivity"
             android:exported="true" />
 
         <activity
-            android:name=".barcord.BarcordActivity"
+            android:name=".barcode.BarcodeActivity"
             android:exported="true" />
 
 >>>>>>> 9c683101ed3f292d117ab82380c490b1b35b72d0

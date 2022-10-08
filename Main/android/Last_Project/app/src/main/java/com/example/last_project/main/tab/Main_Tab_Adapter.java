@@ -66,7 +66,7 @@ public class Main_Tab_Adapter extends RecyclerView.Adapter<Main_Tab_Adapter.View
             h.tv_model_name.setText(list.get(i).getModel_name());
             h.tv_model_code.setText(list.get(i).getModel_code());
 
-            Glide.with(context).load(list.get(i).getFilepath().replace("localhost","121.147.215.12:3302")).into(h.imgv_model_photo);
+            Glide.with(context).load(list.get(i).getFilepath().replace("localhost","121.147.215.12:3302").replace("192.168.0.33","121.147.215.12:3302")).into(h.imgv_model_photo);
 
             h.ln_recent.setOnClickListener(new View.OnClickListener() {
                 @Override

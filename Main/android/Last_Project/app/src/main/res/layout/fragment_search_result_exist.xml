@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -166,13 +167,92 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="110dp" />
+                android:layout_height="50dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
                 android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:paddingVertical="40dp"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="찾으시는 "
+                        android:textColor="#000"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="검색결과"
+                        android:textColor="#0C2843"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="가 없으시다면!"
+                        android:textColor="#000"
+                        android:textSize="18dp" />
+
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="280dp"
+                    android:layout_marginVertical="3dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    app:cardCornerRadius="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/ln_search_not_found_request"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginVertical="15dp"
+                            android:src="@drawable/icon_exclamation" />
+
+
+                        <TextView
+                            android:layout_gravity="center_horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="15dp"
+                            android:gravity="center"
+                            android:text="해당 제품설명서 등록울 요청하시려면 "
+                            android:textColor="#000"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:layout_gravity="center_horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="15dp"
+                            android:gravity="center"
+                            android:text="여기를 눌러주세요"
+                            android:textColor="#0C2843"
+                            android:textStyle="bold"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"/>
                 <LinearLayout
                     android:layout_marginVertical="10dp"
                     android:gravity="center_horizontal"
@@ -198,25 +278,31 @@
                         android:textColor="#393838"
                         android:textSize="11dp" />
                 </LinearLayout>
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:gravity="center_horizontal"
-                    android:text="세상 모든 설명서가 다 있는 \n나의 설명서"
-                    android:textColor="#0C2843"
-                    android:textSize="12dp" />
+                    android:layout_marginBottom="20dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:text="세상 모든 설명서가 다 있는 \n나의 설명서"
+                        android:textColor="#0C2843"
+                        android:textSize="12dp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginVertical="10dp"
-                    android:gravity="center_horizontal"
-                    android:text="ⓒ 2022 Hanul Ateam Production Inc."
-                    android:textColor="#0C2843"
-                    android:textSize="10dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginVertical="10dp"
+                        android:gravity="center_horizontal"
+                        android:text="ⓒ 2022 Hanul Ateam Production Inc."
+                        android:textColor="#0C2843"
+                        android:textSize="10dp" />
 
+                </LinearLayout>
             </LinearLayout>
             <Space
                 android:layout_width="match_parent"

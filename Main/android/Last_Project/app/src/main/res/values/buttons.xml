@@ -5,7 +5,7 @@
     <!-- 아이콘 배열 : 임시 -->
     <array name="icons">
 
-        <item>@drawable/barcord</item>
+        <item>@drawable/barcode</item>
         <item>@drawable/mail</item>
         <item>@drawable/pdf</item>
         <item>@drawable/search</item>

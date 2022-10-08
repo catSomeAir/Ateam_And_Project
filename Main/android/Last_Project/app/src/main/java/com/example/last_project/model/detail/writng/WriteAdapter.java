@@ -79,7 +79,7 @@ public class WriteAdapter extends RecyclerView.Adapter<WriteAdapter.ViewHolder>{
         }
         public void bind(@NonNull ViewHolder h, int i){
             //글쓴이 이미지
-            Glide.with(context).load(list.get(i).getFilepath().replace("localhost","121.147.215.12:3302")).into(h.imgv_board_profile_img);
+            Glide.with(context).load(list.get(i).getFilepath().replace("localhost","121.147.215.12:3302").replace("192.168.0.33","121.147.215.12:3302")).into(h.imgv_board_profile_img);
             //닉네임 -> 그냥 이메일로대체
             h.tv_board_nickname.setText(list.get(i).getEmail());
             // 자기가 쓴 글 수정 삭제 처리

@@ -89,7 +89,7 @@ public class SearchActivity extends AppCompatActivity {
                 //검색데이터가 있는경우 임시( 비스포크라고 쳤을 경우로 테스트중 )
 
 
-                getSupportFragmentManager().beginTransaction().replace(R.id.container_search, new SearchResultFragment(edt_search.getText() + "", search_div_text)).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.container_search, new SearchResultFragment(edt_search.getText() + "", search_div_text, "text")).commit();
 
 
                 edt_search.setText("");
@@ -199,17 +199,18 @@ public class SearchActivity extends AppCompatActivity {
 
 
         //* 임시로 바코드 검색 데이터 넘어오는곳 : 추후 수정
-        String barcord_search_name = getIntent().getStringExtra("barcord_search_name");
-        if (barcord_search_name != null) {
-            if (barcord_search_name == "") {
-                barcord_search_name = "해당하는 제품정보";
+        String barcode_search_name = getIntent().getStringExtra("barcode_search_name");
+        if (barcode_search_name != null) {
+            if (barcode_search_name == "") {
+                barcode_search_name = "해당하는 제품정보";
             }
 
-            getSupportFragmentManager().beginTransaction().replace(R.id.container_search, new SearchResultFragment(barcord_search_name, CommonMethod.text_div(barcord_search_name))).commit();
+
+            getSupportFragmentManager().beginTransaction().replace(R.id.container_search, new SearchResultFragment(barcode_search_name, CommonMethod.text_div(barcode_search_name),"barcode")).commit();
             recv_search_relate.setVisibility(View.GONE);
             search = false;
 //            Bundle bundle = new Bundle();
-//            bundle.putString("barcord_search_name",barcord_search_name);
+//            bundle.putString("barcode_search_name",barcode_search_name);
 //            SearchResultFragment fragment = new SearchResultFragment();
 //            fragment.setArguments(bundle);
         }

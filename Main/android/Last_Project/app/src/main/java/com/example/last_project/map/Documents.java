@@ -1,6 +1,8 @@
 package com.example.last_project.map;
 
-public class Documents {
+import java.io.Serializable;
+
+public class Documents implements Serializable {
     private String place_name;
     private String distance;
     private String place_url;

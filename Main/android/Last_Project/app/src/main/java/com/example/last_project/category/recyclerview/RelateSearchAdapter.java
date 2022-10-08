@@ -89,7 +89,7 @@ public class RelateSearchAdapter extends RecyclerView.Adapter<RelateSearchAdapte
                     edt_search.clearFocus();
                     edt_search.setText("");
                     ln_search_list.setVisibility(View.GONE);
-                    manager.beginTransaction().replace(R.id.container_search, new SearchResultFragment(list1[i],CommonMethod.text_div(list1[i]))).commit();
+                    manager.beginTransaction().replace(R.id.container_search, new SearchResultFragment(list1[i],CommonMethod.text_div(list1[i]), "text")).commit();
                     recv_search_relate.setVisibility(View.GONE);
 
 //                    CommonMethod.edittext_change(edt_search, tv_cancel, imgv_cancel, context);

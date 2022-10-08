@@ -315,4 +315,8 @@ public class ModelDetailActivity extends AppCompatActivity implements View.OnCli
 
         }
     }
+
+    public void manual_Info(){
+
+    }
 }

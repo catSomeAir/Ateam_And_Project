@@ -32,10 +32,32 @@
             android:textSize="17dp"
             android:textColor="@color/white"
             android:text="찜한 설명서" />
-        <Space
+        <LinearLayout
+            android:gravity="right"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            >
+           <!-- <ImageView
+                android:layout_gravity="center_vertical"
+                android:id="@+id/imgv_bookmark_setting"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_baseline_settings_24"/>-->
+            <TextView
+                android:id="@+id/tv_bookmark_setting"
+                android:layout_gravity="right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:layout_marginRight="8dp"
+                android:textColor="#C9CACA"
+                android:text=" 편집" />
+        </LinearLayout>
+
     </LinearLayout>
 
 
@@ -44,28 +66,21 @@
         android:layout_height="2dp"
         android:background="#EEEEEE"/>
     <LinearLayout
+        android:id="@+id/btn_edt_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <Space
-            android:layout_width="260dp"
-            android:layout_height="wrap_content"/>
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_edt_list"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:layout_marginVertical="10dp"
-            android:paddingHorizontal="30dp"
-            android:background="#020E20"
-            android:text="편집하기"/>
+
+
+
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"/>
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="6dp"
         android:id="@+id/bookmarked_post_recv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

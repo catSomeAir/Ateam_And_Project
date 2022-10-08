@@ -69,11 +69,6 @@ public class AfterServiceFragment extends Fragment  implements MapView.MapViewEv
         keywordRepository.retrieveData_fragment(this, model_info.getBrand_name() + " 서비스센터");
 
 
-        AfterServiceAdapter adapter = new AfterServiceAdapter(getLayoutInflater(), getContext());   //list 추가해야함
-        RecyclerView.LayoutManager manager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
-        recv_as.setAdapter(adapter);
-        recv_as.setLayoutManager(manager);
-
         return v;
     }
 
@@ -259,9 +254,16 @@ public class AfterServiceFragment extends Fragment  implements MapView.MapViewEv
         int getListSize = data.size();
         if(data.size() != 0){
             Log.d("위치목록", "retrieveOnSuccess: "+ data);
+
+
         }
 //            y = data.get(0).getX();
 //            x = data.get(0).getY();
+
+        AfterServiceAdapter adapter = new AfterServiceAdapter(getLayoutInflater(), getContext() , data, model_info);   //list 추가해야함
+        RecyclerView.LayoutManager manager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
+        recv_as.setAdapter(adapter);
+        recv_as.setLayoutManager(manager);
 
 //            mapView.moveCamera(CameraUpdateFactory.newCameraPosition(new CameraPosition(MapPoint.mapPointWithGeoCoord(Double.parseDouble(x), Double.parseDouble(y)), 2)));
 //            MapPOIItem marker = new MapPOIItem();//마커
@@ -273,10 +275,10 @@ public class AfterServiceFragment extends Fragment  implements MapView.MapViewEv
 //            marker.setMarkerType(MapPOIItem.MarkerType.BluePin); // 기본으로 제공하는 BluePin 마커 모양.
 //            marker.setSelectedMarkerType(MapPOIItem.MarkerType.RedPin); // 마커를 클릭했을때, 기본으로 제공하는 RedPin 마커 모양.
 //            mapView.addPOIItem(marker);
-            if (!checkLocationServicesStatus()) {
-                showDialogForLocationServiceSetting();
-            }else {
-                checkRunTimePermission();
-            }
+        if (!checkLocationServicesStatus()) {
+            showDialogForLocationServiceSetting();
+        }else {
+            checkRunTimePermission();
         }
+    }
 }

@@ -20,8 +20,8 @@ public class Main_Tab_HomeFragment extends Fragment {
     private FragmentStateAdapter bannerAdapter;           //배너 붙이기
     private CircleIndicator3 indicator_main_tap_home;     //뷰페이지 indicator
     private int num_page = 4;                             //indicator 수
-
-    private boolean thread_check = true;
+    public Thread thread;
+    public boolean thread_check = true;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -30,8 +30,16 @@ public class Main_Tab_HomeFragment extends Fragment {
         //뷰페이지
         vp_main_tap_home = v.findViewById(R.id.vp_main_tap_home);
         vp_main_tap_home.setOrientation(ViewPager2.ORIENTATION_HORIZONTAL); //뷰페이지 방향설정 : 가로
-        vp_main_tap_home.setCurrentItem(1000); //시작 지점
+        vp_main_tap_home.setCurrentItem(0); //시작 지점
         vp_main_tap_home.setOffscreenPageLimit(4); //최대 이미지 수
+
+
+/*
+        if(thread_check){
+            thread.start();
+        }else {
+            thread.interrupt();
+        }*/
 
         //뷰페이지 adapter
         bannerAdapter = new HomeFragmentAdapter(Main_Tab_HomeFragment.this, num_page);      //파라메터 : fragment, int count
@@ -48,7 +56,7 @@ public class Main_Tab_HomeFragment extends Fragment {
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
                 super.onPageScrolled(position, positionOffset, positionOffsetPixels);
                 if (positionOffsetPixels == 0) {
-                    vp_main_tap_home.setCurrentItem(position);
+                  //  vp_main_tap_home.setCurrentItem(position);
 
 
                 }
@@ -57,68 +65,63 @@ public class Main_Tab_HomeFragment extends Fragment {
             @Override
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
-                indicator_main_tap_home.animatePageSelected(position % num_page);
+             //   indicator_main_tap_home.animatePageSelected(position % num_page);
             }
         });
 //        autoSlide();
         return v;
     }
 
-    public void autoSlide() {
-        // new Handler<- SlpashActivity 페이지전환
-        // runOnUiThread : 비동기로 화면전환 쓰레드사용  --->> Activity 단에서만 사용가능
 
-        if (thread_check) {
-
-                new Thread(new Runnable() {
+public Runnable runnable = new Runnable() {
+    @Override
+    public void run() {
+        for (int i = 0; i < 4; i++) {
+            final int value = i;
+            if(!thread_check) return;
+            if(getActivity()==null) return;
+            try {
+                getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-
-                        for (int i = 0; i < 3000; i++) {
-                            final int value = i;
-                            getActivity().runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-
-                                    //비동기로 디자인 작업
-
-                                    vp_main_tap_home.setCurrentItem(value);  //현재 아이템
-                                }
-                            });
-
-                            try {
-                                if (i == 3000 - 1) {
-                                    i = -1;
-                                }
-                                Thread.sleep(4500);
-
-                            } catch (Exception e) {
-                            }
-                        }
+                        vp_main_tap_home.setCurrentItem(value);  //현재 아이템
                     }
-                }).start();
+                });
 
-
-
+                if (i == 3) {
+                    i = -1;
+                }
+                Thread.sleep(4500);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
-
     }
-
+};
     @Override
     public void onStart() {
         super.onStart();
         vp_main_tap_home.setCurrentItem(0);
-        autoSlide();
-        thread_check = true;
+        startThread();
         Log.d("주기", "onStart: ");
     }
+    public void startThread(){
+        thread_check = true;
+        thread =  new Thread(runnable);
+        thread.start();
+    }
 
-
-
+    public void stopThread(){
+        if(thread == null){
+            return;
+        }
+        thread_check = false;
+        thread.interrupt();
+    }
     @Override
     public void onStop() {
         super.onStop();
-        thread_check = false;
+
         Log.d("주기", "onStop: ");
 
     }

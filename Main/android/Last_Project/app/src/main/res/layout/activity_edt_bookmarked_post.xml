@@ -40,32 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="#EEEEEE"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingLeft="150dp">
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:layout_marginVertical="10dp"
-            android:layout_marginHorizontal="5dp"
-            android:paddingHorizontal="30dp"
-            android:background="#020E20"
-            android:text="삭제하기"/>
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_edt_list"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:layout_marginVertical="10dp"
-            android:paddingHorizontal="30dp"
-            android:background="#020E20"
-            android:text="저장하기"/>
-    </LinearLayout>
 
     <View
         android:layout_width="match_parent"
@@ -74,5 +49,38 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_edt_bookmarked_post"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_weight="1"
+        android:layout_height="0dp"/>
+
+    <LinearLayout
+        android:paddingHorizontal="14dp"
+        android:paddingVertical="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_edt_delete"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_marginVertical="10dp"
+            android:layout_marginHorizontal="5dp"
+            android:paddingHorizontal="30dp"
+            android:background="#020E20"
+            android:text="선택목록 삭제하기"/>
+        <Space
+            android:layout_width="6dp"
+            android:layout_height="wrap_content"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_edt_save"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_marginVertical="10dp"
+            android:paddingHorizontal="30dp"
+            android:background="#020E20"
+            android:text="저장하기"/>
+    </LinearLayout>
 </LinearLayout>

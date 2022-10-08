@@ -37,7 +37,7 @@ import java.util.List;
 public class AfterServiceActivity extends AppCompatActivity  implements MapView.MapViewEventListener,
         MapView.POIItemEventListener, MapView.OpenAPIKeyAuthenticationResultListener, RetrofitOnSuccess, MapView.CurrentLocationEventListener {
     LinearLayout ln_as_call, ln_as_homepage;
-    TextView tv_as_call, tv_as_homepage;
+    TextView tv_as_call, tv_as_homepage, tv_as_category, tv_as_detail_adress;
     NestedScrollView scrollView;
 
     ImageView imgv_as_back;//뒤로각
@@ -47,7 +47,7 @@ public class AfterServiceActivity extends AppCompatActivity  implements MapView.
     MapView mapView;
     String x = "", y = "";
     MapPoint mapPoint;
-
+    Documents data ;
     private static final String LOG_TAG = "AfterServiceActivity.this";
     private static final int GPS_ENABLE_REQUEST_CODE = 2001;
     private static final int PERMISSIONS_REQUEST_CODE = 100;
@@ -62,6 +62,7 @@ public class AfterServiceActivity extends AppCompatActivity  implements MapView.
         setContentView(R.layout.activity_after_service);
 
 
+        data = (Documents) getIntent().getSerializableExtra("data");
 
 
         scrollView = findViewById(R.id.scrollView);
@@ -69,6 +70,19 @@ public class AfterServiceActivity extends AppCompatActivity  implements MapView.
         //AS센터정보
         //센터이름
         tv_as_name = findViewById(R.id.tv_as_name);
+        tv_as_name.setText(data.getPlace_name());
+
+        tv_as_category = findViewById(R.id.tv_as_category);
+        tv_as_category.setText(data.getCategory_name());
+
+        tv_as_detail_adress = findViewById(R.id.tv_as_detail_adress);
+        tv_as_detail_adress.setText(data.getRoad_address_name());
+
+
+
+
+
+
 
 
         //뒤로가기
@@ -85,7 +99,7 @@ public class AfterServiceActivity extends AppCompatActivity  implements MapView.
 
         //전화번호 담당 tv
         tv_as_call = findViewById(R.id.tv_as_call);
-
+        tv_as_call.setText(data.getPhone());
         ln_as_call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,6 +110,7 @@ public class AfterServiceActivity extends AppCompatActivity  implements MapView.
 
         //홈페이지 주소
         tv_as_homepage = findViewById(R.id.tv_as_homepage);
+        tv_as_homepage.setText(data.getPlace_url());
         //홈페이지 아이콘
         ln_as_homepage = findViewById(R.id.ln_as_homepage);
         ln_as_homepage.setOnClickListener(new View.OnClickListener() {
@@ -118,13 +133,13 @@ public class AfterServiceActivity extends AppCompatActivity  implements MapView.
 
         mapViewContainer.addView(mapView);
 
-
-        mapView.setCurrentLocationTrackingMode(MapView.CurrentLocationTrackingMode.TrackingModeOnWithHeading);
-        if (!checkLocationServicesStatus()) {
-            showDialogForLocationServiceSetting();
-        }else {
-            checkRunTimePermission();
-        }
+//현재위치로 이동하게하기
+//        mapView.setCurrentLocationTrackingMode(MapView.CurrentLocationTrackingMode.TrackingModeOnWithHeading);
+//        if (!checkLocationServicesStatus()) {
+//            showDialogForLocationServiceSetting();
+//        }else {
+//            checkRunTimePermission();
+//        }
 
     }
 
@@ -139,7 +154,7 @@ public class AfterServiceActivity extends AppCompatActivity  implements MapView.
     //지도 중심 좌표가 이동한 경우 호출된다.
     @Override
     public void onMapViewCenterPointMoved(MapView mapView, MapPoint mapPoint) {
-//            mapView.setMapCenterPoint(MapPoint.mapPointWithGeoCoord(Double.parseDouble(x), Double.parseDouble(y)), true);
+       //     mapView.setMapCenterPoint(MapPoint.mapPointWithGeoCoord(Double.parseDouble(x), Double.parseDouble(y)), true);
         scrollView.requestDisallowInterceptTouchEvent(true);
     }
 
@@ -255,7 +270,7 @@ public class AfterServiceActivity extends AppCompatActivity  implements MapView.
     //현재위치-----------------------------------
     @Override
     public void onCurrentLocationUpdate(MapView mapView, MapPoint mapPoint, float v) {
-        MapPoint.GeoCoordinate mapPointGeo = mapPoint.getMapPointGeoCoord();
+//        MapPoint.GeoCoordinate mapPointGeo = mapPoint.getMapPointGeoCoord();
     }
 
     @Override

@@ -3,10 +3,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:id="@+id/ln_edt_bookmark"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <LinearLayout
+        android:paddingVertical="8dp"
+        android:gravity="center_vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -15,18 +18,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
-            android:layout_marginTop="24dp"
-            android:id="@+id/check1"/>
+            app:buttonTint="#123"
+            android:id="@+id/chkbox_edt_bookmark"/>
 
         <androidx.cardview.widget.CardView
             android:layout_gravity="center_vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="12dp"
+            android:layout_marginVertical="7dp"
+
             app:cardCornerRadius="7dp"
             android:elevation="40dp">
 
             <LinearLayout
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
@@ -41,7 +46,8 @@
 
         <LinearLayout
             android:padding="10dp"
-            android:layout_width="200dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
@@ -50,12 +56,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-                <TextView
-                    android:textSize="13dp"
-                    android:textColor="#4D4d4D"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="제품명 : " />
 
                 <TextView
                     android:id="@+id/tv_bookmarked_name"
@@ -73,13 +73,6 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:textSize="13dp"
-                    android:textColor="#4D4d4D"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="모델명 : " />
-
-                <TextView
                     android:id="@+id/tv_model_code"
                     android:textSize="13dp"
                     android:textColor="#4D4d4D"
@@ -93,13 +86,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-
-                <TextView
-                    android:textSize="13dp"
-                    android:textColor="#4D4d4D"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="브랜드 : " />
 
                 <TextView
                     android:id="@+id/tv_brand"
@@ -117,14 +103,17 @@
         </LinearLayout>
 
         <ImageView
+            android:id="@+id/imgv_edt_handler"
             android:layout_width="19dp"
             android:layout_height="19dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="7dp"
+            android:layout_marginRight="14dp"
             android:src="@drawable/hamburger"/>
 
     </LinearLayout>
 
-
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E6E6E6" />
 
 </LinearLayout>

@@ -63,7 +63,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
                 public void onClick(View v) {
                     context.findViewById(R.id.recv_search_relate).setVisibility(View.GONE);
                     String replace = list.get(i).replace("# ","");
-                    context.getSupportFragmentManager().beginTransaction().replace(R.id.container_search, new SearchResultFragment(replace, CommonMethod.text_div(replace))).commit();
+                    context.getSupportFragmentManager().beginTransaction().replace(R.id.container_search, new SearchResultFragment(replace, CommonMethod.text_div(replace), "text")).commit();
                 }
             });
         }

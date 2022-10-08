@@ -2,7 +2,6 @@ package com.example.last_project.postList.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
@@ -11,25 +10,21 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.core.view.MotionEventCompat;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.last_project.R;
 import com.example.last_project.postList.BookmarkEdtVO;
-import com.example.last_project.postList.BookmarkItemTouchCallback;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
-public class EdtBookmarkedPostAdapter extends RecyclerView.Adapter<EdtBookmarkedPostAdapter.ViewHolder> implements BookmarkItemTouchCallback.OnItemMoveListener {
+public class EdtBookmarkedPost_deleteAdapter extends RecyclerView.Adapter<EdtBookmarkedPost_deleteAdapter.ViewHolder> {
     LayoutInflater inflater;
 //    ArrayList<BookmarkedPostVO> list;
     Context context;
     FragmentActivity fragmentActivity;
     ArrayList<BookmarkEdtVO> edt_list;
-    private final OnStartDragListener mStartDragListener;
 //    public EdtBookmarkedPostAdapter(LayoutInflater inflater, ArrayList<BookmarkedPostVO> list, Context context, FragmentActivity fragmentActivity) {
 //        this.inflater = inflater;
 //        this.list = list;
@@ -37,12 +32,8 @@ public class EdtBookmarkedPostAdapter extends RecyclerView.Adapter<EdtBookmarked
 //        this.fragmentActivity =fragmentActivity;
 //    }
 
-    public interface OnStartDragListener{
-        void onStartDrag(EdtBookmarkedPostAdapter.ViewHolder holder);
-    }
 
-    public EdtBookmarkedPostAdapter(LayoutInflater inflater, ArrayList<BookmarkEdtVO> edt_list, Context context, FragmentActivity fragmentActivity, OnStartDragListener startDragListener) {
-        mStartDragListener = startDragListener;
+    public EdtBookmarkedPost_deleteAdapter(LayoutInflater inflater, ArrayList<BookmarkEdtVO> edt_list, Context context, FragmentActivity fragmentActivity) {
         this.inflater = inflater;
         this.context = context;
         this.fragmentActivity = fragmentActivity;
@@ -65,12 +56,7 @@ public class EdtBookmarkedPostAdapter extends RecyclerView.Adapter<EdtBookmarked
         return edt_list.size();
     }
 
-    @Override
-    public boolean onItemMove(int fromPosition, int toPosition) {
-        Collections.swap(edt_list, fromPosition,toPosition);
-        notifyItemMoved(fromPosition,toPosition);
-        return false;
-    }
+
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView tv_bookmarked_name,tv_model_code,tv_brand;
@@ -98,12 +84,7 @@ public class EdtBookmarkedPostAdapter extends RecyclerView.Adapter<EdtBookmarked
            h.tv_bookmarked_name.setText(edt_list.get(i).getVo().getModel_name()+"");
            h.tv_model_code.setText(edt_list.get(i).getVo().getModel_code()+"");
            h.tv_brand.setText(edt_list.get(i).getVo().getBrand_name()+"");
-           h.imgv_edt_handler.setOnTouchListener((v, event) -> {
-               if(MotionEventCompat.getActionMasked(event)== MotionEvent.ACTION_DOWN){
-                   mStartDragListener.onStartDrag(h);
-               }
-               return false;
-           });
+
 
            h.chkbox_edt_bookmark.setOnClickListener(new View.OnClickListener() {
                @Override

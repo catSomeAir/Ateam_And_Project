@@ -614,8 +614,7 @@ public class RequestManualActivity extends AppCompatActivity {
     public boolean onKeyDown(int keyCode, KeyEvent event) {
 
         if (keyCode == KeyEvent.KEYCODE_BACK) {
-            Intent intent = new Intent(RequestManualActivity.this, RequestCancelActivity.class);
-            startActivity(intent);
+            imgv_request_back.performClick();
             return true;
         }
         return false;

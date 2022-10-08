@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,7 +20,7 @@ import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.last_project.barcord.BarcordActivity;
+import com.example.last_project.barcode.BarcodeActivity;
 import com.example.last_project.category.CategoryActivity;
 import com.example.last_project.common.CommonMethod;
 import com.example.last_project.common.CommonVal;
@@ -65,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     GoogleSignInClient mGoogleSignInClient;
     NestedScrollView scrollView;
     private final int RC_SIGN_IN = 1000;
-
+    Main_Tab_HomeFragment mtFragment = new Main_Tab_HomeFragment();
     //마켓
     LinearLayout ln_main_market1, ln_main_market2;
     @Override
@@ -87,17 +88,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String pw = preferences.getString("pw", null);
         String social_code = preferences.getString("social_code", null);
         if(social_code != null){
-            if(!social_code.equals("0")){
-                if(social_code.equals("G")){
+            if(!social_code.equals("0")) {
+                if (social_code.equals("G")) {
                     Intent signInIntent = mGoogleSignInClient.getSignInIntent();
                     startActivityForResult(signInIntent, RC_SIGN_IN);
-                }else if (social_code.equals("N")){
+                } else if (social_code.equals("N")) {
 
-                }else if (social_code.equals("K")){
+                } else if (social_code.equals("K")) {
 
                 }
+            }else{
+                CommonConn conn = new CommonConn(MainActivity.this, "login.me");
+                conn.addParams("email", email);
+                conn.addParams("pw",pw);
+                conn.executeConn_no_dialog(new CommonConn.ConnCallback() {
+                    @Override
+                    public void onResult(boolean isResult, String data) {
+                        if(isResult){
+
+                            if(data == null){
+                                Toast.makeText(MainActivity.this, "회원정보가 일치하지 않습니다.", Toast.LENGTH_SHORT).show();
+                            }else{
+                                Toast.makeText(MainActivity.this, "로그인 성공", Toast.LENGTH_SHORT).show();
+                                CommonVal.userInfo = new Gson().fromJson(data, MemberVO.class);
 
 
+                            }
+                        }else {
+                            Toast.makeText(MainActivity.this ,"로그인실패", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
             }
         }
 
@@ -157,7 +178,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //테스트
         menuView1 = findViewById(R.id.circle_menu1);
-        menuView1.setMainMenu(Color.parseColor("#123456") ,R.drawable.barcord, R.drawable.barcord)
+        menuView1.setMainMenu(Color.parseColor("#123456") ,R.drawable.barcode, R.drawable.barcode)
                     .addSubMenu(Color.parseColor("#123456") ,R.drawable.mail)
                     .addSubMenu(Color.parseColor("#123456") ,R.drawable.mail)
                     .addSubMenu(Color.parseColor("#123456") ,R.drawable.mail);
@@ -195,7 +216,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onButtonClickAnimationEnd(@NonNull CircleMenuView view, int index) {
                 if(index==0){
-                    Intent intent = new Intent(MainActivity.this, BarcordActivity.class);
+                    Intent intent = new Intent(MainActivity.this, BarcodeActivity.class);
                     startActivity(intent);
                 }else if(index ==1){
 
@@ -245,13 +266,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 if(tab.getPosition()==0){
-                    getSupportFragmentManager().beginTransaction().replace(R.id.container_main, new Main_Tab_HomeFragment()).commit();
+                    mtFragment = new Main_Tab_HomeFragment();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container_main, mtFragment).commit();
+
+                    return;
+
                 }else if(tab.getPosition()==1){
                     getSupportFragmentManager().beginTransaction().replace(R.id.container_main, new Main_Tab_MyManaulFragment()).commit();
+
 
                 }else{
                     getSupportFragmentManager().beginTransaction().replace(R.id.container_main, new Main_Tab_RecentFragment()).commit();
                 }
+                mtFragment.stopThread();
+
             }
 
             @Override

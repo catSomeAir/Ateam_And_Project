@@ -85,7 +85,7 @@ public class MypageActivity extends AppCompatActivity {
             tv_my_level.setText("lv."+vo.getMy_level());
             tv_my_point.setText(vo.getPoint());
             //닉네임 나오게
-            tv_nickname.setText(vo.getNickname());
+            tv_nickname.setText(vo.getNickname()==null||vo.getNickname().equals("")?vo.getEmail():vo.getNickname());
             CommonConn conn = new CommonConn(MypageActivity.this, "count.ct");
             conn.addParams("email", vo.getEmail());
             conn.executeConn(new CommonConn.ConnCallback() {
@@ -147,14 +147,14 @@ public class MypageActivity extends AppCompatActivity {
             edit_profile.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(getApplicationContext(), EditProfileActivity.class);
+                    Intent intent = new Intent(MypageActivity.this, EditProfileActivity.class);
                     startActivity(intent);
                 }
             });
             my_post.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(getApplicationContext(), postListActivity.class);
+                    Intent intent = new Intent(MypageActivity.this, postListActivity.class);
                     intent.putExtra("1", "0");
                     startActivity(intent);
 
@@ -163,7 +163,7 @@ public class MypageActivity extends AppCompatActivity {
             my_reply.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(getApplicationContext(), postListActivity.class);
+                    Intent intent = new Intent(MypageActivity.this, postListActivity.class);
                     intent.putExtra("1", "1");
                     startActivity(intent);
 
@@ -172,14 +172,14 @@ public class MypageActivity extends AppCompatActivity {
             requested_post.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(getApplicationContext(), RequestedPostActivity.class);
+                    Intent intent = new Intent(MypageActivity.this, RequestedPostActivity.class);
                     startActivity(intent);
                 }
             });
             point.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(getApplicationContext(), PointActivity.class);
+                    Intent intent = new Intent(MypageActivity.this, PointActivity.class);
                     startActivity(intent);
                 }
             });
@@ -187,7 +187,7 @@ public class MypageActivity extends AppCompatActivity {
             bookmarked_post.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(getApplicationContext(), BookmarkedPostActivity.class);
+                    Intent intent = new Intent(MypageActivity.this, BookmarkedPostActivity.class);
                     startActivity(intent);
                 }
             });
@@ -196,7 +196,7 @@ public class MypageActivity extends AppCompatActivity {
             downloaded_manual.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(getApplicationContext(), DownloadedManualActivity.class);
+                    Intent intent = new Intent(MypageActivity.this, DownloadedManualActivity.class);
                     startActivity(intent);
                 }
             });

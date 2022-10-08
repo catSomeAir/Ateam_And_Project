@@ -57,7 +57,7 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
         tv_write_model_code.setText(model_info.getModel_code());
 
         imgv_write_photo = v.findViewById(R.id.imgv_write_photo);
-        Glide.with(getContext()).load(model_info.getFilepath().replace("localhost", "121.147.215.12:3302")).into(imgv_write_photo);
+        Glide.with(getContext()).load(model_info.getFilepath().replace("localhost", "121.147.215.12:3302").replace("192.168.0.33","121.147.215.12:3302")).into(imgv_write_photo);
 
 
 

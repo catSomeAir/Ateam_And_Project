@@ -70,7 +70,7 @@ public class WriteComentAdapter extends RecyclerView.Adapter<WriteComentAdapter.
         }
 
         public void bind(@NonNull ViewHolder h, int i) {
-            Glide.with(context).load(list.get(i).getFilepath().replace("localhost", "121.147.215.12:3302")).into(h.imgv_reply_profile);
+            Glide.with(context).load(list.get(i).getFilepath().replace("localhost", "121.147.215.12:3302").replace("192.168.0.33","121.147.215.12:3302")).into(h.imgv_reply_profile);
             h.tv_reply_name.setText(list.get(i).getEmail());
             h.tv_reply_writedate.setText(list.get(i).getWritedate());
             h.tv_reply_content.setText(list.get(i).getContent());

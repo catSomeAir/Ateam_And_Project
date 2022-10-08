@@ -1,48 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/scrollView"
+    android:orientation="vertical"
     tools:context=".model.detail.as.AfterServiceActivity">
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#020E20"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingHorizontal="14dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/imgv_as_back"
+                android:layout_width="34dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/back_arrow_white" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/logo_navy" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <LinearLayout
 
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="#020E20"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:paddingHorizontal="14dp">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
-
-                <ImageView
-                    android:id="@+id/imgv_as_back"
-                    android:layout_width="34dp"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/back_arrow_white" />
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/logo_navy" />
-
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -109,12 +115,13 @@
                             <androidx.cardview.widget.CardView
                                 android:layout_width="60dp"
                                 android:layout_height="60dp"
+                                android:layout_margin="4dp"
                                 android:elevation="10dp">
 
                                 <ImageView
+                                    android:layout_margin="4dp"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:layout_margin="4dp"
                                     android:adjustViewBounds="true"
                                     android:src="@drawable/temp_samsung_logo" />
 
@@ -138,11 +145,13 @@
                     </LinearLayout>
 
                     <TextView
+                        android:id="@+id/tv_as_category"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginHorizontal="8dp"
                         android:layout_marginTop="8dp"
+                        android:layout_marginBottom="10dp"
                         android:text="수리, AS"
                         android:textColor="#a9a9a9"
                         android:textSize="12dp" />
@@ -277,6 +286,7 @@
                     android:src="@drawable/icon_map" />
 
                 <TextView
+                    android:id="@+id/tv_as_detail_adress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="광주 서구 죽봉대로22번길 6 삼성 디지털프라자 광천본점 2층"
@@ -384,7 +394,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="제품 점검 시간을 고려하여 운영시간 종료 최소 1시간 전까지 방문해주세요 . (운영시간은 삼성전자서비스홈페이지에서 확인 가능합니다.)"
+                    android:text="제품 점검 시간을 고려하여 운영시간 종료 최소 1시간 전까지 방문해주세요 . (운영시간은 서비스홈페이지에서 확인 가능합니다.)"
                     android:textColor="#3A3A3A" />
             </LinearLayout>
 
@@ -450,4 +460,6 @@
 
         </LinearLayout>
     </LinearLayout>
-</androidx.core.widget.NestedScrollView>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

@@ -191,7 +191,6 @@ public class ManualFragment extends Fragment implements OnPageChangeListener, On
         }
 
 
-        //찜하기 하트 선택 : DB정보에 넣어야할 예정임
         imgv_manual_zzim = v.findViewById(R.id.imgv_manual_zzim);
         imgv_manual_zzim.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -232,7 +231,7 @@ public class ManualFragment extends Fragment implements OnPageChangeListener, On
         tv_manual_model_code = v.findViewById(R.id.tv_manual_model_code);
         tv_manual_catg = v.findViewById(R.id.tv_manual_catg);
 
-        Glide.with(getContext()).load(model_info.getFilepath().replace("localhost", "121.147.215.12:3302")).into(imgv_manual_photo);
+        Glide.with(getContext()).load(model_info.getFilepath().replace("localhost", "121.147.215.12:3302").replace("192.168.0.33","121.147.215.12:3302")).into(imgv_manual_photo);
         tv_manual_brand.setText(model_info.getBrand_name());
         tv_manual_model_name.setText(model_info.getModel_name() + " (" + model_info.getModel_code() + ")");
         tv_manual_model_code.setText(model_info.getModel_code());

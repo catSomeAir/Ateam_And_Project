@@ -95,6 +95,7 @@ public class Login_in_Activity extends AppCompatActivity {
         SharedPreferences.Editor editor = preferences.edit();   // Editer 객체를 리턴하는 메소드
         editor.putString("email", CommonVal.userInfo.getEmail());
         editor.putString("pw", CommonVal.userInfo.getPw());
+        editor.putString("social_code","0");
         editor.apply();
     }
 }

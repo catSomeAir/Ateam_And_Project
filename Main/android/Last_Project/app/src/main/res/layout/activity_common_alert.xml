@@ -14,12 +14,13 @@
         app:cardCornerRadius="14dp">
 
         <LinearLayout
+            android:paddingTop="40dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
             <LinearLayout
-                android:layout_marginTop="40dp"
+                android:layout_marginBottom="14dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
@@ -30,7 +31,7 @@
                     android:gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
+                    android:layout_gravity="center_horizontal"
                     android:text="로그인"
                     android:textColor="#020E20"
                     android:textSize="16dp"
@@ -40,7 +41,7 @@
                     android:id="@+id/tv_explain1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
+                    android:layout_gravity="center_horizontal"
                     android:gravity="center_horizontal"
                     android:text="이 필요한 서비스입니다."
                     android:textColor="#000"
@@ -53,11 +54,11 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center_horizontal"
-                android:layout_marginTop="14dp"
-                android:layout_marginBottom="24dp"
+                android:layout_marginBottom="14dp"
                 android:text="로그인 하시겠습니까?" />
 
             <LinearLayout
+                android:layout_marginTop="18dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">

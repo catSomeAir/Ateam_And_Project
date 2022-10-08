@@ -1,12 +1,17 @@
 package com.example.last_project.notice;
 
-import java.sql.Date;
-
 public class NoticeDTO {
     private int id;
     private String title,content;
-    private Date today;
+    private String today;
 
+    public String getToday() {
+        return today;
+    }
+
+    public void setToday(String today) {
+        this.today = today;
+    }
 
     public int getId() {
         return id;
@@ -32,11 +37,4 @@ public class NoticeDTO {
         this.content = content;
     }
 
-    public Date getToday() {
-        return today;
-    }
-
-    public void setToday(Date today) {
-        this.today = today;
-    }
 }
