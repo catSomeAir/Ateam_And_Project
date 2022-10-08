@@ -50,6 +50,10 @@ public class CommonAlertActivity extends AppCompatActivity {
         ln_yes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(page.equals("EdtBookmarkedPostActivity_save")){
+                    setResult(1);// 온곳을 종료시켜라
+                }
+
                 if(page.equals("ManualFragment_download_not_exist")){
                     setResult(2000);// ModelDetailactivity에서 다운로드 진행되도록함
                 }
@@ -85,7 +89,15 @@ public class CommonAlertActivity extends AppCompatActivity {
         });
 
         if (page != null) {
-
+            if(page.equals("EdtBookmarkedPostActivity_save")){
+                tv_target.setText("변경사항이");
+                tv_explain1.setText("이 처리되었습니다");
+                tv_explain2.setVisibility(View.GONE);
+                view_center_line.setVisibility(View.GONE);
+                ln_no.setVisibility(View.GONE);
+                tv_yes.setText("확인");
+                return;
+            }
 
             //메뉴얼 다운로드 유무
             if(page.equals("ManualFragment_download_exist")){
@@ -109,7 +121,7 @@ public class CommonAlertActivity extends AppCompatActivity {
             if (page.equals("WriteSpaceActivity")) {
                 tv_target.setText("글목록");
                 tv_explain1.setText("을 선택해주세요");
-                tv_explain2.setVisibility(View.INVISIBLE);
+                tv_explain2.setVisibility(View.GONE);
                 view_center_line.setVisibility(View.GONE);
                 ln_no.setVisibility(View.GONE);
                 tv_yes.setText("확인");
@@ -118,7 +130,7 @@ public class CommonAlertActivity extends AppCompatActivity {
             if (page.equals("WriteSpaceActivity_empty")) {
                 tv_target.setText("내용");
                 tv_explain1.setText("을 입력해주세요");
-                tv_explain2.setVisibility(View.INVISIBLE);
+                tv_explain2.setVisibility(View.GONE);
 
                 view_center_line.setVisibility(View.GONE);
                 ln_no.setVisibility(View.GONE);
@@ -126,11 +138,10 @@ public class CommonAlertActivity extends AppCompatActivity {
             }
             //글쓰기 댓글쓰기
             if (page.equals("WriteSpaceActivity_success") || page.equals("WriteSpaceActivity_comment") || page.equals("WriteSpaceActivity_comment_update")) {
-                tv_target.setText("등록되었습니다");
-                tv_explain1.setText("을 입력해주세요");
-                tv_explain1.setVisibility(View.GONE);
+                tv_explain1.setText("등록되었습니다");
+                tv_explain2.setText("소중한 글 감사합니다");
+                tv_target.setVisibility(View.GONE);
 
-                tv_explain2.setVisibility(View.GONE);
 
                 view_center_line.setVisibility(View.GONE);
                 ln_no.setVisibility(View.GONE);

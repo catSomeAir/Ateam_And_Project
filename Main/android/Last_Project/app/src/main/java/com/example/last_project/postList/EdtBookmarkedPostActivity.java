@@ -1,16 +1,19 @@
 package com.example.last_project.postList;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.last_project.CommonAlertActivity;
 import com.example.last_project.R;
 import com.example.last_project.common.CommonVal;
 import com.example.last_project.conn.CommonConn;
@@ -88,21 +91,13 @@ public class EdtBookmarkedPostActivity extends AppCompatActivity implements EdtB
         btn_edt_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(EdtBookmarkedPostActivity.this, CommonAlertActivity.class);
+                intent.putExtra("page", "EdtBookmarkedPostActivity_save");
+                startActivityForResult(intent,0);
+                overridePendingTransition(0,0);
 
-                for (int i = 0; i < edt_list.size(); i++) {
-                    if (edt_list.get(i).isChecked()) {
-                        CommonConn conn = new CommonConn(EdtBookmarkedPostActivity.this, "my_manual_delete");
-                        conn.addParams("email", CommonVal.userInfo.getEmail());
-                        conn.addParams("model_code", edt_list.get(i).getVo().getModel_code());
-                        edt_list.remove(i);
-                        conn.executeConn_no_dialog(new CommonConn.ConnCallback() {
-                            @Override
-                            public void onResult(boolean isResult, String data) {
 
-                            }
-                        });
-                    }
-                }
+
             }
         });
 
@@ -119,5 +114,27 @@ public class EdtBookmarkedPostActivity extends AppCompatActivity implements EdtB
     @Override
     public void onStartDrag(EdtBookmarkedPostAdapter.ViewHolder holder) {
         mItemTouchHelper.startDrag(holder);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode  == 1){
+            for (int i = 0; i < edt_list.size(); i++) {
+                if (edt_list.get(i).isChecked()) {
+                    CommonConn conn = new CommonConn(EdtBookmarkedPostActivity.this, "my_manual_delete");
+                    conn.addParams("email", CommonVal.userInfo.getEmail());
+                    conn.addParams("model_code", edt_list.get(i).getVo().getModel_code());
+                    edt_list.remove(i);
+                    conn.executeConn_no_dialog(new CommonConn.ConnCallback() {
+                        @Override
+                        public void onResult(boolean isResult, String data) {
+
+                        }
+                    });
+                }
+            }
+            finish();
+        }
     }
 }

@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 import com.example.last_project.R;
-import com.example.last_project.category.CategoryActivity;
 import com.example.last_project.common.CommonVal;
 import com.example.last_project.conn.CommonConn;
 import com.example.last_project.member.MemberVO;
@@ -55,6 +54,13 @@ public class EditProfileActivity extends AppCompatActivity {
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+//                Intent intent = new Intent(EditProfileActivity.this, CommonAlertActivity.class);
+//                intent.putExtra("page", "EditProfileActivity_save");
+//                startActivityForResult(intent,0);
+//                overridePendingTransition(0,0);
+
+
                 CommonConn conn = new CommonConn(EditProfileActivity.this, "update.me");
                 vo.setEmail(CommonVal.userInfo.getEmail());
                 vo.setPw(edt_pw.getText().toString());
