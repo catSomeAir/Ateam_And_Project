@@ -1,5 +1,6 @@
 package com.hanul.ateam;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +18,18 @@ public class MarketController {
 	Gson gson = new Gson();
 	
 //	@RequestMapping(value =  "/gift_insert.me" , produces = "text/html;charset=utf-8")
-
 	
+	@RequestMapping(value =  "/gift_insert" , produces = "text/html;charset=utf-8")
+	public String gift_insert(String email, String point) {
+		
+		HashMap<String, String> map = new HashMap<String, String>();
+		map.put("email", email);
+		map.put("point", point);
+		
+		
+		
+		return dao.gift_insert(map) + "";
+	}
 	
 	
 	@RequestMapping(value =  "/gift.me" , produces = "text/html;charset=utf-8")

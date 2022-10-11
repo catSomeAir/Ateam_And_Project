@@ -1,7 +1,15 @@
 package member;
 
 public class MemberVO {
-	private String email, pw, name, nickname, phone, join_date, amdin, social_code, filepath, point, filename;
+	private String email, pw, name, nickname, phone, join_date, amdin, social_code, filepath, point, filename, my_level;
+
+	public String getMy_level() {
+		return my_level;
+	}
+
+	public void setMy_level(String my_level) {
+		this.my_level = my_level;
+	}
 
 	public String getEmail() {
 		return email;

@@ -2,6 +2,7 @@ package com.example.last_project.barcode;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -41,4 +42,13 @@ public class BarcodeActivity extends AppCompatActivity {
                     });
                 }
             });
+    //뒤로가기 버튼 눌렀을 경우 엑티비티 종료시 에니메이션 막기
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if(keyCode == KeyEvent.KEYCODE_BACK){
+            finish();
+            overridePendingTransition(0, 0);
+        }
+        return true;
+    }
 }

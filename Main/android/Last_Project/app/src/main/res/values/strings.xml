@@ -6,4 +6,5 @@
     <string name="naver_client_secret">BJbZC7mICm</string>
     <string name="naver_client_name">Last_Project</string>
     <string name="join_signup">Sign Up</string>
+    <string name="default_notification_channel_id">myChannel</string>
 </resources>

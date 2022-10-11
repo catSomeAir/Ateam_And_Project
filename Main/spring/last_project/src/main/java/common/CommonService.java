@@ -104,7 +104,9 @@ public class CommonService {
 			// 실제 저장경로  :  D://app/iot/upload/notice/2022...
 			// DB저장경로 http://192.168.0.33/iot ---->> D://app/iot 로 바꿔줘야한다. : iot는 어플리케이션이름 = req.getContextPath()
 		
-		filepath=filepath.replace( appName(req), "d://app/"+req.getContextPath());
+		filepath = filepath.replace(appName(req),
+				"d://app/"/* +req.getContextPath() */)
+				.replace("121.147.215.12:3302", "d://app/"/* +req.getContextPath() */);
 			
 		//2. 다운로드할 파일 객체를 생성 ( filepath 에있는 파일 )
 			File file = new File(filepath);

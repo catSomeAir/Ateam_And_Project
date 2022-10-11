@@ -8,6 +8,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.last_project.R;
+import com.example.last_project.common.CommonMethod;
 import com.example.last_project.common.CommonVal;
 
 public class PointActivity extends AppCompatActivity {
@@ -21,7 +22,7 @@ public class PointActivity extends AppCompatActivity {
         imgv_point_back = findViewById(R.id.imgv_point_back);
 
         if(CommonVal.userInfo.getPoint()!=null){
-            tv_point_enable.setText(CommonVal.userInfo.getPoint());
+            tv_point_enable.setText(CommonMethod.makeStringComma(CommonVal.userInfo.getPoint()) );
         }
 
         imgv_point_back.setOnClickListener(new View.OnClickListener() {

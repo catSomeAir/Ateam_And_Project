@@ -9,6 +9,11 @@
     <color name="white">#FFFFFFFF</color>
     <color name="market_font">#020E20</color>
 
+    <color name="main_color">#020E20</color>
+    <color name="textColorHighlight">#88133D7C</color>
+
+
+
     <!--투명도 조절위해 추가 - 아인-->
     <color name="o0">#00000000</color>
     <color name="o3">#4D000000</color>

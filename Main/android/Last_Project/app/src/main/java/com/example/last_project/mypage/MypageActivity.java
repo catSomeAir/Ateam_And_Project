@@ -78,7 +78,7 @@ public class MypageActivity extends AppCompatActivity {
             if (vo.getFilepath() != null) {
                 //피카소 글라이드 비교해봐야할듯
 //            Picasso.get().load(CommonVal.userInfo.getProfile_img()).into(imgv_category_profile);
-                Glide.with(MypageActivity.this).load(vo.getFilepath()).into(imgv_category_profile);
+                Glide.with(MypageActivity.this).load(vo.getFilepath().replace("localhost","121.147.215.12:3302").replace("192.168.0.33","121.147.215.12:3302")).into(imgv_category_profile);
             }
 
             //등급, 포인트 나오게

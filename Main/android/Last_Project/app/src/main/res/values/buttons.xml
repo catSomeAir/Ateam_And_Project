@@ -5,22 +5,33 @@
     <!-- 아이콘 배열 : 임시 -->
     <array name="icons">
 
-        <item>@drawable/barcode</item>
-        <item>@drawable/mail</item>
+        <item>@drawable/menu_barcode</item>
+        <item>@drawable/menu_alarm_off</item>
         <item>@drawable/pdf</item>
-        <item>@drawable/search</item>
-        <item>@drawable/user</item>
+        <item>@drawable/menu_search</item>
+        <item>@drawable/menu_profile</item>
 
 
     </array>
     <!-- 아이콘 색-->
     <array name="colors">
 
-        <item>#060F3E</item>
-        <item>#111E60</item>
-        <item>#1E2D7A</item>
-        <item>#2F4095</item>
-        <item>#5467D1</item>
+        <item>#4B57C8</item>
+        <item>#4C58C6</item>
+        <item>#4C58C6</item>
+        <item>#6A74CF</item>
+        <item>#8C94E3</item>
+
+
+    </array>
+
+    <array name="icon_colors">
+
+        <item>#FFFFFF</item>
+        <item>#FFFFFF</item>
+        <item>#FFFFFF</item>
+        <item>#FFFFFF</item>
+        <item>#FFFFFF</item>
 
 
     </array>

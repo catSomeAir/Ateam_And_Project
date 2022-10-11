@@ -100,6 +100,8 @@
                 app:cardCornerRadius="18dp">
 
                 <EditText
+                    android:textCursorDrawable="@drawable/shape_edittext"
+                    android:theme="@style/EditTextStyle"
                     android:id="@+id/edt_writing"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

@@ -64,7 +64,7 @@ public class WritingFragment extends Fragment implements View.OnClickListener {
         //로그인 유저
         if (CommonVal.userInfo != null) {
             if (CommonVal.userInfo.getFilepath() != null) {
-                Glide.with(getContext()).load(CommonVal.userInfo.getFilepath()).into(imgv_profile);
+                Glide.with(getContext()).load(CommonVal.userInfo.getFilepath().replace("localhost", "121.147.215.12:3302").replace("192.168.0.33","121.147.215.12:3302")).into(imgv_profile);
             }
         }
 

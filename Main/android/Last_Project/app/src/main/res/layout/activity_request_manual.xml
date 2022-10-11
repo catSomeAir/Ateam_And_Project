@@ -121,6 +121,8 @@
             android:paddingLeft="14dp">
 
             <EditText
+                android:textCursorDrawable="@drawable/shape_edittext"
+                android:theme="@style/EditTextStyle"
                 android:id="@+id/edt_request_title"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
@@ -159,6 +161,8 @@
             android:paddingVertical="8dp">
 
             <EditText
+                android:textCursorDrawable="@drawable/shape_edittext"
+                android:theme="@style/EditTextStyle"
                 android:id="@+id/edt_request_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -241,6 +245,8 @@
                     android:orientation="vertical">
 
                     <ImageView
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
                         android:id="@+id/imgv_request_picture"
                         android:layout_width="46dp"
                         android:layout_height="46dp"
@@ -272,6 +278,8 @@
                     android:visibility="gone">
 
                     <ImageView
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
                         android:id="@+id/imgv_request_picture2"
                         android:layout_width="46dp"
                         android:layout_height="46dp"
@@ -302,6 +310,8 @@
                     android:visibility="gone">
 
                     <ImageView
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
                         android:id="@+id/imgv_request_picture3"
                         android:layout_width="46dp"
                         android:layout_height="46dp"

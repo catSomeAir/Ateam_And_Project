@@ -2,6 +2,7 @@ package com.example.last_project.conn;
 
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatDialog;
@@ -39,7 +40,7 @@ public class CommonConn {
 
     public void onPreExecute() {
         if (dialog == null) return;
-//            dialog.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+            dialog.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
             dialog.setCancelable(false);
             dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
             dialog.setContentView(R.layout.progess_loading);

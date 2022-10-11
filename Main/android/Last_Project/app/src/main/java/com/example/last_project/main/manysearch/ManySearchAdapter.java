@@ -16,8 +16,11 @@ import com.bumptech.glide.Glide;
 import com.example.last_project.R;
 import com.example.last_project.common.CommonMethod;
 import com.example.last_project.common.CommonVal;
+import com.example.last_project.conn.CommonConn;
 import com.example.last_project.model.ModelDetailActivity;
+import com.example.last_project.model.detail.manual.ManualVO;
 import com.example.last_project.search.category_search.CategorySearchVO;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 
@@ -26,7 +29,8 @@ public class ManySearchAdapter extends RecyclerView.Adapter<ManySearchAdapter.Vi
     LayoutInflater inflater;
     ArrayList<CategorySearchVO> list;
     Context context;
-    public ManySearchAdapter(LayoutInflater inflater,ArrayList<CategorySearchVO> list, Context context) {
+    ManualVO manualVO = new ManualVO();
+    public ManySearchAdapter(LayoutInflater inflater, ArrayList<CategorySearchVO> list, Context context) {
         this.inflater = inflater;
         this.list = list;
         this.context = context;
@@ -52,6 +56,7 @@ public class ManySearchAdapter extends RecyclerView.Adapter<ManySearchAdapter.Vi
         ImageView imgv_main_manysearch;
         TextView tv_main_manysearch_brand, tv_main_manysearch_model_name, tv_main_manysearch_model_code, tv_manysearch_rank;
         LinearLayout ln_manysearch;
+
         public ViewHolder(@NonNull View v) {
             super(v);
             imgv_main_manysearch = v.findViewById(R.id.imgv_main_manysearch);
@@ -67,29 +72,46 @@ public class ManySearchAdapter extends RecyclerView.Adapter<ManySearchAdapter.Vi
             h.tv_main_manysearch_model_code.setText(list.get(i).getModel_code());
             h.tv_main_manysearch_brand.setText(list.get(i).getBrand_name());
             h.tv_main_manysearch_model_name.setText(list.get(i).getModel_name());
-            Glide.with(context).load(list.get(i).getFilepath().replace("localhost","121.147.215.12:3302").replace("192.168.0.33","121.147.215.12:3302")).into(h.imgv_main_manysearch);
-            h.tv_manysearch_rank.setText(i+1+"");
+            Glide.with(context).load(list.get(i).getFilepath().replace("localhost", "121.147.215.12:3302").replace("192.168.0.33", "121.147.215.12:3302")).into(h.imgv_main_manysearch);
+            h.tv_manysearch_rank.setText(i + 1 + "");
 
             h.ln_manysearch.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(context, ModelDetailActivity.class);
                     intent.putExtra("model_info", list.get(i));
-                    if (CommonVal.recent_list != null) {
 
-                        if (CommonVal.recent_list.size() <= 10) {
-                            CommonVal.recent_list.add(list.get(i).getModel_code());
-                            CommonMethod.setStringArrayPref(context, "recent_list", CommonVal.recent_list);
-                        } else {
-                            CommonVal.recent_list.remove(0);
-                            CommonVal.recent_list.add(list.get(i).getModel_code());
-                            CommonMethod.setStringArrayPref(context, "recent_list", CommonVal.recent_list);
+
+                    CommonConn conn = new CommonConn(context, "manual_info");
+                    conn.addParams("model_code", list.get(i).getModel_code());
+                    conn.executeConn(new CommonConn.ConnCallback() {
+                        @Override
+                        public void onResult(boolean isResult, String data) {
+                            if(isResult){
+
+                            manualVO = new Gson().fromJson(data, ManualVO.class);
+                            CommonVal.manualInfo = manualVO;
+                                intent.putExtra("manual_info", manualVO);
+                                if (CommonVal.recent_list != null) {
+
+                                    if (CommonVal.recent_list.size() <= 10) {
+                                        CommonVal.recent_list.add(list.get(i).getModel_code());
+                                        CommonMethod.setStringArrayPref(context, "recent_list", CommonVal.recent_list);
+                                    } else {
+                                        CommonVal.recent_list.remove(0);
+                                        CommonVal.recent_list.add(list.get(i).getModel_code());
+                                        CommonMethod.setStringArrayPref(context, "recent_list", CommonVal.recent_list);
+                                    }
+                                } else {
+                                    CommonVal.recent_list.add(list.get(i).getModel_code());
+                                    CommonMethod.setStringArrayPref(context, "recent_list", CommonVal.recent_list);
+                                }
+                                context.startActivity(intent);
+                            }
+
                         }
-                    } else {
-                        CommonVal.recent_list.add(list.get(i).getModel_code());
-                        CommonMethod.setStringArrayPref(context, "recent_list", CommonVal.recent_list);
-                    }
-                    context.startActivity(intent);
+                    });
+
                 }
             });
         }

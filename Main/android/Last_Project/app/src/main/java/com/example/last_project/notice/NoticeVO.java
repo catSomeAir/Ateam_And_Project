@@ -1,6 +1,6 @@
 package com.example.last_project.notice;
 
-public class NoticeDTO {
+public class NoticeVO {
     private int id;
     private String title,content;
     private String today;

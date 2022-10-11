@@ -25,8 +25,8 @@ public class SearchController {
 	@Autowired private SearchDAO dao;
 	@Autowired private	ManySearchDAO search_dao;
 	//  실기기테스트하면서 변경해야함 !!!!!!!!!!!!!
-		@RequestMapping(value = "/barcord.mo", produces = "text/html;charset=utf-8")
-		public String barcord_search() {
+		@RequestMapping(value = "/barcode.mo", produces = "text/html;charset=utf-8")
+		public String barcode_search() {
 //			List<CategorySearchVO> list = dao.m_list(m_name);
 //			return new Gson().toJson(list);
 			return null;
@@ -79,6 +79,13 @@ public class SearchController {
 	public String many_search() {
 		
 		return new Gson().toJson(search_dao.many_search());
+	}
+	
+	//모델코드로 검색 -> 이미지 모델명, 모델코드, 브랜드 표시
+	@RequestMapping(value = "/model_code_list", produces = "text/html;charset=utf-8")
+	public String model_code_list(String model_code) {
+		
+		return new Gson().toJson(dao.model_code_list(model_code));
 	}
 	
 	

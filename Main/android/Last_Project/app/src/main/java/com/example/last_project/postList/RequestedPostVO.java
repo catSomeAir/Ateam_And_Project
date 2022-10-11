@@ -1,10 +1,10 @@
 package com.example.last_project.postList;
 
-import java.sql.Date;
+import java.io.Serializable;
 
-public class RequestedPostVO {
+public class RequestedPostVO implements Serializable {
 	private String l_catg,req_title,req_content,commit;
-	private Date req_writedate;
+	private String req_writedate;
 	
 	public String getL_catg() {
 		return l_catg;
@@ -30,13 +30,12 @@ public class RequestedPostVO {
 	public void setCommit(String commit) {
 		this.commit = commit;
 	}
-	public Date getReq_writedate() {
+
+	public String getReq_writedate() {
 		return req_writedate;
 	}
-	public void setReq_writedate(Date req_writedate) {
+
+	public void setReq_writedate(String req_writedate) {
 		this.req_writedate = req_writedate;
 	}
-	
-	
-
 }

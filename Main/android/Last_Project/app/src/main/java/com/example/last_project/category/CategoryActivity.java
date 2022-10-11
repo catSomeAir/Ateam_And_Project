@@ -19,6 +19,7 @@ import androidx.core.widget.NestedScrollView;
 
 import com.bumptech.glide.Glide;
 import com.example.last_project.R;
+import com.example.last_project.common.CommonMethod;
 import com.example.last_project.common.CommonVal;
 import com.example.last_project.conn.CommonConn;
 import com.example.last_project.event.EventActivity;
@@ -130,7 +131,7 @@ public class CategoryActivity extends AppCompatActivity implements View.OnClickL
                 Glide.with(CategoryActivity.this).load(vo.getFilepath().replace("192.168.0.33","121.147.215.12:3302")).into(imgv_category_profile);
             }
             //아인---------------------------------------------------------------------------------------------------
-            catg_tv_point.setText(CommonVal.userInfo.getPoint());//로그인 후 페이지 회원이 가진 포인트 뿌리기
+            catg_tv_point.setText(CommonMethod.makeStringComma(CommonVal.userInfo.getPoint()) );//로그인 후 페이지 회원이 가진 포인트 뿌리기
             //---▲---------------------------------------------------------------------------------------------------
             //* 임시
             tv_category_nickname.setText(vo.getNickname()!=null?vo.getNickname():vo.getName());

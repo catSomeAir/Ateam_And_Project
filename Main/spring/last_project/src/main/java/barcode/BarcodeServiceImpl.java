@@ -1,10 +1,10 @@
-package barcord;
+package barcode;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
 @Service
-public class BarcordServiceImpl implements BarcordService {
-	@Autowired private BarcordDAO dao;
+public class BarcodeServiceImpl implements BarcodeService {
+	@Autowired private BarcodeDAO dao;
 }

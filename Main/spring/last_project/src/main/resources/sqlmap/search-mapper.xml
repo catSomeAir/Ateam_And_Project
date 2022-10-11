@@ -2,6 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="search">
 
+<select id="model_code_list" resultType="search.CategorySearchVO">
+	SELECT a.model_code, a.model_name, a.filepath, b.brand_name
+	FROM	model_info a LEFT OUTER JOIN brand b
+	ON		a.brand_code = b.brand_code LEFT OUTER JOIN category c
+	ON		a.category_code = c.category_code
+	WHERE	a.model_code LIKE #{model_code}
+</select>
+
 <select id="many_search" resultType="search.CategorySearchVO">
 <![CDATA[ 
 	SELECT  f.MODEL_CODE, f.MODEL_NAME, f.FILEPATH, f.BRAND_NAME, f.CATEGORY_NAME

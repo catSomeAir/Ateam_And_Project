@@ -2,7 +2,10 @@ package com.example.last_project.postList;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
+import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,11 +15,13 @@ import com.google.android.material.tabs.TabLayout;
 public class postListActivity extends AppCompatActivity {
     FrameLayout container;
     String selected ="";
+    ImageView imgv_back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_list);
         container = findViewById(R.id.container_post_list);
+        imgv_back = findViewById(R.id.imgv_back);
 
 
         Intent intent = getIntent();
@@ -55,6 +60,26 @@ public class postListActivity extends AppCompatActivity {
             public void onTabReselected(TabLayout.Tab tab) {
 
             }
+
+
         });
+
+        imgv_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                overridePendingTransition(0,0);
+            }
+        });
+
+
+    }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if(keyCode == KeyEvent.KEYCODE_BACK){
+            finish();
+            overridePendingTransition(0, R.anim.slideing_up_exit);
+        }
+        return true;
     }
 }

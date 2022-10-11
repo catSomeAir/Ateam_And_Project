@@ -48,6 +48,8 @@
                     android:paddingLeft="1dp">
 
                     <EditText
+                        android:textCursorDrawable="@drawable/shape_edittext"
+                        android:theme="@style/EditTextStyle"
                         android:inputType="textNoSuggestions"
                         android:id="@+id/edt_search"
                         android:layout_width="0dp"

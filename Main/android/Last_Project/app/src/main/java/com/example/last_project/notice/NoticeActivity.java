@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class NoticeActivity extends AppCompatActivity {
     RecyclerView recv_notice;
-    ArrayList<NoticeDTO> list;
+    ArrayList<NoticeVO> list;
     //TextView title;
     ImageView imgv_notice_back;
 
@@ -43,7 +43,7 @@ public class NoticeActivity extends AppCompatActivity {
             @Override
             public void onResult(boolean isResult, String data) {
                 if (isResult) {
-                    list = new Gson().fromJson(data, new TypeToken<ArrayList<NoticeDTO>>() {
+                    list = new Gson().fromJson(data, new TypeToken<ArrayList<NoticeVO>>() {
                     }.getType());
 
                     NoticeAdapter adapter = new NoticeAdapter(getLayoutInflater(), list);

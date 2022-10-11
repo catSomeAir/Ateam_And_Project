@@ -99,6 +99,8 @@
                             app:cardCornerRadius="100dp">
 
                             <ImageView
+                                android:adjustViewBounds="true"
+                                android:scaleType="fitXY"
                                 android:id="@+id/imgv_category_profile"
                                 android:layout_width="60dp"
                                 android:layout_height="60dp"

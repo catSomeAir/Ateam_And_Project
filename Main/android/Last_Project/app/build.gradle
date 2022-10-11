@@ -41,6 +41,7 @@ dependencies {
 
     //상윤----------------------------------------
 
+
     //gif drwable 에서 부르기
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.3'
     
@@ -83,6 +84,7 @@ dependencies {
     //pdf viwer
 //    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
     implementation 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1'
+    implementation 'es.voghdev.pdfviewpager:library:1.1.2'
 
     //DialogSpinner
     implementation 'com.github.hamzaahmedkhan:SpinnerDialog:v1.2.3'
@@ -95,6 +97,7 @@ dependencies {
     //Circle-menu : 메인 하단 원형 네비
     implementation 'com.ramotion.circlemenu:circle-menu:0.3.2'
     implementation 'com.github.Hitomis:CircleMenu:v1.1.0'
+    implementation 'com.github.imangazalievm:circlemenu:3.0.0'
     //바코드
     implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
 

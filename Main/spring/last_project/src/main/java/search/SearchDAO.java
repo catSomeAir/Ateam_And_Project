@@ -12,6 +12,11 @@ import org.springframework.stereotype.Repository;
 public class SearchDAO {
 	@Autowired private SqlSession sql;
 	
+	//모델코드에 대한 제품정보
+	public CategorySearchVO model_code_list(String model_code) {
+		return sql.selectOne("search.model_code_list", model_code);
+	}
+	
 	//검색어로 검색 - 전체
 	public List<CategorySearchVO> search_text(String search_div_text){
 		

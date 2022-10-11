@@ -1,9 +1,15 @@
 package com.example.last_project;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -16,6 +22,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.core.app.NotificationCompat;
+import androidx.core.graphics.drawable.IconCompat;
 import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -32,7 +40,11 @@ import com.example.last_project.main.tab.Main_Tab_HomeFragment;
 import com.example.last_project.main.tab.Main_Tab_MyManaulFragment;
 import com.example.last_project.main.tab.Main_Tab_RecentFragment;
 import com.example.last_project.member.MemberVO;
+import com.example.last_project.model.detail.writng.ReplyVO;
 import com.example.last_project.mypage.MypageActivity;
+import com.example.last_project.news.NewsActivity;
+import com.example.last_project.news.NewsVO;
+import com.example.last_project.postList.BookmarkedPostActivity;
 import com.example.last_project.search.NotFoundAlertActivity;
 import com.example.last_project.search.SearchActivity;
 import com.example.last_project.search.category_search.CategorySearchVO;
@@ -45,7 +57,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.tabs.TabLayout;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.hitomi.cmlibrary.CircleMenu;
 import com.ramotion.circlemenu.CircleMenuView;
 
 import java.util.ArrayList;
@@ -56,7 +67,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     LinearLayout ln_main_search;
     RecyclerView recv_main_manysearch;
     CircleMenuView menuView;
-    CircleMenu menuView1;
+
+    //알림설정
+    String reply_cnt_before, reply_cnt_after;//조회했을 때 원래 회원에게 달린 댓글수
+    String notice_cnt_before, notice_cnt_after;
+
+    boolean conn_check;
+    //    CircleMenu menuView1;
     //카테고리 클릭
     LinearLayout ln_ctg_gajeon, ln_ctg_computer, ln_ctg_mobile, ln_ctg_car, ln_ctg_gagu, ln_ctg_adong, ln_ctg_samu, ln_ctg_leisure;
 
@@ -69,10 +86,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Main_Tab_HomeFragment mtFragment = new Main_Tab_HomeFragment();
     //마켓
     LinearLayout ln_main_market1, ln_main_market2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //알림설정하기
+
+            news_alarm();
+
+
+
+
 
         //자동로그인확인
 
@@ -87,8 +113,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String email = preferences.getString("email", null);
         String pw = preferences.getString("pw", null);
         String social_code = preferences.getString("social_code", null);
-        if(social_code != null){
-            if(!social_code.equals("0")) {
+        if (social_code != null) {
+            if (!social_code.equals("0")) {
                 if (social_code.equals("G")) {
                     Intent signInIntent = mGoogleSignInClient.getSignInIntent();
                     startActivityForResult(signInIntent, RC_SIGN_IN);
@@ -97,25 +123,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 } else if (social_code.equals("K")) {
 
                 }
-            }else{
+            } else {
                 CommonConn conn = new CommonConn(MainActivity.this, "login.me");
                 conn.addParams("email", email);
-                conn.addParams("pw",pw);
+                conn.addParams("pw", pw);
                 conn.executeConn_no_dialog(new CommonConn.ConnCallback() {
                     @Override
                     public void onResult(boolean isResult, String data) {
-                        if(isResult){
+                        if (isResult) {
 
-                            if(data == null){
+                            if (data == null) {
                                 Toast.makeText(MainActivity.this, "회원정보가 일치하지 않습니다.", Toast.LENGTH_SHORT).show();
-                            }else{
+                            } else {
                                 Toast.makeText(MainActivity.this, "로그인 성공", Toast.LENGTH_SHORT).show();
                                 CommonVal.userInfo = new Gson().fromJson(data, MemberVO.class);
 
 
                             }
-                        }else {
-                            Toast.makeText(MainActivity.this ,"로그인실패", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(MainActivity.this, "로그인실패", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -161,7 +187,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                       menuView.setVisibility(View.VISIBLE);
+                        menuView.setVisibility(View.VISIBLE);
 
                     }
                 }, 500); //딜레이 타임 조절
@@ -176,18 +202,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
         //하단 circle menu
 
-        //테스트
-        menuView1 = findViewById(R.id.circle_menu1);
-        menuView1.setMainMenu(Color.parseColor("#123456") ,R.drawable.barcode, R.drawable.barcode)
-                    .addSubMenu(Color.parseColor("#123456") ,R.drawable.mail)
-                    .addSubMenu(Color.parseColor("#123456") ,R.drawable.mail)
-                    .addSubMenu(Color.parseColor("#123456") ,R.drawable.mail);
-
-
         menuView = findViewById(R.id.circle_menu);
-        menuView.setEventListener(new CircleMenuView.EventListener(){
+
+        menuView.setEventListener(new CircleMenuView.EventListener() {
             @Override
             public void onMenuOpenAnimationStart(@NonNull CircleMenuView view) {
+
                 Log.d("D", "onMenuOpenAnimationStart: ");
             }
 
@@ -215,28 +235,39 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             @Override
             public void onButtonClickAnimationEnd(@NonNull CircleMenuView view, int index) {
-                if(index==0){
+                if (index == 0) {
                     Intent intent = new Intent(MainActivity.this, BarcodeActivity.class);
                     startActivity(intent);
-                }else if(index ==1){
 
-                }else if(index ==2){
-
-                }else if(index ==3){
+                } else if (index == 1) {
+                    Intent intent = new Intent(MainActivity.this, NewsActivity.class);
+                    startActivity(intent);
+                } else if (index == 2) {
+                    if (CommonVal.userInfo != null) {
+                        Intent intent = new Intent(MainActivity.this, BookmarkedPostActivity.class);
+                        startActivity(intent);
+                    } else {
+                        Intent intent = new Intent(MainActivity.this, NotFoundAlertActivity.class);
+                        intent.putExtra("intent_type", "write");
+                        startActivity(intent);
+                    }
+                } else if (index == 3) {
                     Intent intent = new Intent(MainActivity.this, SearchActivity.class);
                     startActivity(intent);
 
-                }else if(index ==4){
-                    if(CommonVal.userInfo != null){
+                } else if (index == 4) {
+                    if (CommonVal.userInfo != null) {
                         Intent intent = new Intent(MainActivity.this, MypageActivity.class);
                         startActivity(intent);
 
-                    }else{
+                    } else {
                         Intent intent = new Intent(MainActivity.this, NotFoundAlertActivity.class);
                         intent.putExtra("intent_type", "write");
                         startActivity(intent);
                     }
                 }
+                overridePendingTransition(0, 0);
+
                 cdv_plus.setVisibility(View.VISIBLE);
                 menuView.setVisibility(View.GONE);
             }
@@ -244,16 +275,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
 
 
-
-
-
-
-
-
         //val <=  var
         //interface
         //메인 탭레이아웃--------------------------------------------------------------------
-        tabs =findViewById(R.id.tabs);
+        tabs = findViewById(R.id.tabs);
         tabs.addTab(tabs.newTab().setText("홈").setTag(1));
         tabs.addTab(tabs.newTab().setText("나의설명서").setTag(2));
         tabs.addTab(tabs.newTab().setText("최근").setTag(3));
@@ -265,17 +290,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                if(tab.getPosition()==0){
+                if (tab.getPosition() == 0) {
                     mtFragment = new Main_Tab_HomeFragment();
                     getSupportFragmentManager().beginTransaction().replace(R.id.container_main, mtFragment).commit();
 
                     return;
 
-                }else if(tab.getPosition()==1){
+                } else if (tab.getPosition() == 1) {
                     getSupportFragmentManager().beginTransaction().replace(R.id.container_main, new Main_Tab_MyManaulFragment()).commit();
 
 
-                }else{
+                } else {
                     getSupportFragmentManager().beginTransaction().replace(R.id.container_main, new Main_Tab_RecentFragment()).commit();
                 }
                 mtFragment.stopThread();
@@ -324,18 +349,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         conn.executeConn(new CommonConn.ConnCallback() {
             @Override
             public void onResult(boolean isResult, String data) {
-                if(isResult){
-                    ArrayList<CategorySearchVO> list = new Gson().fromJson(data,new TypeToken<ArrayList<CategorySearchVO>>() {}.getType());
+                if (isResult) {
+                    ArrayList<CategorySearchVO> list = new Gson().fromJson(data, new TypeToken<ArrayList<CategorySearchVO>>() {
+                    }.getType());
                     ManySearchAdapter adapter = new ManySearchAdapter(getLayoutInflater(), list, MainActivity.this);
-                    RecyclerView.LayoutManager manager = new LinearLayoutManager(MainActivity.this, RecyclerView.HORIZONTAL , false);
+                    RecyclerView.LayoutManager manager = new LinearLayoutManager(MainActivity.this, RecyclerView.HORIZONTAL, false);
                     recv_main_manysearch.setLayoutManager(manager);
                     recv_main_manysearch.setAdapter(adapter);
                 }
             }
         });
-
-
-
 
 
         //마켓
@@ -344,7 +367,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, MarketActivity.class);
-                intent.putExtra("item_num",1);
+                intent.putExtra("item_num", 1);
                 startActivity(intent);
             }
         });
@@ -353,7 +376,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, MarketActivity.class);
-                intent.putExtra("item_num",2);
+                intent.putExtra("item_num", 2);
                 startActivity(intent);
             }
         });
@@ -372,25 +395,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-       // ln_ctg_gajeon, ln_ctg_computer, ln_ctg_mobile, ln_ctg_car, ln_ctg_gagu, ln_ctg_adong, ln_ctg_samu, ln_ctg_leisure;
+        // ln_ctg_gajeon, ln_ctg_computer, ln_ctg_mobile, ln_ctg_car, ln_ctg_gagu, ln_ctg_adong, ln_ctg_samu, ln_ctg_leisure;
 
         Intent intent = new Intent(MainActivity.this, CategoryActivity.class);
 
-        if(v.getId() == R.id.ln_ctg_gajeon){
+        if (v.getId() == R.id.ln_ctg_gajeon) {
             intent.putExtra("category", 1);
-        }else if(v.getId() == R.id.ln_ctg_computer){
+        } else if (v.getId() == R.id.ln_ctg_computer) {
             intent.putExtra("category", 2);
-        }else if(v.getId() == R.id.ln_ctg_mobile){
+        } else if (v.getId() == R.id.ln_ctg_mobile) {
             intent.putExtra("category", 3);
-        }else if(v.getId() == R.id.ln_ctg_car){
+        } else if (v.getId() == R.id.ln_ctg_car) {
             intent.putExtra("category", 4);
-        }else if(v.getId() == R.id.ln_ctg_gagu){
+        } else if (v.getId() == R.id.ln_ctg_gagu) {
             intent.putExtra("category", 5);
-        }else if(v.getId() == R.id.ln_ctg_adong){
+        } else if (v.getId() == R.id.ln_ctg_adong) {
             intent.putExtra("category", 6);
-        }else if(v.getId() == R.id.ln_ctg_samu){
+        } else if (v.getId() == R.id.ln_ctg_samu) {
             intent.putExtra("category", 7);
-        }else if(v.getId() == R.id.ln_ctg_leisure){
+        } else if (v.getId() == R.id.ln_ctg_leisure) {
             intent.putExtra("category", 8);
         }
         startActivity(intent);
@@ -399,11 +422,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onResume() {
         super.onResume();
+//        tabs.getTabAt(1).select();
+//        tabs.getTabAt(2).select();
         tabs.getTabAt(0).select();
-        scrollView.smoothScrollTo(0,0);
-        recv_main_manysearch.scrollToPosition(0 );
+        news_alarm();
+
+        scrollView.smoothScrollTo(0, 0);
+        recv_main_manysearch.scrollToPosition(0);
 
     }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -423,7 +451,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     String personId = acct.getId();
                     Uri personPhoto = acct.getPhotoUrl();
                     /*구글 로그인 정보 DB에 저장*/
-                    CommonConn conn = new CommonConn(MainActivity.this,"socialinfo.me");
+                    CommonConn conn = new CommonConn(MainActivity.this, "socialinfo.me");
 
                     MemberVO vo = new MemberVO();
                     vo.setSocial_code("G");
@@ -435,8 +463,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     conn.executeConn_no_dialog(new CommonConn.ConnCallback() {
                         @Override
                         public void onResult(boolean isResult, String data) {
-                            Log.d("Result", "onResult: "+ isResult);
-                            MemberVO vo =  new Gson().fromJson(data, MemberVO.class);
+                            Log.d("Result", "onResult: " + isResult);
+                            MemberVO vo = new Gson().fromJson(data, MemberVO.class);
                             CommonVal.userInfo = vo;
                             saveLoginInfo();
 
@@ -449,6 +477,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         }
     }
+
     //자동로그인 메소드
     public void saveLoginInfo() {
         SharedPreferences preferences = getSharedPreferences("login", MODE_PRIVATE);
@@ -457,6 +486,123 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         editor.putString("pw", CommonVal.userInfo.getPw());
         editor.putString("social_code", CommonVal.userInfo.getSocial_code());
         editor.apply();
+    }
+
+    //알림설정 메소드
+    public void news_alarm() {
+
+        // 알림 종류 : 공지사항, 내가쓴글에 답글, 내가요청한 설명서의 처리현황
+        // 디비에서 회원 email에 관련된 내용의 count가 기존과 다를 경우 알림이 뜨도록해본다
+        //테이블은 notice, board, req_board
+//        CommonConn while_conn = new CommonConn(MainActivity.this, "alarm");
+//        while_conn.addParams("email", CommonVal.userInfo);
+//        while_conn.executeConn(new CommonConn.ConnCallback() {
+//            @Override
+//            public void onResult(boolean isResult, String data) {
+//
+//            }
+//        });
+
+        //접속 할 때 달린 댓글수 조회
+        if (CommonVal.userInfo != null) {
+            if (reply_cnt_before != null) { //최근에 조회한 댓글수 이력이 있을경우
+
+                CommonConn reply_cnt_conn = new CommonConn(MainActivity.this, "reply_cnt");
+                reply_cnt_conn.addParams("email", CommonVal.userInfo.getEmail());
+                reply_cnt_conn.executeConn_no_dialog(new CommonConn.ConnCallback() {
+                    @Override
+                    public void onResult(boolean isResult, String data) {
+                        reply_cnt_after = data;
+                        if(!reply_cnt_before.equals(reply_cnt_after)){  //추가된 글이 있다면
+                            conn_check = true;  //한번더 연결해서 변경된 댓글정보 조회하게하기
+
+                        }
+                    }
+                });
+                if(conn_check){
+                    //해당 댓글정보를 조회한다
+                    CommonConn reply_info = new CommonConn(MainActivity.this, "reply_info");
+                    reply_info.addParams("email", CommonVal.userInfo.getEmail());
+                    reply_info.executeConn_no_dialog(new CommonConn.ConnCallback() {
+                        @Override
+                        public void onResult(boolean isResult, String data) {
+                            NewsVO newsVO = new NewsVO();
+                            ReplyVO replyVO = new Gson().fromJson(data,ReplyVO.class);
+
+                            newsVO.setReply_vo(replyVO);
+                            CommonVal.alarm_list.add(newsVO);
+                            reply_cnt_before = reply_cnt_after;
+                            conn_check = false;
+                            push_alarm();
+                        }
+                    });
+                }
+            }else {
+                CommonConn reply_cnt_conn = new CommonConn(MainActivity.this, "reply_cnt");
+                reply_cnt_conn.addParams("email", CommonVal.userInfo.getEmail());
+                reply_cnt_conn.executeConn_no_dialog(new CommonConn.ConnCallback() {
+                    @Override
+                    public void onResult(boolean isResult, String data) {
+                        reply_cnt_before = data;
+
+                    }
+                });
+            }
+//            if(notice_cnt_before != null){
+//
+//            }
+
+
+        }
+    }
+
+    public void push_alarm(){
+
+        Bitmap largeIcon = BitmapFactory.decodeResource(getResources(), R.drawable.logo_navy);
+        Bitmap smallIcon = BitmapFactory.decodeResource(getResources(), R.drawable.logo_navy);
+
+        String description = "알림";
+        String CHANNEL_ID = "알림";
+        String name1 = "알림";
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name1, importance);
+            channel.setDescription(description);
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+
+        PendingIntent pendingIntent =
+                PendingIntent.getActivity(MainActivity.this, 4
+                        , new Intent(getApplicationContext()
+                                , MainActivity.class), Build.VERSION.SDK_INT >= Build.VERSION_CODES.M ? PendingIntent.FLAG_IMMUTABLE : PendingIntent.FLAG_UPDATE_CURRENT);
+        //기기버전 따라 푸시알람 FLAG 설정 따로 해줘야함
+
+
+        NotificationCompat.Builder builder =
+                null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+            builder = new NotificationCompat.Builder(getApplicationContext(), CHANNEL_ID)
+                    .setSmallIcon(IconCompat.createWithBitmap(smallIcon))
+                    .setContentTitle("나의설명서")
+                    .setContentText(CommonVal.alarm_list.get(CommonVal.alarm_list.size()).getReply_vo().getEmail() + "님이 댓글을 달았습니다\n" + CommonVal.alarm_list.get(CommonVal.alarm_list.size()).getReply_vo().getContent()+"    방금 전")
+                    .setDefaults(Notification.DEFAULT_VIBRATE)
+                    .setStyle(new NotificationCompat.InboxStyle()
+                            .addLine(CommonVal.alarm_list.get(CommonVal.alarm_list.size()).getReply_vo().getEmail() + "님이 댓글을 달았습니다    방금 전")
+                            .addLine(CommonVal.alarm_list.get(CommonVal.alarm_list.size()).getReply_vo().getContent()))
+                    .setLargeIcon(largeIcon)
+                    .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                    .setAutoCancel(true)
+
+                    .setContentIntent(pendingIntent);
+        }
+
+        NotificationManager manager = (NotificationManager) MainActivity.this.getSystemService(MainActivity.this.NOTIFICATION_SERVICE);
+        if (manager != null)
+
+            manager.notify(1, builder.build());
     }
 }
 

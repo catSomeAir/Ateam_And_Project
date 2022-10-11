@@ -935,11 +935,16 @@
                 app:button_icons="@array/icons"
                 app:button_colors="@array/colors"
                 app:icon_color="#e1e1e1" />
+<!--
+    <com.imangazaliev.circlemenu.CircleMenu
+            android:id="@+id/menuView1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:buttonColors="@array/colors"
+            app:iconsColor="#123456"
+            app:buttonIcons="@array/icons"/>-->
 
-<com.hitomi.cmlibrary.CircleMenu
-    android:id="@+id/circle_menu1"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"/>
+
 
             <Space
                 android:layout_width="0dp"

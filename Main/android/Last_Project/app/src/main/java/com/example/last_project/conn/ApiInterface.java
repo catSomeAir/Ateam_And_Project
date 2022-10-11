@@ -37,8 +37,12 @@ public interface ApiInterface {
     Call<String> sendFile(@Part MultipartBody.Part file);
 
 
+    //VO + file파일하나
+    @POST("edit_profile")//1. 멀티파트 어노테이션
+    @Multipart      //2. Part어노테이션 파라메터  MultipartBody.Par  -> fileMap에 접속되고 추가 (파라메터)
+    Call<String> sendOneFile_VO(@Part("vo") RequestBody data ,@Part MultipartBody.Part file);
 
-    //VO + file 동시에 보내기
+    //VO + files 동시에 보내기
     @POST("request_manual")
     @Multipart
     Call<String> sendFile_VO(@Part("vo") RequestBody data , @Part List<MultipartBody.Part> files); //@FieldMap 접속 되고 추가  파일만 보낼때

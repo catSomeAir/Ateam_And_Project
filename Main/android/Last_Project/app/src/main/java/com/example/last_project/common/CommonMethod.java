@@ -20,6 +20,7 @@ import android.widget.TextView;
 import org.json.JSONArray;
 import org.json.JSONException;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class CommonMethod {
@@ -174,5 +175,16 @@ public class CommonMethod {
         }
         return urls;
     }
+
+    //천단위 콤마찍기
+    public static String makeStringComma(String str) {    // 천단위 콤마설정.
+        if (str.length() == 0) {
+            return "";
+        }
+        long value = Long.parseLong(str);
+        DecimalFormat format = new DecimalFormat("###,###");
+        return format.format(value);
+    }
+
 
 }

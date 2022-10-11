@@ -82,6 +82,8 @@
             android:orientation="horizontal">
 
             <EditText
+                android:textCursorDrawable="@drawable/shape_edittext"
+                android:theme="@style/EditTextStyle"
                 android:id="@+id/login_edt_id"
                 android:singleLine="true"
                 android:layout_width="60dp"
@@ -110,6 +112,8 @@
 
 
             <EditText
+                android:textCursorDrawable="@drawable/shape_edittext"
+                android:theme="@style/EditTextStyle"
                 android:id="@+id/login_edt_pw"
                 android:singleLine="true"
                 android:layout_width="0dp"

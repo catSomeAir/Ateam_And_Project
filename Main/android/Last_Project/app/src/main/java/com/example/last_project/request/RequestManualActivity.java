@@ -291,7 +291,9 @@ public class RequestManualActivity extends AppCompatActivity {
                 if (empty_alert()) {
                     Intent intent = new Intent(RequestManualActivity.this, RequestResultActivity.class);
                     startActivity(intent);
+                    overridePendingTransition(0,0);
                     finish();
+                    overridePendingTransition(0,0);
 
                 }
             }

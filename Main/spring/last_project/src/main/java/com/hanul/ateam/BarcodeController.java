@@ -17,20 +17,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-
-
-import barcord.BarcordServiceImpl;
-import barcord.BarcordVO;
+import barcode.BarcodeServiceImpl;
+import barcode.BarcodeVO;
 
 
 @RestController
-public class BarcordController {
-	@Autowired private BarcordServiceImpl service;
+public class BarcodeController {
+	@Autowired private BarcodeServiceImpl service;
 	
-	@ResponseBody @RequestMapping(value = "/barcord", produces = "text/html;charset=utf-8")
-	public String search_name(String barcord_number) {
+	@ResponseBody @RequestMapping(value = "/barcode", produces = "text/html;charset=utf-8")
+	public String search_name(String barcode_number) {
 		String result = "";
-		String URL = "http://www.gs1kr.org//service/service/appl/12_findBarcode.asp?searchGtin="+barcord_number;
+		String URL = "http://www.gs1kr.org//service/service/appl/12_findBarcode.asp?searchGtin="+barcode_number;
 			Document doc;
 			try {
 			//connect해주는거라 화면상에서 띄웠을때 오류가 발생할수 있으니 필수로 작성해주자! 
@@ -73,10 +71,10 @@ public class BarcordController {
 	}
 	
 	
-//	@ResponseBody @RequestMapping(value = "/barcord1", produces = "text/html;charset=utf-8")
-//	public String search_name1(String barcord_number) {
+//	@ResponseBody @RequestMapping(value = "/barcode1", produces = "text/html;charset=utf-8")
+//	public String search_name1(String barcode_number) {
 //		String URL = "http://www.gs1kr.org//service/service/appl/12_findBarcode.asp?searchGtin=8801234560016";
-////	//+barcord_number; //원하는 url 
+////	//+barcode_number; //원하는 url 
 ////		System.out.println(URL);
 ////		
 ////		JSONArray jarr = new JSONArray(URL);

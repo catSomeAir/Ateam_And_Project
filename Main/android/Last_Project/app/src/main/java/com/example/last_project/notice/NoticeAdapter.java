@@ -14,9 +14,9 @@ import java.util.ArrayList;
 
 public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.ViewHolder> {
     LayoutInflater inflater;
-    ArrayList<NoticeDTO> list;
+    ArrayList<NoticeVO> list;
 
-    public NoticeAdapter(LayoutInflater inflater, ArrayList<NoticeDTO> list) {
+    public NoticeAdapter(LayoutInflater inflater, ArrayList<NoticeVO> list) {
         this.inflater = inflater;
         this.list = list;
     }

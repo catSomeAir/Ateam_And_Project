@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="news">
+
+<select id="reply_cnt" resultType="String">
+SELECT count(*)
+FROM  (SELECT    *
+      FROM      board 
+      WHERE     email like #{email}) a INNER JOIN  reply b
+ON    a.board_id = b.board_id
+
+</select>
+
+<select id="reply_info" resultType="board.ReplyVO">
+SELECT c.*
+FROM    (SELECT b.*
+        FROM  (SELECT    *
+              FROM      board 
+              WHERE     email like #{email}) a INNER JOIN  reply b
+        ON    a.board_id = b.board_id
+        ORDER BY b.rep_no DESC) c
+WHERE   rownum =1
+</select>
+</mapper>

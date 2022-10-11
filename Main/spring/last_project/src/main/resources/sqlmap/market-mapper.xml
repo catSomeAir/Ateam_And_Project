@@ -9,4 +9,10 @@ ON U.EMAIL = G.EMAIL
 WHERE U.EMAIL = #{EMAIL}
 </select>
 
+<update id="gift_insert">
+	UPDATE userinfo
+	SET	point = #{point}
+	WHERE email = #{email}
+</update>
+
 </mapper>

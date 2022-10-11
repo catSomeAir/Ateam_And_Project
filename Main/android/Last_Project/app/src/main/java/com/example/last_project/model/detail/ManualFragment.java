@@ -3,13 +3,15 @@ package com.example.last_project.model.detail;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -24,17 +26,25 @@ import com.example.last_project.R;
 import com.example.last_project.WebviewActivity;
 import com.example.last_project.common.CommonVal;
 import com.example.last_project.conn.CommonConn;
+import com.example.last_project.model.detail.manual.ManualVO;
 import com.example.last_project.search.category_search.CategorySearchVO;
 import com.github.barteksc.pdfviewer.PDFView;
+import com.github.barteksc.pdfviewer.listener.OnErrorListener;
 import com.github.barteksc.pdfviewer.listener.OnLoadCompleteListener;
 import com.github.barteksc.pdfviewer.listener.OnPageChangeListener;
-import com.github.barteksc.pdfviewer.scroll.DefaultScrollHandle;
+import com.google.android.material.progressindicator.CircularProgressIndicator;
 import com.google.android.material.tabs.TabLayout;
 import com.shockwave.pdfium.PdfDocument;
 
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.List;
 
 public class ManualFragment extends Fragment implements OnPageChangeListener, OnLoadCompleteListener {
+    CircularProgressIndicator progress_circular;
 
     GestureDetector detector;
     Context context;
@@ -69,12 +79,17 @@ public class ManualFragment extends Fragment implements OnPageChangeListener, On
     //디비에서 조회한 찜하기 상태
     String help = "";
 
+    //설명서
+    WebView webView_manual;
+    WebViewClient webViewClient;
+    ManualVO manual_info;
     public ManualFragment() {
     }
 
-    public ManualFragment(Context context, CategorySearchVO model_info) {
+    public ManualFragment(Context context, CategorySearchVO model_info, ManualVO manual_info) {
         this.context = context;
         this.model_info = model_info;
+        this.manual_info = manual_info;
     }
 
     @Override
@@ -117,6 +132,15 @@ public class ManualFragment extends Fragment implements OnPageChangeListener, On
 //
 //            }
 //        });
+//        webViewClient = new WebViewClient();
+//        webView_manual = v.findViewById(R.id.webView_manual);
+//
+//        webView_manual.setWebViewClient(webViewClient);
+//        webView_manual.getSettings().setJavaScriptEnabled(true);
+////        webView_manual.loadUrl("http://www.naver.com");
+//        webView_manual.loadUrl("http://121.147.215.12:3302/pj/upload/manaulpdf/test.pdf");
+
+        //http://121.147.215.12:3302/pj/model_info?model_code=T18MTH
 
         //전체 스크롤뷰
         scrollView = v.findViewById(R.id.scrollView);
@@ -149,7 +173,12 @@ public class ManualFragment extends Fragment implements OnPageChangeListener, On
         });
 
         pdfView = (PDFView) v.findViewById(R.id.pdfView);
-        displayFromAsset(SAMPLE_FILE);
+        progress_circular = v.findViewById(R.id.progress_circular);
+        progress_circular.setVisibility(View.VISIBLE);
+//        new loadpdffromUrl().execute("https://downloadcenter.samsung.com/content/UM/202203/20220303101157093/OSNATSCB-3.2.0_EM_Oscar_Pontus_Nike_Kant-SU2e_KOR_KOR_220216.0.pdf");
+        new loadpdffromUrl().execute(manual_info.getFilepath());
+
+//        displayFromAsset(SAMPLE_FILE);
 
         //상품의견, AS센터 -> 탭선택되도록하기
         ln_model_detail_writing = v.findViewById(R.id.ln_model_detail_writing);
@@ -251,76 +280,76 @@ public class ManualFragment extends Fragment implements OnPageChangeListener, On
         return v;
     }
 
-    private void displayFromAsset(String assetFileName) {
-        pdfFileName = assetFileName;
-
-        pdfView.fromAsset(SAMPLE_FILE)
-                .defaultPage(pageNumber)
-                .enableSwipe(true)
-                .fitEachPage(true)
-                .pageFling(true)
-                .pageSnap(true)
-                .autoSpacing(true)
-                .swipeHorizontal(true)
-                .onPageChange(this)
-                .enableAnnotationRendering(false)
-                .onLoad(this)
-                .scrollHandle(new DefaultScrollHandle(getContext()))
-                .load();
-
-        if (pdfView.isSwipeEnabled()) {
-            pdfView.setSwipeEnabled(true);
-            scrollView.requestDisallowInterceptTouchEvent(true);
-        }
-
-//        pdfView.setOnTouchListener(new View.OnTouchListener() {
+//    private void displayFromAsset(String assetFileName) {
+//        pdfFileName = assetFileName;
+//
+//        pdfView.fromAsset(SAMPLE_FILE)
+//                .defaultPage(pageNumber)
+//                .enableSwipe(true)
+//                .fitEachPage(true)
+//                .pageFling(true)
+//                .pageSnap(true)
+//                .autoSpacing(true)
+//                .swipeHorizontal(true)
+//                .onPageChange(this)
+//                .enableAnnotationRendering(false)
+//                .onLoad(this)
+//                .scrollHandle(new DefaultScrollHandle(getContext()))
+//                .load();
+//
+//        if (pdfView.isSwipeEnabled()) {
+//            pdfView.setSwipeEnabled(true);
+//            scrollView.requestDisallowInterceptTouchEvent(true);
+//        }
+//
+////        pdfView.setOnTouchListener(new View.OnTouchListener() {
+////
+////            @Override
+////            public boolean onTouch(View v, MotionEvent event) {
+////
+////                if(MotionEvent.ACTION_DOWN == event.getAction()){
+////                    Log.d("터치", "onTouch: 다운 ");
+////                    scrollView.requestDisallowInterceptTouchEvent(true);
+////                }else{
+////                    Log.d("터치", "onTouch: 그외 ");
+//////                    scrollView.requestDisallowInterceptTouchEvent(true);
+////
+////                }
+////                return true;
+////            }
+////        });
+//        detector = new GestureDetector(getContext(), new GestureDetector.OnGestureListener() {
+//            @Override
+//            public boolean onDown(MotionEvent e) {
+//                return false;
+//            }
 //
 //            @Override
-//            public boolean onTouch(View v, MotionEvent event) {
+//            public void onShowPress(MotionEvent e) {
 //
-//                if(MotionEvent.ACTION_DOWN == event.getAction()){
-//                    Log.d("터치", "onTouch: 다운 ");
-//                    scrollView.requestDisallowInterceptTouchEvent(true);
-//                }else{
-//                    Log.d("터치", "onTouch: 그외 ");
-////                    scrollView.requestDisallowInterceptTouchEvent(true);
+//            }
 //
-//                }
-//                return true;
+//            @Override
+//            public boolean onSingleTapUp(MotionEvent e) {
+//                return false;
+//            }
+//
+//            @Override
+//            public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
+//                return false;
+//            }
+//
+//            @Override
+//            public void onLongPress(MotionEvent e) {
+//
+//            }
+//
+//            @Override
+//            public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+//                return false;
 //            }
 //        });
-        detector = new GestureDetector(getContext(), new GestureDetector.OnGestureListener() {
-            @Override
-            public boolean onDown(MotionEvent e) {
-                return false;
-            }
-
-            @Override
-            public void onShowPress(MotionEvent e) {
-
-            }
-
-            @Override
-            public boolean onSingleTapUp(MotionEvent e) {
-                return false;
-            }
-
-            @Override
-            public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
-                return false;
-            }
-
-            @Override
-            public void onLongPress(MotionEvent e) {
-
-            }
-
-            @Override
-            public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-                return false;
-            }
-        });
-    }
+//    }
 
 
     @Override
@@ -407,5 +436,54 @@ public class ManualFragment extends Fragment implements OnPageChangeListener, On
         }
     }
 
+
+
+    public class loadpdffromUrl extends AsyncTask<String, Void, InputStream> implements OnLoadCompleteListener, OnErrorListener {
+        @Override
+        protected InputStream doInBackground(String... strings) {
+            //We use InputStream to get PDF.
+            InputStream inputStream = null;
+            try {
+                URL url = new URL(strings[0]);
+                HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+                if (urlConnection.getResponseCode() == 200) {
+                    // if response is success. we are getting input stream from url and storing it in our variable.
+                    inputStream = new BufferedInputStream(urlConnection.getInputStream());
+                }
+            } catch (IOException e) {
+                //method to handle errors.
+                e.printStackTrace();
+                return null;
+            }
+            return inputStream;
+        }
+        @Override
+        protected void onPostExecute(InputStream inputStream) {
+            //after the executing async task we load pdf in to pdfview.
+            pdfView.fromStream(inputStream)
+                    .defaultPage(pageNumber)
+                    .enableSwipe(true)
+                    .fitEachPage(true)
+                    .pageFling(true)
+                    .pageSnap(true)
+                    .autoSpacing(true)
+                    .swipeHorizontal(true)
+                    .onPageChange(ManualFragment.this::onPageChanged)
+                    .enableAnnotationRendering(false)
+                    .onLoad(this)
+                    .onError(this)
+                    .load();
+
+        }
+        @Override
+        public void loadComplete(int nbPages) {
+            progress_circular.setVisibility(View.GONE);
+        }
+        @Override
+        public void onError(Throwable t) {
+            progress_circular.setVisibility(View.GONE);
+            Toast.makeText(getContext(),"Error:" +t.getMessage(),Toast.LENGTH_SHORT).show();
+        }
+    }
 
 }

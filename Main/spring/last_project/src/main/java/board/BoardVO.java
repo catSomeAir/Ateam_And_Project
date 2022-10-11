@@ -3,7 +3,25 @@ package board;
 import java.io.Serializable;
 
 public class BoardVO implements Serializable{
-	private String board_id, email, title, content, writedate, help_cnt, model_code, cmt_code;
+	private String board_id, email, title, content, writedate, help_cnt, model_code, cmt_code, filepath, social_code;
+
+	
+	
+	public String getSocial_code() {
+		return social_code;
+	}
+
+	public void setSocial_code(String social_code) {
+		this.social_code = social_code;
+	}
+
+	public String getFilepath() {
+		return filepath;
+	}
+
+	public void setFilepath(String filepath) {
+		this.filepath = filepath;
+	}
 
 	public String getBoard_id() {
 		return board_id;
