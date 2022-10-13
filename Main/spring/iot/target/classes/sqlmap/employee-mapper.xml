@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="employee">
+ <select id="list" resultType='hr.EmployeeVO'>
+  select e.employee_id, e.first_name|| last_name name, d.department_name, j.job_title, e.hire_date
+from employees e left outer join departments d
+on e.department_id =d.department_id
+left outer join jobs j
+on e.job_id = j.job_id
+  </select>
+<select id="job_list" resultType="hr.JobVO">
+select * from jobs
+</select>
+  <!-- 회사의 전체부서목록조회 -->
+<select id='department_list' resultType='hr.DepartmentVO'>
+select department_id, department_name
+from departments
+order by department_name
+</select>
+
+
+<!-- 특정사번의 사원정보 삭제 -->
+<delete id='delete'>
+delete from employees where employee_id=#{employee_id}
+</delete>
+
+<!-- 특정사번의 사원정보조회 -->
+<select id='detail' resultType='hr.EmployeeVO'>
+select e.*, job_title, department_name 
+from employees e inner join jobs j on j.job_id=e.job_id
+				 left outer join departments d on d.department_id=e.department_id
+where employee_id = #{employee_id}
+</select>
+
+<!-- 특정부서에 속한 사원목록조회 -->
+<select id="department_employee_list" resultType='hr.EmployeeVO'>
+select e.*, department_name, job_title, last_name|| ' ' || last_name name
+from employees e left outer join departments d on d.department_id=e.department_id
+	 inner join jobs j on j.job_id = e.job_id
+<if test='department_id==0'>
+where e.department_id is null
+</if>	 
+<if test='department_id!=0'>
+where e.department_id = #{department_id}
+</if>	 
+order by employee_id	 
+</select>
+
+
+<!-- 사원이 속한 부서목록조회 -->
+<select id='employee_department_list' resultType='hr.DepartmentVO'>
+select distinct department_id
+		, nvl(department_name, '소속없음') department_name
+from employees e left outer join departments d using(department_id)
+</select>
+ 
+<!--  사원정보 변경저장처리 -->
+<update id="update">
+update employees
+set last_name=#{last_name}, first_name=#{first_name},
+	<if test='department_id==-1'>department_id = null</if>
+	<if test='department_id!=-1'>department_id =#{department_id}</if>
+	
+	,job_id = #{job_id}, email=#{email}, phone_number = #{phone_number}
+	,salary=#{salary}, hire_date=#{hire_date}
+where employee_id =#{employee_id}
+</update>
+<!-- 신입사원등록 -->
+<insert id="insert">
+ insert into employees (employee_id, first_name,last_name,department_id,job_id,manager_id,email,phone_number,salary,hire_date)
+  values (employees_seq.nextval, #{first_name},#{last_name},#{job_id},
+  <choose>
+  	<when test="manager_id==-1">null</when>
+  	<otherwise> #{manager_id}</otherwise>
+  </choose>
+ ,<choose>
+ 	<when test="department_id==-1">null</when>
+ 	<otherwise>#{department_id}</otherwise>
+ </choose>,
+ #{email},#{phone_number},#{salary},#{hire_date})
+</insert>
+  
+ </mapper>

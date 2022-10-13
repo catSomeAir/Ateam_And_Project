@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+.flex{display:flex;}
+.flex.wrap{flex-wrap:wrap;}
+.flex.stretch{align-items: stretch;}
+.flex.j_center{justify-content: center;}
+.flex.between{justify-content: space-between;}
+.flex.a_center{align-items: center;}
+.flex.column{flex-flow: column;}
+.flex .fill{flex:1;}
+.flex.gap10{gap:10px;}
+.flex.gap15{gap:15px;}
+.flex.gap20{gap:20px;}
+@media only screen and (max-width:1023px) {
+    .flex.gap10{gap:1vw;}
+    .flex.gap15{gap:1.5vw;}
+    .flex.gap20{gap:2vw;}
+    .flex.column_1023{flex-flow: column;}
+}
+@media only screen and (max-width:639px) {
+    .flex.column_639{flex-flow: column;}
+}
+
+/* image crop */
+.img_crop{ display:inline-block; position:relative; width:100%; margin-bottom:-5px; } /*모듈별 max-width 지정*/
+.img_crop a{display:block; position:relative; width:100%; } /*모듈별 이미지 높이 비율을 padding-top으로 지정*/
+.img_crop a > b{position:absolute; top:0; left:0; width:100%; height:100%;}
+.edit_mode .img_crop:hover { z-index:400; }
+.edit_mode .img_crop a > b:hover{outline:none;}
+.edit_mode .img_crop b:hover::after{ content:''; display:inline-block; position:absolute; top:0; left:0; width:100%; height:100%; border:2px #3a7fd0 solid; z-index:99; pointer-events:none; }
+.edit_mode .img_crop.circle b:hover::after{border-radius:50%;}
+.img_crop img{width:100%; height:100%; object-fit:cover; position:absolute; left:0; }
+.img_crop.pt100 a{padding-top:100%;} 
+
+/* 배너전체영역 링크삽입 (전체 영역 박스에 .positioin 추가)
+ * <a href='#none' data-link-type='' data-cutting-apply='no' class='banner_link'><b><img src='https://storage.clickn.co.kr/images/logo_blank.png' /></b></a>
+ */
+.banner_link{position:absolute; top:0; left:0; right:0; bottom:0;}
+.banner_link b,
+.banner_link img{display:inline-block; width:100%; height:100%;}
+.banner_link .image_edit{display:none;}
+
+/* 에디터 텍스트영역 모바일 줄바꿈 */
+@media only screen and (max-width:1023px) {
+    .paragraph_1023 > p{display:inline; margin-right:.3em;}
+}
+@media only screen and (max-width:639px) {
+    .paragraph_639 > p{display:inline; margin-right:.3em;}
+}
+@media only screen and (max-width:499px) {
+    .paragraph_499 > p{display:inline; margin-right:.3em;}
+}

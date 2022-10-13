@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+[data-content-type1='line'] .line { font-size:0; text-align:center; }
+
+[data-content-type2='line-type-B'] .line svg {fill:none; stroke:#000000; display:inline-block; }
+[data-content-type2='line-type-C'] .line svg {fill:#000000; stroke:none; display:inline-block; }
+
+[data-content-type2='line-type-D'] .line { background-position:50% 50%; background-repeat:repeat-x; }
+
+
+[data-module-parents='line_A001'] .line { border-top-width:1px; border-top-style:solid; }
+[data-module-parents='line_A002'] .line { border-top-width:1px; border-top-style:dashed; }
+[data-module-parents='line_A003'] .line { border-top-width:2px; border-top-style:solid; }
+[data-module-parents='line_A004'] .line { border-top-width:2px; border-top-style:dashed; }
+[data-module-parents='line_A005'] .line { border-top-width:4px; border-top-style:solid; }
+[data-module-parents='line_A006'] .line { border-top-width:4px; border-top-style:dashed; }
+[data-module-parents='line_A007'] .line { border-top-width:8px; border-top-style:solid; }
+[data-module-parents='line_A008'] .line { border-top-width:8px; border-top-style:dashed; }
+
+[data-module-parents='line_B001'] .line svg { width:57px; height:57px; }
+[data-module-parents='line_B002'] .line svg { width:65.52px; height:48.86px; }
+[data-module-parents='line_B003'] .line svg { width:323px; height:21.36px; }
+[data-module-parents='line_B004'] .line svg { width:66.12px; height:14.36px; }
+[data-module-parents='line_B005'] .line svg { width:306px; height:9.05px; }
+[data-module-parents='line_B006'] .line svg { width:261.11px; height:9.27px; }
+[data-module-parents='line_B007'] .line svg { width:65.52px; height:48.86px; }
+[data-module-parents='line_B008'] .line svg { width:249.04px; height:9.47px; }
+[data-module-parents='line_B009'] .line svg { width:321.08px; height:9.07px; }
+[data-module-parents='line_B010'] .line svg { width:65.41px; height:48.68px; }
+[data-module-parents='line_B011'] .line svg { width:309.04px; height:9.27px; }
+[data-module-parents='line_B012'] .line svg { width:561.71px; height:14.71px; }
+[data-module-parents='line_B013'] .line svg { width:299px; height:17.35px; }
+[data-module-parents='line_B014'] .line svg { width:389px; height:20.32px; }
+[data-module-parents='line_B015'] .line svg { width:309px; height:17.7px; }
+[data-module-parents='line_B016'] .line svg { width:1px; height:61px; }
+[data-module-parents='line_B017'] .line svg { width:78px; height:1px; }
+[data-module-parents='line_B019'] .line svg { width:132px; height:17px; }
+
+
+
+
+
+[data-module-parents='line_C001'] .line svg { width:45px; height:5px; }
