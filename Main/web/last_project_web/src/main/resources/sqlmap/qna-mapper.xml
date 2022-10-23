@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="qna">
+
+<sql id='more_search'>
+	<if test="open>-1">and open = #{open}</if>
+	<if test="field>0">and field = #{field}</if>
+</sql>
+
+<sql id="where_search">
+	<choose>
+		<when test="page.search=='all'">
+			where (title like '%'||#{page.keyword}||'%'
+			or    writer in (select email from userinfo 
+							 where name like '%'||#{page.keyword}||'%') )
+			<include refid="more_search"/>							 
+		</when>
+		
+		<when test="page.search=='title'">
+			where title like '%'||#{page.keyword}||'%'
+			<include refid="more_search"/>			
+		</when>
+		
+		<when test="page.search=='writer'">
+			where writer in (select email from userinfo 
+					   	 where name like '%'||#{page.keyword}||'%')
+			<include refid="more_search"/>		
+		</when>
+		
+	</choose>
+</sql>
+
+<select id='qna_answer' resultType='qna.QnaAnswerVO'>
+select name, a.* 
+from qna_answer a left outer join userinfo u on a.writer=u.email
+where a.qna_id = ${id}
+</select>
+
+
+<select id='qna_detail' resultType='qna.QnaVO'>
+select name, c.title field_title, q.* 
+from qna q left outer join userinfo u on q.writer=u.email
+left outer join cs_category_medium c on q.field=c.id
+where q.id = #{id}
+</select>
+
+
+<select id='qna_list' resultType='qna.QnaVO'>
+select row_number() over(order by id) no, name
+		, (select decode( count(*), 0, '접수', '완료' ) 
+			from qna_answer a where a.qna_id=q.id) status
+		, q.* 
+from qna q left outer join userinfo u on q.writer=u.email <include refid="where_search"/>
+order by no desc 
+</select>
+
+<select id='qna_total' resultType='integer'>
+select count(*) from qna <include refid="where_search"/>
+</select>
+
+<delete id="delete">
+delete from qna where id = #{id}
+</delete>
+
+<update id="update">
+update qna set title = #{title}, content = #{content}, field = #{field}, open = #{open}
+
+where id = #{id}	
+</update>
+
+<update id="read">
+update qna set readcnt = readcnt+1 where id = #{id}				
+</update>
+
+<insert id="insert">
+insert into qna( title, content, writer, field, open)
+values ( #{title}, #{content}, #{writer}, #{field}, #{open} )
+</insert>
+
+<select id='field_list' resultType='qna.FieldVO'>
+select * from cs_category_medium
+where large_id= ${large_id}
+</select>
+
+</mapper>

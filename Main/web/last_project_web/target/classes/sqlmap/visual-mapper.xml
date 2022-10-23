@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="visual">
+
+<!-- 상위3위 부서의 년도별 채용인원수 조회 -->
+<select id='hirement_top3_year' resultType='hashmap'>
+<![CDATA[ 
+
+select * 
+from (
+      select department_name, to_char(hire_date,'yyyy') unit, count(employee_id) count
+      from employees e inner join
+                        (select rank, department_id, '(TOP'||rank ||')'|| department_name department_name
+                         from (select dense_rank() over( order by count(employee_id) desc ) rank, department_id
+                               from employees
+                               where to_char(hire_date,'yyyy') between #{begin} and #{end}
+                               group by department_id) e left outer join departments d using(department_id)
+                         where rank <= 3
+                         order by rank) r using(department_id)
+      where to_char(hire_date,'yyyy') between #{begin} and #{end}
+      group by department_name, to_char(hire_date,'yyyy')
+)
+pivot( sum(count) for unit in ( ${range} )  )
+
+]]>
+
+<!--  
+
+select department_name,  ${range}
+from (
+      select department_name, to_char(hire_date,'yyyy') unit, count(employee_id) count
+      from employees e inner join
+                        (select rank, department_id, '(TOP'||rank ||')'|| department_name department_name
+                         from (select dense_rank() over( order by count(employee_id) desc ) rank, department_id
+                               from employees
+                               where to_char(hire_date,'yyyy') between #{begin} and #{end}
+                               group by department_id) e left outer join departments d using(department_id)
+                         where rank <= 3
+                         order by rank) r using(department_id)
+      where to_char(hire_date,'yyyy') between #{begin} and #{end}
+      group by department_name, to_char(hire_date,'yyyy')
+) e
+group by department_name
+order by department_name
+
+
+select department_name, sum(decode(unit, 2001, count, 0)) y2001
+    , sum(decode(unit, 2002, count, 0)) y2002, sum(decode(unit, 2003, count, 0)) y2003
+    , sum(decode(unit, 2004, count, 0)) y2004, sum(decode(unit, 2005, count, 0)) y2005
+    , sum(decode(unit, 2006, count, 0)) y2006, sum(decode(unit, 2007, count, 0)) y2007
+    , sum(decode(unit, 2008, count, 0)) y2008, sum(decode(unit, 2022, count, 0)) y2022
+from (
+      select department_name, to_char(hire_date,'yyyy') unit, count(employee_id) count
+      from employees e inner join
+                        (select rank, department_id, '(TOP'||rank ||')'|| department_name department_name
+                         from (select dense_rank() over( order by count(employee_id) desc ) rank, department_id
+                               from employees
+                               group by department_id) e left outer join departments d using(department_id)
+                         where rank <= 3
+                         order by rank) r using(department_id)
+      group by department_name, to_char(hire_date,'yyyy')
+) e
+group by department_name
+order by department_name
+-->
+</select>
+
+<!-- 상위3위 부서의 월별 채용인원수 조회 -->
+<select id='hirement_top3_month' resultType='hashmap'>
+<![CDATA[ 
+select department_name
+    , sum(decode(unit, '01', count, 0)) m01, sum(decode(unit, '02', count, 0)) m02
+    , sum(decode(unit, '03', count, 0)) m03, sum(decode(unit, '04', count, 0)) m04
+    , sum(decode(unit, '05', count, 0)) m05, sum(decode(unit, '06', count, 0)) m06
+    , sum(decode(unit, '07', count, 0)) m07, sum(decode(unit, '08', count, 0)) m08
+    , sum(decode(unit, '09', count, 0)) m09, sum(decode(unit, '10', count, 0)) m10
+    , sum(decode(unit, '011', count, 0)) m11, sum(decode(unit, '12', count, 0)) m12
+from (
+      select department_name, to_char(hire_date,'mm') unit, count(employee_id) count
+      from employees e inner join
+                        (select rank, department_id, '(TOP'||rank ||')'|| department_name department_name
+                         from (select dense_rank() over( order by count(employee_id) desc ) rank, department_id
+                               from employees
+                               group by department_id) e left outer join departments d using(department_id)
+                         where rank <= 3
+                         order by rank) r using(department_id)
+      group by department_name, to_char(hire_date,'mm')
+) e
+group by department_name
+order by department_name
+]]>
+</select>
+
+
+<!-- 년도별 채용인원수 조회 -->
+<select id='hirement_year' resultType='hashmap'>
+select to_char(hire_date,'yyyy')||'년' unit, count(employee_id) count
+from employees
+where to_char(hire_date,'yyyy') between #{begin} and #{end}
+group by to_char(hire_date,'yyyy')
+order by 1
+</select>
+
+<!-- 월별 채용인원수 조회 -->
+<select id='hirement_month' resultType='hashmap'>
+select to_char(hire_date, 'mm')||'월' unit, count(employee_id) count
+from employees
+group by to_char(hire_date, 'mm')
+order by 1
+</select>
+
+<!-- 부서별 사원수 조회 -->
+<select id='department' resultType='hashmap'>
+select department_id, nvl(department_name, '소속없음') department_name, count(employee_id) count
+from employees e left outer join departments using(department_id)
+group by department_id, department_name
+order by 1
+</select>
+
+</mapper>

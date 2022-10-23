@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="board">
+
+<!-- 댓글 목록조회 -->
+<select id='comment_list' resultType='board.BoardCommentVO'>
+select name, to_char(writedate, 'yyyy-mm-dd hh24:mi:ss') writedate, c.* 
+from board_comment c left outer join member m on c.writer = m.userid 
+where board_id=#{board_id}
+order by id desc
+</select>
+
+<!-- 댓글 삭제 -->
+<delete id="comment_delete">
+delete from board_comment where id = #{id}
+</delete>
+
+<!-- 댓글 변경저장 -->
+<update id='comment_update'>
+update board_comment set content = #{content} where id = #{id}
+</update>
+
+<!-- 댓글 신규저장 -->
+<insert id="comment_insert">
+insert into board_comment ( content, writer, board_id )
+values ( #{content}, #{writer}, #{board_id} )
+</insert>
+
+<!-- 삭제대상 첨부파일정보 삭제 -->
+<delete id='file_delete'>
+delete from board_file where id in ( ${removed} )
+</delete>
+
+<!-- 선택된 id목록 첨부파일정보 조회 -->
+<select id='file_list_in' resultType='board.BoardFileVO'>
+select * from board_file where id in ( ${removed} )
+</select>
+
+<!-- 방명록정보 변경저장 -->
+<update id="update">
+update board set title = #{title}, content = #{content}
+where id = #{id}
+</update>
+
+<!-- 해당 첨부파일정보 조회 -->
+<select id='file_info' resultType='board.BoardFileVO'>
+select * from board_file where id = #{id}
+</select>
+
+<!-- 방명록 글에 대한 첨부파일정보 조회 -->
+<select id='file_list' resultType='board.BoardFileVO'>
+select * from board_file where board_id = #{id}
+</select>
+
+<!-- 방명록 글정보 조회 -->
+<select id="detail" resultType='board.BoardVO'>
+select name, b.* 
+from board b left outer join member m on b.writer = m.userid 
+where id = #{id}
+</select>
+
+<!-- 방명록 해당 페이지 글목록 -->
+<select id='list' resultType='board.BoardVO'>
+select (select count(*) from board_file f where f.board_id=b.id) filecnt, b.* 
+from (select b.*, name, row_number() over(order by b.id) no
+	  from board b left outer join member m on b.writer=m.userid
+	  <include refid="search_where"/>) b
+where no between #{beginList} and #{endList}
+order by no desc	  
+</select>
+
+<sql id='search_where'>
+<choose>
+	<when test="search=='title' or search=='content'">
+	where ${search} like '%'|| #{keyword} || '%' 
+	</when>
+	<when test='search=="t_c"'>
+	where title like '%'|| #{keyword} || '%' 
+	or    content like '%'|| #{keyword} || '%' 
+	</when>
+	<when test='search=="all"'>
+	where title like '%'|| #{keyword} || '%' 
+	or    content like '%'|| #{keyword} || '%'
+	or    writer in ( select userid from member where name like '%'|| #{keyword} || '%')
+	</when>
+	<when test='search=="writer"'>
+	where writer in ( select userid from member where name like '%'|| #{keyword} || '%')
+	</when>
+</choose>
+</sql>
+
+<!-- 방명록 글의 전체 건수 -->
+<select id="totalList" resultType='integer'>
+select count(*) from board <include refid="search_where"/>
+</select>
+
+<!-- 방명록 글 삭제처리 -->
+<delete id='delete'>
+delete from board where id = #{id}
+</delete>
+
+<!-- 방명록에 대한 첨부파일 저장 -->
+<insert id='file_insert'>
+	<foreach collection="fileInfo" item="info" open="insert all" 
+									separator=" " close="select * from dual">
+	into board_file ( board_id, filename, filepath )
+	values ( #{id}, #{info.filename}, #{info.filepath} )
+	</foreach>
+	<!--  
+	insert all 
+	into ...
+	into ...
+	into ...	
+	-->
+</insert>
+
+<!-- 방명록 신규저장 -->
+<insert id="insert">
+<!--  
+board 에 데이터행을 저장한 후 적용된 시퀀스값을 조회해 파라미터로 받은 데이터객체의 id 필드에 담는다
+-->
+<selectKey keyProperty="id" order='AFTER' resultType='integer'>
+select seq_board.currval from dual
+</selectKey>
+insert into board ( title, content, writer )
+values ( #{title}, #{content}, #{writer} )
+</insert>
+
+</mapper>
