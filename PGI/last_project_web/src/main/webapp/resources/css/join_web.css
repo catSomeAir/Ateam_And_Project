@@ -1,0 +1,105 @@
+@charset "UTF-8";
+table tr td { text-align: left }
+[name=address] { margin-top: 3px }
+p { width:600px; text-align: right; margin: 10px auto; color:#ff0000; }
+form table th span { color:#ff0000; margin-right:5px  }
+
+.email_ok{
+	color:#0080ff; 
+	font-size: 13px;
+	display: none;
+}
+
+.email_already{
+	color:#ff0000; 
+	font-size: 13px;
+	display: none;
+}
+
+
+input {
+	outline: none;
+	border: none;
+	background-color: #f6f6f6;
+	margin-bottom: 1.2%;
+	height: 40px;
+}
+
+table th, table td {
+	border: 0px;
+}
+
+table tr {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-direction: column;
+	height: 150px;
+	/* border: 1px solid #d8d8d8;
+	border-radius: 10px; */
+	margin-bottom: 3%;
+	padding: 1%;
+}
+
+#email-tr {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-direction: column;
+	height: 100px;
+	/* border: 1px solid #d8d8d8;
+	border-radius: 10px; */
+	margin-bottom: 1%;
+	padding: 1%;
+}
+
+table th {
+	width: 110px;
+	background-color: #ffffff;
+}
+table td {
+	width: 410px;
+	margin: 1% 1% 1% 0%;
+	padding: 0px;
+}
+table th {
+	text-align: left;
+}
+
+table td input .chk .join_input{
+	margin-left: 5%;
+}
+
+table td {
+	display: flex;
+	flex-direction: column;
+	align-content: flex-start;
+}
+
+#join-wrap{
+	border: 1px solid #d8d8d8;
+	border-radius: 10px;
+	padding: 1%;
+	box-shadow: 2px 2px 3px #0c0c21;
+}
+
+#in-wrap{
+	display: flex;
+	margin-left: 15%;
+}
+
+p{
+	font-size: 12px;
+}
+
+.pw-cmt{
+	margin-left: 3%;
+}
+
+.pw-tr{
+height: 110px;
+}
+
+.etc-tr{
+height: 90px;
+}
