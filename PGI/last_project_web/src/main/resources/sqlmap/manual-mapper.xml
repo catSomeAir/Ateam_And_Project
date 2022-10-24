@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+	<!-- 설명서 요청 정보저장 -->
+	<!-- 첨부파일을 해당 테이블에 pk에 맞도록 저장하기 위해서 selectKey를 사용한다.  -->
+	<mapper namespace="manual">
+	<select id="my_manual_select" resultType="String">
+	SELECT count(*)
+	FROM	my_manual
+	WHERE	email LIKE #{email}
+	AND		manual_code LIKE ( SELECT  manual_code
+			                   FROM    manual
+			                   WHERE   model_code LIKE #{model_code})  
+	</select>
+	<insert id="my_manual_insert">
+	INSERT INTO my_manual (email, manual_code)
+ 	VALUES (#{email},  (SELECT  manual_code
+            	 		FROM    manual
+             			WHERE   model_code LIKE #{model_code}))
+	</insert>
+	<!-- 찜한 설명서 수정 -->
+	<delete id="my_manual_delete">
+	DELETE FROM my_manual
+	WHERE  email = #{email}
+	AND    manual_code = ( SELECT  manual_code
+		                   FROM    manual
+		                   WHERE   model_code LIKE #{model_code})
+	</delete>
+	<!-- 찜한 설명서 리스트 -->
+	<select id="my_manual_list" resultType="search.CategorySearchVO">
+		 SELECT  e.brand_name, d.model_name, d.model_code, d.filepath, f.category_name
+		  FROM    (SELECT  b.model_code
+		          FROM   (SELECT  MANUAL_CODE
+		               FROM    my_manual
+		               WHERE   email LIKE #{email}) a LEFT OUTER JOIN  manual b
+		          ON     a.manual_code = b.manual_code) c LEFT OUTER JOIN model_info d
+		  ON      c.model_code = d.model_code  LEFT OUTER JOIN brand e
+		  ON      d.brand_code = e.brand_code LEFT OUTER JOIN category f
+		  ON      d.category_code = f.category_code
+	</select>
+	
+	<insert id="request" >
+	<selectKey keyProperty="req_bd_id" order="AFTER" resultType="Integer">
+		SELECT seq_req_board.currval FROM dual
+	</selectKey>
+		INSERT INTO	req_board (email, req_title, req_content, l_catg)
+		VALUES		(#{email}, #{req_title}, #{req_content},  #{l_catg})
+	</insert>
+	
+	<!-- 설명서 요청 파일정보 저장 -->
+	<insert id="request_file" >
+	
+		<foreach collection="fileList" item="list" open="INSERT all" separator=" " close="SELECT * FROM dual">
+		INTO		req_board_file (req_board_id, req_filename, req_filepath)
+		VALUES		(#{req_bd_id}, #{list.req_filename}, #{list.req_filepath})
+		</foreach>
+	</insert>
+	
+	<!-- 메인 최근탭 : 최근에 본 list뽑아오기 -->
+	
+	<select id="recent_list"  resultType="search.CategorySearchVO">
+			
+
+			
+			SELECT  d.model_code , d.model_name, d.filepath, d.brand_name, e.category_name
+			FROM    (SELECT  b.model_code model_code , b.model_name model_name, b.filepath filepath, c.brand_name brand_name, b.category_code
+			        FROM    manual a LEFT OUTER JOIN  model_info b
+			        ON      a.model_code = b.model_code LEFT OUTER JOIN brand c
+			        ON      b.brand_code = c.brand_code
+			        WHERE   b.model_code IN (${data})) d LEFT OUTER JOIN category e
+			ON      d.category_code = e.category_code       
+			
+		
+	</select>
+	
+	<!-- 해당제품 pdf다운로드 한적있는지 파악 -->
+	<select id="download_manual_check" resultType="Integer">
+		SELECT count(*)
+		FROM	download_manual
+		WHERE	email=#{email}
+		AND		model_code = #{model_code}
+	</select>
+	
+	<!-- 해당제품 설명서 정보  -->
+	<select id="manual_info" resultType="manual.ManualVO">
+		SELECT	*
+		FROM	manual
+		WHERE	model_code like #{model_code}
+	</select>
+
+<!-- 브랜드 로고이미지  -->
+	<select id="brand_logo" resultType="String">
+		SELECT	filepath
+		FROM	brand
+		WHERE	brand_name = #{brand_name}
+	</select>
+</mapper>

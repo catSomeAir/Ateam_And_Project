@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cs">
+
+<!-- 질문글 해당 페이지 목록 --> 
+  	<select id='list' resultType='cs.CsVO'>
+		select c.* 
+		from (select c.*, name, row_number() over(order by c.id) no
+			  from cs c left outer join userinfo u on c.cs_writer=u.email
+			  <include refid="search_where"/>) c
+		where no between #{beginList} and #{endList}
+		order by no desc	  
+	</select>
+	
+<!-- 수정된 질문글 정보 변경저장 -->
+	<update id="update">
+		update cs set cs_title = #{cs_title}, cs_content = #{cs_content}
+		where id = #{id}
+	</update>
+	
+	<!-- 조회수증가처리 -->
+	<update id="cs_read">
+		update cs set readcnt = readcnt + 1
+		where id = #{id}
+	</update>
+
+<!-- 질문글 정보 조회 -->
+	<select id="cs_detail" resultType='cs.CsVO'>
+		select  * 
+		from cs 
+		where id = #{id}
+	</select>
+	<sql id='search_where'>
+		<choose>
+			<when test="search=='cs_title' or search=='cs_content'">
+				where ${search} like '%'|| #{keyword} || '%' 
+			</when>
+			<when test='search=="t_c"'>
+				where cs_title like '%'|| #{keyword} || '%' 
+				or    cs_content like '%'|| #{keyword} || '%' 
+			</when>
+			<when test='search=="all"'>
+				where cs_title like '%'|| #{keyword} || '%' 
+				or    cs_content like '%'|| #{keyword} || '%'
+				<!-- or    cs_writer in ( select userid from member where name like '%'|| #{keyword} || '%') -->
+			</when>
+			<!-- <when test='search=="cs_writer"'>
+				where cs_writer in ( select userid from member where name like '%'|| #{keyword} || '%')
+			</when> -->
+		</choose>
+	</sql> 
+	
+	
+
+
+	<select id="totalList" resultType='integer'>
+		select count(*) from cs <include refid="search_where"/>
+	</select> 
+
+
+	<select id="list_web" resultType="cs.CsVO">
+		select *
+		from cs
+	</select>
+
+	<insert id="insert">
+		insert into cs ( cs_title, cs_content, cs_writer )
+		values ( #{cs_title}, #{cs_content}, #{cs_writer} )
+	</insert>
+	
+</mapper>
