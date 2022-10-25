@@ -8,8 +8,17 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-body {
-  background: #f5f5f5
+th, td {
+     padding: 20px;
+     border-bottom: 1px solid darkgray;
+}
+tr:first-child{
+	border-top: 1px solid darkgray;
+}
+table td {
+    padding: 14px 10px !important;
+}
+/*   background: #f5f5f5
 }
 
 table {
@@ -92,55 +101,55 @@ a {
   
    th:first-child, td:first-child {
     border-left: none;
-  }
+  } */
   
 </style>
 
 </head>
 <body>
-<h3 style="font-size:2rem;">내가 쓴 의견</h3>
-
+<h3 style="font-size:1.5rem;">내가 쓴 의견</h3>
+<br/>
+<br/>
 <form method='post' action='list.no'>
 <input type='hidden' name='curPage' value='1'>
 <div id='list-top' class='w-px1200'>
-	<ul>
-		<!-- 관리자로 로그인한 경우만 글쓰기 가능 -->
-		<c:if test='${ loginInfo.admin eq "Y" }'>
-		<li><a class='btn-fill' href='new.no'>글쓰기</a></li>
-		</c:if>
-	</ul>
+	
 </div>
 </form>
 
 <table class='tb-list w-px1200'>
 <colgroup>
 	<col width='100px'>
-	<col width='330px'>
 	<col>
-	<col width='120px'>
+	<col width='250px'>
 </colgroup>
-<tr><th>번호</th>
+<!-- <tr><th>번호</th>
 	<th>제목</th>
-	<th>내용</th>
 	<th>작성일자</th>
-</tr>
-<c:forEach items='${page.list}' var='vo'>
-<tr><td>${vo.no}</td>
-	<td class='left'>
-	<c:forEach var='i' begin="1" end="${vo.indent}">
+</tr> -->
+<c:forEach items='${vo}' var='vo'>
+<tr><td>${vo.board_id}</td>
+	<!-- <td class='left'> -->
+	<%-- <c:forEach var='i' begin="1" end="${vo.indent}">
 		${i eq vo.indent ? '&nbsp;&nbsp;<i class="font fa-regular fa-comment-dots"></i>' 
 						 : '&nbsp;&nbsp;'  }
-	</c:forEach>
-		<a href='detail.no?id=${vo.id}'>${vo.title}</a></td>
-	<td>${vo.name}</td>
+	</c:forEach> --%>
+		<%-- <a href='detail.no?id=${vo.id}'>${vo.title}</a></td> --%>
+	<td>${vo.title}</td>
 	<td>${vo.writedate}</td>
-	<td>${empty vo.filename ? '' : '<i class="font fa-solid fa-paperclip"></i>'}</td>
+<%-- 	<td>${empty vo.filename ? '' : '<i class="font fa-solid fa-paperclip"></i>'}</td> --%>
 </tr>
 </c:forEach>
 </table>
-
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 <div class='btnSet'>
-	<jsp:include page="/WEB-INF/views/include/page.jsp"/>
+<%-- 	<jsp:include page="/WEB-INF/views/include/page.jsp"/> --%>
 </div>
 
 </body>

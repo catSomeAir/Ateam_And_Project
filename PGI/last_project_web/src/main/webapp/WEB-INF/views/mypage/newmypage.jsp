@@ -19,6 +19,11 @@
 }
 
 .profile {
+	width: 30px;
+	height: 30px;
+	object-fit: cover;
+}
+.myprofile{
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
@@ -101,8 +106,8 @@
 
 																	<div class="box"
 																		style="background: #BDBDBD; position: relative; top: 10px; left: 930px;">
-																		<img class="profile" src="img/profile.png" >
-																		<%-- ${profile.replace('localhost','121.147.215.12:3302').replace('192.168.0.23','121.147.215.12:3302')} --%>
+																		<img class="myprofile" src="${loginInfo.filepath }" >
+																		
 																	</div>
 																</div>
 															</div>

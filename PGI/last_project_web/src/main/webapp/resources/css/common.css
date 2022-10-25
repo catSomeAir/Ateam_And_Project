@@ -48,7 +48,7 @@ ul {
 table { margin: 0 auto;  border-collapse:collapse; }
 table tr { height: 46px; }
 table.tb-list tr { height: 38px; }
-table th, table td { border: 1px solid #b0b0b0; }
+/* table th, table td { border: 1px solid #b0b0b0; } */
 table td { padding: 8px 10px; }
 table th { background-color: #f6f6f6; }
 table td a:hover { font-weight: bold; }

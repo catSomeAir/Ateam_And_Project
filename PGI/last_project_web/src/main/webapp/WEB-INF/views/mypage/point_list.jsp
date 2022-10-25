@@ -52,7 +52,6 @@
 </script>
 <style>
 body {
-  padding:1.5em;
   background: #f5f5f5
 }
 
@@ -205,34 +204,22 @@ a {
 				</div>
 			</div>
 		</div>
-<form method='post' action='list.no'>
-<input type='hidden' name='curPage' value='1'>
-<div id='list-top' class='w-px1200'>
-	<ul>
-		<!-- 관리자로 로그인한 경우만 글쓰기 가능 -->
-		<c:if test='${ loginInfo.admin eq "Y" }'>
-		<li><a class='btn-fill' href='new.no'>글쓰기</a></li>
-		</c:if>
-	</ul>
-</div>
-</form>
 
-<table s>
+
+<table >
 <colgroup>
-	<col width='100px'>
 	<col width='150px'>
 	<col>
-	<col width='120px'>
+	<col width='170px'>
 </colgroup>
-<tr><th>번호</th>
-	<th>날짜</th>
-	<th>내용</th>
-	<th>포인트</th>
+<tr>
+	<th>사용 날짜</th>
+	<th>사용 내역</th>
+	<th>사용 포인트</th>
 </tr>
 <%-- <c:forEach items='${page.list}' var='vo'> --%>
 <tr>
 <%-- <td>${vo.no}</td> --%>
-	<td>1</td>
 <!-- 	<td class='left'> -->
 	<%-- <c:forEach var='i' begin="1" end="${vo.indent}">
 		${i eq vo.indent ? '&nbsp;&nbsp;<i class="font fa-regular fa-comment-dots"></i>' 
@@ -247,7 +234,6 @@ a {
 	
 </tr>
 <tr>
-	<td >2</td>
 	<td >2022-10-20</td>
 	<td >이벤트 참여</td>
 	<td >15</td>

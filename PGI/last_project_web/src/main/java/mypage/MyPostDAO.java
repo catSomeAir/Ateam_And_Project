@@ -14,4 +14,8 @@ public class MyPostDAO {
 	public List<BoardVO> mypost(String email){
 		return sql.selectList("mypage.mypost",email);
 	}
+	
+	public List<ReplyVO> myreply(String email){
+		return sql.selectList("mypage.myreply",email);
+	}
 }

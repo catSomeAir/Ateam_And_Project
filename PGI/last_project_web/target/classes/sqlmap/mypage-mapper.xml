@@ -28,4 +28,9 @@ select board_id,title,content,writedate
 from board
 where email=#{email}
 </select>
+<select id="myreply" resultType="mypage.ReplyVO">
+select rep_no,content,writedate,email
+from reply
+where email=#{email}
+</select>
 </mapper>

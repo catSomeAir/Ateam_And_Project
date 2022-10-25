@@ -47,7 +47,7 @@
 						test='${empty loginInfo.filepath}'>
 						<i class="font-profile fa-regular fa-circle-user"></i>
 					</c:if> <c:if test='${!empty loginInfo.filepath}'>
-						<img class='profile' src='${loginInfo.filepath.replace("localhost","121.147.215.12:3302").replace("192.168.0.33","192.168.0.228","121.147.215.12:3302")}'>
+						<img class='profile' src='${loginInfo.filepath}'>
 					</c:if> <span style="margin:0 6px; font-size: 18px;">${loginInfo.name} 님</span> <a class='btn-empty'
 					href='password_web'>비밀번호변경</a> <a class='btn-fill' href='logout_web'>로그아웃</a>
 				</li>

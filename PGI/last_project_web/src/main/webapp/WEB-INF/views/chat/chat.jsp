@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>   
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,14 +16,16 @@ body {
 	color: #9a9a9a;
 	margin: 0;
 }
-.chat-background{
+
+.chat-background {
 	background-color: white;
-	width:450px;
-	height:575px;
+	width: 450px;
+	height: 575px;
 	bottom: 0;
 	position: fixed;
-	right:24px;
+	right: 24px;
 }
+
 #live-chat {
 	bottom: 0;
 	font-size: 20px;
@@ -34,14 +36,16 @@ body {
 
 #sendBtn {
 	width: 45px;
-	height: 45px; 
-	background-image : url('img/send2.png');
+	height: 45px;
+	background-image: url('img/send2.png');
 	background-size: cover;
 	border-radius: 5px;
 }
+
 .chat-message {
 	margin: 16px 0;
 }
+
 .chat-message img {
 	border-radius: 50%;
 	float: left;
@@ -50,17 +54,19 @@ body {
 .chat-message-content {
 	
 }
-.chat-top{
+
+.chat-top {
 	background-color: black;
-	width:450px;
+	width: 450px;
 	height: 100px;
 	right: 24px;
 	position: fixed;
-	color:white;
-	padding-top:10px;
-	top:450px;
+	color: white;
+	padding-top: 10px;
+	top: 450px;
 }
-.green{
+
+.green {
 	background: #1a8a34;
 	border-radius: 50%;
 	content: "";
@@ -69,20 +75,24 @@ body {
 	margin: 0 8px 0 0;
 	width: 8px;
 }
-#messageArea{
+
+#messageArea {
 	text-align: left;
 }
 </style>
 </head>
 <body>
-	<div class="chat-top"><div class="green"></div>관리자</div>
+	<div class="chat-top">
+		<div class="green"></div>
+		관리자
+	</div>
 	<div class="chat-background">
-	
+
 		<div id="live-chat">
-		<div id="messageArea"></div>
+			<div id="messageArea"></div>
 			<input type="text" id="message"
-				style="font-size: 20px; margin-bottom: 10px;padding-top:10px;" /> <input
-				type="button" id="sendBtn" value="" />
+				style="font-size: 20px; margin-bottom: 10px; padding-top: 10px;" />
+			<input type="button" id="sendBtn" value="" />
 		</div>
 	</div>
 </body>
@@ -101,6 +111,7 @@ body {
 	}
 	// 서버로부터 메시지를 받았을 때
 	function onMessage(msg) {
+		
 		var data = msg.data;
 		str="<div class='chat-message'>";
 		str+="<img src='img/main-logo.png' alt='' width='32' height='32' style='margin-left:20px;'>"
@@ -109,6 +120,8 @@ body {
 		str+="</div>"
 		str+="</div>"
 		$("#messageArea").append(str + "<br/>");
+			
+		
 	}
 	
 /*     str = "<div class='col-6'>";

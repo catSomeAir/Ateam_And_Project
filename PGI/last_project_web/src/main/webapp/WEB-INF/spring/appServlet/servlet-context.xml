@@ -41,12 +41,8 @@
 	</beans:bean>
 
 	<context:component-scan base-package="com.hanul.ateam" />
-	<websocket:handlers>
-		<websocket:mapping handler="echoHandler" path="/echo" />
-		<websocket:sockjs />
-	</websocket:handlers>
+	
     
-	<beans:bean id="echoHandler" class="com.hanul.ateam.EchoHandler"></beans:bean>
 		
 	
 </beans:beans>

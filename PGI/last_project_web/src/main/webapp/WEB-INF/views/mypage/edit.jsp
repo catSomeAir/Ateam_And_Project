@@ -128,16 +128,12 @@ button[type="button"] {
 	left: 3px;
 }
 
-
-.profile
-{
-width:
-100px !important;
-height:
-100px !important;
-object-fit:
-cover;
+.profile {
+	width: 100px !important;
+	height: 100px !important;
+	object-fit: cover;
 }
+
 .box {
 	width: 100px;
 	height: 100px;
@@ -145,59 +141,63 @@ cover;
 	overflow: hidden;
 	padding: 0;
 }
-
 </style>
 </head>
 <body>
-<jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
-	<br/>
-	<br/>
-	<form method='post' action='edit_myprofile' enctype='multipart/form-data'>
+	<jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
+	<br />
+	<br />
+	<form method='post' action='edit_myprofile'
+		enctype='multipart/form-data'>
 		<div id="form-container">
 			<div id="form-inner-container">
 				<div id="sign-up-container">
-					<br/>
+					<br />
 					<h3>회원 정보 수정</h3>
-					<div >프로필이미지</div>
-					<br/>
-								<label> 
-								<input type='file' name='file' id='attach-file'
-									accept="image/*">
-										<img class="profile" src="img/profile.png">
-									<a style="width: 100px; height: 80px; padding: 8px 20px 8px 20px; border: 1px solid gray;">사진변경</a>
-								</label>
-								<span id='preview'></span>
-								<a id='delete-file'><i
-									class="font-r fa-regular fa-trash-can"></i></a>
-					<div style="margin-top: 20px;">성명
-						<div style="text-align:center;"><input type='text' name='name' title='이름' autofocus></div>
-						<br/>
-						<div><span style="color:red;">*</span>비밀번호</div>
-						<input type='password'
-							name='pw' class='chk'>
-						 <div class='valid'>비밀번호를 입력하세요(영문대/소문자,숫자 모두 포함)</div> 
-						<br/>
-						<div><span style="color:red;">*</span>비밀번호확인</div>
-						<input type='password' name='pw_chk' class='chk'>
-							 <div class='valid'>비밀번호를 다시 입력하세요</div> 
-						<br/>
+					<div>프로필이미지</div>
+					<br /> 
+					<label>
+					 <input type='file' name='file' id='attach-file' accept="image/*"> 
+						<img class="profile" src="${loginInfo.filepath }"> 
+						<a style="width: 100px; height: 80px; padding: 8px 20px 8px 20px; border: 1px solid gray;">사진변경</a>
+					</label> <span id='preview'></span> <a id='delete-file'><i
+						class="fa-solid fa-trash" style="margin-left: 5px"></i></a>
+						<div style="margin-top: 20px;">이메일</div>
+						<input type='text' name='email' class='chk'
+							value="${loginInfo.email }" readonly>
+						<br />
+					<div >성명
+						<div style="text-align: center;">
+							<input type='text' name='name' title='이름' autofocus>
+						</div>
+						<br />
 						
-						<div>이메일</div>
-						<input type='text' name='email' class='chk'>
-							 <div class='valid'>이메일을 입력하세요</div> 
-						<br/>
 						<div>
-						<div>휴대전화</div>
-						<input type='text' name='phone' maxlength="13"></div>
-						<br/>
-					<div id="form-controls">
-						<button type="submit" onclick='join()'>저장</button>
-						<button type="button" id="toggleSignIn" href='/iot/'>취소</button>
+							<span style="color: red;">*</span>비밀번호
+						</div>
+						<input type='password' name='pw' class='need' id="pw">
+						<!-- <div class='valid'>비밀번호를 입력하세요(영문대/소문자,숫자 모두 포함)</div>  -->
+						<br />
+						<div>
+							<span style="color: red;">*</span>비밀번호확인
+						</div>
+						<input type='password' name='pw_chk' class='need' id="pw_chk">
+						<!--  <div class='valid'>비밀번호를 다시 입력하세요</div>  -->
+						<br />
+						<div>
+							<div>휴대전화</div>
+							<input type='text' name='phone' maxlength="13">
+						</div>
+						<br />
+						<div id="form-controls">
+							<button type="submit" onclick="if( necessary() ) { $('form').submit(); }"
+							>수정</button>
+							<button type="button" id="toggleSignIn" onclick="history.go(-1)">취소</button>
+						</div>
 					</div>
 				</div>
 			</div>
-			</div>
-			</div>
+		</div>
 	</form>
 	<!-- Lottie animation -->
 	<div id="animation-container">
@@ -206,16 +206,43 @@ cover;
 			background="transparent" speed="1"
 			style="width: 520px; height: 520px;" loop autoplay></lottie-player>
 	</div>
-	
+
 	<script
 		src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<!-- 	<script src='js/member.js?Fri Oct 14 16:53:24 KST 2022'></script> -->
+	<!-- 	<script src='js/member.js?Fri Oct 14 16:53:24 KST 2022'></script> -->
 	<script>
-		//회원가입처리
-		function join() {
+		//유효성
+
+		//회원수정처리
+		function edit() {
+			const pw = document.getElementById('pw');
+			const pw_chk = document.getElementById('pw_chk');
+			const pwt = pw.value;
+			const pw_chkt = pw_chk.value;
+			if (pwt != pw_chkt) {
+				alert('비밀번호가 일치하지 않습니다.');
+			}
 			
-			$('form').submit();
+			if(necessary()){
+				$('form').submit();
+			}
+				
+
 		}
+		
+		//입력항목에 입력되어 있는지 여부 반환하는 함수
+		function necessary(){
+	var need = true;
+	$('.need').each(function(){
+		if( $(this).val()=='' ){
+			alert( '입력하세요!' );
+			$(this).focus();
+			need = false;
+			return need;
+		}
+	});
+	return need; 
+}
 
 		//아이다,비번,비번확인,이메일태그의 입력상태가 invalid 하면 form submit 불가
 		function tagIsInvalid(tag) {

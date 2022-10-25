@@ -55,14 +55,15 @@ select * from userinfo where email=#{email} and pw=#{pw}
 </select>
 
 <!-- 회원정보수정 -->
-<insert id="edit">
+<update id="edit">
 update userinfo
-set email=#{email},
-    pw=#{pw},
+set pw=#{pw},
     name=#{name},
-    phone=#{phone}
+    phone=#{phone},
+    filename=#{filename},
+    filepath=#{filepath}
 where email=#{email}
-</insert>
+</update>
 <!-- 회원정보 조회 -->
 <select id="show" resultType="member.MemberVO">
 select name,phone,email

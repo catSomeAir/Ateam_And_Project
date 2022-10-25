@@ -19,6 +19,11 @@
 }
 
 .profile {
+	width: 30px;
+	height: 30px;
+	object-fit: cover;
+}
+.myprofile{
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
@@ -101,7 +106,7 @@
 
 																	<div class="box"
 																		style="background: #BDBDBD; position: relative; top: 10px; left: 930px;">
-																		<img class="profile" src="img/profile.png" >
+																		<img class="myprofile" src="${loginInfo.filepath }" >
 																		<%-- ${profile.replace('localhost','121.147.215.12:3302').replace('192.168.0.23','121.147.215.12:3302')} --%>
 																	</div>
 																</div>
@@ -111,22 +116,22 @@
 																<br />
 																<div style="text-align: left;">
 																	<span style="text-align: left; font-size: 20px;">이름</span>
-																	<strong class="count" style="margin-left: 530px;">${vo.name}</strong>
+																	<strong class="count" style="margin-left: 530px;">${loginInfo.name}</strong>
 																</div>
 																<br />
 																<div style="text-align: left;">
 																	<span style="text-align: left; font-size: 20px;">전화번호</span>
-																	<strong class="count" style="margin-left: 470px;">${vo.phone}</strong>
+																	<strong class="count" style="margin-left: 470px;">${loginInfo.phone}</strong>
 																</div>
 																<br />
 																<div style="text-align: left;">
 																	<span style="text-align: left; font-size: 20px;">이메일</span>
-																	<strong class="count" style="margin-left: 470px;">${vo.email}</strong>
+																	<strong class="count" style="margin-left: 470px;">${loginInfo.email}</strong>
 																</div>
 															</div>
 														</div>
 														<!-- 내활동 -->
-																												<div class="content_header">
+															<div class="content_header">
 															<p class="content_title">
 																<span style="font-size: 22px;">내 활동</span>
 															</p>

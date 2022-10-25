@@ -121,6 +121,15 @@ margin: 0px auto;
   left: 50%;
   transform: translate(-50%, -50%); */
 }
+.chat_icon{
+position:fixed;
+width: 300px;
+height: 80x;
+background-color: black;
+color:white;
+bottom: 0;
+left: 1800px;
+}
 </style>
 </head>
 <body style="padding: 0px">
@@ -188,5 +197,6 @@ margin: 0px auto;
 </section>
   
 </div>
+<div class="chat_icon" onclick="location='broadcasting'">채팅하기</div>
 </body>
 </html>
