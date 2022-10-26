@@ -225,9 +225,7 @@ button[type="button"] {
 			
 			if(necessary()){
 				$('form').submit();
-			}
-				
-
+			}			
 		}
 		
 		//입력항목에 입력되어 있는지 여부 반환하는 함수

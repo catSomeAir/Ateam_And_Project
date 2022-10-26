@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>  
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +23,8 @@
 	height: 30px;
 	object-fit: cover;
 }
-.myprofile{
+
+.myprofile {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
@@ -95,7 +96,7 @@
 																</p>
 																<div onclick="location='edit'">
 																	<span
-																		style="font-size: 15px; margin-bottom: 1px; color: gray; cursor:pointer;"
+																		style="font-size: 15px; margin-bottom: 1px; color: gray; cursor: pointer;"
 																		class="pointer">수정하기 &nbsp;</span> <i
 																		class="fa-solid fa-chevron-right" style="color: gray;"></i>
 																</div>
@@ -105,9 +106,14 @@
 																<div style="display: flex;">
 
 																	<div class="box"
-																		style="background: #BDBDBD; position: relative; top: 10px; left: 930px;">
-																		<img class="myprofile" src="${loginInfo.filepath }" >
-																		<%-- ${profile.replace('localhost','121.147.215.12:3302').replace('192.168.0.23','121.147.215.12:3302')} --%>
+																		style="background: white; position: relative; top: 10px; left: 930px;">
+																		<c:if test='${empty loginInfo.filepath}'>
+																			<i class="font-profile fa-regular fa-circle-user myprofile"></i>
+																		</c:if>
+																		<c:if test='${!empty loginInfo.filepath}'>
+																			<img class='myprofile' src='${loginInfo.filepath}'>
+																		</c:if>
+							
 																	</div>
 																</div>
 															</div>
@@ -131,7 +137,7 @@
 															</div>
 														</div>
 														<!-- 내활동 -->
-															<div class="content_header">
+														<div class="content_header">
 															<p class="content_title">
 																<span style="font-size: 22px;">내 활동</span>
 															</p>
@@ -141,21 +147,24 @@
 
 															<div style="text-align: left;"
 																onclick='location="mypost_list"'>
-																<span style="font-size: 20px ;cursor:pointer;;" class="pointer">내가
-																	쓴 의견</span> <i class="fa-solid fa-chevron-right"
+																<span style="font-size: 20px; cursor: pointer;"
+																	class="pointer">내가 쓴 의견</span> <i
+																	class="fa-solid fa-chevron-right"
 																	style="margin-left: 8px;"></i>
 															</div>
 															<br />
 															<div style="text-align: left;"
 																onclick='location="myreply_list"'>
-																<span style="font-size: 20px;cursor:pointer;" class="pointer">내가
-																	쓴 답글</span> <i class="fa-solid fa-chevron-right"
+																<span style="font-size: 20px; cursor: pointer;"
+																	class="pointer">내가 쓴 답글</span> <i
+																	class="fa-solid fa-chevron-right"
 																	style="margin-left: 8px;"></i>
 															</div>
-															<br/>
+															<br />
 															<div style="text-align: left;"
 																onclick='location="bookmarked_list"'>
-																<span style="text-align: left; font-size: 20px;cursor:pointer;"
+																<span
+																	style="text-align: left; font-size: 20px; cursor: pointer;"
 																	class="pointer">내가 찜한 설명서</span> <i
 																	class="fa-solid fa-chevron-right"
 																	style="margin-left: 8px;"></i>
@@ -178,7 +187,8 @@
 															<br />
 															<div style="text-align: left;"
 																onclick='location="point_list"'>
-																<span style="text-align: left; font-size: 20px; cursor:pointer;"
+																<span
+																	style="text-align: left; font-size: 20px; cursor: pointer;"
 																	class="pointer">포인트 사용내역</span> <i
 																	class="fa-solid fa-chevron-right"
 																	style="margin-left: 8px;"></i>
@@ -186,7 +196,8 @@
 															<br />
 															<div style="text-align: left;"
 																onclick='location="gifticon_list"'>
-																<span style="text-align: left; font-size: 20px; cursor:pointer;"
+																<span
+																	style="text-align: left; font-size: 20px; cursor: pointer;"
 																	class="pointer">기프티콘 사용내역</span> <i
 																	class="fa-solid fa-chevron-right"
 																	style="margin-left: 8px;"></i>
