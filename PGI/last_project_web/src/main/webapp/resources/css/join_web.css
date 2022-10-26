@@ -21,6 +21,7 @@ input {
 	outline: none;
 	border: none;
 	background-color: #f6f6f6;
+	border-radius: 12px;
 	margin-bottom: 1.2%;
 	height: 40px;
 }
@@ -42,15 +43,16 @@ table tr {
 }
 
 #email-tr {
+	margin: 0 auto;
 	display: flex;
 	justify-content: center;
-	align-items: flex-start;
 	flex-direction: column;
 	height: 100px;
 	/* border: 1px solid #d8d8d8;
 	border-radius: 10px; */
 	margin-bottom: 1%;
 	padding: 1%;
+	align-items: flex-start;
 }
 
 table th {
@@ -58,7 +60,7 @@ table th {
 	background-color: #ffffff;
 }
 table td {
-	width: 410px;
+	width: 657px;
 	margin: 1% 1% 1% 0%;
 	padding: 0px;
 }
@@ -77,15 +79,18 @@ table td {
 }
 
 #join-wrap{
-	border: 1px solid #d8d8d8;
+	/* border: 1px solid #d8d8d8; */
 	border-radius: 10px;
 	padding: 1%;
-	box-shadow: 2px 2px 3px #0c0c21;
+	/* box-shadow: 2px 2px 3px #0c0c21; */
 }
 
 #in-wrap{
 	display: flex;
-	margin-left: 15%;
+	/* margin-left: 15%; */
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
 }
 
 p{

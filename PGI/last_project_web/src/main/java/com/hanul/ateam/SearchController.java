@@ -38,11 +38,18 @@ public class SearchController {
 	@Autowired
 	private CommentDAO commentdao;
 	
+	@RequestMapping(value = "/search_main.sc", produces = "text/html;charset=utf-8")
+	public String sc_main() {
+//		
+		 return  "search/search_main";
+	}
+	
+	
 	//AS센터 리스트
 	
 	@RequestMapping(value = "/as_list_web", produces = "text/html;charset=utf-8")
 	public String as_list(String brand_name) {
-		System.out.println("방구야"+brand_name);
+//		System.out.println("방구야"+brand_name);
 		 return  "";
 	}
 	

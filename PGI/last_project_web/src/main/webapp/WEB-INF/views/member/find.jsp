@@ -10,7 +10,7 @@
 <body>
 
 <div class='center'>
-	<a href='<c:url value="/"/>'><img src='img/hanul.logo.png'></a>
+	<a href='<c:url value="/"/>'><img src=''></a>
 	<div class='box'>
 		<h3>비밀번호 재발급</h3>
 		<form method='post' action='resetPw'>

@@ -31,28 +31,24 @@ body {
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	text-align: left !important;
 }
-
 #form-container {
 	height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-
 #form-inner-container {
 	background-color: white;
 	max-width: 80%;
 	border-radius: 8px;
 	box-shadow: 0 0 20px gainsboro;
 }
-
 #sign-up-container, #sign-in-container {
 	margin-top: 10px;
 	padding: 40px 80px;
 	width: 600px;
 	display: inline-block;
 }
-
 form input {
 	display: block;
 	margin-bottom: 13px;
@@ -63,53 +59,43 @@ form input {
 	border-radius: 10px;
 	width: 100%;
 }
-
 #form-controls {
 	margin-bottom: 20px;
 }
-
 h3 {
 	color: #020E20;
 	font-size: 150%;
 	font-weight: 500;
 }
-
 label {
 	color: #7369AB;
 }
-
 ::placeholder {
 	color: #C0C7DB;
 	font-size: larger;
 	letter-spacing: 1.2px;
 }
-
 #form-controls button {
 	border: none;
 	font-size: 120%;
 }
-
 #form-controls button:hover {
 	cursor: pointer;
 }
-
 button[type="submit"] {
 	padding: 16px 65px;
 	background-color: #020E20;
 	border-radius: 10px;
 	color: white;
 }
-
 button[type="submit"]:hover {
 	background-color: #ff6678;
 }
-
 button[type="button"] {
 	padding: 16px 0 16px 35px;
 	background-color: transparent;
 	color: #020E20;
 }
-
 #terms {
 	width: 30px;
 	height: 30px;
@@ -118,7 +104,6 @@ button[type="button"] {
 	border-radius: 4px;
 	position: relative;
 }
-
 #terms:checked:after {
 	content: '\2713';
 	color: #7369AB;
@@ -127,13 +112,11 @@ button[type="button"] {
 	top: 0;
 	left: 3px;
 }
-
 .profile {
 	width: 100px !important;
 	height: 100px !important;
 	object-fit: cover;
 }
-
 .box {
 	width: 100px;
 	height: 100px;
@@ -212,7 +195,6 @@ button[type="button"] {
 	<!-- 	<script src='js/member.js?Fri Oct 14 16:53:24 KST 2022'></script> -->
 	<script>
 		//유효성
-
 		//회원수정처리
 		function edit() {
 			const pw = document.getElementById('pw');
@@ -241,7 +223,6 @@ button[type="button"] {
 	});
 	return need; 
 }
-
 		//아이다,비번,비번확인,이메일태그의 입력상태가 invalid 하면 form submit 불가
 		function tagIsInvalid(tag) {
 			var status = member.tag_status(tag);
@@ -252,21 +233,18 @@ button[type="button"] {
 			} else
 				return false;
 		}
-
 		//아이디 중복확인
 		function id_check() {
 			//올바른 아이디 입력값 상태인지 확인
 			var $id = $('[name=userid]');
 			if ($id.hasClass('chked'))
 				return; //중복확인이 되어 있다면 다시 중복확인 불필요
-
 			var status = member.tag_status($id);
 			if (status.code == 'invalid') {
 				alert('아이디 중복확인 불필요\n' + status.desc);
 				$id.focus();
 				return;
 			}
-
 			//DB에 입력한 아이디가 있다면 사용할 수 없는 아이디
 			$.ajax({
 				url : 'id_check',
@@ -306,7 +284,6 @@ button[type="button"] {
 			$('.date').val('');
 			$(this).css('display', 'none');
 		});
-
 		//생년월일을 특정 날짜(만13세)까지만 선택할 수 있도록 제한
 		var today = new Date();
 		var endday = new Date(today.getFullYear() - 13, today.getMonth(), today

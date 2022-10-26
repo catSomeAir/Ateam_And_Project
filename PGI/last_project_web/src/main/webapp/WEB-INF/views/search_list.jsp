@@ -25,20 +25,20 @@ body {
 }
 
 .search {
-	width: 100%;
-	position: relative;
-	display: flex;
+ width: 100%;
+  position: relative;
+  display: flex;
 }
 
 .searchTerm {
-	width: 100%;
-	border: 3px solid #053f81;
-	border-right: none;
-	padding: 5px;
-	height: 20px;
-	border-radius: 5px 0 0 5px;
-	outline: none;
-	color: #9DBFAF;
+  width: 100%;
+  border: 3px solid #020E20;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
 }
 
 .searchTerm:focus {
@@ -46,15 +46,15 @@ body {
 }
 
 .searchButton {
-	width: 40px;
-	height: 36px;
-	border: 1px solid #020E20;
-	background: #020E20;
-	text-align: center;
-	color: #fff;
-	border-radius: 0 5px 5px 0;
-	cursor: pointer;
-	font-size: 20px;
+  width: 40px;
+  height: 36px;
+  border: 1px solid #020E20;
+  background: #020E20;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
 }
 
 /*Resize the wrap to see the search bar change!*/
@@ -229,7 +229,7 @@ cursor: pointer !important;
 				<div class="item" style="margin:20px; overflow: hidden; text-overflow: ellipsis;">
 					<p style="text-align: left; margin:8px; border-bottom: 1px solid #ccc;">${vo.category_name}</p>
 					<img
-						style="margin:14px 0; width:200; height: 200px;" src="${vo.filepath}"
+						style="margin:14px 0; width:200; height: 200px;" src="${vo.filepath.replace('localhost','121.147.215.12:3302')}"
 						alt="item" />
 					<h2 style="width: 200px !important; text-overflow:ellipsis; overflow: hidden !important; white-space:nowrap;">${vo.brand_name } ${vo.model_name}</h2>
 					<p style="margin-top: 5px">${vo.model_code }</p>

@@ -5,10 +5,11 @@ var member = {
 	//키보드입력시 입력값 태그별 상태확인
 	tag_status: function( tag ){
 		var name = tag.attr('name');
-		if( name=='userpw' )  return this.userpw_status( tag.val() );
-		else if( name=='userpw_ck' ) return this.userpw_ck_status( tag.val() );
-		else if( name=='userid' )  return this.userid_status( tag.val() );
+		if( name=='pw' )  return this.pw_status( tag.val() );
+		else if( name=='pw_ck' ) return this.pw_ck_status( tag.val() );
+		/*else if( name=='userid' )  return this.userid_status( tag.val() );*/
 		else if( name=='email' )	return this.email_status( tag.val() );
+		
 	},
 	
 	//이메일 입력값 상태확인: 이메일형식
@@ -50,14 +51,14 @@ var member = {
 	},
 	
 	//비밀번호확인 입력값 상태확인: 비밀번호와 입력값이 동일한지
-	userpw_ck_status: function(pw_ck){
+	pw_ck_status: function(pw_ck){
 		if( pw_ck=='' )								return this.common.empty;
-		else if( pw_ck==$('[name=userpw]').val() ) 	return this.userpw.equal;
+		else if( pw_ck==$('[name=pw]').val() ) 	return this.userpw.equal;
 		else									return this.userpw.notEqual;
 	},
 	
 	//비밀번호입력값 상태확인: 영문 대.소문자, 숫자를 모두 포함
-	userpw_status: function( pw ){
+	pw_status: function( pw ){
 		var reg = /[^a-zA-Z0-9]/g, upper=/[A-Z]/g, lower=/[a-z]/g, digit=/[0-9]/g;
 		if( pw=='' )						return this.common.empty;
 		else if( pw.match(this.space) )		return this.common.space;

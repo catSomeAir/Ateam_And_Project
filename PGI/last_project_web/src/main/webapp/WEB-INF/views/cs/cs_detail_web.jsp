@@ -117,7 +117,7 @@ table th {
 	<a class='btn-fill list'>목록</a>
 	
 </div>
-<form method='post' action='list.cs'>
+<form method='post' action='helplist.cs'>
 	<input type='hidden' name='curPage' value='${page.curPage}' >
 	<input type='hidden' name=search value='${page.search}' >
 	<input type='hidden' name=pageList value='${page.pageList}' >

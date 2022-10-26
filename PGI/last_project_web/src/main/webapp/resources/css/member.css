@@ -2,7 +2,7 @@
 .box {
 	width: 300px;
 	margin: 20px auto;
-	border: 1px solid #aaa;
+	border: 3px solid #d4d4d4;
 	padding: 30px 50px;
 }
 .box li:not(:last-child) { margin: 10px 0; }

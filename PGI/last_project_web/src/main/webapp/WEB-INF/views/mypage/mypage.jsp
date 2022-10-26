@@ -17,13 +17,11 @@
 	overflow: hidden;
 	padding: 0;
 }
-
 .profile {
 	width: 30px;
 	height: 30px;
 	object-fit: cover;
 }
-
 .myprofile {
 	width: 100%;
 	height: 100%;

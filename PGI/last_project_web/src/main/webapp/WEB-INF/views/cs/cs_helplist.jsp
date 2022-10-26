@@ -16,6 +16,11 @@
 	flex-direction: column; 
 	margin:0 auto;
 }
+h2{
+	text-align: center;
+	margin-top: 50px;
+	margin-bottom: 100px;
+}
 </style>
 </head>
 <body>
@@ -40,7 +45,6 @@
 	</div>
 	
 	<div id="page_ul_wrap">
-	<h2>자주 묻는 도움말 '${loginInfo.name}'</h2>
 	
 		<ul class="ul-in">
 			<li>

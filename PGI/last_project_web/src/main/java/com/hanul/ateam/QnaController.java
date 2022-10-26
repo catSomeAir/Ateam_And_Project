@@ -82,7 +82,7 @@ public class QnaController {
 	public String qna(Model model) {
 		int large_id = 6;
 		model.addAttribute("fields", service.qna_filed_list(large_id));
-		return "qna/new_web";
+		return "qna/new_web2";
 	}
 	@RequestMapping("/index.qa")
 	public String qna() {
@@ -116,7 +116,7 @@ public class QnaController {
 		int large_id = 6;//
 		model.addAttribute("fields", service.qna_filed_list(large_id));
 		
-		return "qna/list_web2";
+		return "qna/list_web";
 //		return "index";
 	}
 

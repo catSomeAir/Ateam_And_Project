@@ -56,4 +56,9 @@ public class MemberServiceImpl implements MemberService {
 		return dao.member_userid_email(vo);
 	}
 
+	@Override
+	public boolean member_id_check(String id) {
+		return dao.member_id_check(id);
+	}
+
 }

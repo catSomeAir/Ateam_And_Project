@@ -24,6 +24,11 @@ update member set name=#{name}, gender=#{gender}, email=#{email}
 where userid=#{userid}				   
 </update>
 
+<!-- id 존재 여부 판단 -->
+	<select id="id_check" resultType="integer">
+		select count(*) from userinfo where email= #{email}
+	</select>
+
 <!-- 아이디 존재여부 확인 -->
 <select id='email_check' resultType='integer'>
 select count(*) from userinfo where email=#{email}
@@ -54,12 +59,13 @@ select salt from member where userid=#{userid}
 select * from userinfo where email=#{email} and pw=#{pw}
 </select>
 
+
 <!-- 회원정보수정 -->
 <update id="edit">
 update userinfo
 set pw=#{pw},
-    name=#{name},
-    phone=#{phone},
+    name=#{name, jdbcType=VARCHAR},
+    phone=#{phone, jdbcType=VARCHAR},
     filename=#{filename, jdbcType=VARCHAR},
     filepath=#{filepath, jdbcType=VARCHAR}
 where email=#{email}
@@ -70,4 +76,6 @@ select name,phone,email
 from userinfo
 where email=#{email}
 </select>
+
+
 </mapper>

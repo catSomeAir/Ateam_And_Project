@@ -32,7 +32,6 @@
 	href="https://storage.clickn.co.kr//css/modules/module_mypage.css?v=20221006">
 
 <script>
-
 	var MODULES_STORAGE_BASE_URI = "https:\/\/storage.clickn.co.kr\/";
 </script>
 <script src="https://designskin36.clickn.co.kr/lang/skin_js.js"></script>
@@ -64,7 +63,6 @@ table td {
 /* body {
   background: #f5f5f5
 }
-
 table {
    border: 1px #a39485 solid; 
   font-size: .9em;
@@ -74,7 +72,6 @@ table {
   border-radius: 5px;
   overflow: hidden;
 }
-
 th {
   text-align: center;
 }
@@ -94,7 +91,6 @@ thead {
   border-bottom: 1px solid rgba(0,0,0,.1);
   background: #fff;
 }
-
 a {
   color: #73685d;
 }

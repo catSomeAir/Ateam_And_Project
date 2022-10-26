@@ -33,9 +33,9 @@
 	width: 80%;
 	text-align: left;
 	height: 166px;
-    margin: 0 10px;
-    border: 1.3px solid #020E20;
-    border-radius: 20px;
+	margin: 0 10px;
+	border: 3px solid #e8e8e8;
+	border-radius: 20px;
 }
 
 .cs-li{
@@ -100,7 +100,7 @@
 		<li class="cs-li">
 		
 			<div id="qna_wrap-h">
-				<button class="cs-btn" type="button" onclick='location=""'>
+				<button class="cs-btn" type="button" onclick='location="list_web.ch"'>
 					<div class="cs-spandiv">
 						<span class="cs-span">채팅 서비스</span>
 						<span style="margin-top: 15%; font-size: 15px; font-weight: normal;" class="cs-span">채팅 시작</span>

@@ -79,18 +79,23 @@ body{
 }
 
 .search {
-  width: 100%;
+  width: 105%;
   position: relative;
   display: flex;
+  border: 2px solid #020e20;
+  border-radius: 15px;
+  justify-content: flex-end;
+  flex-direction: row;
 }
 
 .searchTerm {
-  width: 100%;
-  border: 3px solid #020E20;
-  border-right: none;
+  width: 80%;
+  /* border: 3px solid #020E20; */
+  /* border-right: none; */
+  border-style: none;
   padding: 5px;
-  height: 20px;
-  border-radius: 5px 0 0 5px;
+  height: 42px;
+  border-radius: 15px;
   outline: none;
   color: #9DBFAF;
 }
@@ -100,13 +105,12 @@ body{
 }
 
 .searchButton {
-  width: 40px;
-  height: 36px;
-  border: 1px solid #020E20;
-  background: #020E20;
+  width: 51px;
+  height: 52px;
+  border-style: none;
+  background: #ffffff00;
   text-align: center;
-  color: #fff;
-  border-radius: 0 5px 5px 0;
+  color: #040e1d;
   cursor: pointer;
   font-size: 20px;
 }
@@ -121,15 +125,39 @@ margin: 0px auto;
   left: 50%;
   transform: translate(-50%, -50%); */
 }
-.chat_icon{
+/* .chat_icon{
 position:fixed;
-width: 300px;
-height: 80x;
+width: 290px;
+height: 50px;
 background-color: black;
 color:white;
 bottom: 0;
 left: 1800px;
-}
+} */
+  .chat_icon {
+        position:fixed;
+        bottom: 0;
+		left: 1900px;
+      /*   margin: 50px; */
+        width:140px;
+        height:90px;
+        background:black;
+        border-radius: 100%;
+        color: white;
+        line-height: 90px;
+        cursor: pointer;
+    }
+    .chat_icon:after {
+        content:"";
+        background:black;
+        border-top: 15px solid black;
+        border-left: 15px solid transparent;
+        border-right: 0px solid transparent;
+        border-bottom: 0px solid transparent;
+        position: absolute;
+        top: 15px;
+        left: 120px;
+    }
 </style>
 </head>
 <body style="padding: 0px">

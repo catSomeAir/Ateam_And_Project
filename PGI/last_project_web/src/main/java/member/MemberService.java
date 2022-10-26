@@ -7,6 +7,7 @@ public interface MemberService {
 	int member_join(MemberVO vo); //회원가입시 회원정보 저장
 	MemberVO member_myinfo(String email); //내정보보기(마이페이지, 마이프로필)
 	MemberVO member_login(HashMap<String, String> map); //로그인처리
+	boolean member_id_check(String id);//회원가입시 아이디중복확인(아이디존재여부)
 	int member_email_check(String email);//회원가입시 아이디중복확인(아이디존재여부)
 	String member_salt(String userid); //회원의 salt 조회
 	int member_update(MemberVO vo); //마이페이지에서 회원정보변경저장

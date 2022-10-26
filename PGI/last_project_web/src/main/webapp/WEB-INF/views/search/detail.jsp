@@ -5488,7 +5488,7 @@ var cart = Quickbeam.init({
 								</div>
 								<div class="big">
 									<span id="big-image" class="img" quickbeam="image"
-										style="background-image: url(${vo.filepath}); background-size: 420px;"></span>
+										style="background-image: url(${vo.filepath.replace('localhost','121.147.215.12:3302')}); background-size: 420px;"></span>
 									<div id="banner-gallery" class="swipe">
 										<div class="swipe-wrap">
 											<div

@@ -6,6 +6,23 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+.noti-li{
+	border: 0px !important;
+	border-bottom: 1px solid #d8d8d8 !important;
+}
+
+tr, th, td{
+	border: 0px !important;
+}
+
+tr {
+
+	border: 0px !important;
+	border-bottom: 1px solid #d8d8d8 !important;
+}
+
+</style>
 </head>
 <body>
 <h3>공지사항</h3>
@@ -15,14 +32,14 @@
 <div id='list-top' class='w-px1200'>
 	<ul>
 		<li>
-			<select class='w-px100' name='search'>
+			<select class='w-px100 noti-li' name='search'>
 			<option value='all' ${page.search eq 'all' ? 'selected' : ''}>전체</option>
 			<option value='title' ${page.search eq 'title' ? 'selected' : ''}>제목</option>
 			<option value='content' ${page.search eq 'content' ? 'selected' : ''}>내용</option>
 			<option value='t_c' ${page.search eq 't_c' ? 'selected' : ''}>제목+내용</option>
 			</select>
 		</li>
-		<li><input type='text' name='keyword' class='w-px300' 
+		<li><input type='text' name='keyword' class='w-px300 noti-li' 
 									value='${page.keyword}'></li>	
 		<li><a class='btn-fill' onclick='$("form").submit()'>검색</a></li>
 	</ul>
@@ -31,7 +48,10 @@
 		<c:if test='${ loginInfo.admin eq "Y" }'>
 		<li><a class='btn-fill' href='new.no'>글쓰기</a></li>
 		</c:if> --%>
+		<!-- 박가인 -->
+		<c:if test='${loginInfo.admin eq "Y"}'>
 		<li><a class='btn-fill' href='new_web.no'>글쓰기</a></li>
+		</c:if>
 	</ul>
 </div>
 </form>
@@ -40,7 +60,7 @@
 <colgroup>
 	<col width='100px'>
 	<col>
-	<col width='120px'>
+	<col width='160px'>
 </colgroup>
 <tr><th>번호</th>
 	<th>제목</th>

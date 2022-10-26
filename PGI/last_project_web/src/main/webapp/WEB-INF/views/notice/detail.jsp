@@ -9,12 +9,30 @@
 <title>Insert title here</title>
 <style>
 table td { text-align: left }
+tr, th, td{
+	border: 0px !important;
+}
+
+tr {
+
+	border: 0px !important;
+	border-bottom: 1px solid #d8d8d8 !important;
+}
+
+.noti-table{
+	display: flex;
+}
+/* 박가인 */
+td {
+    width: 700px;
+}
 </style>
 </head>
 <body>
 <h3>공지글 안내</h3>
-<table class='w-px1200'>
-<tr><th style="width:14px">제목</th>
+<table class='w-px1200 noti-table'>
+<tr><th style="width:120px">제목</th> 
+<!-- 박가인 제목 style="width:14px"이었는데 수정했습니다. -->
 	<td colspan='3'>${vo.title}</td>
 </tr>
 <tr>
@@ -33,11 +51,13 @@ table td { text-align: left }
 <!-- 관리자이면 수정/삭제 가능 -->
 <%-- <c:if test='${loginInfo.admin eq "Y"}'> --%>
 <!-- 로그인사용자 작성자인 경우 수정/삭제 가능  -->
+<!-- 박가인 -->
+<c:if test='${loginInfo.admin eq "Y"}'>
 <c:if test='${loginInfo.userid eq vo.writer}'>
 <a class='btn-fill' href='modify_web.no?id=${vo.id}'>수정</a>
 <a class='btn-fill remove'>삭제</a>
 </c:if>
-
+</c:if>
 </div>
 
 <script>

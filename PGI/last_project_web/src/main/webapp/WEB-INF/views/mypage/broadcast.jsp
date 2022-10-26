@@ -21,7 +21,7 @@
 <title>Insert title here</title>
 <style type="text/css">
 body{
-	text-align: left !important;
+	text-align: left;
 	background-color: #F2F2F2;
 }
 #inputMessage:focus{
@@ -38,8 +38,9 @@ body{
 <br/>
 <div id="messageWindow2" style="margin: 0 auto; width: 700px;padding:10px 0;height: 45em; overflow: auto; background-color: white; border: 1px solid #d1cdcd;border-radius: 10px 10px 0px 0px;"></div>
 <input id="inputMessage" type="text"
-	onkeydown="if(event.keyCode==13){send();}" style="width: 621px; margin-left: 708px;border-radius: 15px; padding: 8px; background-color: white;" />
-	<input type="submit" value="보내기" onclick="send();" style="height: 50px; background-color: #020E20;  border-radius: 8px; color: white;" />
+	onkeydown="if(event.keyCode==13){send();}" style="width: 621px; margin-left: 0px auto;border-radius: 15px; padding: 8px; background-color: white; justify-content : center; text-align: left; position:absolute; left:34%;" />
+	<input type="submit" value="보내기" onclick="send();" style="height: 50px; background-color: #020E20;  border-radius: 8px; color: white;  position:absolute; left:64%;" />
+	<br/>
 	<br/>
 <script type="text/javascript">
 	

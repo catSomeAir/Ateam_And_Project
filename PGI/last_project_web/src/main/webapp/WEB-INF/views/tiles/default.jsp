@@ -13,7 +13,7 @@
 <head>
 <meta charset="UTF-8">
 <title>나의설명서 ${title}</title>
-<link rel='icon' type='image/x-icon' href='img/hanul.ico'>
+<link rel='icon' type='image/x-icon' href='img/favi.png'>
 <link rel='stylesheet' type='text/css' href='css/common.css?<%=new java.util.Date()%>'>
 <link rel='stylesheet' type='text/css' href='css/member.css?<%=new java.util.Date()%>'>
 
@@ -22,7 +22,8 @@
 </head>
 <body>
 <div id='container'>
-<tiles:insertAttribute name='container' ignore="true"/>
+<%-- <tiles:insertAttribute name='container' /> --%>
+<tiles:insertAttribute name='container'  ignore="true"/>
 </div>
 </body>
 </html>
