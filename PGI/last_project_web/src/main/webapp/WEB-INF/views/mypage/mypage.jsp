@@ -172,7 +172,7 @@
 															<div style="display: flex;">
 																<div style="text-align: left; font-size: 20px;">포인트
 																</div>
-																<strong style="margin-left: 500px; font-size: 20px;">&nbsp;${point}
+																<strong style="margin-left: 500px; font-size: 20px;">&nbsp;${loginInfo.point}
 																	&nbsp;P</strong>
 															</div>
 															<br />

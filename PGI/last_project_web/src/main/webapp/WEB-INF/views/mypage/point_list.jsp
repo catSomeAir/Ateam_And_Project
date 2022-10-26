@@ -51,7 +51,17 @@
 	var USER = "pgi0822"
 </script>
 <style>
-body {
+th, td {
+     padding: 20px;
+     border-bottom: 1px solid darkgray;
+}
+tr:first-child{
+	border-top: 1px solid darkgray;
+}
+table td {
+    padding: 14px 10px !important;
+}
+/* body {
   background: #f5f5f5
 }
 
@@ -125,7 +135,7 @@ a {
   
   th {
     border-bottom: 1px solid #a39485;
-     border-left: 1px solid #e5e5e5;
+     border-left: none;
   }
   
   td {
@@ -136,7 +146,7 @@ a {
    th:first-child, td:first-child {
     border-left: none;
   }
-  
+   */
 </style>
 
 
@@ -176,16 +186,20 @@ a {
 												<div class="mypage">
 													<!-- 타이틀 -->
 													<div class="title wow">
+													<br/>
 														<p>
 															<span
-																style="font-size: 30px; color: #000; font-weight: 500;">포인트</span>
+																style="font-size: 30px; color: #000; font-weight: 500; margin-left: 20px;">포인트</span>
+																<img alt="" src="img/pig.png" width="30px" height="30px">
 														</p>
 													</div>
-													<strong style="font-size:2rem;">${point }&nbsp;P</strong>
+													<strong style="font-size:2rem;"><u>&nbsp;${loginInfo.point }&nbsp;P</u></strong>
+													<br/>
 													<br>
 													<br/>
 													<br/>
 													<div style="font-size: 1.5rem;">적립 및 사용 내역</div>
+													<br/>
 													<br/>
 													<div class="sub_content">
 														</div>
@@ -208,9 +222,9 @@ a {
 
 <table >
 <colgroup>
-	<col width='150px'>
-	<col>
-	<col width='170px'>
+	<col width='200px'>
+	<col width='360px'>
+	<col width='200px'>
 </colgroup>
 <tr>
 	<th>사용 날짜</th>

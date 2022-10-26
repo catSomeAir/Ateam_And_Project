@@ -60,8 +60,8 @@ update userinfo
 set pw=#{pw},
     name=#{name},
     phone=#{phone},
-    filename=#{filename},
-    filepath=#{filepath}
+    filename=#{filename, jdbcType=VARCHAR},
+    filepath=#{filepath, jdbcType=VARCHAR}
 where email=#{email}
 </update>
 <!-- 회원정보 조회 -->

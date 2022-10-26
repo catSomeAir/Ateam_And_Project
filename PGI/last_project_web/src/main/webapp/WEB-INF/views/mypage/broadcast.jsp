@@ -1,17 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%
-	String id = "";
-	if (session.getAttribute("loginInfo") != null) {
-		id = (String) session.getAttribute("loginInfo");
-	}
 
-	String nick = "";
-	if (session.getAttribute("loginInfo") != null) {
-		nick = (String) session.getAttribute("loinInfo");
+    <%
+	String id = "회원님";
+	
+	/* if (session.getAttribute("loginInfo") != null) {
+		id = (String) session.getAttribute("id");
+	} */
+	String nick = "관리자";
+	/* if (session.getAttribute("loginInfo") != null) {
+		nick = (String) session.getAttribute("nick");
 	} else {
 		nick = "NICKNAME";
-	}
+	} */
 %>
 <!DOCTYPE html>
 <html>
@@ -21,16 +22,24 @@
 <style type="text/css">
 body{
 	text-align: left !important;
+	background-color: #F2F2F2;
+}
+#inputMessage:focus{
+	border:none;
+	background-color: white;
 }
 </style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 </head>
 <body>
-
-<div style="margin: 0 auto; width: 800px; height: 50px; background-color: white; color: black; line-height: 50px;">&nbsp; 회원서비스 고객상담</div>
-<div id="messageWindow2" style="margin: 0 auto; width: 800px;padding:10px 0;height: 45em; overflow: auto; background-color: #a0c0d7;"></div>
+<!-- #a0c0d7 -->
+<div style="text-align: center; font-size: 25px; font-family: 'Noto Sans KR', sans-serif;" >&nbsp; 회원서비스 고객상담</div>
+<br/>
+<div id="messageWindow2" style="margin: 0 auto; width: 700px;padding:10px 0;height: 45em; overflow: auto; background-color: white; border: 1px solid #d1cdcd;border-radius: 10px 10px 0px 0px;"></div>
 <input id="inputMessage" type="text"
-	onkeydown="if(event.keyCode==13){send();}" style="width: 721px; margin-left: 656px;" />
-	<input type="submit" value="send" onclick="send();" />
+	onkeydown="if(event.keyCode==13){send();}" style="width: 621px; margin-left: 708px;border-radius: 15px; padding: 8px; background-color: white;" />
+	<input type="submit" value="보내기" onclick="send();" style="height: 50px; background-color: #020E20;  border-radius: 8px; color: white;" />
 	<br/>
 <script type="text/javascript">
 	
@@ -88,7 +97,9 @@ body{
 			div.style["display"]="inline-block";
 			div.style["background-color"]="#fcfcfc";
 			div.style["border-radius"]="3px";
-			div.style["padding"]="3px";
+			div.style["padding"]="5px";
+			div.style["border"]="1px solid darkgray";
+			div.style["font-size"]="18px";
 			div.style["margin-left"]="3px";
 
 			div.innerHTML = message[1];
@@ -144,8 +155,10 @@ body{
 			div.style["word-wrap"]="break-word";
 			div.style["float"]="right";
 			div.style["display"]="inline-block";
-			div.style["background-color"]="#ffea00";
-			div.style["padding"]="3px";
+			div.style["background-color"]="#020E20";
+			div.style["color"]="white";
+			div.style["padding"]="5px";
+			div.style["font-size"]="18px";
 			div.style["border-radius"]="3px";
 			div.style["margin-right"]="3px";
 
