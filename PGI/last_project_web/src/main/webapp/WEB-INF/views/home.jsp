@@ -137,7 +137,7 @@ left: 1800px;
   .chat_icon {
         position:fixed;
         bottom: 0;
-		left: 1900px;
+		left: 1730px;
       /*   margin: 50px; */
         width:140px;
         height:90px;

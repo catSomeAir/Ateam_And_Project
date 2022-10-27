@@ -24,21 +24,30 @@ body {
   -webkit-box-orient: vertical;
 }
 
+/* 황아인 */
 .search {
- width: 100%;
+  width: 105%;
   position: relative;
   display: flex;
+  border: 2px solid #020e20;
+  border-radius: 15px;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .searchTerm {
-  width: 100%;
-  border: 3px solid #020E20;
-  border-right: none;
+  width: 80%;
+  /* border: 3px solid #020E20; */
+  /* border-right: none; */
+  border-style: none;
   padding: 5px;
-  height: 20px;
-  border-radius: 5px 0 0 5px;
+  height: 42px;
+  border-radius: 15px;
   outline: none;
   color: #9DBFAF;
+
 }
 
 .searchTerm:focus {
@@ -46,15 +55,16 @@ body {
 }
 
 .searchButton {
-  width: 40px;
-  height: 36px;
-  border: 1px solid #020E20;
-  background: #020E20;
+  /* width: 40px; */
+  /* height: 36px; */
+  border: 0px;
+  /* background: #020E20; */
   text-align: center;
-  color: #fff;
-  border-radius: 0 5px 5px 0;
+  color: #020E20;
+  /* border-radius: 0 5px 5px 0; */
   cursor: pointer;
   font-size: 20px;
+  margin-right: 5px;
 }
 
 /*Resize the wrap to see the search bar change!*/

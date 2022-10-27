@@ -4,13 +4,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.css">
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.css">
+<script
+	src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.min.js"></script>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
 
 <style type="text/css">
+/* 박가인 */
+div#div-wrap {
+	border: 1px solid #d8d8d8;
+	width: 1051px;
+	margin: 0 auto;
+}
+
 @
 -moz-keyframes quick_cart_pay_show { 0% {
 	-webkit-transform: rotate(70deg);
@@ -20,48 +29,138 @@
 }
 
 50
+
+
 %
 {
 -webkit-transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 -20deg
-);
+
+
+)
+;
+
+
 -ms-transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 -20deg
-);
+
+
+)
+;
+
+
 transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 -20deg
-);
+
+
+)
+;
+
+
 right
+
+
 :
-20px;
+
+
+20px
+;
+
+
 }
 100
+
+
 %
 {
 -webkit-transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 0deg
-);
+
+
+)
+;
+
+
 -ms-transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 0deg
-);
+
+
+)
+;
+
+
 transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 0deg
-);
+
+
+)
+;
+
+
 right
+
+
 :
-0;
+
+
+0
+;
+
+
 }
 }
 @
@@ -72,38 +171,104 @@ right
 }
 
 50
+
+
 %
 {
 -webkit-transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 -20deg
-);
+
+
+)
+;
+
+
 transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 -20deg
-);
+
+
+)
+;
+
+
 right
+
+
 :
-20px;
+
+
+20px
+;
+
+
 }
 100
+
+
 %
 {
 -webkit-transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 0deg
-);
+
+
+)
+;
+
+
 transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 0deg
-);
+
+
+)
+;
+
+
 right
+
+
 :
-0;
+
+
+0
+;
+
+
 }
 }
 @
@@ -114,38 +279,104 @@ keyframes quick_cart_pay_show { 0% {
 }
 
 50
+
+
 %
 {
 -webkit-transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 -20deg
-);
+
+
+)
+;
+
+
 transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 -20deg
-);
+
+
+)
+;
+
+
 right
+
+
 :
-20px;
+
+
+20px
+;
+
+
 }
 100
+
+
 %
 {
 -webkit-transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 0deg
-);
+
+
+)
+;
+
+
 transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 0deg
-);
+
+
+)
+;
+
+
 right
+
+
 :
-0;
+
+
+0
+;
+
+
 }
 }
 @
@@ -155,18 +386,44 @@ right
 }
 
 100
+
+
 %
 {
 -webkit-transform
+
+
 :
-translateX(
+
+
+translateX
+(
+
+
 200px
-);
+
+
+)
+;
+
+
 transform
+
+
 :
-translateX(
+
+
+translateX
+(
+
+
 200px
-);
+
+
+)
+;
+
+
 }
 }
 @
@@ -176,18 +433,44 @@ keyframes quick_cart_pay_hide { 0% {
 }
 
 100
+
+
 %
 {
 -webkit-transform
+
+
 :
-translateX(
+
+
+translateX
+(
+
+
 200px
-);
+
+
+)
+;
+
+
 transform
+
+
 :
-translateX(
+
+
+translateX
+(
+
+
 200px
-);
+
+
+)
+;
+
+
 }
 }
 @
@@ -198,27 +481,74 @@ keyframes fadeDown { 0% {
 }
 
 100
+
+
 %
 {
 -webkit-transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 5deg
+
+
 )
-translateY(
+
+
+translateY
+(
+
+
 5px
-);
+
+
+)
+;
+
+
 transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 5deg
+
+
 )
-translateY(
+
+
+translateY
+(
+
+
 5px
-);
+
+
+)
+;
+
+
 opacity
+
+
 :
-0;
+
+
+0
+;
+
+
 }
 }
 @
@@ -229,27 +559,74 @@ opacity
 }
 
 100
+
+
 %
 {
 -webkit-transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 5deg
+
+
 )
-translateY(
+
+
+translateY
+(
+
+
 5px
-);
+
+
+)
+;
+
+
 transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 5deg
+
+
 )
-translateY(
+
+
+translateY
+(
+
+
 5px
-);
+
+
+)
+;
+
+
 opacity
+
+
 :
-0;
+
+
+0
+;
+
+
 }
 }
 @
@@ -260,27 +637,74 @@ keyframes fadeUp { 0% {
 }
 
 100
+
+
 %
 {
 -webkit-transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 0deg
+
+
 )
-translateY(
+
+
+translateY
+(
+
+
 0px
-);
+
+
+)
+;
+
+
 transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 0deg
+
+
 )
-translateY(
+
+
+translateY
+(
+
+
 0px
-);
+
+
+)
+;
+
+
 opacity
+
+
 :
-1;
+
+
+1
+;
+
+
 }
 }
 @
@@ -291,27 +715,74 @@ opacity
 }
 
 100
+
+
 %
 {
 -webkit-transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 0deg
+
+
 )
-translateY(
+
+
+translateY
+(
+
+
 0px
-);
+
+
+)
+;
+
+
 transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 0deg
+
+
 )
-translateY(
+
+
+translateY
+(
+
+
 0px
-);
+
+
+)
+;
+
+
 opacity
+
+
 :
-1;
+
+
+1
+;
+
+
 }
 }
 .fadeDown {
@@ -1148,7 +1619,7 @@ header #nav-icon {
 	position: relative
 }
 
-.btn-fill:hover{
+.btn-fill:hover {
 	color: #ffffff !important;
 }
 
@@ -2180,38 +2651,102 @@ header #nav-icon {
 }
 
 50
+
+
 %
 {
 -moz-transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 -20deg
-);
+
+
+)
+;
+
+
 transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 -20deg
-);
+
+
+)
+;
+
+
 right
+
+
 :
+
+
 20px
+
+
 }
 100
+
+
 %
 {
 -moz-transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 0deg
-);
+
+
+)
+;
+
+
 transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 0deg
-);
+
+
+)
+;
+
+
 right
+
+
 :
+
+
 0
+
+
 }
 }
 @
@@ -2222,38 +2757,102 @@ right
 }
 
 50
+
+
 %
 {
 -webkit-transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 -20deg
-);
+
+
+)
+;
+
+
 transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 -20deg
-);
+
+
+)
+;
+
+
 right
+
+
 :
+
+
 20px
+
+
 }
 100
+
+
 %
 {
 -webkit-transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 0deg
-);
+
+
+)
+;
+
+
 transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 0deg
-);
+
+
+)
+;
+
+
 right
+
+
 :
+
+
 0
+
+
 }
 }
 @
@@ -2266,58 +2865,170 @@ keyframes quick_cart_pay_show { 0% {
 }
 
 50
+
+
 %
 {
 -moz-transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 -20deg
-);
+
+
+)
+;
+
+
 -ms-transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 -20deg
-);
+
+
+)
+;
+
+
 -webkit-transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 -20deg
-);
+
+
+)
+;
+
+
 transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 -20deg
-);
+
+
+)
+;
+
+
 right
+
+
 :
+
+
 20px
+
+
 }
 100
+
+
 %
 {
 -moz-transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 0deg
-);
+
+
+)
+;
+
+
 -ms-transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 0deg
-);
+
+
+)
+;
+
+
 -webkit-transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 0deg
-);
+
+
+)
+;
+
+
 transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 0deg
-);
+
+
+)
+;
+
+
 right
+
+
 :
+
+
 0
+
+
 }
 }
 @
@@ -2328,21 +3039,53 @@ right
 }
 
 100
+
+
 %
 {
 -moz-transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 70deg
-);
+
+
+)
+;
+
+
 transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 70deg
-);
+
+
+)
+;
+
+
 right
+
+
 :
+
+
 -100px
+
+
 }
 }
 @
@@ -2353,21 +3096,53 @@ right
 }
 
 100
+
+
 %
 {
 -webkit-transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 70deg
-);
+
+
+)
+;
+
+
 transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 70deg
-);
+
+
+)
+;
+
+
 right
+
+
 :
+
+
 -100px
+
+
 }
 }
 @
@@ -2380,31 +3155,87 @@ keyframes quick_cart_pay_hide { 0% {
 }
 
 100
+
+
 %
 {
 -moz-transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 70deg
-);
+
+
+)
+;
+
+
 -ms-transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 70deg
-);
+
+
+)
+;
+
+
 -webkit-transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 70deg
-);
+
+
+)
+;
+
+
 transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 70deg
-);
+
+
+)
+;
+
+
 right
+
+
 :
+
+
 -100px
+
+
 }
 }
 .homepage .bg {
@@ -4910,11 +5741,11 @@ var Quickbeam = (function () {
 
       setPayButtonAction();
 
-      if (cartPay.length > 0) {return false;}
+      /* if (cartPay.length() > 0) {return false;} */
 
-      if (att.animationLib === 'gsap') {
+      /* if (att.animationLib === 'gsap') {
         if (typeof TweenMax !== 'function') {throw "GSAP is not loaded."}
-      }
+      } */
 
       if (price) {
         price = price.innerHTML;
@@ -5004,14 +5835,14 @@ var Quickbeam = (function () {
       }
 
       //Event delegation for cart
-      cart.addEventListener("click",function(e) {
+      /* cart.addEventListener("click",function(e) {
         //calling callback if item of object have a match.
         for (var key in listeners) {
           if (listeners.hasOwnProperty(key) && e.target && e.target.matches(key)) {
             listeners[key].apply(null, [e.target]);
           }
         }
-      });
+      }); */
 
       if (addToCart) {
         //Buy button listener.
@@ -5459,33 +6290,32 @@ var cart = Quickbeam.init({
 		</div>
 		<section aria-label="Main content" role="main" class="product-detail">
 			<div itemscope itemtype="http://schema.org/Product">
-				<meta itemprop="url"
-					content="http://html-koder-test.myshopify.com/products/tommy-hilfiger-t-shirt-new-york">
+				<meta itemprop="url" content="http://html-koder-test.myshopify.com/products/tommy-hilfiger-t-shirt-new-york">
 				<meta itemprop="image"
 					content="//cdn.shopify.com/s/files/1/1047/6452/products/product_grande.png?v=1446769025">
 				<div class="shadow">
 					<div class="_cont detail-top">
 						<div class="cols">
 							<div class="left-col">
-								<!-- 최근 본 설명서 -->
+								<div style="text-align:left; margin-top: 5px;">최근 본 설명서</div>
 								<div class="thumbs">
 									<a class="thumb-image active"
 										href="//cdn.shopify.com/s/files/1/1047/6452/products/product_1024x1024.png?v=1446769025"
 										data-index="0"> <span><img style="width: 400px;"
-											src="//cdn.shopify.com/s/files/1/1047/6452/products/product_150x150.png?v=1446769025"
+											src="img/temp10.png"
 											alt="Tommy Hilfiger T-Shirt New York"></span>
 									</a> <a class="thumb-image active"
 										href="//cdn.shopify.com/s/files/1/1047/6452/products/product_1024x1024.png?v=1446769025"
 										data-index="0"> <span><img style="width: 400px;"
-											src="//cdn.shopify.com/s/files/1/1047/6452/products/product_150x150.png?v=1446769025"
+											src="img/temp_model_img2.jpg.png"
 											alt="Tommy Hilfiger T-Shirt New York"></span>
 									</a> <a class="thumb-image active"
 										href="//cdn.shopify.com/s/files/1/1047/6452/products/product_1024x1024.png?v=1446769025"
 										data-index="0"> <span><img style="width: 400px;"
-											src="//cdn.shopify.com/s/files/1/1047/6452/products/product_150x150.png?v=1446769025"
+											src="img/model_temp3.png"
 											alt="Tommy Hilfiger T-Shirt New York"></span>
 									</a>
-								</div>
+									</div>
 								<div class="big">
 									<span id="big-image" class="img" quickbeam="image"
 										style="background-image: url(${vo.filepath.replace('localhost','121.147.215.12:3302')}); background-size: 420px;"></span>
@@ -5528,7 +6358,7 @@ var cart = Quickbeam.init({
 									<p style="font-size: 20px; text-align: left;">모델코드 :
 										${vo.model_code}</p>
 									</br>
-				
+
 									<!-- <form method="post" enctype="multipart/form-data" id="AddToCartForm"> -->
 									<form id="AddToCartForm">
 										<select name="id" id="productSelect" quickbeam="product"
@@ -5572,12 +6402,35 @@ var cart = Quickbeam.init({
 										<div class="tab-labels">
 											<span data-id="1" class="active">Info</span> <span
 												data-id="2">Brand</span>
+												<br/>
+												<br/>
+												<div style="text-align: left;">
+&nbsp;제조자/수입자 : 
+DH글로벌/㈜삼성전자
+<br/>
+&nbsp;제조국가 : 
+대한민국
+<br/>
+&nbsp;KC 인증 필 유무 : 
+해당 없음
+<br/>
+&nbsp;동일모델의 출시년월 : 
+2019년 6월
+<br/>
+ 
+&nbsp;A/S 책임자와 전화번호 : 
+삼성전자서비스센터 / 1588-3366
+<br/>
+&nbsp;품질보증기준 : 
+결함·하자 등에 따른 소비자피해에 대해서는 소비자분쟁해결기준(소비자<br/>
+ &nbsp;기본법 제16조)에 따라 보상가능
+</div>
 										</div>
 										<div class="tab-slides">
 											<div id="tab-slide-1" itemprop="description"
-												class="slide active">We open source it for you
-												https://github.com/greenwoodents/quickbeam.js if you want to
-												use it on your ecommerce.</div>
+												class="slide active">
+												
+												</div>
 											<div id="tab-slide-2" class="slide">Tony Hunfinger</div>
 										</div>
 									</div>
@@ -5607,171 +6460,207 @@ var cart = Quickbeam.init({
 
 		<!-- 댓글관리 -->
 		<section
-			style="background: #dee1e3; padding-top: 50px; padding-bottom: 50px;">
+			style="background: white; padding-top: 50px; padding-bottom: 50px;">
 			<!-- Contenedor Principal -->
-			
-							
-			
-			<div class="comments-container">
-				<h1 style="text-align: left;">의견 및 질문</h1>
-				<!-- 새 글쓰기 -->
-				<c:if test="${loginInfo !=null }">
-					<ul class="comments-list reply-space">
+			<div id="div-wrap">
+				<div class="comments-container">
+					<h1 style="text-align: left;">의견 및 질문</h1>
+					<!-- 새 글쓰기 -->
+					<c:if test="${loginInfo !=null }">
+						<ul class="comments-list reply-space">
 							<li>
 								<!-- Avatar -->
 								<div class="comment-avatar">
 									<c:if test="${loginInfo.filepath == null }">
-									 <img src='img/noneprofile.png' alt="1"/>
+										<img src='img/noneprofile.png' alt="1" />
 									</c:if>
 									<c:if test="${loginInfo.filepath != null}">
-									<img src="${loginInfo.filepath }" alt="">
+										<img src="${loginInfo.filepath }" alt="">
 									</c:if>
-									
+
 								</div> <!-- Contenedor del Comentario -->
 								<div class="comment-box">
-									<div class="comment-head" style="padding-left:0px !important; padding-right:0px !important;">
-										
-										<input id="comment_insert" type="text" style="width: 86%; border:none; border-bottom: 1px solid gray;" placeholder="새 글을 입력해주세요">
-											 <%-- <a onclick="reply_cancel('reply-space${status.index}')" contenteditable="false" class="btn-fill" style="margin-left: 6px; background-color: #a9a9a9; border: 1px solid #a9a9a9; color: #e9e9e9; box-shadow: 2px 2px 3px black;">취소</a> --%>
-											 <a onclick="insert(${loginInfo.email})"  class="btn-fill" style="box-shadow: 2px 2px 3px black; color: #e9e9e9" >등록</a>
-										
+									<div class="comment-head"
+										style="padding-left: 0px !important; padding-right: 0px !important;">
+
+										<input id="comment_insert" type="text"
+											style="width: 86%; border: none; border-bottom: 1px solid gray;"
+											placeholder="새 글을 입력해주세요">
+										<%-- <a onclick="reply_cancel('reply-space${status.index}')" contenteditable="false" class="btn-fill" style="margin-left: 6px; background-color: #a9a9a9; border: 1px solid #a9a9a9; color: #e9e9e9; box-shadow: 2px 2px 3px black;">취소</a> --%>
+										<a onclick="insert_board()" class="btn-fill"
+											style="box-shadow: 2px 2px 3px black; color: #e9e9e9">등록</a>
+
 
 									</div>
-									
+
 								</div>
 							</li>
-					</ul>
-					<hr>
-				</c:if>	
-				<ul id="comments-list" class="comments-list">
-				
-				
-				<!-- ------------------------------------------------------------------------------------------- -->
-				
-				
-				
-				
-				
-				
-					<c:forEach items="${commentlist }" var="commentvo" varStatus="status">
+						</ul>
+						<hr>
+					</c:if>
+					<ul id="comments-list" class="comments-list">
 
-						<li>
 
-							<div class="comment-main-level">
-								<!-- Avatar -->
-								<div class="comment-avatar">
-									<img src="${commentvo.filepath}" alt="">
-								</div>
-								<!-- Contenedor del Comentario -->
-								<div class="comment-box">
-									<div class="comment-head">
-										<c:if test="${commentvo.cmt_code eq 'o' }">
+						<!-- ------------------------------------------------------------------------------------------- -->
 
-											<h6 class="comment-name by-author">
-												<a style="padding-right: 0 !important;">${commentvo.email} > </a>
-											</h6>
+						<c:forEach items="${commentlist }" var="commentvo"
+							varStatus="status">
+
+							<li>
+
+								<div class="comment-main-level">
+									<!-- Avatar -->
+									<div class="comment-avatar">
+										<c:if test="${commentvo.filepath != null}">
+											<img src="${commentvo.filepath}" alt="">
 										</c:if>
-										<c:if test="${commentvo.cmt_code eq 'q' }">
 
-											<h6 class="comment-name by-authore">
-												<a>${commentvo.email}</a>
-											</h6>
+										<c:if test="${commentvo.filepath == null}">
+											<img src="img/noneprofile.png" alt="">
 										</c:if>
-										<span >${commentvo.writedate }</span> 
-										<c:if test="${loginInfo.email == commentvo.email }">
-										<div style="width: 100%; text-align: right;"><a>수정</a><a>삭제</a></div>
-										</c:if>
+
 									</div>
-									<div class="comment-content"
-										style="text-align: left; padding-left: 30px; padding-right: 10px;">
-										${commentvo.content }
-										</br>
-										<a style="margin-top: 20px;" onclick="reply('reply-space${status.index}')">답글</a>
+									<!-- Contenedor del Comentario -->
+									<div class="comment-box">
+										<div class="comment-head">
+											<c:if test="${commentvo.cmt_code eq 'o' }">
+
+												<h6 class="comment-name by-author">
+													<a style="padding-right: 0 !important;">${commentvo.email}
+														> </a>
+												</h6>
+											</c:if>
+											<c:if test="${commentvo.cmt_code eq 'q' }">
+
+												<h6 class="comment-name by-authore">
+													<a>${commentvo.email}</a>
+												</h6>
+											</c:if>
+											<span>${commentvo.writedate }</span>
+											<c:if test="${loginInfo.email == commentvo.email }">
+												<div style="width: 100%; text-align: right;">
+													<a>수정</a><a>삭제</a>
+												</div>
+											</c:if>
+										</div>
+										<div class="comment-content"
+											style="text-align: left; padding-left: 30px; padding-right: 10px;">
+											${commentvo.content } </br> <a style="margin-top: 20px;"
+												onclick="reply('reply-space${status.index}')">답글</a>
+										</div>
+
 									</div>
-									
-								</div>
-								
-								
-								
-								<!-- ------------------------------------------------------------------------------------------- -->
-								
-								
-								
-							</div> <!-- Respuestas de los comentarios -->
-							<ul id="reply-space${status.index}" style="display: none;" class="comments-list reply-list reply-space">
+
+
+
+									<!-- ------------------------------------------------------------------------------------------- -->
+
+
+
+								</div> <!-- Respuestas de los comentarios -->
+								<ul id="reply-space${status.index}" style="display: none;"
+									class="comments-list reply-list reply-space">
 									<li>
 										<!-- Avatar -->
 										<div class="comment-avatar">
 											<img src="${loginInfo.filepath }" alt="">
 										</div> <!-- Contenedor del Comentario -->
 										<div class="comment-box">
-											<div class="comment-head" style="padding-left:0px !important; padding-right:0px !important;">
-												
-												<input id="reply-content${status.index}" type="text" style="width: 75%; border:none; border-bottom: 1px solid black;" placeholder="댓글을 입력해주세요">
-													 <a onclick="reply_cancel('reply-space${status.index}')" contenteditable="false" class="btn-fill" style="margin-left: 6px; background-color: #a9a9a9; border: 1px solid #a9a9a9; color: #e9e9e9; box-shadow: 2px 2px 3px black;">취소</a>
-													 <a onclick="reply_commit('reply-content${status.index}','${commentvo.board_id}','${vo.model_code }')"  class="btn-fill" style="box-shadow: 2px 2px 3px black; color: #e9e9e9" >등록</a>
-												
- 
-											</div>
-											
-										</div>
-									</li>
-							</ul>
-							
-							
-							<ul class="comments-list reply-list">
-								<c:forEach items="${commentvo.replylist }" var="replyvo" varStatus="replystatus">
-									<li>
-										<!-- Avatar -->
-										<div class="comment-avatar">
-											<img src="${replyvo.filepath }" alt="">
-										</div> <!-- Contenedor del Comentario -->
-										<div class="comment-box">
-											<div class="comment-head">
-												<h6 class="comment-name">
-													<a>${replyvo.email}</a>
-												</h6>
-											
-													<span>${replyvo.writedate }</span>
-													
-											<c:if test="${loginInfo!=null && loginInfo.email == replyvo.email }">
-												<div style="width: 100%; text-align: right;"><a id="reply_modify_button${replystatus.index }" onclick="reply_modify('reply_id${replystatus.index }','reply_modify_id${replystatus.index }','${replyvo.content }','reply_modify_button${replystatus.index }','reply_delete_button${replystatus.index }' )">수정</a><a id="reply_delete_button${replystatus.index }" onclick="reply_delete('reply_delete_button${replystatus.index }','${replyvo.rep_no}', 'reply_modify_id${replystatus.index }')" >삭제</a></div>
-											</c:if>
+											<div class="comment-head"
+												style="padding-left: 0px !important; padding-right: 0px !important;">
+
+												<input id="reply-content${status.index}" type="text"
+													style="width: 75%; border: none; border-bottom: 1px solid black;"
+													placeholder="댓글을 입력해주세요"> <a
+													onclick="reply_cancel('reply-space${status.index}')"
+													contenteditable="false" class="btn-fill"
+													style="margin-left: 6px; background-color: #a9a9a9; border: 1px solid #a9a9a9; color: #e9e9e9; box-shadow: 2px 2px 3px black;">취소</a>
+												<a
+													onclick="reply_commit('reply-content${status.index}','${commentvo.board_id}','${vo.model_code }')"
+													class="btn-fill"
+													style="box-shadow: 2px 2px 3px black; color: #e9e9e9">등록</a>
+
 
 											</div>
-											<div class="comment-content"
-												style="text-align: left; padding-left: 30px; padding-right: 10px;">
-												<a style="display: block;" id="reply_id${replystatus.index }">${replyvo.content }</a>
-												<input id="reply_modify_id${replystatus.index }" type="text" value="" style="display:none; border-top:none !important; border-left:none !important; border-right:none !important; border-bottom: 1px solid gray;">
-												</div>
-											
-											
+
 										</div>
 									</li>
-								</c:forEach>
-								
-								
-							</ul>
-						</li>
-					</c:forEach>
-					
-				</ul>
+								</ul>
+
+
+								<ul class="comments-list reply-list">
+									<c:forEach items="${commentvo.replylist }" var="replyvo"
+										varStatus="replystatus">
+										<li>
+											<!-- Avatar -->
+											<div class="comment-avatar">
+
+												<c:if test="${replyvo.filepath != null}">
+													<img src="${replyvo.filepath }" alt="">
+												</c:if>
+
+												<c:if test="${replyvo.filepath == null}">
+													<img src="img/noneprofile.png" alt="">
+												</c:if>
+											</div> <!-- Contenedor del Comentario -->
+											<div class="comment-box">
+												<div class="comment-head">
+													<h6 class="comment-name">
+														<a>${replyvo.email}</a>
+													</h6>
+
+													<span>${replyvo.writedate }</span>
+
+													<c:if
+														test="${loginInfo!=null && loginInfo.email == replyvo.email }">
+														<div style="width: 100%; text-align: right;">
+															<a id="reply_modify_button${replystatus.index }"
+																onclick="reply_modify('reply_id${replystatus.index }','reply_modify_id${replystatus.index }','${replyvo.content }','reply_modify_button${replystatus.index }','reply_delete_button${replystatus.index }' )">수정</a><a
+																id="reply_delete_button${replystatus.index }"
+																onclick="reply_delete('reply_delete_button${replystatus.index }','${replyvo.rep_no}', 'reply_modify_id${replystatus.index }')">삭제</a>
+														</div>
+													</c:if>
+
+												</div>
+												<div class="comment-content"
+													style="text-align: left; padding-left: 30px; padding-right: 10px;">
+													<a style="display: block;"
+														id="reply_id${replystatus.index }">${replyvo.content }</a>
+													<input id="reply_modify_id${replystatus.index }"
+														type="text" value=""
+														style="display: none; border-top: none !important; border-left: none !important; border-right: none !important; border-bottom: 1px solid gray;">
+												</div>
+
+
+											</div>
+										</li>
+									</c:forEach>
+
+
+								</ul>
+							</li>
+						</c:forEach>
+
+					</ul>
+				</div>
 			</div>
 		</section>
 	</div>
-	
+
 	<script type="text/javascript">
 
-document.addEventListener("click", reply);
+/* document.addEventListener("click", reply);
 document.addEventListener("click", reply_cancel);
 document.addEventListener("click", reply_commit);
-document.addEventListener("click", reply_modify);
-document.addEventListener("click", reply_delete);
+document.addEventListener("click", reply_modify);*/
+
+/* document.addEventListener("click", reply_delete);  */
 /* document.addEventListener("click", insert); */
 /* 답글 등록 */
 function reply_commit(content_id, board_id, model_code){
 	console.log(content_id);
-	const content = document.getElementById(content_id).value;
+	const content = $('#content_id').val();
+// 	const content = document.getElementById(content_id).value;
 	console.log(content);
 	 location.href='/pj_web/coment_insert_web.mo?board_id='+board_id+'&content='+ content +'&email=${loginInfo.email}&model_code='+model_code;
 	return;
@@ -5779,14 +6668,16 @@ function reply_commit(content_id, board_id, model_code){
 /* 답글쓰기 */
 function reply(id){
 	console.log(id);
-	 document.getElementById(id).style.display = "block";
+	 $("#"+id).css('display',"block");
+// 	 document.getElementById(id).style.display = "block";
 return;
 }
 
 /* 답글쓰기 취소 */
 function reply_cancel(id){
 	console.log(id);
-	 document.getElementById(id).style.display = "none";
+	 $('#id').css('display',"none");
+// 	 document.getElementById(id).style.display = "none";
 return;
 }
 
@@ -5802,14 +6693,14 @@ function reply_modify(a_tag, input_tag, modify_content, modify_button, delete_bu
 		input_tag.value = modify_content;
 		modify_button.innerText="취소";
 		delete_button.innerText="저장"
-		a_tag.style.display = "none";
-		input_tag.style.display = "block";
+			$('#a_tag').css('display',"none");
+		$('#input_tag').css('display',"block");
 	}else{
 		modify_button.innerText="수정";
 		delete_button.innerText="삭제";
 		a_tag.value = modify_content;
-		input_tag.style.display = "none";
-		a_tag.style.display = "block";
+		$('#input_tag').css('display',"none");
+		$('#a_tag').css('display',"block");
 	}
 	
 }
@@ -5818,8 +6709,8 @@ function reply_modify(a_tag, input_tag, modify_content, modify_button, delete_bu
 
 function reply_delete(delete_button, rep_no, modify_content){
 	var delete_button = document.getElementById(delete_button);
-	var modify_content = document.getElementById(modify_content);
-	const modify_contente = modify_content.value;
+	/* var modify_content = document.getElementById(modify_content); */
+	const modify_contente = $('#modify_content').val();
 	if(delete_button.textContent == "삭제"){
 		Swal.fire({
 			   title: '정말 삭제 하시겠습니까??',
@@ -5879,7 +6770,7 @@ function reply_delete(delete_button, rep_no, modify_content){
 	}); */
 
 </script>
-<script type="text/javascript">
+	<script type="text/javascript">
 $('#AddToCart').click(function(){
 	/* window.open('https://www.samsungsvc.co.kr', '_blank');  */
 	/* location.href='/pj_web/as_list_web?brand_name='+${vo.brand_name}; */
@@ -5887,14 +6778,17 @@ $('#AddToCart').click(function(){
 	window.open('https://map.kakao.com/link/search/${vo.brand_name} 서비스센터', '_blank');
 });
 //새글쓰기
-function insert(email){
+function insert_board(){
+	console.log('확인용');
+	
 	const comment_content = document.getElementById('comment_insert').value;
 	console.log(comment_content);
 	const model_code = '${vo.model_code}';
 	console.log(model_code);
-/* 	const email = ${loginInfo.email};
-	console.log(email); */
+	const email = '${loginInfo.email}';
+	console.log(email); 
 	location.href="/pj_web/comment_insert_web?content="+comment_content+"&model_code="+model_code+"&cmt_code=o&email="+email;
+	 
 
 }
 

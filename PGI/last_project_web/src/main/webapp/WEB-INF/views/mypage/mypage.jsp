@@ -169,7 +169,7 @@
 															</div>
 														</div>
 														<!-- 포인트 -->
-														<div class="content_header">
+														<%-- <div class="content_header">
 															<p class="content_title">
 																<span style="font-size: 22px;">포인트</span>
 															</p>
@@ -203,10 +203,10 @@
 															<br />
 
 														</div>
-														<br />
+														<br /> --%>
 
 
-														<div class="content_header">
+														<!-- <div class="content_header">
 															<p class="content_title">
 																<span style="font-size: 22px;">1:1 문의</span>
 															</p>
@@ -224,7 +224,7 @@
 																	<li class="item_state" style="width: 140px;">답변유무</li>
 																	<li class="item_subject">제목</li>
 																	<li class="item_date" style="width: 180px;">작성일자</li>
-																</ul>
+																</ul> -->
 															</div>
 														</div>
 													</div>

@@ -15,7 +15,7 @@ p {
 }
 
 .search {
-	width: 140px;
+	width: 130px;
 	height: 60px;
 	line-height: 60px;
 	margin-right: 20px;
@@ -68,7 +68,7 @@ p {
 }
 
 .product-list {
-	width: 735px;
+	width: 910px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -88,8 +88,8 @@ p {
 	text-decoration: none;
 	color: black;
 	float: left;
-	margin-left: 10px;
-	margin-right: 10px;
+	/* margin-left: 10px; */
+	margin-right: 120px;
 	margin-bottom: 30px;
 }
 
@@ -126,7 +126,7 @@ p {
 	<br />
 	<br />
 	<section>
-		<div style="display: flex; padding-left: 490px; margin-bottom: 50px;">
+		<div style="display: flex; padding-left: 510px; margin-bottom: 70px;">
 			<div class="search">제품명</div>
 			<div class="search">모델코드</div>
 			<div class="search">브랜드</div>
@@ -145,22 +145,7 @@ p {
 			</c:forEach>
 			
 			
-				<a href="#" class="product">
-				 <img src="img/temp_model_img.jpg"
-					width="225" height="225px">
-					<div class="product-name">BESPOKE 냉장고 4도어 키친핏</div>
-					<div class="product-price">RF61R91C3APWP</div>
-				</a> 
-				<a href="#" class="product"> <img src="img/model_temp3.png"
-					width="225" height="225px">
-					<div class="product-name">BESPOKE 김치플러스 3도어 313 L</div>
-					<div class="product-price">RQ33A74C255</div>
-				</a>
-				 <a href="#" class="product"> <img
-					src="img/temp_model_img2.jpg.png" width="225" height="225px">
-					<div class="product-name">삼성전자 양문형 냉장고</div>
-					<div class="product-price">RS82M6000S8</div>
-				</a> 
+				
 				<div class="clearfix"></div>
 			</div>
 	</section>

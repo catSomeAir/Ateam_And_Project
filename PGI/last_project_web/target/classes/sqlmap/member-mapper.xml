@@ -56,7 +56,7 @@ select salt from member where userid=#{userid}
 <!-- 000000000000000000000000000000000000000 -->
 <!-- 로그인:아이디/비번 일치하는 회원정보 조회 -->
 <select id='login' resultType='member.MemberVO'>
-select * from userinfo where email=#{email} and pw=#{pw}
+select * from userinfo where email=#{email, jdbcType=VARCHAR} and pw=#{pw}
 </select>
 
 

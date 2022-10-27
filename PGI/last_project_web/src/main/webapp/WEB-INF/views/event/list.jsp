@@ -81,8 +81,8 @@ color: #123456;
 </head>
 <body>
 	<h3>이벤트</h3>
-
-
+<!-- 박가인 -->
+<br/>
 
 <section id="content_box" style="display: flex; align-content: center; ">
 <div onclick="location.href='/pj_web/detail_web.ev'" class="box" >
@@ -133,12 +133,19 @@ color: #123456;
 
 	</ul>
 </div>
+
 <div class="clear"></div>
 </section>
-
-
-
-
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 </body>
 
 <script type="text/javascript">

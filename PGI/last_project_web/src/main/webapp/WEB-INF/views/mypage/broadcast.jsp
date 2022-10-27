@@ -7,7 +7,7 @@
 	/* if (session.getAttribute("loginInfo") != null) {
 		id = (String) session.getAttribute("id");
 	} */
-	String nick = "관리자";
+	String nick = "";
 	/* if (session.getAttribute("loginInfo") != null) {
 		nick = (String) session.getAttribute("nick");
 	} else {
@@ -37,15 +37,19 @@ body{
 <div style="text-align: center; font-size: 25px; font-family: 'Noto Sans KR', sans-serif;" >&nbsp; 회원서비스 고객상담</div>
 <br/>
 <div id="messageWindow2" style="margin: 0 auto; width: 700px;padding:10px 0;height: 45em; overflow: auto; background-color: white; border: 1px solid #d1cdcd;border-radius: 10px 10px 0px 0px;"></div>
+<div style="display: table;margin: 0 auto;">
 <input id="inputMessage" type="text"
-	onkeydown="if(event.keyCode==13){send();}" style="width: 621px; margin-left: 0px auto;border-radius: 15px; padding: 8px; background-color: white; justify-content : center; text-align: left; position:absolute; left:34%;" />
-	<input type="submit" value="보내기" onclick="send();" style="height: 50px; background-color: #020E20;  border-radius: 8px; color: white;  position:absolute; left:64%;" />
+	onkeydown="if(event.keyCode==13){send();}" style="width: 621px; margin-left: 0px auto;border-radius: 15px; padding: 8px; background-color: white; justify-content : center; text-align: left; " />
+<!-- position:absolute; left:34%; -->
+	<input type="submit" value="보내기" onclick="send();" style="height: 50px; background-color: #020E20;  border-radius: 8px; color: white;  " />
+	<!-- position:absolute; left:64%; -->
+	</div>
 	<br/>
 	<br/>
 <script type="text/javascript">
 	
 	//웹소켓 설정
-	var webSocket = new WebSocket('ws://localhost:81/iot/broadcasting');
+	var webSocket = new WebSocket('ws://localhost/pj_web/broadcasting');
 	//var webSocket = new WebSocket('ws://localhost:8080/프로젝트명/broadcasting');
 	var inputMessage = document.getElementById('inputMessage');
 	//같은 이가 여러번 보낼때 이름 판별할 변수

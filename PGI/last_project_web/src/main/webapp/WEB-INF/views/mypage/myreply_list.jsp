@@ -94,8 +94,9 @@ a {
     border-left: none;
   } */
   th, td {
-     padding: 20px;
-     border-bottom: 1px solid darkgray;
+    padding: 20px;
+     border-bottom: 1px solid #fff;
+     background-color: #f5f5f59e;
 }
 tr:first-child{
 	border-top: 1px solid darkgray;
@@ -106,12 +107,14 @@ table td {
 </style>
 </head>
 <body>
-<h3 style="font-size: 1.5rem;">내가 쓴 답글</h3>
+<br/>
+<br/>
+<h3 style="font-size:1.5rem; padding-right: 40px; display:table; text-align: center; margin:0 auto;">내가 쓴 답글</h3>
 <br/>
 <br/>
 <form method='post' action='list.no'>
 <input type='hidden' name='curPage' value='1'>
-<div id='list-top' class='w-px1200'>
+<div id='list-top' class='w-px1000'>
 	<%-- <ul>
 		<!-- 관리자로 로그인한 경우만 글쓰기 가능 -->
 		<c:if test='${ loginInfo.admin eq "Y" }'>
@@ -121,7 +124,7 @@ table td {
 </div>
 </form>
 
-<table class='tb-list w-px1200'>
+<table class='tb-list w-px1000'>
 <colgroup>
 	<col width='100px'>
 	<col>

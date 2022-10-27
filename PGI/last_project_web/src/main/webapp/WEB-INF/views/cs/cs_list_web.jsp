@@ -100,7 +100,7 @@
 		<li class="cs-li">
 		
 			<div id="qna_wrap-h">
-				<button class="cs-btn" type="button" onclick='location="list_web.ch"'>
+				<button class="cs-btn" type="button" onclick='location="broadcasting"'>
 					<div class="cs-spandiv">
 						<span class="cs-span">채팅 서비스</span>
 						<span style="margin-top: 15%; font-size: 15px; font-weight: normal;" class="cs-span">채팅 시작</span>
@@ -120,7 +120,14 @@
 		</li>
 	</ul>
 </div>
-
-
+<!-- 박가인 -->
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 </body>
 </html>

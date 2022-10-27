@@ -10,7 +10,8 @@
 <style type="text/css">
 th, td {
      padding: 20px;
-     border-bottom: 1px solid darkgray;
+     border-bottom: 1px solid #fff;
+     background-color: #f5f5f59e;
 }
 tr:first-child{
 	border-top: 1px solid darkgray;
@@ -107,7 +108,8 @@ a {
 
 </head>
 <body>
-<h3 style="font-size:1.5rem;">내가 쓴 의견</h3>
+<br/>
+<h3 style="font-size:1.5rem; padding-right: 40px; display:table; text-align: center; margin:0 auto;">내가 쓴 의견</h3>
 <br/>
 <br/>
 <form method='post' action='list.no'>
@@ -117,7 +119,7 @@ a {
 </div>
 </form>
 
-<table class='tb-list w-px1200'>
+<table class='tb-list w-px1000'>
 <colgroup>
 	<col width='100px'>
 	<col>
@@ -135,7 +137,7 @@ a {
 						 : '&nbsp;&nbsp;'  }
 	</c:forEach> --%>
 		<%-- <a href='detail.no?id=${vo.id}'>${vo.title}</a></td> --%>
-	<td>${vo.title}</td>
+	<td>${vo.content}</td>
 	<td>${vo.writedate}</td>
 <%-- 	<td>${empty vo.filename ? '' : '<i class="font fa-solid fa-paperclip"></i>'}</td> --%>
 </tr>

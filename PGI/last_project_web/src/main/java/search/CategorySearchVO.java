@@ -13,6 +13,9 @@ public class CategorySearchVO implements Serializable {
 	        this.filepath = filepath;
 	        this.category_name = category_name;
 	    }
+	    
+
+		
 
 		public String getBrand_name() {
 			return brand_name;

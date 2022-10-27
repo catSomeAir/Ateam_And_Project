@@ -82,16 +82,16 @@ label {
 #form-controls button:hover {
 	cursor: pointer;
 }
-button[type="submit"] {
+.edit_btn{
 	padding: 16px 65px;
 	background-color: #020E20;
 	border-radius: 10px;
 	color: white;
 }
-button[type="submit"]:hover {
+.edit_btn:hover {
 	background-color: #ff6678;
 }
-button[type="button"] {
+.cancel_btn {
 	padding: 16px 0 16px 35px;
 	background-color: transparent;
 	color: #020E20;
@@ -112,7 +112,7 @@ button[type="button"] {
 	top: 0;
 	left: 3px;
 }
-.profile {
+.myprofile {
 	width: 100px !important;
 	height: 100px !important;
 	object-fit: cover;
@@ -123,6 +123,7 @@ button[type="button"] {
 	border-radius: 70%;
 	overflow: hidden;
 	padding: 0;
+	display: inline-block;
 }
 </style>
 </head>
@@ -141,7 +142,9 @@ button[type="button"] {
 					<br /> 
 					<label>
 					 <input type='file' name='file' id='attach-file' accept="image/*"> 
-						<img class="profile" src="${loginInfo.filepath }"> 
+					 	<div class="box">
+						<img class="myprofile" src="${loginInfo.filepath }"> 
+						</div>
 						<a style="width: 100px; height: 80px; padding: 8px 20px 8px 20px; border: 1px solid gray;">사진변경</a>
 					</label> <span id='preview'></span> <a id='delete-file'><i
 						class="fa-solid fa-trash" style="margin-left: 5px"></i></a>
@@ -149,7 +152,7 @@ button[type="button"] {
 						<input type='text' name='email' class='chk'
 							value="${loginInfo.email }" readonly>
 						<br />
-					<div >성명
+					<div >닉네임
 						<div style="text-align: center;">
 							<input type='text' name='name' title='이름' autofocus>
 						</div>
@@ -173,9 +176,9 @@ button[type="button"] {
 						</div>
 						<br />
 						<div id="form-controls">
-							<button type="submit" onclick="if( necessary() ) { $('form').submit(); }"
+							<button type="button"  class="edit_btn" onclick="if( necessary() ) { $('form').submit(); }"
 							>수정</button>
-							<button type="button" id="toggleSignIn" onclick="history.go(-1)">취소</button>
+							<button type="button" class="cancel_btn" id="toggleSignIn" onclick="history.go(-1)">취소</button>
 						</div>
 					</div>
 				</div>
@@ -194,35 +197,21 @@ button[type="button"] {
 		src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<!-- 	<script src='js/member.js?Fri Oct 14 16:53:24 KST 2022'></script> -->
 	<script>
-		//유효성
-		//회원수정처리
-		function edit() {
-			const pw = document.getElementById('pw');
-			const pw_chk = document.getElementById('pw_chk');
-			const pwt = pw.value;
-			const pw_chkt = pw_chk.value;
-			if (pwt != pw_chkt) {
-				alert('비밀번호가 일치하지 않습니다.');
-			}
-			
-			if(necessary()){
-				$('form').submit();
-			}			
-		}
+
 		
 		//입력항목에 입력되어 있는지 여부 반환하는 함수
 		function necessary(){
-	var need = true;
-	$('.need').each(function(){
-		if( $(this).val()=='' ){
-			alert( '입력하세요!' );
-			$(this).focus();
-			need = false;
-			return need;
+			var need = true;
+			$('input.need').each(function(){
+				if( $(this).val()=='' ){
+					alert( '입력하세요!' );
+					$(this).focus();
+					need = false;
+					return need;
+				}
+			});
+			return need; 
 		}
-	});
-	return need; 
-}
 		//아이다,비번,비번확인,이메일태그의 입력상태가 invalid 하면 form submit 불가
 		function tagIsInvalid(tag) {
 			var status = member.tag_status(tag);
@@ -263,20 +252,6 @@ button[type="button"] {
 				}
 			});
 		}
-		/* $('.chk').keyup(
-				function(e) {
-					//아이디를 중복확인한 후 다시 입력한다면 중복확인하지 않은 상태
-					if ($(this).hasClass('chked'))
-						$(this).removeClass('chked');
-					//아이디태그에 엔터 키 입력인 경우는 아이디 중복확인
-					if ($(this).attr('name') == 'userid' && e.keyCode == 13) {
-						id_check();
-					} else {
-						var status = member.tag_status($(this));
-						$(this).siblings('div').text(status.desc).removeClass()
-								.addClass(status.code);
-					}
-				}); */
 		$('.date').change(function() {
 			$('#delete').css('display', 'inline');
 		});
